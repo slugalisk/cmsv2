@@ -1,12 +1,15 @@
 import React from 'react';
 import thunk from 'redux-thunk';
 import { createLogger } from "redux-logger";
-import { routerReducer } from 'react-router-redux';
-
+import { routerReducer, routerMiddleware } from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory'
 import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
 
 import reducers from './reducers';
-console.log(reducers);
+
+export const history = createHistory()
+
+
 export default(initialState)=>{
   return createStore(
      combineReducers({
@@ -17,6 +20,7 @@ export default(initialState)=>{
     compose(
       applyMiddleware(
         thunk,
+      
         createLogger({
           duration: true,
           predicate: () => process.env.NODE_ENV !== 'production',
