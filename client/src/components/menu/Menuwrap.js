@@ -22,6 +22,8 @@ class Menuwrap extends React.Component{
       buttoncolor: '#fff',
       rotate:'rotate(0deg)',
 
+      opened:false,
+
     }
     this.togglepanel = this.togglepanel.bind(this);
     this.hoverbutton = this.hoverbutton.bind(this);
@@ -83,38 +85,40 @@ leavebutton(){
         offset:'-300px',
       })
     }
-    this.testfunction = this.testfunction.bind(this);
-    this.openMenu = this.openMenu.bind(this);
+
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   componentWillMount(){
-    this.props.action.closeMenu("-300px");
+    this.props.action.toggleMenu("-300px");
   }
-  testfunction(){
-    this.props.action.closeMenu();
-    console.log(this.props.offset);
-  }
-  openMenu(){
-    this.props.action.openMenu();
-    console.log(this.props.offset);
+
+  toggleMenu(){
+    if (this.state.opened){
+      this.props.action.toggleMenu("-300px");
+      this.setState({
+        opened:false,
+      });
+    }
+    else{
+      this.props.action.toggleMenu("0px");
+      this.setState({
+        opened:true,
+      });
+    }
   }
 
   render(){
 
-    
-
-
     return(
       <div>
-        {/*mapItems*/}
-        <button onClick={()=>this.testfunction()}>close</button>
-        <button onClick={()=>this.openMenu()}>open</button>
+
         <Menupanel
         offset={this.props.offset}
-        toggler={this.togglepanel}
+        toggler={()=>this.toggleMenu()}
         />
         <Menubtn 
-        toggler={this.togglepanel}
+        toggler={()=>this.toggleMenu()}
         line1rot={this.state.lineanim1}
 				line2rot={this.state.lineanim2}
 				line3rot={this.state.lineanim3}

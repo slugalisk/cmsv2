@@ -1,14 +1,11 @@
 const DEFAULT_STATE={
-  map: {},
-  offset:[],
+  offset:"-300px",
 }
 
 export default(state=DEFAULT_STATE, payload)=>
 {
   switch(payload.type){
-    case 'openMenu':
-      return payload.offset;
-    case 'closeMenu':
+    case 'toggleMenu':
       return payload.offset;
     default:
       return state;

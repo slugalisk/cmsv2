@@ -1,22 +1,7 @@
-
-export const toggleMenu = (key, offset) =>{
+export const toggleMenu = (offset) =>{
   return{
-    type: 'openMenu',
-    key,
+    type: 'toggleMenu',
     offset,
   };
 }
 
-export const closeMenu = () =>{
-  return{
-    type: 'closeMenu',
-    offset:"-300px",
-  };
-}
-
-export const openMenu = () =>{
-  return{
-    type: 'closeMenu',
-    offset:"0px",
-  };
-}
