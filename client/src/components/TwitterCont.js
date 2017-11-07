@@ -3,6 +3,8 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as TwitterActions from '../actions/twitter';
 
+import TwitterComment from './TwitterComment';
+
 class TwitterCont extends Component {
   constructor(props){
     super(props);
@@ -14,14 +16,34 @@ componentWillMount(){
   this.props.action.fetchPostsIfNeeded();
 }
 
-  render() {
+render() {
+  const twitterHeader={
+  }
+  const twitterWrapper={
+  }
+
     const mapPosts = this.props.posts.map((value) => {
-      return (<div><span>{value.body}</span></div>)
+      return (
+        <TwitterComment>
+          {value.body}
+        </TwitterComment>
+      )
     });
 
     return (
       <div>
-        {mapPosts}
+        <div 
+          style={twitterWrapper} 
+          className='twitterWrapper'
+        >
+          <div 
+            style={twitterHeader}
+            className='twitterHeader'
+          >
+            Twitter
+          </div>
+          {mapPosts}
+        </div>
       </div>
     );
   }
