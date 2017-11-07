@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import './Menu.css';
 
 import { Route } from 'react-router'
-import {Row, Col} from 'react-bootstrap';
 
 import Home from './components/template1/pages/Home';
 import Admin from './components/admin/Admin';

@@ -4,7 +4,6 @@ import {
 } from '../actions/twitter'
 
 const DEFAULT_STATE={
-  map: {},
   posts: [],
 }
 export default(state=DEFAULT_STATE, payload)=>

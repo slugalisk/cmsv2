@@ -3,7 +3,11 @@ import React from 'react';
 import Menupanel from './Menupanel';
 import Menubtn from './Menubtn';
 
-export default class Menuwrap extends React.Component{
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as MenuActions from '../../actions/menu';
+
+class Menuwrap extends React.Component{
   constructor(props){
     super(props);
     this.state={
@@ -17,6 +21,7 @@ export default class Menuwrap extends React.Component{
       l3left:'18px',
       buttoncolor: '#fff',
       rotate:'rotate(0deg)',
+
     }
     this.togglepanel = this.togglepanel.bind(this);
     this.hoverbutton = this.hoverbutton.bind(this);
@@ -78,13 +83,34 @@ leavebutton(){
         offset:'-300px',
       })
     }
+    this.testfunction = this.testfunction.bind(this);
+    this.openMenu = this.openMenu.bind(this);
   }
+
+  componentWillMount(){
+    this.props.action.closeMenu("-300px");
+  }
+  testfunction(){
+    this.props.action.closeMenu();
+    console.log(this.props.offset);
+  }
+  openMenu(){
+    this.props.action.openMenu();
+    console.log(this.props.offset);
+  }
+
   render(){
+
+    
+
 
     return(
       <div>
+        {/*mapItems*/}
+        <button onClick={()=>this.testfunction()}>close</button>
+        <button onClick={()=>this.openMenu()}>open</button>
         <Menupanel
-        offset={this.state.offset}
+        offset={this.props.offset}
         toggler={this.togglepanel}
         />
         <Menubtn 
@@ -106,3 +132,18 @@ leavebutton(){
     )
   }
 }
+
+function mapStateToProps(state, prop){
+  /*the name of the reducer*/
+  return{
+    offset:state.menu,
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    action: bindActionCreators(MenuActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menuwrap);
