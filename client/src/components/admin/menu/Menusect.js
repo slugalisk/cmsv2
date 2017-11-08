@@ -7,25 +7,13 @@ export default class Keynotesect extends React.Component{
 	constructor(props) {
 		super(props);
 		this.state = {
-      titleHovered:false,
       subtextHidden:true,
       maxheight:"0px",
     }
     this.toggledisplay = this.toggledisplay.bind(this);
-    this.hovered=this.hovered.bind(this);
-    this.leave=this.leave.bind(this);
   }
   
-  hovered(){
-    this.setState({
-      titleHovered:true,
-    })
-  }
-  leave(){
-    this.setState({
-      titleHovered:false,
-    })
-  }
+
 
   componentDidMount(){
     this.toggledisplay();
@@ -50,27 +38,14 @@ export default class Keynotesect extends React.Component{
     const subtext={
       maxHeight: this.state.maxheight,
     }
-    const adminMenuTitle = classNames(
-      'admin_menu__title',
-      {
-        'admin_menu__title--hovered':this.state.titleHovered,
-      }
-    );
-
-    const adminMenuSubtext = classNames(
-      'admin_menu__subtext',
-      {
-      }
-    );
 
 	  return(
       <div>
         <Row>
           <div 
-            className={adminMenuTitle}
+            className='admin_menu__title'
             onClick={this.toggledisplay} 
-            onMouseEnter={this.hovered} 
-            onMouseLeave={this.leave}
+
           > 
             <strong>
               {this.props.title}
@@ -78,7 +53,7 @@ export default class Keynotesect extends React.Component{
         </div>
         
         <div 
-          className={adminMenuSubtext} 
+          className='admin_menu__subtext' 
           style={subtext} 
           ref="expand"
         >

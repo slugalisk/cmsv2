@@ -24,7 +24,7 @@
   -o-transition: .25s ease-out;
   transition:.25s ease-out;
 }
-.admin_menu__title--hovered{
+.admin_menu__title:hover{
   color:rgb(124,211,211);
 }
 
@@ -54,27 +54,7 @@
   -o-transition: .25s ease-out;
   transition:.25s ease-out;
 }
-.admin_menu_option__container--hovered{
+.admin_menu_option__container:hover{
   color:rgb(124,211,211);
 }
 
-
-
-.admin_menu_option__underline{
-  height: 2px;
-  width: 0px;
-  background-color:rgb(255,255,255);
-  position: absolute;
-  bottom:0px;
-  left:0;
-  z-index: 11;
-  -webkit-transition: .25s ease-out;
-  -moz-transition: .25s ease-out;
-  -o-transition: .25s ease-out;
-  transition:.25s ease-out;
-}
-
-.admin_menu_option__underline--hovered{
-  width: 100%;
-  background-color:rgb(124,211,211);
-}
