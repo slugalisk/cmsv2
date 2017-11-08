@@ -7,6 +7,8 @@ import Adminmenu from './menu/Sidemenu';
 import SiteSetup from './Setup';
 import SiteSetup2 from './Setup2';
 
+import Account from './Account';
+
 export default class Main extends React.Component{
   constructor(props){
     super(props);
@@ -19,7 +21,7 @@ export default class Main extends React.Component{
  
     return(
       <div> 
-        <Row>
+      <Row>
       <Col md={2} className='admin_menu'>
       <Route path="/admin" render={(props) => <Adminmenu {...props}/>} />
       </Col>
@@ -29,6 +31,7 @@ export default class Main extends React.Component{
           <Route exact path="/admin" render={(props) => <Admin {...props}/>}/>
           <Route exact path="/admin/setup" render={(props) => <SiteSetup {...props}/>}/>
           <Route exact path="/admin/setup2" render={(props) => <SiteSetup2 {...props}/>}/>
+          <Route exact path="/admin/account" render={(props) => <Account {...props}/>}/>
         </Col>
       </Col>
       </Row>
