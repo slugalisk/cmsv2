@@ -1,11 +1,20 @@
+import {
+  TOGGLE_MENU,
+  OPEN_MENU,
+  CLOSE_MENU,
+} from '../actions/menu'
 
-export default(state={offset:"-300px"}, payload)=>
+const DEFAULT_STATE={
+  isHidden:true,
+}
+
+export default(state=DEFAULT_STATE, payload)=>
 {
   switch(payload.type){
     //case 'toggleMenu':
     //  return payload.offset;
-    case 'toggleMenu':
-      state = {...state, offset:payload.offset};
+    case TOGGLE_MENU:
+      state = {...state, isHidden:payload.isHidden};
     default:
       return state;
   }

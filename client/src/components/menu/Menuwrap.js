@@ -99,7 +99,7 @@ leavebutton(){
       <div>
 
         <Menupanel
-        offset={this.props.offset}
+        isHidden={this.props.isHidden}
         toggler={()=>this.toggleMenu()}
         />
         <Menubtn 
@@ -125,7 +125,7 @@ leavebutton(){
 function mapStateToProps(state, prop){
   /*the name of the reducer*/
   return{
-    offset:state.menu.offset,
+    isHidden:state.menu.isHidden,
   }
 }
 

@@ -8,7 +8,6 @@ export default class Menubtn extends React.Component{
 		}
 	}
 
-
   render(){
 		const menuButtonWrapper = {
       transform: this.props.rotate,
@@ -45,25 +44,25 @@ export default class Menubtn extends React.Component{
         onClick = {this.props.toggler}
         onMouseEnter = {this.props.hoverbutton} 
         onMouseLeave = {this.props.leavebutton}
-        className = 'menuButtonWrapper'
+        className = 'menu_btn'
       >
         <div 
           style = {menuButton}
-          className = 'menuButton'
+          className = 'menu_btn__container'
         >
           <span 
             style = {menuLine1} 
-            className = 'menuLine'
+            className = 'menu_btn__line'
           >
           </span>
           <span 
             style = {menuLine2}
-            className = 'menuLine'
+            className = 'menu_btn__line'
           >
           </span>
           <span 
             style = {menuLine3} 
-            className = 'menuLine'>
+            className = 'menu_btn__line'>
           </span>
         </div>
 			</div>

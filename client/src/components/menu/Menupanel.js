@@ -1,25 +1,29 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+import classNames from 'classnames';
 
 export default class Menupanel extends React.Component{
   render(){
-    const menuPanel={
-      right:this.props.offset,
-    }
-   
-    const menuLink={
 
-    }
+  
+
+   
+    const menuClassName = classNames(
+      'menu_panel',
+      {
+        'menu_panel--hidden':this.props.isHidden
+      }
+    );
+    
+
     return(
       <div 
-        style = {menuPanel} 
-        className = 'menuPanel'
+        className = {menuClassName}
       >
         <Link 
-          to='/' 
-          style = {menuLink} 
-          className = 'menuLink' 
+          to='/'
+          className = 'menu_panel__link' 
           onClick = {this.props.toggler}
         >
           Home
@@ -27,8 +31,7 @@ export default class Menupanel extends React.Component{
         <br/>
         <Link
           to = '/admin'
-          style = {menuLink} 
-          className = 'menuLink' 
+          className = 'menu_panel__link' 
           onClick = {this.props.toggler}
         >
           Admin

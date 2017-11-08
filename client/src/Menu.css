@@ -1,4 +1,4 @@
-.menuPanel{
+.menu_panel{
   position: fixed;
   height: 100vh;
   top: 0px;
@@ -9,15 +9,20 @@
   transition: .4s ease-out;
   width: 300px;
   z-index: 11;
+  right: 0px;
 }
 
-.menuLink{
+.menu_panel--hidden{
+  right: -300px;
+}
+
+.menu_panel__link{
   text-decoration: none;
   color: #fff;
   font-weight: bold;
 }
 
-.menuButtonWrapper{
+.menu_btn{
   position: fixed;
   mix-blend-mode:  difference;
   z-index:  100;
@@ -34,12 +39,12 @@
   background-color: #000;
 }
 
-.menuButton{
+.menu_btn__container{
   background: transparent;
   color: #fff;
 }
 
-.menuLine{
+.menu_btn__line{
   height: 3px;
   width: 24px;
   position: absolute;
