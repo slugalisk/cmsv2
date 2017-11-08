@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import './Menu.css';
 import './Adminmenu.css';
+import './Adminpanel.css';
 
 import { Route } from 'react-router'
 

@@ -1,0 +1,16 @@
+.admin_form_field{
+  height: 2.5em;
+  width: 100%;
+  line-height: 1.5em;
+  padding-right: 3.5em;
+  padding: .5em;
+  -webkit-transition: .3s linear;
+  -moz-transition: .3s linear;
+  -o-transition: .3s linear;
+  transition:.3s linear;
+  border: 2px solid #000;
+}
+
+.admin_form_field--focused{
+  border: 2px solid rgba(124,211,211,.8);
+}
