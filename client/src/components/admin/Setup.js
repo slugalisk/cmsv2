@@ -14,14 +14,14 @@ class Setup extends React.Component{
 constructor(props){
   super(props);
   this.state={
-    pageBackgroundColorHidden:true,
+    pageBackgroundColorDisplay:false,
   }
 }
 
   togglePageBackgroundColor(){
-    this.props.action.togglePageBackgroundColor(this.state.pageBackgroundColorHidden);
+    this.props.action.togglePageBackgroundColor(this.state.pageBackgroundColorDisplay);
     this.setState({
-      pageBackgroundColorHidden: !this.state.pageBackgroundColorHidden
+      pageBackgroundColorDisplay: !this.state.pageBackgroundColorDisplay
     })
   }
 
@@ -32,7 +32,8 @@ constructor(props){
       <Col md={6} mdOffset={0} sm={10} smOffset={1} xs={10} xsOffset={1}>
       <SetupForm 
       onSubmit={showResults} 
-      togglePageBackgroundColor={()=>this.togglePageBackgroundColor(true)}
+      pageBackgroundColorDisplay = {this.state.pageBackgroundColorDisplay}
+      togglePageBackgroundColor = {()=>this.togglePageBackgroundColor(true)}
       
       />
       </Col>
@@ -44,7 +45,7 @@ constructor(props){
 function mapStateToProps(state, prop){
   /*the name of the reducer*/
   return{
-    isHidden:state.setup.pageBackgroundColorHidden,
+    pageBackgroundColorDisplay:state.setup.pageBackgroundColorDisplay,
   }
 }
 

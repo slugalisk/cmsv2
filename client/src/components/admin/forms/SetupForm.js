@@ -6,7 +6,7 @@ import { ChromePicker } from 'react-color';
 import dropper from '../../../images/dropper.svg';
 
 const SetupForm = props => {
-  const { handleSubmit, pristine, reset, submitting } = props;
+  const { handleSubmit, pristine, reset, submitting, togglePageBackgroundColor, pageBackgroundColorDisplay } = props;
   return (
     <form onSubmit={handleSubmit}>
     <h2>Page</h2>
@@ -23,6 +23,24 @@ const SetupForm = props => {
               placeholder=''
               className='admin_form_field'
             />
+        </Col>
+        <Col md = {4} sm = {4} xs = {4}>
+        <img 
+          src={dropper} 
+          className= 'admin_setup__dropper' 
+          onClick={ togglePageBackgroundColor } 
+          alt="Eye Dropper By Gregor Cresnar"
+        />
+        { pageBackgroundColorDisplay ? 
+          <div className = 'admin_setup__popover'>
+            <div className = 'admin_setup__cover' onClick={ togglePageBackgroundColor }/>
+            <ChromePicker
+            /*onChangeComplete={ this.changebackground }*/
+           />
+        </div> 
+        : 
+        null 
+        }
         </Col>
       </Row>
 

@@ -6,14 +6,14 @@ import {
 
 
 const DEFAULT_STATE={
-  pageBackgroundColorHidden:true,
+  pageBackgroundColorDisplay:true,
 }
 
 export default(state=DEFAULT_STATE, payload)=>
 {
   switch(payload.type){
     case TOGGLE_PAGE_BACKGROUND_COLOR:
-      state = {...state, pageBackgroundColorHidden:payload.pageBackgroundColorHidden};
+      state = {...state, pageBackgroundColorDisplay:payload.pageBackgroundColorDisplay};
     default:
       return state;
   }
