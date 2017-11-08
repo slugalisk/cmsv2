@@ -16,18 +16,12 @@ class Menuwrap extends React.Component{
   }
 
   toggleMenu(){
-    if (this.state.opened){
-      this.props.action.toggleMenu(true);
+
+      this.props.action.toggleMenu(this.state.opened);
       this.setState({
-        opened:false,
-      });
-    }
-    else{
-      this.props.action.toggleMenu(false);
-      this.setState({
-        opened:true,
-      });
-    }
+        opened: !this.state.opened
+      })
+  
   }
 
   render(){

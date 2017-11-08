@@ -2,15 +2,18 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col} from 'react-bootstrap';
 
+import { ChromePicker } from 'react-color';
+import dropper from '../../../images/dropper.svg';
+
 const SetupForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
     <h2>Page</h2>
 
-      <Row>
+      <Row className='admin_setup__row'>
         <Col md = {4} sm = {4} xs = {4}> 
-          <label>Background Color</label>
+          <label className='admin_setup__label'>Background Color</label>
         </Col>
         <Col md = {4} sm = {4} xs = {4}>
             <Field
@@ -23,9 +26,9 @@ const SetupForm = props => {
         </Col>
       </Row>
 
-      <Row>
+      <Row className='admin_setup__row'>
         <Col md = {4} sm = {4} xs = {4}> 
-        <label>Header Color 1</label>
+        <label className='admin_setup__label'>Header Color 1</label>
         </Col>
         <Col md = {4} sm = {4} xs = {4}> 
           <Field
@@ -38,9 +41,9 @@ const SetupForm = props => {
         </Col>
       </Row>
 
-      <Row>
+      <Row className='admin_setup__row'>
         <Col md = {4} sm = {4} xs = {4}> 
-        <label>Header Color 2</label>
+        <label className='admin_setup__label'>Header Color 2</label>
         </Col>
         <Col md = {4} sm = {4} xs = {4}> 
           <Field
@@ -53,9 +56,9 @@ const SetupForm = props => {
         </Col>
       </Row>
 
-      <Row>
+      <Row className='admin_setup__row'>
         <Col md = {4} sm = {4} xs = {4}> 
-        <label>Header Font</label>
+        <label className='admin_setup__label'>Header Font</label>
         </Col>
         <Col md = {4} sm = {4} xs = {4}> 
           <Field 
@@ -82,9 +85,9 @@ const SetupForm = props => {
         </Col>
       </Row>
 
-      <Row>
+      <Row className='admin_setup__row'>
         <Col md = {4} sm = {4} xs = {4}> 
-        <label>Body Font</label>
+        <label className='admin_setup__label'>Body Font</label>
         </Col>
         <Col md = {4} sm = {4} xs = {4}> 
           <Field 
@@ -113,9 +116,9 @@ const SetupForm = props => {
 
       <h2>Sections</h2>
 
-      <Row>
+      <Row className='admin_setup__row'>
       <Col md = {4} sm = {4} xs = {4}>
-      <label>Background</label>
+      <label className='admin_setup__label'>Background</label>
       </Col>
       <Col md = {4} sm = {4} xs = {4}>
         <Field
@@ -128,9 +131,9 @@ const SetupForm = props => {
       </Col>
     </Row>
 
-    <Row>
+    <Row className='admin_setup__row'>
     <Col md = {4} sm = {4} xs = {4}>
-    <label>Header Text</label>
+    <label className='admin_setup__label'>Header Text</label>
     </Col>
       <Col md = {4} sm = {4} xs = {4}>
         <Field
@@ -143,9 +146,9 @@ const SetupForm = props => {
       </Col>
     </Row>
     
-    <Row>
+    <Row className='admin_setup__row'>
     <Col md = {4} sm = {4} xs = {4}>
-    <label>Header Size</label>
+    <label className='admin_setup__label'>Header Size</label>
     </Col>
       <Col md = {4} sm = {4} xs = {4}>
         <Field
@@ -158,9 +161,9 @@ const SetupForm = props => {
       </Col>
     </Row>
 
-    <Row>
+    <Row className='admin_setup__row'>
       <Col md = {4} sm = {4} xs = {4}>
-      <label>Body Text</label>
+      <label className='admin_setup__label'>Body Text</label>
       </Col>
       <Col md = {4} sm = {4} xs = {4}>
         <Field
@@ -173,9 +176,9 @@ const SetupForm = props => {
       </Col>
     </Row>
 
-    <Row>
+    <Row className='admin_setup__row'>
       <Col md = {4} sm = {4} xs = {4}>
-      <label>Link Text</label>
+      <label className='admin_setup__label'>Link Text</label>
       </Col>
       <Col md = {4} sm = {4} xs = {4}>
         <Field
@@ -188,9 +191,9 @@ const SetupForm = props => {
       </Col>
     </Row>
 
-    <Row>
+    <Row className='admin_setup__row'>
     <Col md = {4} sm = {4} xs = {4}>
-      <label>Border Color</label>
+      <label className='admin_setup__label'>Border Color</label>
     </Col>
       <Col md = {4} sm = {4} xs = {4}>
         <Field

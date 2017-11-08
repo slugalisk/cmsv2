@@ -4,8 +4,8 @@ import {Row, Col} from 'react-bootstrap';
 
 import Admin from './Admin';
 import Adminmenu from './menu/Sidemenu';
-import SiteSetup from './Setup';
-import SiteSetup2 from './Setup2';
+import SiteSetup from './Setupold';
+import SiteSetup2 from './Setup';
 
 import Account from './Account';
 
