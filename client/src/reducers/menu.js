@@ -11,8 +11,6 @@ const DEFAULT_STATE={
 export default(state=DEFAULT_STATE, payload)=>
 {
   switch(payload.type){
-    //case 'toggleMenu':
-    //  return payload.offset;
     case TOGGLE_MENU:
       state = {...state, isHidden:payload.isHidden};
     default:

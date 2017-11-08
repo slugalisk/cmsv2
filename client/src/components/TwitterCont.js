@@ -30,10 +30,10 @@ render() {
     return (
       <div>
         <div
-          className='twitterWrapper'
+          className='twitter'
         >
           <div
-            className='twitterHeader'
+            className='twitter__header'
           >
             Twitter
           </div>

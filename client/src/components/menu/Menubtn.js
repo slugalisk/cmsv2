@@ -1,5 +1,5 @@
 import React from "react";
-
+import classNames from 'classnames';
 export default class Menubtn extends React.Component{
 
 	constructor(props) {
@@ -9,33 +9,28 @@ export default class Menubtn extends React.Component{
 	}
 
   render(){
+
+    const menuLine1Names= classNames(
+      'menu_line1',
+      {
+        'menu_line1--closed':this.props.isHidden,
+      }
+    );
+    const menuLine2Names= classNames(
+      'menu_line2',
+      {
+        'menu_line2--closed':this.props.isHidden,
+      }
+    );
+    const menuLine3Names= classNames(
+      'menu_line3',
+      {
+        'menu_line3--closed':this.props.isHidden,
+      }
+    );
+
 		const menuButtonWrapper = {
       transform: this.props.rotate,
-		}
-		const menuButton={
-
-		}
-		const menuLine1={
-      backgroundColor: this.props.buttoncolor,
-			top:this.props.line1top,
-			WebkitTransform: this.props.line1rot,
-			MozTransform: this.props.line1rot,
-			OTransform: this.props.line1rot,
-			transform: this.props.line1rot,
-		}
-		const menuLine2={
-      backgroundColor: this.props.buttoncolor,
-			top:this.props.line2top,
-			WebkitTransform: this.props.line2rot,
-			MozTransform: this.props.line2rot,
-			OTransform: this.props.line2rot,
-			transform: this.props.line2rot,
-		}
-		const menuLine3={
-			width: this.props.line3rot,
-			backgroundColor: this.props.buttoncolor,
-			left: this.props.l3left,
-			top: '47px',
 		}
 
 	  return(
@@ -47,22 +42,19 @@ export default class Menubtn extends React.Component{
         className = 'menu_btn'
       >
         <div 
-          style = {menuButton}
           className = 'menu_btn__container'
         >
           <span 
-            style = {menuLine1} 
-            className = 'menu_btn__line'
+            className = {menuLine1Names}
           >
           </span>
           <span 
-            style = {menuLine2}
-            className = 'menu_btn__line'
+            className = {menuLine2Names}
           >
           </span>
           <span 
-            style = {menuLine3} 
-            className = 'menu_btn__line'>
+            className = {menuLine3Names}
+          >
           </span>
         </div>
 			</div>

@@ -11,7 +11,6 @@ class Menuwrap extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      offset: '-300px',
       lineTransform1: 'none',
       lineTransform2: 'none',
       lineWidth3: '14px',
@@ -25,50 +24,12 @@ class Menuwrap extends React.Component{
 
       opened:false,
     }
-    this.hoverbutton = this.hoverbutton.bind(this);
-    this.leavebutton = this.leavebutton.bind(this);
     
   }
 
-  hoverbutton(){
-		this.setState({
-		 buttoncolor: '#aaa',
-	 });
-	 if (this.state.offset === '0px'){
-     if(this.state.rotate==='rotate(360deg)'){
-      this.setState({
-        rotate:'rotate(0deg)',
-      })
-     }
-     else{
-		this.setState({
-			rotate:'rotate(360deg)',
-    })
-  }
-   }
-   else{
-     this.setState({
-       l3left:'28px',
-     })
-   }
-}
-
-leavebutton(){
-	this.setState({
-		 buttoncolor: '#fff',
-  });
-  if (this.state.offset==='-300px'){
-    this.setState({
-    l3left:'18px',
-    });
-  }
-}
-
-
-
   toggleMenu(){
     if (this.state.opened){
-      this.props.action.toggleMenu(false);
+      this.props.action.toggleMenu(true);
       this.setState({
         opened:false,
 
@@ -80,7 +41,7 @@ leavebutton(){
       });
     }
     else{
-      this.props.action.toggleMenu(true);
+      this.props.action.toggleMenu(false);
       this.setState({
         opened:true,
 
@@ -103,6 +64,8 @@ leavebutton(){
         toggler={()=>this.toggleMenu()}
         />
         <Menubtn 
+        isHidden={this.props.isHidden}
+        
         toggler={()=>this.toggleMenu()}
         line1rot={this.state.lineTransform1}
 				line2rot={this.state.lineTransform2}

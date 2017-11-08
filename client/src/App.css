@@ -19,11 +19,11 @@
 
   /*Twitter Component*/
 
-  .twitterWrapper{
+  .twitter{
     max-width: 768px;
     float: right;
   }
-  .twitterHeader{
+  .twitter__header{
     height: 40px;
     padding-left: 10px;
     color: #ddd;
@@ -37,7 +37,7 @@
     font-weight: 600,
   }
   
-  .tweet{
+  .twitter__tweet{
   font-family:'Open Sans', Helvetica;
   color: #ddd;
   padding: 10px;

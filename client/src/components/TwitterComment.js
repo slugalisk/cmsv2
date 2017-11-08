@@ -9,10 +9,7 @@ constructor(props){
   }
 }
 
-
   render(){
-    const tweet={
-    }
 
     return(
       <Row>
@@ -23,8 +20,7 @@ constructor(props){
           smOffset={0} 
           xs={12} 
           xsOffset={0} 
-          style={tweet} 
-          className='tweet'
+          className='twitter__tweet'
         >
         {this.props.children}
         </Col>
