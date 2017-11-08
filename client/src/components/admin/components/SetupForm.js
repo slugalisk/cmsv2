@@ -1,49 +1,68 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import {Row, Col} from 'react-bootstrap';
 
 const SetupForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <h2>Page</h2>
-        <label>Background Color</label>
-        <div>
-          <Field
-            name='pageBackgroundColor'
-            component='input'
-            type='text'
-            placeholder=''
-          />
-        </div>
-      </div>
-      <div>
+    <h2>Page</h2>
+
+      <Row>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <label>Background Color</label>
+        </Col>
+        <Col md = {4} sm = {4} xs = {4}>
+            <Field
+              name='pageBackgroundColor'
+              component='input'
+              type='text'
+              placeholder=''
+              className='admin_form_field'
+            />
+        </Col>
+      </Row>
+
+      <Row>
+        <Col md = {4} sm = {4} xs = {4}> 
         <label>Header Color 1</label>
-        <div>
+        </Col>
+        <Col md = {4} sm = {4} xs = {4}> 
           <Field
             name='pageHeaderColor1'
             component='input'
             type='text'
             placeholder=''
+            className='admin_form_field'
           />
-        </div>
-      </div>
-      <div>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col md = {4} sm = {4} xs = {4}> 
         <label>Header Color 2</label>
-        <div>
+        </Col>
+        <Col md = {4} sm = {4} xs = {4}> 
           <Field
             name='pageHeaderColor2'
             component='input'
             type='text'
             placeholder=''
+            className='admin_form_field'
           />
-        </div>
-      </div>
+        </Col>
+      </Row>
 
-      <div>
+      <Row>
+        <Col md = {4} sm = {4} xs = {4}> 
         <label>Header Font</label>
-        <div>
-          <Field name='pageHeaderFont' component='select'>
+        </Col>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <Field 
+            name='pageHeaderFont' 
+            component='select'
+            className='admin_form_field'
+          >
             <option />
             <option value='georgia'>Georgia</option>
             <option value='palatino linotype'>Palatino Linotype</option>
@@ -60,13 +79,19 @@ const SetupForm = props => {
             <option value='courier new'>Courier New</option>
             <option value='lucida console'>Lucida Console</option>
           </Field>
-        </div>
-      </div>
+        </Col>
+      </Row>
 
-      <div>
+      <Row>
+        <Col md = {4} sm = {4} xs = {4}> 
         <label>Body Font</label>
-        <div>
-          <Field name='pageBodyFont' component='select'>
+        </Col>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <Field 
+            name='pageBodyFont'
+            component='select'
+            className='admin_form_field'
+          >
             <option />
             <option value='georgia'>Georgia</option>
             <option value='palatino linotype'>Palatino Linotype</option>
@@ -83,90 +108,110 @@ const SetupForm = props => {
             <option value='courier new'>Courier New</option>
             <option value='lucida console'>Lucida Console</option>
           </Field>
-        </div>
-      </div>
+        </Col>
+      </Row>
 
       <h2>Sections</h2>
-      <div>
+
+      <Row>
+      <Col md = {4} sm = {4} xs = {4}>
       <label>Background</label>
-      <div>
+      </Col>
+      <Col md = {4} sm = {4} xs = {4}>
         <Field
           name='sectionBackgroundColor'
           component='input'
           type='text'
           placeholder=''
+          className='admin_form_field'
         />
-      </div>
-    </div>
-    <div>
-      <label>Header Text</label>
-      <div>
+      </Col>
+    </Row>
+
+    <Row>
+    <Col md = {4} sm = {4} xs = {4}>
+    <label>Header Text</label>
+    </Col>
+      <Col md = {4} sm = {4} xs = {4}>
         <Field
           name='sectionHeaderTextColor'
           component='input'
           type='text'
           placeholder=''
+          className='admin_form_field'
         />
-      </div>
-    </div>
+      </Col>
+    </Row>
     
-    <div>
-      <label>Header Size</label>
-      <div>
+    <Row>
+    <Col md = {4} sm = {4} xs = {4}>
+    <label>Header Size</label>
+    </Col>
+      <Col md = {4} sm = {4} xs = {4}>
         <Field
           name='sectionHeaderSize'
           component='input'
           type='text'
           placeholder=''
+          className='admin_form_field'
         />
-      </div>
-    </div>
+      </Col>
+    </Row>
 
-    <div>
+    <Row>
+      <Col md = {4} sm = {4} xs = {4}>
       <label>Body Text</label>
-      <div>
+      </Col>
+      <Col md = {4} sm = {4} xs = {4}>
         <Field
           name='sectionBodyTextColor'
           component='input'
           type='text'
           placeholder=''
+          className='admin_form_field'
         />
-      </div>
-    </div>
+      </Col>
+    </Row>
 
-    <div>
+    <Row>
+      <Col md = {4} sm = {4} xs = {4}>
       <label>Link Text</label>
-      <div>
+      </Col>
+      <Col md = {4} sm = {4} xs = {4}>
         <Field
           name='sectionLinkColor'
           component='input'
           type='text'
           placeholder=''
+          className='admin_form_field'
         />
-      </div>
-    </div>
+      </Col>
+    </Row>
 
-    <div>
+    <Row>
+    <Col md = {4} sm = {4} xs = {4}>
       <label>Border Color</label>
-      <div>
+    </Col>
+      <Col md = {4} sm = {4} xs = {4}>
         <Field
           name='sectionBorderColor'
           component='input'
           type='text'
           placeholder=''
+          className='admin_form_field'
         />
-      </div>
-    </div>
+      </Col>
+    </Row>
 
 
 
 
-      <div>
-        <button type='submit' disabled={pristine || submitting}>Submit</button>
-        <button type='button' disabled={pristine || submitting} onClick={reset}>
+      <Row>
+        <button type='submit' disabled = {pristine || submitting}>Submit</button>
+        <button type='button' disabled = {pristine || submitting} onClick={reset}>
           Clear Values
         </button>
-      </div>
+      </Row>
     </form>
   );
 };
