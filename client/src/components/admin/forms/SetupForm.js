@@ -2,16 +2,9 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col} from 'react-bootstrap';
 
-import { ChromePicker } from 'react-color';
-import dropper from '../../../images/dropper.svg';
-
-import {toggleColorPicker} from '../../../actions/setup';
+import ColorPickerWrapper from '../components/ColorPicker';
 
 class SetupForm extends React.Component{
-
-  colorPickerClick(colorPickerName){
-    this.props.dispatch(toggleColorPicker(colorPickerName, !this.props.colorDisplay[colorPickerName]));
-  }
 
   render(){
   
@@ -22,7 +15,6 @@ class SetupForm extends React.Component{
             colorDisplay,
           } = this.props;
 
-    const colorPickerName = 'colorPicker1';
 
     return (
       <form onSubmit={handleSubmit}>
@@ -41,27 +33,11 @@ class SetupForm extends React.Component{
                 className='admin_form_field'
               />
           </Col>
-          <Col md = {4} sm = {4} xs = {4}>
-          <img 
-            src={dropper} 
-            className= 'admin_setup__dropper' 
-            alt="Eye Dropper By Gregor Cresnar"
-            onClick={() => this.colorPickerClick(colorPickerName)}
-          />
 
-          { colorDisplay[colorPickerName] ? 
-            <div className = 'admin_setup__popover'>
-              <div className = 'admin_setup__cover'
-              onClick={() => this.colorPickerClick(colorPickerName)}
-              />
-              <ChromePicker
-              /*onChangeComplete={ this.changebackground }*/
-            />
-          </div> 
-          : 
-          null 
-          }
-          </Col>
+         <ColorPickerWrapper
+         colorPickerName = 'colorPicker1'
+         />
+
         </Row>
 
         <Row className='admin_setup__row'>
@@ -246,9 +222,6 @@ class SetupForm extends React.Component{
         </Col>
       </Row>
 
-
-
-
         <Row>
           <button type='submit' disabled = {pristine || submitting}>Submit</button>
           <button type='button' disabled = {pristine || submitting} onClick={reset}>
@@ -258,7 +231,6 @@ class SetupForm extends React.Component{
       </form>
     );
   }
-
 }
 
 export default reduxForm({
