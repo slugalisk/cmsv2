@@ -1,28 +1,25 @@
 import {
-  TOGGLE_PAGE_BACKGROUND_COLOR,
-  TOGGLE_PAGE_HEADER_COLOR_1,
+  TOGGLE_COLOR_PICKER,
 } from '../actions/setup'
 
 
 const DEFAULT_STATE={
-  pageBackgroundColorDisplay:true,
-  pageHeaderColor1Display:true,
+  colorDisplay:{}
 }
 
 export default(state=DEFAULT_STATE, payload)=>
 {
   switch(payload.type){
-    case TOGGLE_PAGE_BACKGROUND_COLOR:
-      state = {...state, pageBackgroundColorDisplay:payload.pageBackgroundColorDisplay};
+    case TOGGLE_COLOR_PICKER:
+      state = {
+        ...state, 
+        colorDisplay: { 
+          ...state.colorDisplay,
+          [payload.key]: payload.colorPickerDisplay,
+        }
+      };
+
     default:
       return state;
   }
-
-  switch(payload.type){
-    case TOGGLE_PAGE_HEADER_COLOR_1:
-      state = {...state, pageHeaderColor1Display:payload.pageHeaderColor1Display};
-    default:
-      return state;
-  }
-
-};
+}

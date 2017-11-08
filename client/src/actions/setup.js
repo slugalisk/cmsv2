@@ -1,18 +1,11 @@
-export const TOGGLE_PAGE_BACKGROUND_COLOR = Symbol('TOGGLE_PAGE_BACKGROUND_COLOR');
 
-export const togglePageBackgroundColor = (pageBackgroundColorDisplay) =>{
-    return{
-      type: TOGGLE_PAGE_BACKGROUND_COLOR,
-      pageBackgroundColorDisplay
-    };
-}
+export const TOGGLE_COLOR_PICKER = Symbol('TOGGLE_COLOR_PICKER');
 
-export const TOGGLE_PAGE_HEADER_COLOR_1 = Symbol('TOGGLE_PAGE_HEADER_COLOR_1');
-
-export const togglePageHeaderColor1 = (pageHeaderColor1Display) =>{
+export const toggleColorPicker = (key, colorPickerDisplay) => {
   return{
-    type: TOGGLE_PAGE_HEADER_COLOR_1,
-    pageHeaderColor1Display
+    type: TOGGLE_COLOR_PICKER,
+    key,
+    colorPickerDisplay,
   };
 }
 

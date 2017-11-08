@@ -14,30 +14,8 @@ class Setup extends React.Component{
 constructor(props){
   super(props);
   this.state={
-    pageBackgroundColorDisplay:false,
-    pageHeaderColor1Display:false,
-    pageHeaderColor2Display:false,
   }
 }
-  togglePageBackgroundColor(){
-    this.props.action.togglePageBackgroundColor(this.state.pageBackgroundColorDisplay);
-    this.setState({
-      pageBackgroundColorDisplay: !this.state.pageBackgroundColorDisplay
-    });
-  }
-  togglePageHeaderColor1(){
-    this.props.action.togglePageHeaderColor1(this.state.pageHeaderColor1Display);
-    this.setState({
-      pageHeaderColor1Display: !this.state.pageHeaderColor1Display
-    });
-  }
-  togglePageHeaderColor2(){
-    this.props.action.togglePageHeaderColor2(this.state.pageHeaderColor2Display);
-    this.setState({
-      pageHeaderColor2Display: !this.state.pageHeaderColor2Display
-    });
-  }
-
 
   render(){
     return(
@@ -45,10 +23,8 @@ constructor(props){
       <Col md={6} mdOffset={0} sm={10} smOffset={1} xs={10} xsOffset={1}>
         <SetupForm 
         onSubmit={showResults} 
-        pageBackgroundColorDisplay = {this.state.pageBackgroundColorDisplay}
-        togglePageBackgroundColor = {()=>this.togglePageBackgroundColor(true)} 
-        pageHeaderColor1Display = {this.state.pageHeaderColor1Display}
-        togglePageHeaderColor1 = {()=>this.togglePageHeaderColor1(true)} 
+        colorDisplay={this.props.colorDisplay}
+        dispatch={this.props.dispatch}
         />
       </Col>
     </div>
@@ -59,7 +35,7 @@ constructor(props){
 function mapStateToProps(state, prop){
   /*the name of the reducer*/
   return{
-    pageBackgroundColorDisplay:state.setup.pageBackgroundColorDisplay,
+    colorDisplay:state.setup.colorDisplay,
   }
 }
 
