@@ -237,30 +237,6 @@ export default class Setup extends React.Component{
 
 
   render(){
-    const popover = {
-      position: 'absolute',
-      zIndex: '2',
-    }
-    const cover = {
-      position: 'fixed',
-      top: '0px',
-      right: '0px',
-      bottom: '0px',
-      left: '0px',
-    }
-    const desc={
-      textAlign:"right",
-    }
-    const title={
-      fontSize:"2em",
-      fontWeight:"600",
-      marginBottom:"1em",
-    }
-    const labelstyle={
-      fontWeight:"600",
-      marginRight:"1em",
-    }
-
     const previewcontainer={
       marginTop:"3em",
       width:"100%",
@@ -295,20 +271,7 @@ export default class Setup extends React.Component{
     const previewbody={
       fontFamily:this.props.bodyfont,
     }
-    const dropperstyle={
-      height:"2.5em",
-      cursor:"pointer",
-      border:"2px solid rgb(102, 102, 102)",
-    }
 
-    const rowstyle={
-      marginBottom:"1em",
-    }
-
-    const selectstyle={
-      height:"2.5em",
-      border:"2px solid rgb(102, 102, 102)",
-    }
 
     const headergradient={
       background:"linear-gradient(90deg,"+this.props.headercolor1+","+this.props.headercolor2+")",
@@ -318,20 +281,20 @@ export default class Setup extends React.Component{
     return(
       <div>
 
-    <Col md={6}>
-      <div style={title}>Page</div>
+    <Col md = {6}>
+      <div className = 'admin_setup__title'>Page</div>
       
-      <Row style={rowstyle}>
-        <Col md={4} sm={4} xs={4} style={desc}>
-        <span style={labelstyle}>Background:</span>   
+      <Row className = 'admin_setup__row'>
+        <Col md = {4} sm = {4} xs = {4}>
+        <span className = 'admin_setup__label'>Background:</span>   
         </Col>
-        <Col md={4} sm={4} xs={4} >
+        <Col md = {4} sm = {4} xs = {4} >
         <Inputv2 type="text" name="background" placeholder={this.props.colorbg} getvalue={this.hexcolorbg}/>
         </Col>
-        <Col md={4} sm={4} xs={4} >
-        <img src={dropper} style={dropperstyle} onClick={ this.togglecolorbg } alt="Eye Dropper By Gregor Cresnar"/>
-        { this.state.colorbgpanel ? <div style={ popover }>
-          <div style={ cover } onClick={ this.closecolorbg }/>
+        <Col md = {4} sm = {4} xs = {4} >
+        <img src={dropper} className= 'admin_setup__dropper' onClick={ this.togglecolorbg } alt="Eye Dropper By Gregor Cresnar"/>
+        { this.state.colorbgpanel ? <div className = 'admin_setup__popover'>
+          <div className = 'admin_setup__cover' onClick={ this.closecolorbg }/>
           <ChromePicker 
           color={ this.props.colorbg }
           onChangeComplete={ this.changebackground }/>
@@ -339,17 +302,17 @@ export default class Setup extends React.Component{
       </Col>
       </Row>
 
-      <Row style={rowstyle}>
-        <Col md={4} sm={4} xs={4} style={desc}>
-        <span style={labelstyle}>Header Color 1:</span>   
+      <Row className = 'admin_setup__row'>
+        <Col md = {4} sm = {4} xs = {4}>
+        <span className='admin_setup__label'>Header Color 1:</span>   
         </Col>
-        <Col md={4} sm={4} xs={4} >
+        <Col md = {4} sm = {4} xs = {4} >
         <Inputv2 type="text" name="background" placeholder={this.props.headercolor1} getvalue={this.hexheader1}/>
         </Col>
-        <Col md={4} sm={4} xs={4} >
-        <img src={dropper} style={dropperstyle} onClick={ this.togglecolorheader1 } alt="Eye Dropper By Gregor Cresnar"/>
-        { this.state.colorheader1 ? <div style={ popover }>
-          <div style={ cover } onClick={ this.closecolorheader1 }/>
+        <Col md = {4} sm = {4} xs = {4} >
+        <img src={dropper} className= 'admin_setup__dropper' onClick={ this.togglecolorheader1 } alt="Eye Dropper By Gregor Cresnar"/>
+        { this.state.colorheader1 ? <div className = 'admin_setup__popover'>
+          <div className = 'admin_setup__cover' onClick={ this.closecolorheader1 }/>
           <ChromePicker 
           color={ this.props.headercolor1 }
           onChangeComplete={ this.changecolorheader1 }/>
@@ -357,17 +320,17 @@ export default class Setup extends React.Component{
       </Col>
       </Row>
 
-      <Row style={rowstyle}>
-        <Col md={4} sm={4} xs={4} style={desc}>
-        <span style={labelstyle}>Header Color 2:</span>   
+      <Row className = 'admin_setup__row'>
+        <Col md = {4} sm = {4} xs = {4}>
+        <span className='admin_setup__label'>Header Color 2:</span>   
         </Col>
-        <Col md={4} sm={4} xs={4} >
+        <Col md = {4} sm = {4} xs = {4} >
         <Inputv2 type="text" name="background" placeholder={this.props.headercolor2} getvalue={this.hexheader2}/>
         </Col>
-        <Col md={4} sm={4} xs={4} >
-        <img src={dropper} style={dropperstyle} onClick={ this.togglecolorheader2 } alt="Eye Dropper By Gregor Cresnar"/>
-        { this.state.colorheader2 ? <div style={ popover }>
-          <div style={ cover } onClick={ this.closecolorheader2 }/>
+        <Col md = {4} sm = {4} xs = {4} >
+        <img src={dropper} className= 'admin_setup__dropper' onClick={ this.togglecolorheader2 } alt="Eye Dropper By Gregor Cresnar"/>
+        { this.state.colorheader2 ? <div className = 'admin_setup__popover'>
+          <div className = 'admin_setup__cover' onClick={ this.closecolorheader2 }/>
           <ChromePicker 
           color={ this.props.headercolor2 }
           onChangeComplete={ this.changecolorheader2 }/>
@@ -375,21 +338,21 @@ export default class Setup extends React.Component{
       </Col>
       </Row>
     
-      <Row style={rowstyle}>
-      <Col md={4} sm={4} xs={4} style={desc}>
-      <span style={labelstyle}>Header Image: </span>
+      <Row className = 'admin_setup__row'>
+      <Col md = {4} sm = {4} xs = {4}>
+      <span className='admin_setup__label'>Header Image: </span>
        </Col>
-       <Col md={4} sm={4} xs={4} >
+       <Col md = {4} sm = {4} xs = {4} >
        <Imageupload/>
        </Col>
        </Row>
 
-       <Row style={rowstyle}>
-       <Col md={4} sm={4} xs={4} style={desc}>
-       <span style={labelstyle}>Header font:</span>
+       <Row className = 'admin_setup__row'>
+       <Col md = {4} sm = {4} xs = {4}>
+       <span className='admin_setup__label'>Header font:</span>
         </Col>
-        <Col md={4} sm={4} xs={4}>
-        <select defaultValue={this.props.headerfont} onChange={(e)=>this.sendheaderfont(e)} style={selectstyle}>
+        <Col md = {4} sm = {4} xs = {4}>
+        <select defaultValue={this.props.headerfont} onChange={(e)=>this.sendheaderfont(e)} className = 'admin_setup__language'>
           <option value="georgia">Georgia</option>
           <option value="palatino linotype">Palatino Linotype</option>
           <option value="times new roman">Times New Roman</option>
@@ -408,12 +371,12 @@ export default class Setup extends React.Component{
         </Col>
         </Row>
 
-        <Row style={rowstyle}>
-        <Col md={4} sm={4} xs={4} style={desc}>
-        <span style={labelstyle}>Body font:</span>
+        <Row className = 'admin_setup__row'>
+        <Col md = {4} sm = {4} xs = {4}>
+        <span className='admin_setup__label'>Body font:</span>
         </Col>
-        <Col md={4} sm={4} xs={4}>
-        <select defaultValue={this.props.bodyfont} onChange={(e)=>this.sendbodyfont(e)} style={selectstyle}>
+        <Col md = {4} sm = {4} xs = {4}>
+        <select defaultValue={this.props.bodyfont} onChange={(e)=>this.sendbodyfont(e)} className = 'admin_setup__language'>
         <option value="georgia">Georgia</option>
         <option value="palatino linotype">Palatino Linotype</option>
         <option value="times new roman">Times New Roman</option>
@@ -435,18 +398,18 @@ export default class Setup extends React.Component{
 
 
 
-      <div style={title}>Sections</div>
-      <Row style={rowstyle}>
-      <Col md={4} sm={4} xs={4} style={desc}>
-      <span style={labelstyle}>Background:</span>
+      <div className='admin_setup__title'>Sections</div>
+      <Row className = 'admin_setup__row'>
+      <Col md = {4} sm = {4} xs = {4}>
+      <span className='admin_setup__label'>Background:</span>
         </Col>
-        <Col md={4} sm={4} xs={4}>
+        <Col md = {4} sm = {4} xs = {4}>
         <Inputv2 type="text" name="background" placeholder={this.props.colorsectbg} getvalue={this.hexsectbg}/>
         </Col>
-        <Col md={4} sm={4} xs={4}>
-        <img src={dropper} style={dropperstyle} onClick={ this.togglecolorsectbg } alt="Eye Dropper By Gregor Cresnar"/>
-        { this.state.colorsectbg ? <div style={ popover }>
-          <div style={ cover } onClick={ this.closecolorsectbg }/>
+        <Col md = {4} sm = {4} xs = {4}>
+        <img src={dropper} className= 'admin_setup__dropper' onClick={ this.togglecolorsectbg } alt="Eye Dropper By Gregor Cresnar"/>
+        { this.state.colorsectbg ? <div className = 'admin_setup__popover'>
+          <div className = 'admin_setup__cover' onClick={ this.closecolorsectbg }/>
           <ChromePicker 
           color={ this.props.colorsectbg }
           onChangeComplete={ this.changesectbg }/>
@@ -455,17 +418,17 @@ export default class Setup extends React.Component{
         </Row>
 
 
-      <Row style={rowstyle}>
-        <Col md={4} sm={4} xs={4} style={desc}>
-        <span style={labelstyle}>Header Text:</span>
+      <Row className = 'admin_setup__row'>
+        <Col md = {4} sm = {4} xs = {4}>
+        <span className='admin_setup__label'>Header Text:</span>
         </Col>
-        <Col md={4} sm={4} xs={4}>
+        <Col md = {4} sm = {4} xs = {4}>
         <Inputv2 type="text" name="background" placeholder={this.props.colorsectheader} getvalue={this.hexsectheader}/>
         </Col>
-        <Col md={4} sm={4} xs={4}>
-        <img src={dropper} style={dropperstyle} onClick={ this.togglecolorsectheader} alt="Eye Dropper By Gregor Cresnar"/>
-        { this.state.colorsectheader ? <div style={ popover }>
-          <div style={ cover } onClick={ this.closecolorsectheader }/>
+        <Col md = {4} sm = {4} xs = {4}>
+        <img src={dropper} className= 'admin_setup__dropper' onClick={ this.togglecolorsectheader} alt="Eye Dropper By Gregor Cresnar"/>
+        { this.state.colorsectheader ? <div className = 'admin_setup__popover'>
+          <div className = 'admin_setup__cover' onClick={ this.closecolorsectheader }/>
           <ChromePicker 
           color={ this.props.colorsectheader }
           onChangeComplete={ this.changesectheader }/>
@@ -474,27 +437,27 @@ export default class Setup extends React.Component{
       </Row>
 
       {/*section header size*/}
-      <Row style={rowstyle}>
-        <Col md={4} sm={4} xs={4} style={desc}>
-        <span style={labelstyle}>Header Size:</span>
+      <Row className = 'admin_setup__row'>
+        <Col md = {4} sm = {4} xs = {4}>
+        <span className='admin_setup__label'>Header Size:</span>
         </Col>
-        <Col md={4} sm={4} xs={4}>
+        <Col md = {4} sm = {4} xs = {4}>
           <Inputv2 type="text" name="headersize" placeholder={this.props.headersize} getvalue={this.inputheadersize}/>
           </Col>
       </Row>
 
       {/*section body color*/}
-      <Row style={rowstyle}>
-        <Col md={4} sm={4} xs={4} style={desc}>
-        <span style={labelstyle}>Body:</span>
+      <Row className = 'admin_setup__row'>
+        <Col md = {4} sm = {4} xs = {4}>
+        <span className='admin_setup__label'>Body:</span>
         </Col>
-        <Col md={4} sm={4} xs={4}>
+        <Col md = {4} sm = {4} xs = {4}>
         <Inputv2 type="text" name="background" placeholder={this.props.colorsectbody} getvalue={this.hexsectbody}/>
         </Col>
-        <Col md={4} sm={4} xs={4}>
-        <img src={dropper} style={dropperstyle} onClick={ this.togglecolorsectbody } alt="Eye Dropper By Gregor Cresnar"/>
-        { this.state.colorsectbody ? <div style={ popover }>
-          <div style={ cover } onClick={ this.closecolorsectbody }/>
+        <Col md = {4} sm = {4} xs = {4}>
+        <img src={dropper} className= 'admin_setup__dropper' onClick={ this.togglecolorsectbody } alt="Eye Dropper By Gregor Cresnar"/>
+        { this.state.colorsectbody ? <div className = 'admin_setup__popover'>
+          <div className = 'admin_setup__cover' onClick={ this.closecolorsectbody }/>
           <ChromePicker 
           color={ this.props.colorsectbody }
           onChangeComplete={ this.changesectbody }/>
@@ -503,17 +466,17 @@ export default class Setup extends React.Component{
       </Row>
 
       {/*section link color*/}
-      <Row style={rowstyle}>
-        <Col md={4} sm={4} xs={4} style={desc}>
-        <span style={labelstyle}>Link Text:</span>
+      <Row className = 'admin_setup__row'>
+        <Col md = {4} sm = {4} xs = {4}>
+        <span className='admin_setup__label'>Link Text:</span>
         </Col>
-        <Col md={4} sm={4} xs={4}>
+        <Col md = {4} sm = {4} xs = {4}>
         <Inputv2 type="text" name="background" placeholder={this.props.colorsectlink} getvalue={this.hexsectlink}/>
         </Col>
-        <Col md={4} sm={4} xs={4}>
-        <img src={dropper} style={dropperstyle} onClick={ this.togglecolorsectlink } alt="Eye Dropper By Gregor Cresnar"/>
-        { this.state.colorsectlink ? <div style={ popover }>
-          <div style={ cover } onClick={ this.closecolorsectlink }/>
+        <Col md = {4} sm = {4} xs = {4}>
+        <img src={dropper} className= 'admin_setup__dropper' onClick={ this.togglecolorsectlink } alt="Eye Dropper By Gregor Cresnar"/>
+        { this.state.colorsectlink ? <div className = 'admin_setup__popover'>
+          <div className = 'admin_setup__cover' onClick={ this.closecolorsectlink }/>
           <ChromePicker 
           color={ this.props.colorsectlink }
           onChangeComplete={ this.changesectlink }/>
@@ -523,17 +486,17 @@ export default class Setup extends React.Component{
 
 
       {/*section border color*/}
-      <Row style={rowstyle}>
-        <Col md={4} sm={4} xs={4} style={desc}>
-        <span style={labelstyle}>Border:</span>
+      <Row className = 'admin_setup__row'>
+        <Col md = {4} sm = {4} xs = {4}>
+        <span className='admin_setup__label'>Border:</span>
         </Col>
-        <Col md={4} sm={4} xs={4}>
+        <Col md = {4} sm = {4} xs = {4}>
         <Inputv2 type="text" name="background" placeholder={this.props.colorsectborder} getvalue={this.hexsectborder}/>
         </Col>
-        <Col md={4} sm={4} xs={4}>
-        <img src={dropper} style={dropperstyle} onClick={ this.togglecolorsectborder } alt="Eye Dropper By Gregor Cresnar"/>
-        { this.state.colorsectborder ? <div style={ popover }>
-          <div style={ cover } onClick={ this.closecolorsectborder }/>
+        <Col md = {4} sm = {4} xs = {4}>
+        <img src={dropper} className= 'admin_setup__dropper' onClick={ this.togglecolorsectborder } alt="Eye Dropper By Gregor Cresnar"/>
+        { this.state.colorsectborder ? <div className = 'admin_setup__popover'>
+          <div className = 'admin_setup__cover' onClick={ this.closecolorsectborder }/>
           <ChromePicker 
           color={ this.props.colorsectborder }
           onChangeComplete={ this.changesectborder }/>
@@ -544,9 +507,9 @@ export default class Setup extends React.Component{
 
     </Col>
 
-    <Col md={6}>
+    <Col md = {6}>
     <div style={previewcontainer}>
-    <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1} >
+    <Col md = {10} mdOffset={1} sm = {10} smOffset={1} xs = {10} xsOffset={1} >
       <div style={previewheader}>
       Header
       </div>
@@ -557,7 +520,7 @@ export default class Setup extends React.Component{
       <div style={headergradient}></div>
 
     </Col>
-    <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1} style={previewsection}>
+    <Col md = {10} mdOffset={1} sm = {10} smOffset={1} xs = {10} xsOffset={1} style={previewsection}>
     <div style={previewsectheader}>
     Section Header
     </div>

@@ -13,8 +13,6 @@ export default class Keynotesect extends React.Component{
     this.toggledisplay = this.toggledisplay.bind(this);
   }
   
-
-
   componentDidMount(){
     this.toggledisplay();
   }
@@ -45,7 +43,6 @@ export default class Keynotesect extends React.Component{
           <div 
             className='admin_menu__title'
             onClick={this.toggledisplay} 
-
           > 
             <strong>
               {this.props.title}
