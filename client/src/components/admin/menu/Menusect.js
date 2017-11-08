@@ -51,14 +51,14 @@ export default class Keynotesect extends React.Component{
       maxHeight: this.state.maxheight,
     }
     const adminMenuTitle = classNames(
-      'admin_menu_title',
+      'admin_menu__title',
       {
-        'admin_menu_title--hovered':this.state.titleHovered,
+        'admin_menu__title--hovered':this.state.titleHovered,
       }
     );
 
     const adminMenuSubtext = classNames(
-      'admin_menu_subtext',
+      'admin_menu__subtext',
       {
       }
     );
