@@ -1,15 +1,8 @@
 import React from "react";
 import classNames from 'classnames';
+
 export default class Menubtn extends React.Component{
-
-	constructor(props) {
-		super(props);
-		this.state = {
-		}
-	}
-
   render(){
-
     const menuLine1Names= classNames(
       'menu_line1',
       {
@@ -28,17 +21,9 @@ export default class Menubtn extends React.Component{
         'menu_line3--closed':this.props.isHidden,
       }
     );
-
-		const menuButtonWrapper = {
-      transform: this.props.rotate,
-		}
-
 	  return(
-      <div 
-        style = {menuButtonWrapper}
+      <div
         onClick = {this.props.toggler}
-        onMouseEnter = {this.props.hoverbutton} 
-        onMouseLeave = {this.props.leavebutton}
         className = 'menu_btn'
       >
         <div 

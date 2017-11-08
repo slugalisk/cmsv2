@@ -6,17 +6,13 @@ import classNames from 'classnames';
 export default class Menupanel extends React.Component{
   render(){
 
-  
-
-   
     const menuClassName = classNames(
       'menu_panel',
       {
         'menu_panel--hidden':this.props.isHidden
       }
     );
-    
-
+  
     return(
       <div 
         className = {menuClassName}

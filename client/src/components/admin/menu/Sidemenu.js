@@ -7,22 +7,10 @@ import Option from './Menuoption';
 
 export default class Adminmenubar extends React.Component{
   render(){
-    const menu={
-      paddingTop:"4em",
-      position:"absolute",
-     width:"100%",
-    }
-
-    const title={
-      fontWeight:"600",
-      fontSize:"2em",
-      color:this.props.colormenutext,
-    }
-
 
     return(
       <div>
-        <div style={menu}>
+        <div className='admin_menu__container'>
         <Adminmenusect title="Account" colormenutext={this.props.colormenutext}>
           <Link to='/admin/account'><Option>Account</Option></Link>
           <Option>OBS Integration</Option>

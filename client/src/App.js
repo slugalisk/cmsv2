@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import './Menu.css';
+import './Adminmenu.css';
 
 import { Route } from 'react-router'
 

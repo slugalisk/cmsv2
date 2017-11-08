@@ -17,7 +17,7 @@ export default class Main extends React.Component{
  
     return(
       <div> 
-      <Col md={2}>
+      <Col md={2} className='admin_menu'>
       <Route path="/admin" render={(props) => <Adminmenu {...props}/>} />
       </Col>
 
