@@ -34,6 +34,7 @@ export default class Adminmenubar extends React.Component{
 
         <Adminmenusect title="Site">
           <Link to='/admin/setup'><Option>Setup</Option></Link>
+          <Link to='/admin/setup2'><Option>Setup2</Option></Link>
           <Link to='/admin/socials'><Option>Social Links</Option></Link>
           <Link to='/admin/SocialDisplay'><Option>Social Display</Option></Link>
           <Option>Custom Pages</Option>

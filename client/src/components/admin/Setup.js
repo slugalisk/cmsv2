@@ -6,6 +6,7 @@ import Inputv2 from './components/Input';
 import dropper from '../../images/dropper.svg';
 import Imageupload from './components/ImageUpload';
 
+
 export default class Setup extends React.Component{
   constructor(props){
     super(props);
@@ -271,18 +272,19 @@ export default class Setup extends React.Component{
     const previewbody={
       fontFamily:this.props.bodyfont,
     }
-
-
     const headergradient={
       background:"linear-gradient(90deg,"+this.props.headercolor1+","+this.props.headercolor2+")",
       width:"100%",
       height:"100px",
     }
+
     return(
       <div>
 
     <Col md = {6}>
-      <div className = 'admin_setup__title'>Page</div>
+      <div className = 'admin_setup__title'>
+        Page
+      </div>
       
       <Row className = 'admin_setup__row'>
         <Col md = {4} sm = {4} xs = {4}>
