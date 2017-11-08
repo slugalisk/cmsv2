@@ -1,7 +1,11 @@
-.admin_menu{
-  background-color: #101010;
-  height: 100vh;
-  position: fixed;
+
+@media screen and (min-width: 992px) {
+  .admin_menu{
+    background-color: #101010;
+    height: 100vh;
+    position: fixed;
+    padding-top: 6em;
+  }
 }
 
 .admin_menu__container{

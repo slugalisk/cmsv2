@@ -6,84 +6,164 @@ const SetupForm = props => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>First Name</label>
+        <h2>Page</h2>
+        <label>Background Color</label>
         <div>
           <Field
-            name="firstName"
-            component="input"
-            type="text"
-            placeholder="First Name"
+            name='pageBackgroundColor'
+            component='input'
+            type='text'
+            placeholder=''
           />
         </div>
       </div>
       <div>
-        <label>Last Name</label>
+        <label>Header Color 1</label>
         <div>
           <Field
-            name="lastName"
-            component="input"
-            type="text"
-            placeholder="Last Name"
+            name='pageHeaderColor1'
+            component='input'
+            type='text'
+            placeholder=''
           />
         </div>
       </div>
       <div>
-        <label>Email</label>
+        <label>Header Color 2</label>
         <div>
           <Field
-            name="email"
-            component="input"
-            type="email"
-            placeholder="Email"
+            name='pageHeaderColor2'
+            component='input'
+            type='text'
+            placeholder=''
           />
         </div>
       </div>
+
       <div>
-        <label>Sex</label>
+        <label>Header Font</label>
         <div>
-          <label>
-            <Field name="sex" component="input" type="radio" value="male" />
-            {' '}
-            Male
-          </label>
-          <label>
-            <Field name="sex" component="input" type="radio" value="female" />
-            {' '}
-            Female
-          </label>
-        </div>
-      </div>
-      <div>
-        <label>Favorite Color</label>
-        <div>
-          <Field name="favoriteColor" component="select">
+          <Field name='pageHeaderFont' component='select'>
             <option />
-            <option value="ff0000">Red</option>
-            <option value="00ff00">Green</option>
-            <option value="0000ff">Blue</option>
+            <option value='georgia'>Georgia</option>
+            <option value='palatino linotype'>Palatino Linotype</option>
+            <option value='times new roman'>Times New Roman</option>
+            <option value='Open Sans'>Open Sans</option>
+            <option value='arial'>Arial</option>
+            <option value='arial black'>Arial Black</option>
+            <option value='comic sans ms'>Comic Sans MS</option>
+            <option value='impact'>Impact</option>
+            <option value='lucida sans unicode'>Lucida Sans Unicode</option>
+            <option value='tahoma'>Tahoma</option>
+            <option value='trebuchet ms'>Trebuchet MS</option>
+            <option value='verdana'>Verdana</option>
+            <option value='courier new'>Courier New</option>
+            <option value='lucida console'>Lucida Console</option>
           </Field>
         </div>
       </div>
+
       <div>
-        <label htmlFor="employed">Employed</label>
+        <label>Body Font</label>
         <div>
-          <Field
-            name="employed"
-            id="employed"
-            component="input"
-            type="checkbox"
-          />
+          <Field name='pageBodyFont' component='select'>
+            <option />
+            <option value='georgia'>Georgia</option>
+            <option value='palatino linotype'>Palatino Linotype</option>
+            <option value='times new roman'>Times New Roman</option>
+            <option value='Open Sans'>Open Sans</option>
+            <option value='arial'>Arial</option>
+            <option value='arial black'>Arial Black</option>
+            <option value='comic sans ms'>Comic Sans MS</option>
+            <option value='impact'>Impact</option>
+            <option value='lucida sans unicode'>Lucida Sans Unicode</option>
+            <option value='tahoma'>Tahoma</option>
+            <option value='trebuchet ms'>Trebuchet MS</option>
+            <option value='verdana'>Verdana</option>
+            <option value='courier new'>Courier New</option>
+            <option value='lucida console'>Lucida Console</option>
+          </Field>
         </div>
       </div>
+
+      <h2>Sections</h2>
       <div>
-        <label>Notes</label>
-        <div>
-          <Field name="notes" component="textarea" />
-        </div>
+      <label>Background</label>
+      <div>
+        <Field
+          name='sectionBackgroundColor'
+          component='input'
+          type='text'
+          placeholder=''
+        />
       </div>
+    </div>
+    <div>
+      <label>Header Text</label>
       <div>
-        <button type="submit" disabled={pristine || submitting}>Submit</button>
-        <button type="button" disabled={pristine || submitting} onClick={reset}>
+        <Field
+          name='sectionHeaderTextColor'
+          component='input'
+          type='text'
+          placeholder=''
+        />
+      </div>
+    </div>
+    
+    <div>
+      <label>Header Size</label>
+      <div>
+        <Field
+          name='sectionHeaderSize'
+          component='input'
+          type='text'
+          placeholder=''
+        />
+      </div>
+    </div>
+
+    <div>
+      <label>Body Text</label>
+      <div>
+        <Field
+          name='sectionBodyTextColor'
+          component='input'
+          type='text'
+          placeholder=''
+        />
+      </div>
+    </div>
+
+    <div>
+      <label>Link Text</label>
+      <div>
+        <Field
+          name='sectionLinkColor'
+          component='input'
+          type='text'
+          placeholder=''
+        />
+      </div>
+    </div>
+
+    <div>
+      <label>Border Color</label>
+      <div>
+        <Field
+          name='sectionBorderColor'
+          component='input'
+          type='text'
+          placeholder=''
+        />
+      </div>
+    </div>
+
+
+
+
+      <div>
+        <button type='submit' disabled={pristine || submitting}>Submit</button>
+        <button type='button' disabled={pristine || submitting} onClick={reset}>
           Clear Values
         </button>
       </div>
@@ -92,5 +172,5 @@ const SetupForm = props => {
 };
 
 export default reduxForm({
-  form: 'simple', // a unique identifier for this form
+  form: 'setup', // a unique identifier for this form
 })(SetupForm);

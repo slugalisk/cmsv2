@@ -9,7 +9,7 @@ export default class Setup2 extends React.Component{
     return(
  
     <div>
-      <h2>Simple Form</h2>
+      <h2>Setup</h2>
       <SimpleForm onSubmit={showResults} />
     </div>
     );
