@@ -1,12 +1,11 @@
-const DEFAULT_STATE={
-  offset:"-300px",
-}
 
-export default(state=DEFAULT_STATE, payload)=>
+export default(state={offset:"-300px"}, payload)=>
 {
   switch(payload.type){
+    //case 'toggleMenu':
+    //  return payload.offset;
     case 'toggleMenu':
-      return payload.offset;
+      state = {...state, offset:payload.offset};
     default:
       return state;
   }

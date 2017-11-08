@@ -12,7 +12,7 @@ export default class Main extends React.Component{
  
     return(
       <div>
-       admin
+       admin main page
       </div>
     )
   }

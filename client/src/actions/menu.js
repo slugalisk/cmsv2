@@ -1,7 +1,15 @@
 export const toggleMenu = (offset) =>{
-  return{
+  if (offset){
+    return{
+      type: 'toggleMenu',
+      offset: '0px',
+    };
+  }
+  else{
+    return{
     type: 'toggleMenu',
-    offset,
-  };
+    offset: '-300px',
+    };
+  }
 }
 

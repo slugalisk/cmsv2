@@ -12,22 +12,22 @@ class Menuwrap extends React.Component{
     super(props);
     this.state={
       offset: '-300px',
-      lineanim1: 'none',
-      lineanim2: 'none',
-      lineanim3: '14px',
-      line1fromtop: '29px',
-      line2fromtop: '38px',
+      lineTransform1: 'none',
+      lineTransform2: 'none',
+      lineWidth3: '14px',
 
-      l3left:'18px',
-      buttoncolor: '#fff',
+      lineTop1: '29px',
+      lineTop2: '38px',
+
+      lineLeft3:'18px',
+      buttonColor: '#fff',
       rotate:'rotate(0deg)',
 
       opened:false,
-
     }
-    this.togglepanel = this.togglepanel.bind(this);
     this.hoverbutton = this.hoverbutton.bind(this);
     this.leavebutton = this.leavebutton.bind(this);
+    
   }
 
   hoverbutton(){
@@ -64,46 +64,31 @@ leavebutton(){
   }
 }
 
-  togglepanel(){
-    if(this.state.offset ==='-300px'){
-      this.setState({
-        lineanim1: 'rotate(45deg)',
-        lineanim2: 'rotate(-45deg)',
-        lineanim3: '0px',
-        line1fromtop: '34px',
-        line2fromtop: '34px',
-        offset:'0px',
-      })
-    }
-    else{
-      this.setState({
-        lineanim1: 'none',
-        lineanim2: 'none',
-        lineanim3: '14px',
-        line1fromtop: '29px',
-        line2fromtop: '38px',
-        offset:'-300px',
-      })
-    }
 
-    this.toggleMenu = this.toggleMenu.bind(this);
-  }
-
-  componentWillMount(){
-    this.props.action.toggleMenu("-300px");
-  }
 
   toggleMenu(){
     if (this.state.opened){
-      this.props.action.toggleMenu("-300px");
+      this.props.action.toggleMenu(false);
       this.setState({
         opened:false,
+
+        lineTransform1: 'none',
+        lineTransform2: 'none',
+        lineWidth3: '14px',
+        lineTop1: '29px',
+        lineTop2: '38px',
       });
     }
     else{
-      this.props.action.toggleMenu("0px");
+      this.props.action.toggleMenu(true);
       this.setState({
         opened:true,
+
+        lineTransform1: 'rotate(45deg)',
+        lineTransform2: 'rotate(-45deg)',
+        lineWidth3: '0px',
+        lineTop1: '34px',
+        lineTop2: '34px',
       });
     }
   }
@@ -119,18 +104,18 @@ leavebutton(){
         />
         <Menubtn 
         toggler={()=>this.toggleMenu()}
-        line1rot={this.state.lineanim1}
-				line2rot={this.state.lineanim2}
-				line3rot={this.state.lineanim3}
-				line1top={this.state.line1fromtop}
-        line2top={this.state.line2fromtop}
+        line1rot={this.state.lineTransform1}
+				line2rot={this.state.lineTransform2}
+				line3rot={this.state.lineWidth3}
+				line1top={this.state.lineTop1}
+        line2top={this.state.lineTop2}
 
         hoverbutton={this.hoverbutton}
         leavebutton={this.leavebutton}
-        buttoncolor={this.state.buttoncolor}
+        buttoncolor={this.state.buttonColor}
         rotate={this.state.rotate}
 
-        l3left={this.state.l3left}
+        lineLeft3={this.state.l3left}
         />
       </div>
     )
@@ -140,7 +125,7 @@ leavebutton(){
 function mapStateToProps(state, prop){
   /*the name of the reducer*/
   return{
-    offset:state.menu,
+    offset:state.menu.offset,
   }
 }
 

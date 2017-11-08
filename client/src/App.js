@@ -5,7 +5,7 @@ import './Menu.css';
 import { Route } from 'react-router'
 
 import Home from './components/template1/pages/Home';
-import Admin from './components/admin/Admin';
+import Admin from './components/admin/Routes';
 import Menuwrap from './components/menu/Menuwrap';
 
 class App extends Component {

@@ -17,10 +17,7 @@ componentWillMount(){
 }
 
 render() {
-  const twitterHeader={
-  }
-  const twitterWrapper={
-  }
+
 
     const mapPosts = this.props.posts.map((value) => {
       return (
@@ -32,12 +29,10 @@ render() {
 
     return (
       <div>
-        <div 
-          style={twitterWrapper} 
+        <div
           className='twitterWrapper'
         >
-          <div 
-            style={twitterHeader}
+          <div
             className='twitterHeader'
           >
             Twitter
