@@ -4,6 +4,10 @@ import {Row, Col} from 'react-bootstrap';
 
 import ColorPickerWrapper from '../components/ColorPicker';
 
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as MenuActions from '../../../actions/setup';
+
 class SetupForm extends React.Component{
 
   render(){
@@ -12,14 +16,14 @@ class SetupForm extends React.Component{
             pristine, 
             reset, 
             submitting,
-            colorDisplay,
           } = this.props;
 
 
     return (
+ 
       <form onSubmit={handleSubmit}>
       <h2>Page</h2>
-
+      
         <Row className='admin_setup__row'>
           <Col md = {4} sm = {4} xs = {4}> 
             <label className='admin_setup__label'>Background Color</label>
@@ -29,14 +33,14 @@ class SetupForm extends React.Component{
                 name='pageBackgroundColor'
                 component='input'
                 type='text'
-                placeholder=''
                 className='admin_form_field'
+                placeholder={this.props.colorChoice['colorPickerPageBackground']}
               />
           </Col>
 
          <ColorPickerWrapper
-         colorPickerName = 'colorPicker1'
-         />
+            colorPickerName = 'colorPickerPageBackground'
+          />
 
         </Row>
 
@@ -49,10 +53,13 @@ class SetupForm extends React.Component{
               name='pageHeaderColor1'
               component='input'
               type='text'
-              placeholder=''
               className='admin_form_field'
+              placeholder={this.props.colorChoice['colorPickerPageHeader1']}
             />
           </Col>
+          <ColorPickerWrapper
+            colorPickerName = 'colorPickerPageHeader1'
+           />
         
         </Row>
 
@@ -65,10 +72,13 @@ class SetupForm extends React.Component{
               name='pageHeaderColor2'
               component='input'
               type='text'
-              placeholder=''
               className='admin_form_field'
+              placeholder={this.props.colorChoice['colorPickerPageHeader2']}
             />
           </Col>
+          <ColorPickerWrapper
+            colorPickerName = 'colorPickerPageHeader2'
+          />
         
         </Row>
 
@@ -141,10 +151,13 @@ class SetupForm extends React.Component{
             name='sectionBackgroundColor'
             component='input'
             type='text'
-            placeholder=''
             className='admin_form_field'
+            placeholder={this.props.colorChoice['colorPickerSectionBackground']}
           />
         </Col>
+        <ColorPickerWrapper
+            colorPickerName = 'colorPickerSectionBackground'
+          />
       </Row>
 
       <Row className='admin_setup__row'>
@@ -156,10 +169,13 @@ class SetupForm extends React.Component{
             name='sectionHeaderTextColor'
             component='input'
             type='text'
-            placeholder=''
             className='admin_form_field'
+            placeholder={this.props.colorChoice['colorPickerHeaderColor']}
           />
         </Col>
+        <ColorPickerWrapper
+            colorPickerName = 'colorPickerHeaderColor'
+          />
       </Row>
       
       <Row className='admin_setup__row'>
@@ -186,10 +202,13 @@ class SetupForm extends React.Component{
             name='sectionBodyTextColor'
             component='input'
             type='text'
-            placeholder=''
             className='admin_form_field'
+            placeholder={this.props.colorChoice['colorPickerSectionBody']}
           />
         </Col>
+        <ColorPickerWrapper
+            colorPickerName = 'colorPickerSectionBody'
+          />
       </Row>
 
       <Row className='admin_setup__row'>
@@ -201,10 +220,13 @@ class SetupForm extends React.Component{
             name='sectionLinkColor'
             component='input'
             type='text'
-            placeholder=''
             className='admin_form_field'
+            placeholder={this.props.colorChoice['colorPickerSectionLink']}
           />
         </Col>
+        <ColorPickerWrapper
+            colorPickerName = 'colorPickerSectionLink'
+          />
       </Row>
 
       <Row className='admin_setup__row'>
@@ -216,10 +238,13 @@ class SetupForm extends React.Component{
             name='sectionBorderColor'
             component='input'
             type='text'
-            placeholder=''
             className='admin_form_field'
+            placeholder={this.props.colorChoice['colorPickerSectionBorder']}
           />
         </Col>
+        <ColorPickerWrapper
+            colorPickerName = 'colorPickerSectionBorder'
+          />
       </Row>
 
         <Row>

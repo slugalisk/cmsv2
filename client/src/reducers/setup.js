@@ -1,23 +1,34 @@
 import {
   TOGGLE_COLOR_PICKER,
+  CHOOSE_COLOR,
 } from '../actions/setup'
 
 
 const DEFAULT_STATE={
-  colorDisplay:{}
+  colorDisplay:{},
+  colorChoice:{}
 }
 
 export default(state=DEFAULT_STATE, payload)=>
 {
   switch(payload.type){
     case TOGGLE_COLOR_PICKER:
-      state = {
+      return state = {
         ...state, 
         colorDisplay: { 
           ...state.colorDisplay,
           [payload.key]: payload.colorPickerDisplay,
         }
       };
+
+    case CHOOSE_COLOR:
+    state = {
+      ...state, 
+      colorChoice: { 
+        ...state.colorChoice,
+        [payload.key]: payload.colorChoice,
+      }
+    };
 
     default:
       return state;

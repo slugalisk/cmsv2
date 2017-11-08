@@ -24,6 +24,7 @@ constructor(props){
         <SetupForm 
         onSubmit={showResults} 
         colorDisplay={this.props.colorDisplay}
+        colorChoice={this.props.colorChoice}
         dispatch={this.props.dispatch}
         />
       </Col>
@@ -36,6 +37,7 @@ function mapStateToProps(state, prop){
   /*the name of the reducer*/
   return{
     colorDisplay:state.setup.colorDisplay,
+    colorChoice:state.setup.colorChoice,
   }
 }
 

@@ -7,12 +7,9 @@ export default class Main extends React.Component{
     }
   }
 
-  
   render(){
- 
     return(
       <div>
-       admin main page
       </div>
     )
   }

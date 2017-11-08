@@ -11,6 +11,11 @@ class ColorPicker extends React.Component{
   colorPickerClick(colorPickerName){
     this.props.action.toggleColorPicker(colorPickerName, !this.props.colorDisplay[colorPickerName]);
   }
+  changeColor = (color) => {
+    this.props.action.chooseColor(this.props.colorPickerName, color.hex);
+    console.log(this.props.colorChoice[this.props.colorPickerName]);
+    
+  };
 
   render(){
     
@@ -22,14 +27,14 @@ class ColorPicker extends React.Component{
         alt="Eye Dropper By Gregor Cresnar"
         onClick={() => this.colorPickerClick(this.props.colorPickerName)}
       />
-
       { this.props.colorDisplay[this.props.colorPickerName] ? 
         <div className = 'admin_setup__popover'>
           <div className = 'admin_setup__cover'
           onClick={() => this.colorPickerClick(this.props.colorPickerName)}
           />
           <ChromePicker
-          /*onChangeComplete={ this.changebackground }*/
+          color={this.props.colorChoice[this.props.colorPickerName]}
+          onChangeComplete={ this.changeColor }
         />
       </div> 
       : 
@@ -38,13 +43,13 @@ class ColorPicker extends React.Component{
       </Col>
     )
   }
-  
 }
 
 function mapStateToProps(state, prop){
   /*the name of the reducer*/
   return{
     colorDisplay:state.setup.colorDisplay,
+    colorChoice:state.setup.colorChoice,
   }
 }
 
