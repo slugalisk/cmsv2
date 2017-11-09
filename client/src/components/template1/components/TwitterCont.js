@@ -28,7 +28,7 @@ render() {
           className='twitter'
         >
           <div
-            className='twitter__header'
+            className='social__header'
           >
             Twitter
           </div>

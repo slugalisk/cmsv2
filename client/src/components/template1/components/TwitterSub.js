@@ -17,9 +17,13 @@ export default class Tweetobject extends React.Component{
           xsOffset={0} 
           className='twitter__tweet'
         >
-        {this.props.children}
+        <a href={this.props.link}>Link</a> {this.props.children}
         <br/>
+        <span 
+          className='twitter_timestamp'
+        >
         {moment(this.props.timestamp, 'YYYY-MM-DD-HH:mm:ss.SSS Z').fromNow()}
+        </span>
         </Col>
       </Row>
     )

@@ -1,9 +1,12 @@
 import React from 'react';
-import TwitterCont from '../components/TwitterCont';
 import {Row, Col} from 'react-bootstrap';
 
 import MainHeader from '../components/MainHeader';
 import Navbar from '../components/Navbar';
+
+import TwitterCont from '../components/TwitterCont';
+import YoutubeCont from '../components/YoutubeCont';
+import TwitchCont from '../components/TwitchCont';
 
 export default class Home extends React.Component{
 
@@ -13,7 +16,7 @@ export default class Home extends React.Component{
         <Navbar/>
         <MainHeader/>
         <Row>
-          <Col md={10} mdOffset={1}>
+          <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
             <Col md={6}>
               <TwitterCont/>
             </Col>
@@ -23,7 +26,17 @@ export default class Home extends React.Component{
           </Col>
         </Row>
         <Row>
-          <Col md={10} mdOffset={1}>
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+            <Col md={6}>
+              <YoutubeCont/>
+            </Col>
+            <Col md={6}>
+              <TwitchCont/>
+            </Col>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
             <Col md={6}>
               <TwitterCont/>
             </Col>
