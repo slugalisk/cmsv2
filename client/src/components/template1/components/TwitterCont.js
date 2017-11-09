@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as TwitterActions from '../../../actions/twitter';
 
-import TwitterComment from './TwitterComment';
+import TwitterComment from './TwitterSub';
 
 class TwitterCont extends Component {
 
