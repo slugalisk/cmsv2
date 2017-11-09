@@ -1,3 +1,10 @@
+.admin_background{
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ddd;
+}
+
 .admin_panel__wrapper{
   padding-top: 6em;
 }
