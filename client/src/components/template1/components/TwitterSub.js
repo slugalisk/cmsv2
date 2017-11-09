@@ -18,8 +18,11 @@ export default class Tweetobject extends React.Component{
           className='twitter__tweet'
         >
         {this.props.children}
+        <br/>
+        {moment(this.props.timestamp, 'YYYY-MM-DD-HH:mm:ss.SSS Z').fromNow()}
         </Col>
       </Row>
     )
   }
 }
+/*2017-11-09T22:27:43.651*/

@@ -12,16 +12,16 @@ componentWillMount(){
 }
 
 render() {
-
-
     const mapPosts = this.props.posts.map((value) => {
       return (
-        <TwitterComment>
+        <TwitterComment
+          timestamp={value.timestamp}
+          link={value.url}
+          >
           {value.body}
         </TwitterComment>
       )
     });
-
     return (
       <div>
         <div
