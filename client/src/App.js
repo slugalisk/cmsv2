@@ -5,6 +5,8 @@ import './Adminmenu.css';
 import './Adminpanel.css';
 import './Template1.css';
 
+import 'react-table/react-table.css';
+
 import { Route } from 'react-router'
 
 import Home from './components/template1/pages/Home';

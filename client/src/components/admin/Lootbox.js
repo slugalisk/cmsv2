@@ -8,6 +8,9 @@ export default class Lootbox extends React.Component{
  
     <div>
       <Col md={12} mdOffset={0} sm={10} smOffset={1} xs={10} xsOffset={1}>
+      -Song Request
+        -Limited emote
+        -donation message
       </Col>
     </div>
     );

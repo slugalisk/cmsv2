@@ -22,6 +22,16 @@ export default class Home extends React.Component{
             </Col>
           </Col>
         </Row>
+        <Row>
+          <Col md={10} mdOffset={1}>
+            <Col md={6}>
+              <TwitterCont/>
+            </Col>
+            <Col md={6}>
+              <TwitterCont/>
+            </Col>
+          </Col>
+        </Row>
       </div>
     )
   }

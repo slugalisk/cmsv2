@@ -48,6 +48,7 @@ export default class Menupanel extends React.Component{
         >
           Admin Setup
         </Link>
+        <br/>
         <Link
           to = '/admin/users'
           className = 'menu_panel__link' 
@@ -55,6 +56,7 @@ export default class Menupanel extends React.Component{
         >
           Admin Users
         </Link>
+        <br/>
         <Link
           to = '/admin/banlist'
           className = 'menu_panel__link' 
@@ -62,6 +64,7 @@ export default class Menupanel extends React.Component{
         >
           Admin Banlist
         </Link>
+        <br/>
         <Link
           to = '/admin/email'
           className = 'menu_panel__link' 
@@ -69,6 +72,7 @@ export default class Menupanel extends React.Component{
         >
           Admin Email
         </Link>
+        <br/>
         <Link
           to = '/admin/groups'
           className = 'menu_panel__link' 
@@ -76,6 +80,7 @@ export default class Menupanel extends React.Component{
         >
           Admin Groups
         </Link>
+        <br/>
         <Link
           to = '/admin/subscriptions'
           className = 'menu_panel__link' 
@@ -83,6 +88,7 @@ export default class Menupanel extends React.Component{
         >
           Admin Subscriptions
         </Link>
+        <br/>
         <Link
           to = '/admin/bots'
           className = 'menu_panel__link' 
@@ -90,6 +96,7 @@ export default class Menupanel extends React.Component{
         >
           Admin Bots
         </Link>
+        <br/>
         <Link
           to = '/admin/emotes'
           className = 'menu_panel__link' 
@@ -97,6 +104,7 @@ export default class Menupanel extends React.Component{
         >
           Admin Emotes
         </Link>
+        <br/>
         <Link
           to = '/admin/polls'
           className = 'menu_panel__link' 
@@ -104,6 +112,7 @@ export default class Menupanel extends React.Component{
         >
           Admin Polls
         </Link>
+        <br/>
         <Link
           to = '/admin/chatoptions'
           className = 'menu_panel__link' 
