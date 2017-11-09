@@ -78,6 +78,11 @@
   border: 1px solid #000;
 }
 
+.admin_setup_preview__header{
+  height: 100px;
+  border: 1px solid #000;
+}
+
 .admin_setup_preview__section__header{
   
 }

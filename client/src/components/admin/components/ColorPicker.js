@@ -14,7 +14,6 @@ class ColorPicker extends React.Component{
   changeColor = (color) => {
     this.props.action.chooseColor(this.props.colorPickerName, color.hex);
     console.log(this.props.colorChoice[this.props.colorPickerName]);
-    
   };
 
   render(){
