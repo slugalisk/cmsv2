@@ -34,19 +34,20 @@ export default class Main extends React.Component{
   render(){
  
     return(
-      <div>
-      <Route path="/admin" render={(props) => <AdminBackground {...props}/>} /> 
+      <div className='admin_panel'>
+        <Route path="/admin" render={(props) => <AdminBackground {...props}/>} /> 
 
-      <Row>
-      <Col md={2} className='admin_menu'>
-      <Route path="/admin" render={(props) => <Adminmenu {...props}/>} />
-      </Col>
+        <Row>
+        <Col md={2} className='admin_menu'>
+       
+        </Col>
+        <Route path="/admin" render={(props) => <Adminmenu {...props}/>} />
 
-      <Col 
-        md={10} 
-        mdOffset={2} 
-        className = 'admin_panel__wrapper'
-      >
+        <Col 
+          md={10} 
+          mdOffset={2} 
+          className = 'admin_panel__wrapper'
+        >
         <Col 
           md={10} 
           mdOffset={1}

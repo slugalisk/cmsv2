@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import {Row, Col} from 'react-bootstrap';
 
 import Adminmenusect from './Menusect';
 import Option from './Menuoption';
@@ -9,8 +9,7 @@ export default class Adminmenubar extends React.Component{
   render(){
 
     return(
-      <div>
-        <div className='admin_menu__container'>
+        <Col md={2} className='admin_menu__container'>
         <Adminmenusect title="Account">
           <Link to='/admin/account'><Option>Account</Option></Link>
           <Option>OBS Integration</Option>
@@ -45,8 +44,7 @@ export default class Adminmenubar extends React.Component{
 
           <br/>
           Log Out
-        </div>
-      </div>
+        </Col>
     )
   }
 }

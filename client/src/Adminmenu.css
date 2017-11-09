@@ -3,7 +3,12 @@
   background-color: #101010;
   height: 100vh;
   position: fixed;
-  padding-top: 6em;
+  min-width:200px;
+}
+
+.admin_menu__container{
+  padding-top: 4em;
+  position: absolute;
   min-width:200px;
 }
 
@@ -25,13 +30,11 @@
   .admin_menu{
     display: none;
   }
+  .admin_menu__container{
+    display:none;
+  }
 }
 
-.admin_menu__container{
-  padding-top:'4em';
-  position:'absolute';
-  width:'100%';
-}
 
 .admin_menu__title{
   font-size: 2em;
