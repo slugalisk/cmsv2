@@ -33,13 +33,15 @@ class SetupForm extends React.Component{
                 name='pageBackgroundColor'
                 component='input'
                 type='text'
-                className='admin_form_field'
-                placeholder={this.props.colorChoice['colorPickerPageBackground']}
+                className='admin_form_field'  
               />
           </Col>
 
          <ColorPickerWrapper
             colorPickerName = 'colorPickerPageBackground'
+            fieldName='pageBackgroundColor'
+            formName='setup'
+            dispatch={this.props.dispatch}
           />
 
         </Row>
@@ -54,11 +56,13 @@ class SetupForm extends React.Component{
               component='input'
               type='text'
               className='admin_form_field'
-              placeholder={this.props.colorChoice['colorPickerPageHeader1']}
             />
           </Col>
           <ColorPickerWrapper
             colorPickerName = 'colorPickerPageHeader1'
+            fieldName='pageHeaderColor1'
+            formName='setup'
+            dispatch={this.props.dispatch}
            />
         
         </Row>
@@ -73,11 +77,13 @@ class SetupForm extends React.Component{
               component='input'
               type='text'
               className='admin_form_field'
-              placeholder={this.props.colorChoice['colorPickerPageHeader2']}
             />
           </Col>
           <ColorPickerWrapper
             colorPickerName = 'colorPickerPageHeader2'
+            fieldName='pageHeaderColor2'
+            formName='setup'
+            dispatch={this.props.dispatch}
           />
         
         </Row>
@@ -152,12 +158,14 @@ class SetupForm extends React.Component{
             component='input'
             type='text'
             className='admin_form_field'
-            placeholder={this.props.colorChoice['colorPickerSectionBackground']}
           />
         </Col>
         <ColorPickerWrapper
             colorPickerName = 'colorPickerSectionBackground'
-          />
+            fieldName='sectionBackgroundColor'
+            formName='setup'
+            dispatch={this.props.dispatch}
+            />
       </Row>
 
       <Row className='admin_setup__row'>
@@ -170,12 +178,14 @@ class SetupForm extends React.Component{
             component='input'
             type='text'
             className='admin_form_field'
-            placeholder={this.props.colorChoice['colorPickerHeaderColor']}
           />
         </Col>
         <ColorPickerWrapper
             colorPickerName = 'colorPickerHeaderColor'
-          />
+            fieldName='sectionHeaderTextColor'
+            formName='setup'
+            dispatch={this.props.dispatch}
+            />
       </Row>
       
       <Row className='admin_setup__row'>
@@ -203,12 +213,14 @@ class SetupForm extends React.Component{
             component='input'
             type='text'
             className='admin_form_field'
-            placeholder={this.props.colorChoice['colorPickerSectionBody']}
           />
         </Col>
         <ColorPickerWrapper
             colorPickerName = 'colorPickerSectionBody'
-          />
+            fieldName='sectionBodyTextColor'
+            formName='setup'
+            dispatch={this.props.dispatch}
+            />
       </Row>
 
       <Row className='admin_setup__row'>
@@ -221,12 +233,14 @@ class SetupForm extends React.Component{
             component='input'
             type='text'
             className='admin_form_field'
-            placeholder={this.props.colorChoice['colorPickerSectionLink']}
           />
         </Col>
         <ColorPickerWrapper
             colorPickerName = 'colorPickerSectionLink'
-          />
+            fieldName='sectionLinkColor'
+            formName='setup'
+            dispatch={this.props.dispatch}
+            />
       </Row>
 
       <Row className='admin_setup__row'>
@@ -239,12 +253,14 @@ class SetupForm extends React.Component{
             component='input'
             type='text'
             className='admin_form_field'
-            placeholder={this.props.colorChoice['colorPickerSectionBorder']}
           />
         </Col>
         <ColorPickerWrapper
             colorPickerName = 'colorPickerSectionBorder'
-          />
+            fieldName='sectionBorderColor'
+            formName='setup'
+            dispatch={this.props.dispatch}
+            />
       </Row>
 
         <Row>

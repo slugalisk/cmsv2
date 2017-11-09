@@ -6,6 +6,8 @@ import dropper from '../../../images/dropper.svg';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as MenuActions from '../../../actions/setup';
+import { change } from 'redux-form'
+
 
 class ColorPicker extends React.Component{
   colorPickerClick(colorPickerName){
@@ -13,7 +15,7 @@ class ColorPicker extends React.Component{
   }
   changeColor = (color) => {
     this.props.action.chooseColor(this.props.colorPickerName, color.hex);
-    console.log(this.props.colorChoice[this.props.colorPickerName]);
+    this.props.dispatch(change(this.props.formName, this.props.fieldName, this.props.colorChoice[this.props.colorPickerName]));
   };
 
   render(){
