@@ -48,14 +48,76 @@ export default class Menupanel extends React.Component{
         >
           Admin Setup
         </Link>
-        <br/>
         <Link
-          to = '/admin/setup2'
+          to = '/admin/users'
           className = 'menu_panel__link' 
           onClick = {this.props.toggler}
         >
-          Admin Setup2
+          Admin Users
         </Link>
+        <Link
+          to = '/admin/banlist'
+          className = 'menu_panel__link' 
+          onClick = {this.props.toggler}
+        >
+          Admin Banlist
+        </Link>
+        <Link
+          to = '/admin/email'
+          className = 'menu_panel__link' 
+          onClick = {this.props.toggler}
+        >
+          Admin Email
+        </Link>
+        <Link
+          to = '/admin/groups'
+          className = 'menu_panel__link' 
+          onClick = {this.props.toggler}
+        >
+          Admin Groups
+        </Link>
+        <Link
+          to = '/admin/subscriptions'
+          className = 'menu_panel__link' 
+          onClick = {this.props.toggler}
+        >
+          Admin Subscriptions
+        </Link>
+        <Link
+          to = '/admin/bots'
+          className = 'menu_panel__link' 
+          onClick = {this.props.toggler}
+        >
+          Admin Bots
+        </Link>
+        <Link
+          to = '/admin/emotes'
+          className = 'menu_panel__link' 
+          onClick = {this.props.toggler}
+        >
+          Admin Emotes
+        </Link>
+        <Link
+          to = '/admin/polls'
+          className = 'menu_panel__link' 
+          onClick = {this.props.toggler}
+        >
+          Admin Polls
+        </Link>
+        <Link
+          to = '/admin/chatoptions'
+          className = 'menu_panel__link' 
+          onClick = {this.props.toggler}
+        >
+          Admin Chat Options
+        </Link>
+
+
+
+
+
+        <br/>
+       
       </div>
     )
   }

@@ -27,17 +27,16 @@ export default class Adminmenubar extends React.Component{
 
         <Adminmenusect title="Chat">
           <Link to='/admin/emotes'><Option>Emotes</Option></Link>
-          <Link to='/admin/chat'><Option>Chat</Option></Link>
+          <Link to='/admin/chatoptions'><Option>Chat</Option></Link>
           <Link to='/admin/bots'><Option>Bots</Option></Link>
-          <Option>Polls</Option>
+          <Link to='/admin/polls'><Option>Polls</Option></Link>
         </Adminmenusect>
 
         <Adminmenusect title="Site">
           <Link to='/admin/setup'><Option>Setup</Option></Link>
-          <Link to='/admin/setup2'><Option>Setup2</Option></Link>
           <Link to='/admin/socials'><Option>Social Links</Option></Link>
-          <Link to='/admin/SocialDisplay'><Option>Social Display</Option></Link>
-          <Option>Custom Pages</Option>
+          <Link to='/admin/socialdisplay'><Option>Social Display</Option></Link>
+          <Link to='/admin/custompages'><Option>Custom Pages</Option></Link>
         </Adminmenusect>
 
         <Adminmenusect title="Lootboxes">

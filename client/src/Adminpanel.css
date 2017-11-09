@@ -53,3 +53,9 @@
   height: 2.5em;
   border: 2px solid rgb(102, 102, 102);
 }
+
+.admin_setup_preview{
+  height: 600px;
+  width: 100%;
+  border: 1px solid #000;
+}
