@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import showResults from './showResults';
+import showResults from './ShowResults';
 import LoginForm from './forms/LoginForm';
 
 import {Row, Col} from 'react-bootstrap';

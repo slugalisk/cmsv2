@@ -4,6 +4,7 @@ import {Row, Col} from 'react-bootstrap';
 
 import Admin from './Admin';
 import Adminmenu from './menu/Sidemenu';
+import Adminbar from './menu/Menubar';
 
 import Account from './Account';
 
@@ -70,6 +71,9 @@ export default class Main extends React.Component{
           
         </Col>
       </Col>
+
+      <Route path="/admin" render={(props) => <Adminbar {...props}/>} />
+        
       </Row>
 
       </div>

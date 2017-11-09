@@ -1,0 +1,15 @@
+.template1_header{
+  height: 11em;
+  width: 100%;
+  background: linear-gradient(90deg, rgb(132, 158, 181), rgb(48, 57, 74));
+  margin-top: 3em;
+}
+
+.template1_navbar{
+  top: 0px;
+  height: 3em;
+  width: 100%;
+  position: absolute;
+  background-color: #101010;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 31px 0px;
+}

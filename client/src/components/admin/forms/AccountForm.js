@@ -7,7 +7,7 @@ const AccountForm = props => {
   return (
     <form onSubmit={handleSubmit}>
 
-      <Row>
+      <Row className='admin_setup__row'>
         <Col md = {12} sm = {12} xs = {12}> 
           <label>Username</label>
             <Field
@@ -20,7 +20,7 @@ const AccountForm = props => {
         </Col>
       </Row>
 
-      <Row>
+      <Row className='admin_setup__row'>
         <Col md = {5} sm = {12} xs = {12}> 
         <label>First Name</label> 
           <Field
@@ -44,7 +44,7 @@ const AccountForm = props => {
         </Col>
       </Row>
 
-      <Row>
+      <Row  className='admin_setup__row'>
       <Col md = {12} sm = {12} xs = {12}>
       <label>Email</label>
         <Field
@@ -57,7 +57,7 @@ const AccountForm = props => {
       </Col>
     </Row>
 
-    <Row>
+    <Row  className='admin_setup__row'>
     <Col md = {5} sm = {12} xs = {12}>
     <label>New Password</label>
 
@@ -82,7 +82,7 @@ const AccountForm = props => {
       </Col>
     </Row>
 
-    <Row>
+    <Row  className='admin_setup__row'>
       <Col md = {5} sm = {12} xs = {12}>
       <label>Language</label>
       <Field 

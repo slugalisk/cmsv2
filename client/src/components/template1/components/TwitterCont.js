@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import * as TwitterActions from '../actions/twitter';
+import * as TwitterActions from '../../../actions/twitter';
 
 import TwitterComment from './TwitterComment';
 
