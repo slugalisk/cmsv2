@@ -3,11 +3,6 @@ import {Col, Row} from 'react-bootstrap';
 import moment from 'moment';
 
 export default class Tweetobject extends React.Component{
-constructor(props){
-  super(props);
-  this.state={
-  }
-}
 
   render(){
 

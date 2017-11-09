@@ -16,7 +16,6 @@ class Menuwrap extends React.Component{
   }
 
   toggleMenu(){
-
       this.props.action.toggleMenu(this.state.opened);
       this.setState({
         opened: !this.state.opened

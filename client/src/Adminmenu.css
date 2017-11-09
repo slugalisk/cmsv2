@@ -52,7 +52,6 @@
 }
 
 .admin_menu__subtext{
-  overflow: hidden;
   -webkit-transition: .5s ease-in;
   -moz-transition: .5s ease-in;
   -o-transition: .5s ease-in;

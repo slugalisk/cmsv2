@@ -11,11 +11,6 @@ import {connect} from 'react-redux';
 import * as MenuActions from '../../actions/setup';
 
 class Setup extends React.Component{
-constructor(props){
-  super(props);
-  this.state={
-  }
-}
 
   render(){
     return(

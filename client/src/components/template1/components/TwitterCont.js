@@ -6,11 +6,6 @@ import * as TwitterActions from '../../../actions/twitter';
 import TwitterComment from './TwitterComment';
 
 class TwitterCont extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-    }
-  }
 
 componentWillMount(){
   this.props.action.fetchPostsIfNeeded();
