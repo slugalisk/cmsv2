@@ -6,6 +6,7 @@ import AdminBackground from './components/AdminBackground';
 import Admin from './Admin';
 import Adminmenu from './menu/Sidemenu';
 import Adminbar from './menu/Menubar';
+import MobileWrap from './menu/MobileWrap';
 
 import Account from './Account';
 
@@ -78,7 +79,7 @@ export default class Main extends React.Component{
       </Col>
 
       <Route path="/admin" render={(props) => <Adminbar {...props}/>} />
-        
+      <Route path="/admin" render={(props) => <MobileWrap {...props}/>} />
       </Row>
 
       </div>

@@ -1,6 +1,6 @@
 import {
   TOGGLE_MENU,
-} from '../actions/menu'
+} from '../actions/adminmobile'
 
 const DEFAULT_STATE={
   isHidden:true,
@@ -15,3 +15,4 @@ export default(state=DEFAULT_STATE, payload)=>
       return state;
   }
 };
+

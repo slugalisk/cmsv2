@@ -1,24 +1,26 @@
 import React from 'react';
 
-import Menupanel from './Menupanel';
-import Menubtn from './Menubtn';
+import MobilePanel from './MobilePanel';
+import MobileButton from './MobileButton';
 
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import * as MenuActions from '../../actions/menu';
-class Menuwrap extends React.Component{
+import * as MenuActions from '../../../actions/adminmobile';
+
+class MobileWrap extends React.Component{
+
   toggleMenu(){
       this.props.action.toggleMenu(!this.props.isHidden);
   }
   render(){
 
     return(
-      <div>
-        <Menupanel
+      <div className='admin_mobile'>
+        <MobilePanel
         isHidden={this.props.isHidden}
         toggler={()=>this.toggleMenu()}
         />
-        <Menubtn 
+        <MobileButton 
         isHidden={this.props.isHidden}
         toggler={()=>this.toggleMenu()}
         />
@@ -30,7 +32,7 @@ class Menuwrap extends React.Component{
 function mapStateToProps(state, prop){
   /*the name of the reducer*/
   return{
-    isHidden:state.menu.isHidden,
+    isHidden:state.adminmobile.isHidden,
   }
 }
 
@@ -40,4 +42,4 @@ function mapDispatchToProps(dispatch){
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Menuwrap);
+export default connect(mapStateToProps, mapDispatchToProps)(MobileWrap);
