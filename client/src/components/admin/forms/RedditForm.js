@@ -6,7 +6,7 @@ const RedditForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
-    <h2>Twitter</h2>
+    <h2>Reddit</h2>
       <label>Username</label>
       <Field
         name='username'

@@ -13,7 +13,6 @@ export default class Adminmenubar extends React.Component{
         <Adminmenusect title="Account">
           <Link to='/admin/account'><Option>Account</Option></Link>
           <Option>OBS Integration</Option>
-          <Option>Donations</Option>
         </Adminmenusect>
       
         <Adminmenusect title="Users">
@@ -22,6 +21,7 @@ export default class Adminmenubar extends React.Component{
           <Link to='/admin/groups'><Option>Groups</Option></Link>
           <Link to='/admin/banlist'><Option>Ban List</Option></Link>
           <Link to='/admin/email'><Option>Email Users</Option></Link>
+          <Link to='/admin/donations'> <Option>Donations</Option></Link>
         </Adminmenusect>
 
         <Adminmenusect title="Chat">

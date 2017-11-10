@@ -1,6 +1,11 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import showResults from './components/showResults';
 
 import {Row, Col} from 'react-bootstrap';
+
+import EmoteForm from './forms/EmoteForm';
 
 export default class Emotes extends React.Component{
   render(){
@@ -15,6 +20,7 @@ export default class Emotes extends React.Component{
         xs={10} 
         xsOffset={1}
       >
+        <EmoteForm onSubmit={showResults}/>
         [submit new emote button]<br/>
         image must be larger than 32x32 and smaller than 200x200<br/>
         upload button<br/>

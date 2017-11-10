@@ -15,6 +15,7 @@ import UsersEmail from './UsersEmail';
 import UsersGroups from './UsersGroups';
 import UsersList from './UsersList';
 import UsersSubs from './UsersSubs';
+import UsersDonations from './UsersDonations';
 
 import ChatBots from './ChatBots';
 import ChatEmotes from './ChatEmotes';
@@ -62,6 +63,7 @@ export default class Main extends React.Component{
           <Route exact path="/admin/email" render={(props) => <UsersEmail {...props}/>}/>
           <Route exact path="/admin/groups" render={(props) => <UsersGroups {...props}/>}/>
           <Route exact path="/admin/subscriptions" render={(props) => <UsersSubs {...props}/>}/>
+          <Route exact path="/admin/donations" render={(props) => <UsersDonations {...props}/>}/>
 
           <Route exact path="/admin/bots" render={(props) => <ChatBots {...props}/>}/>
           <Route exact path="/admin/emotes" render={(props) => <ChatEmotes {...props}/>}/>
