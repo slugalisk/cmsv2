@@ -4,9 +4,6 @@ import {Row, Col} from 'react-bootstrap';
 
 import ColorPickerWrapper from '../components/ColorPicker';
 
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
-import * as MenuActions from '../../../actions/setup';
 
 class SetupForm extends React.Component{
 

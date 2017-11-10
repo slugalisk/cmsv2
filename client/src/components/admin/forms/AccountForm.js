@@ -111,11 +111,6 @@ const AccountForm = props => {
       </Col>
     </Row>
 
-
-
-
-
-
       <Row>
         <button type='submit' disabled = {pristine || submitting}>Submit</button>
         <button type='button' disabled = {pristine || submitting} onClick={reset}>
