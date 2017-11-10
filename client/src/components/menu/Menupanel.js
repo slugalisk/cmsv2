@@ -120,7 +120,22 @@ export default class Menupanel extends React.Component{
         >
           Admin Chat Options
         </Link>
-
+        <br/>
+        <Link
+          to = '/login'
+          className = 'menu_panel__link' 
+          onClick = {this.props.toggler}
+        >
+          Login
+        </Link>
+        <br/>
+        <Link
+          to = '/register'
+          className = 'menu_panel__link' 
+          onClick = {this.props.toggler}
+        >
+          Register
+        </Link>
 
 
 

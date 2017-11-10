@@ -2,11 +2,11 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col} from 'react-bootstrap';
 
-const TwitterForm = props => {
+const TwitchForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
-    <h2>Twitter</h2>
+    <h2>Twitch</h2>
       <label>Username</label>
       <Field
         name='username'
@@ -15,35 +15,11 @@ const TwitterForm = props => {
         placeholder=''
         className='admin_form_field'
       />
-      <label>Consumer Key</label> 
+      <label>Client ID</label>
       <Field
-        name='consumerKey'
+        name='clientID'
         component='input'
         type='text'
-        placeholder=''
-        className='admin_form_field'
-      />
-      <label>Consumer Secret</label>
-      <Field
-        name='consumerSecret'
-        component='input'
-        type='text'
-        placeholder=''
-        className='admin_form_field'
-      />
-      <label>Access Token</label>
-      <Field
-        name='accessToken'
-        component='input'
-        type='email'
-        placeholder=''
-        className='admin_form_field'
-      />
-      <label>Access Secret</label>
-      <Field
-        name='accessSecret'
-        component='input'
-        type='password'
         placeholder=''
         className='admin_form_field'
       />
@@ -59,5 +35,5 @@ const TwitterForm = props => {
 };
 
 export default reduxForm({
-  form: 'twitter', // a unique identifier for this form
-})(TwitterForm);
+  form: 'twitch', // a unique identifier for this form
+})(TwitchForm);

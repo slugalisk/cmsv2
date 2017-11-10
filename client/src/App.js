@@ -13,6 +13,9 @@ import Home from './components/template1/pages/Home';
 import Admin from './components/admin/Routes';
 import Menuwrap from './components/menu/Menuwrap';
 import Login from './components/users/Login';
+import Register from './components/users/Register';
+
+
 class App extends Component {
   render() {
     return (
@@ -20,8 +23,8 @@ class App extends Component {
         <Menuwrap/>
         <Route exact path="/" component={Home}/>
         <Route path="/admin" component={Admin}/>
-        <Route path="/topics" component={Home}/>
-        <Route exact path="/login" component={Home}/>
+        <Route exact path="/login" component={Login}/>
+        <Route exact path="/register" component={Register}/>
       </div>
     );
   }
