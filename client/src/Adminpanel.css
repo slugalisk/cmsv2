@@ -86,3 +86,69 @@
 .admin_setup_preview__section__header{
   
 }
+
+.admin_setup_preview__section__body{
+  
+}
+
+.admin_option{
+  text-align: center;
+  height: 10em;
+  white-space:  nowrap;
+  padding: 5px;
+}
+.admin_option__inner{
+  paddingTop: 1em;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #000;
+  backgroundColor: #fff;
+  WebkitBoxShadow:  0px 0px 31px 0px rgba(0,0,0,0.3);
+  MozBoxShadow:  0px 0px 31px 0px rgba(0,0,0,0.3);
+  boxShadow:  0px 0px 31px 0px rgba(0,0,0,0.3);
+  fontWeight: 600;
+}
+
+.admin_toggler{
+  cursor: pointer;
+  width: 65px;
+  margin: 0 auto;
+  margin-top: 2em;
+}
+
+.admin_toggler__button{
+  position: relative;
+  height: 30px;
+  width: 65px;
+  background-color: #fff;
+  border-radius: 35px;
+  border: 3px solid #000;
+}
+
+.admin_toggler__inner{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color: #000;
+  border-radius: 50%;
+  top: 2px;
+  right: calc(100% - 25px);
+  -webkit-transition:  .2s ease-out;
+  -moz-transition:  .2s ease-out;
+  -o-transition:  .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.admin_toggler__inner--active{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color: #000;
+  border-radius: 50%;
+  top: 2px;
+  right: 5px;
+  -webkit-transition:  .2s ease-out;
+  -moz-transition:  .2s ease-out;
+  -o-transition:  .2s ease-out;
+  transition: .2s ease-out;
+}
