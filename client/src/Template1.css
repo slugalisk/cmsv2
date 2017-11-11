@@ -40,12 +40,12 @@
   /*---Twitter Component---*/
 
   .twitter{
-    max-width: 768px;
+    max-width: 570px;
     float: right;
     width:100%;
   }
 
-  .twitter__tweet{
+  .twitter_post{
   font-family:'Open Sans', Helvetica;
   color: #ddd;
   padding: 10px;
@@ -82,14 +82,95 @@
     }
   }
 
+
+/*---Reddit Component ---*/
+
+.reddit{
+  max-width: 570px;
+  float: left;
+  width:100%;
+}
+
+.reddit_post{
+  font-family:'Open Sans', Helvetica;
+  color: #ddd;
+  padding: 10px;
+  text-align: left;
+  background: #090909;
+  overflow: hidden;
+  vertical-align: top;
+
+  -webkit-transition: .4s ease-out;
+  -moz-transition: .4s ease-out;
+  -o-transition: .4s ease-out;
+  transition: .4s ease-out;
+  word-wrap: break-word;
+
+  position: relative;
+  float: left;
+  font-size: 1em;
+  width: 100%;
+  height: 90px;
+
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.reddit_timestamp{
+  font-size: .8em;
+}
+
+@media screen and (max-width: 992px) {
+  .reddit{
+    max-width: 100%;
+    float: right;
+  }
+}
+
 /*---Youtube Component---*/
 
-.youtube_thumbnail{
+.youtube{
+  max-width: 570px;
+  float: right;
+  width:100%;
+}
+.youtube_post{
   width: 100%;
   height: 80px;
   background-color:#ddd;
   border: 1px solid #000;
 }
+
+@media screen and (max-width: 992px) {
+  .youtube{
+    max-width: 100%;
+    float: right;
+  }
+}
+
+/*---Youtube Component---*/
+
+.twitch{
+  max-width: 570px;
+  float: left;
+  width:100%;
+}
+.twitch_post{
+  width: 100%;
+  height: 80px;
+  background-color:#ddd;
+  border: 1px solid #000;
+}
+
+@media screen and (max-width: 992px) {
+  .twitch{
+    max-width: 100%;
+    float: right;
+  }
+}
+
+
 
 /*---Stream Live---*/
 

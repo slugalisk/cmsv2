@@ -5,7 +5,7 @@ import {Row, Col} from 'react-bootstrap';
 export default class YoutubeCont extends React.Component{
   render(){
     return(
-      <div>
+      <div className='youtube'>
          <div
             className='social__header'
           >
@@ -13,16 +13,16 @@ export default class YoutubeCont extends React.Component{
           </div>
         <Row>
           <Col md={3} sm={3} xs={3}>
-            <div className='youtube_thumbnail'></div>
+            <div className='youtube_post'></div>
           </Col>
           <Col md={3} sm={3} xs={3}>
-            <div className='youtube_thumbnail'></div>
+            <div className='youtube_post'></div>
           </Col>
           <Col md={3} sm={3} xs={3}>
-            <div className='youtube_thumbnail'></div>
+            <div className='youtube_post'></div>
           </Col>
           <Col md={3} sm={3} xs={3}>
-            <div className='youtube_thumbnail'></div>
+            <div className='youtube_post'></div>
           </Col>
         </Row>
       </div>

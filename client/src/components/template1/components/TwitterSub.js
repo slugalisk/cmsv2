@@ -15,7 +15,7 @@ export default class Tweetobject extends React.Component{
           smOffset={0} 
           xs={12} 
           xsOffset={0} 
-          className='twitter__tweet'
+          className='twitter_post'
         >
         <a href={this.props.link}>Link</a> {this.props.children}
         <br/>
