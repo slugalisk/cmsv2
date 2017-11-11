@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as TwitterActions from '../../../actions/twitter';
 
-import TwitterComment from './TwitterSub';
+import TwitterPost from './TwitterPost';
 
 class TwitterCont extends Component {
 
@@ -14,12 +14,12 @@ componentWillMount(){
 render() {
     const mapPosts = this.props.posts.map((value) => {
       return (
-        <TwitterComment
+        <TwitterPost
           timestamp={value.timestamp}
           link={value.url}
           >
           {value.body}
-        </TwitterComment>
+        </TwitterPost>
       )
     });
     return (

@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as TwitterActions from '../../../actions/twitter';
 
-import RedditSub from './RedditSub';
+import RedditPost from './RedditPost';
 
 class RedditCont extends React.Component{
 
@@ -15,12 +15,12 @@ class RedditCont extends React.Component{
   render(){
     const mapPosts = this.props.posts.map((value) => {
       return (
-        <RedditSub
+        <RedditPost
           timestamp={value.timestamp}
           link={value.url}
           >
           {value.body}
-        </RedditSub>
+        </RedditPost>
       )
     });
 

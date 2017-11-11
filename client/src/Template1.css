@@ -128,6 +128,60 @@
   }
 }
 
+/*---Lastfm Component ---*/
+
+.lastfm{
+  max-width: 570px;
+  float: left;
+  width:100%;
+}
+
+.lastfm_post{
+  font-family:'Open Sans', Helvetica;
+  color: #ddd;
+  padding: 10px;
+  text-align: left;
+  background: #090909;
+  overflow: hidden;
+  vertical-align: top;
+
+  -webkit-transition: .4s ease-out;
+  -moz-transition: .4s ease-out;
+  -o-transition: .4s ease-out;
+  transition: .4s ease-out;
+  word-wrap: break-word;
+
+  position: relative;
+  float: left;
+  font-size: 1em;
+  width: 100%;
+  height: 90px;
+
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.lastfm_timestamp{
+  font-size: .8em;
+}
+
+.lastfm_image{
+  height: 70px;
+}
+
+.lastfm_text{
+  float: right;
+  width: calc(100% - 90px);
+}
+
+@media screen and (max-width: 992px) {
+  .lastfm{
+    max-width: 100%;
+    float: right;
+  }
+}
+
 /*---Youtube Component---*/
 
 .youtube{

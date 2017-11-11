@@ -2,7 +2,7 @@ import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 
 
-import TwitchSub from './TwitchSub';
+import TwitchPost from './TwitchPost';
 
 export default class TwitchCont extends React.Component{
   render(){
