@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTable from "react-table";
-import {Link} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 
 export default class UsersTable extends React.Component{
 constructor(props){
@@ -8,10 +8,7 @@ constructor(props){
   this.state={
     data: this.makeData(),
 
-    panelopened:false,
-    paneloffset:"-100%",
   }
-  this.togglepanel = this.togglepanel.bind(this);
   this.makeData=this.makeData.bind(this);
   this.range=this.range.bind(this);
   this.newPerson = this.newPerson.bind(this);
@@ -50,21 +47,6 @@ newPerson(){
   };
 };
 
-
-togglepanel(){
-  if (this.state.panelopened){
-    this.setState({
-      panelopened:false,
-      paneloffset:"-100%",
-    })
-  }
-  else{
-    this.setState({
-      panelopened:true,
-      paneloffset:"0px",
-    })
-  }
-}
 
 render(){
   const { data } = this.state;

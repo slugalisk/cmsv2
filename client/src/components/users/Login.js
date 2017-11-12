@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+
 import showResults from './ShowResults';
 import LoginForm from './forms/LoginForm';
 
-import {Row, Col} from 'react-bootstrap';
+import {Col} from 'react-bootstrap';
 
 export default class Login extends React.Component{
   render(){

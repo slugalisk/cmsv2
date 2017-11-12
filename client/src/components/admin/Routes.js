@@ -29,6 +29,7 @@ import SiteCustomPages from './SiteCustomPages';
 
 import Lootbox from './Lootbox';
 
+import UsersProfile from './UsersProfile';
 
 
 export default class Main extends React.Component{
@@ -76,7 +77,8 @@ export default class Main extends React.Component{
           <Route exact path="/admin/custompages" render={(props) => <SiteCustomPages {...props}/>}/>
           
           <Route exact path="/admin/lootboxes" render={(props) => <Lootbox {...props}/>}/>
-          
+
+          <Route path="/admin/users/details" render={(props) => <UsersProfile {...props}/>} />
         </Col>
       </Col>
 

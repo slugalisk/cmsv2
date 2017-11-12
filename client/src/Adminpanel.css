@@ -35,7 +35,8 @@
 .admin_setup__label{
   font-weight: 600;
   margin-right: 1em;
-  float:right;
+  float: right;
+  text-align: right;
 }
 
 .admin_setup__row{

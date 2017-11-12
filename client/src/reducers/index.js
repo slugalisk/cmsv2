@@ -4,6 +4,7 @@ import menu from './menu';
 import { reducer as reducerForm } from 'redux-form';
 import setup from './setup';
 import adminmobile from './adminmobile';
+import togglers from './togglers';
 
 const reducers={
   menu,
@@ -11,6 +12,7 @@ const reducers={
   form: reducerForm,
   setup,
   adminmobile,
+  togglers,
 };
 
 export default reducers;

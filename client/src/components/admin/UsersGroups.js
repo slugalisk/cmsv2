@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+
 import showResults from './components/showResults';
 
-import {Row, Col} from 'react-bootstrap';
+import {Col} from 'react-bootstrap';
 import GroupsForm from './forms/GroupsForm';
 
 export default class Groups extends React.Component{

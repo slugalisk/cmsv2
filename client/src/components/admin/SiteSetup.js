@@ -1,10 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 import showResults from './components/showResults';
 import SetupForm from './forms/SetupForm';
 
-import {Row, Col} from 'react-bootstrap';
+import {Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
 import {bindActionCreators} from 'redux';

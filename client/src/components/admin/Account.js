@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+
 import showResults from './components/showResults';
 import AccountForm from './forms/AccountForm';
 
-import {Row, Col} from 'react-bootstrap';
+import {Col} from 'react-bootstrap';
 
 export default class Acccount extends React.Component{
   render(){

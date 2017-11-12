@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 import showResults from './components/showResults';
 
-import {Row, Col} from 'react-bootstrap';
+import {Col} from 'react-bootstrap';
 
 import EmoteForm from './forms/EmoteForm';
 

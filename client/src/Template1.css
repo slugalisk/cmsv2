@@ -1,10 +1,16 @@
-.template1_navbar{
+.home_navbar{
   top: 0px;
   height: 3em;
   width: 100%;
   position: absolute;
   background-color: #101010;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 31px 0px;
+  padding-top: 10px;
+}
+
+.home_navbar__link{
+  text-decoration: none;
+  color: #ddd;
 }
 
 .template1_header{
@@ -18,6 +24,10 @@
 @media screen and (max-width: 992px) {
   .template1_header{
     height: 22em;
+  }
+
+  .home_navbar__link{
+    display: none;
   }
 }
 

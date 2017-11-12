@@ -10,7 +10,6 @@ function receivePosts(json) {
   return {
     type: RECEIVE_POSTS,
     posts: json.data,
-    receivedAt: Date.now(),
   };
 }
 const fetchPosts = () => {

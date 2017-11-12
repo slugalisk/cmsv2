@@ -1,9 +1,7 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import showResults from './components/showResults';
-import AccountForm from './forms/AccountForm';
 
-import {Row, Col} from 'react-bootstrap';
+import {Col} from 'react-bootstrap';
 
 import EmailForm from './forms/EmailForm';
 

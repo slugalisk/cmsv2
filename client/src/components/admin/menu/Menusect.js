@@ -1,7 +1,6 @@
 import React from "react";
-import classNames from 'classnames';
 
-import {Row, Col} from 'react-bootstrap';
+import {Row} from 'react-bootstrap';
 export default class Keynotesect extends React.Component{
   
  

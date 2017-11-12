@@ -5,7 +5,11 @@ import {Row, Col} from 'react-bootstrap';
 import Option from './components/Option';
 import Toggler from './components/Toggler';
 
-export default class SocialDisplay extends React.Component{
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as MenuActions from '../../actions/togglers';
+
+class SocialDisplay extends React.Component{
   render(){
     return(
  
@@ -20,8 +24,9 @@ export default class SocialDisplay extends React.Component{
       >
       <Option>
         test
-        <Toggler>
-        </Toggler>
+        <Toggler
+          toggledOn={this.props.toggledOn}
+        />
       </Option>
       
       </Col>
@@ -29,3 +34,18 @@ export default class SocialDisplay extends React.Component{
     );
   }
 }
+
+function mapStateToProps(state, prop){
+  /*the name of the reducer*/
+  return{
+    toggledOn:state.togglers.toggledOn,
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    action: bindActionCreators(MenuActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SocialDisplay);

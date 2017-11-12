@@ -1,5 +1,5 @@
 import React from 'react';
-import {Row, Col} from 'react-bootstrap';
+import {Col} from 'react-bootstrap';
 import { ChromePicker } from 'react-color';
 import dropper from '../../../images/dropper.svg';
 
