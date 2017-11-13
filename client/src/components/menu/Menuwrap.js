@@ -15,12 +15,12 @@ class Menuwrap extends React.Component{
     return(
       <div>
         <Menupanel
-        isHidden={this.props.isHidden}
-        toggler={()=>this.toggleMenu()}
+          isHidden={this.props.isHidden}
+          toggler={()=>this.toggleMenu()}
         />
         <Menubtn 
-        isHidden={this.props.isHidden}
-        toggler={()=>this.toggleMenu()}
+          isHidden={this.props.isHidden}
+          toggler={()=>this.toggleMenu()}
         />
       </div>
     )

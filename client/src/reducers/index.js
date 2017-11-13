@@ -5,6 +5,7 @@ import { reducer as reducerForm } from 'redux-form';
 import setup from './setup';
 import adminmobile from './adminmobile';
 import togglers from './togglers';
+import templatenav from './templatenav';
 
 const reducers={
   menu,
@@ -13,6 +14,7 @@ const reducers={
   setup,
   adminmobile,
   togglers,
+  templatenav,
 };
 
 export default reducers;

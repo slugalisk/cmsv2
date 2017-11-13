@@ -9,7 +9,6 @@ class Toggler extends React.Component{
 
   colorPickerClick(togglerName){
     this.props.action.toggleColorPicker(togglerName, !this.props.toggledOn[togglerName]);
-    console.log(this.props.toggledOn[togglerName]);
   }
 
   render(){
@@ -20,8 +19,6 @@ class Toggler extends React.Component{
         'admin_toggler__inner--active':this.props.toggledOn[this.props.togglerName]
       }
     )
-
-  
     return(
       <div 
         className='admin_toggler'

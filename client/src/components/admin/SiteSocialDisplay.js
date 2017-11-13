@@ -25,6 +25,13 @@ export default class SocialDisplay extends React.Component{
           togglerName="test"
         />
       </Option>
+
+      <Option>
+        test2
+        <Toggler
+          togglerName="test2"
+        />
+      </Option>
       
       </Col>
     </div>
