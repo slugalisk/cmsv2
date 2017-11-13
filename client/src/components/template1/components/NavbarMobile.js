@@ -20,7 +20,7 @@ export default class NavbarMobile extends React.Component{
       >
         <Link 
           to='/'
-          className = 'menu_panel__link' 
+          className = 'template_nav_link' 
           onClick = {this.props.toggler}
         >
           Home
@@ -28,52 +28,59 @@ export default class NavbarMobile extends React.Component{
         <br/>
         <Link
           to = '/admin'
-          className = 'menu_panel__link' 
+          className = 'template_nav_link' 
           onClick = {this.props.toggler}
         >
-          Admin
+          Blog
         </Link>
         <br/>
         <Link
           to = '/admin'
-          className = 'menu_panel__link' 
+          className = 'template_nav_link' 
           onClick = {this.props.toggler}
         >
-          Admin
+          Twitter
         </Link>
         <br/>
         <Link
           to = '/admin'
-          className = 'menu_panel__link' 
+          className = 'template_nav_link' 
           onClick = {this.props.toggler}
         >
-          Admin
+          Youtube
         </Link>
         <br/>
         <Link
           to = '/admin'
-          className = 'menu_panel__link' 
+          className = 'template_nav_link' 
           onClick = {this.props.toggler}
         >
-          Admin
+          Reddit
         </Link>
         <br/>
         <Link
           to = '/admin'
-          className = 'menu_panel__link' 
+          className = 'template_nav_link' 
           onClick = {this.props.toggler}
         >
-          Admin
+          Facebook
         </Link>
         <br/>
         <Link
           to = '/admin'
-          className = 'menu_panel__link' 
+          className = 'template_nav_link' 
           onClick = {this.props.toggler}
         >
-          Admin
+          Donate
         </Link>
-
+        <br/>
+        <Link
+          to = '/admin'
+          className = 'template_nav_link' 
+          onClick = {this.props.toggler}
+        >
+          Subscribe
+        </Link>
 
 
 
