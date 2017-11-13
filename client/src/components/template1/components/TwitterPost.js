@@ -10,7 +10,7 @@ export default class Tweetobject extends React.Component{
         className='twitter_post'
       >
         <a href={this.props.link}>
-          Link
+          Link &nbsp;
         </a> 
           {this.props.children}
         <br/>

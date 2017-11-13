@@ -20,7 +20,7 @@ export default class Home extends React.Component{
       <div>
         <Navbar/>
         <MainHeader/>
-        <Row>
+        <Row className='template_row'>
           <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
             <Col md={6}>
               <TwitterCont/>
@@ -30,8 +30,8 @@ export default class Home extends React.Component{
             </Col>
           </Col>
         </Row>
-        <Row>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+        <Row className='template_row'>
+          <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
             <Col md={6}>
               <YoutubeCont/>
             </Col>
@@ -40,7 +40,7 @@ export default class Home extends React.Component{
             </Col>
           </Col>
         </Row>
-        <Row>
+        <Row className='template_row'>
           <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
             <Col md={6}>
               <TwitterCont/>

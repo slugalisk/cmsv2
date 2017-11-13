@@ -24,6 +24,10 @@
   background: linear-gradient(90deg, rgb(132, 158, 181), rgb(48, 57, 74));
 }
 
+.template_row{
+  margin-top: 15px;
+}
+
 @media screen and (max-width: 992px) {
   .template1_header{
     height: 22em;
@@ -37,17 +41,18 @@
 /*---Social Components---*/
 
 .social__header{
-  height: 40px;
-  padding-left: 10px;
+  height: 42px;
+  padding-top: 5px;
+  padding-left: 20px;
   color: #ddd;
   font-family: 'Open Sans', Helvetica;
-  font-size: 1.5em;
-  background-color: #090909;
+  font-size: 22px;
+  background-color: #000;
   border-radius: 5px;
   border-top: 1px solid #000;
   border-left: 1px solid #000;
   border-right: 1px solid #000;
-  font-weight: 600,
+  font-weight: 400,
 }
 
   /*---Twitter Component---*/
@@ -61,7 +66,8 @@
   .twitter_post{
   font-family:'Open Sans', Helvetica;
   color: #ddd;
-  padding: 10px;
+  padding-top: 10px;
+  padding-left: 20px;
   text-align: left;
   background: #090909;
   overflow: hidden;
@@ -86,6 +92,7 @@
 
   .twitter_timestamp{
     font-size: .8em;
+    color: #666;
   }
 
   @media screen and (max-width: 992px) {
@@ -107,7 +114,8 @@
 .reddit_post{
   font-family:'Open Sans', Helvetica;
   color: #ddd;
-  padding: 10px;
+  padding-top: 10px;
+  padding-left: 20px;
   text-align: left;
   background: #090909;
   overflow: hidden;
@@ -152,7 +160,8 @@
 .lastfm_post{
   font-family:'Open Sans', Helvetica;
   color: #ddd;
-  padding: 10px;
+  padding-top: 10px;
+  padding-left: 20px;
   text-align: left;
   background: #090909;
   overflow: hidden;
