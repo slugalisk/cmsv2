@@ -1,0 +1,39 @@
+.user_nav{
+  width: auto;
+  max-width: 100%;
+  margin-top: 15px;
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.user_nav__background{
+  background-color: #030303;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 8px 15px;
+}
+
+.user_content{
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #dedede;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.user_content__section{
+  padding: 20px;
+  background-color: #030303;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.user_content__title{
+  margin-top: 20px;
+  padding-left: 15px;
+}

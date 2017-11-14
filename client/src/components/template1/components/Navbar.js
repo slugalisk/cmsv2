@@ -124,6 +124,19 @@ class Navbar extends React.Component{
               Subscribe
             </Link>
           </Col>
+
+          <Col
+            md={1}
+            mdOffset={3}
+            className='home_navbar__link__container'
+          >
+          <Link 
+              to='/user/profile'
+              className='home_navbar__link'
+            >
+              Account
+            </Link>
+          </Col>
       </Row>
 
       </div>
