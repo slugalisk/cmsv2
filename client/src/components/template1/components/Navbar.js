@@ -30,7 +30,7 @@ class Navbar extends React.Component{
         <Row>
           <Col
             md={1}
-            mdOffset={1}
+            className='home_navbar__link__container'
           >
             <Link 
               to='/'
@@ -42,6 +42,7 @@ class Navbar extends React.Component{
 
           <Col
             md={1}
+            className='home_navbar__link__container'
           >
 
           <Link 
@@ -54,6 +55,7 @@ class Navbar extends React.Component{
           
           <Col
             md={1}
+            className='home_navbar__link__container'
           >
             <Link 
               to='/'
@@ -65,6 +67,7 @@ class Navbar extends React.Component{
 
           <Col
             md={1}
+            className='home_navbar__link__container'
           >
             <Link 
               to='/'
@@ -76,6 +79,7 @@ class Navbar extends React.Component{
 
           <Col
             md={1}
+            className='home_navbar__link__container'
           >
             <Link 
               to='/'
@@ -87,6 +91,7 @@ class Navbar extends React.Component{
 
           <Col
             md={1}
+            className='home_navbar__link__container'
           >
           <Link 
               to='/'
@@ -98,6 +103,7 @@ class Navbar extends React.Component{
 
           <Col
             md={1}
+            className='home_navbar__link__container'
           >
             <Link 
               to='/'
@@ -109,6 +115,7 @@ class Navbar extends React.Component{
 
           <Col
             md={1}
+            className='home_navbar__link__container'
           >
           <Link 
               to='/'
