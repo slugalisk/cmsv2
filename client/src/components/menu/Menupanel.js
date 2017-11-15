@@ -160,6 +160,30 @@ export default class Menupanel extends React.Component{
         >
           User Authentication
         </Link>
+        <br/>
+        <Link
+          to = '/user/subscriptions'
+          className = 'menu_panel__link' 
+          onClick = {this.props.toggler}
+        >
+          User Subscriptions
+        </Link>
+        <br/>
+        <Link
+          to = '/user/donations'
+          className = 'menu_panel__link' 
+          onClick = {this.props.toggler}
+        >
+          User Donations
+        </Link>
+        <br/>
+        <Link
+          to = '/user/gifts'
+          className = 'menu_panel__link' 
+          onClick = {this.props.toggler}
+        >
+          User Gifts
+        </Link>
 
 
 

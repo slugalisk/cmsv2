@@ -23,6 +23,10 @@ import Messages from './components/users/Messages'
 import Authentication from './components/users/Authentication';
 import Usernav from './components/users/Usernav';
 
+import Subscriptions from './components/users/Subscriptions';
+import Donations from './components/users/Donations';
+import Gifts from './components/users/Gifts';
+
 class App extends Component {
   render() {
     return (
@@ -37,6 +41,9 @@ class App extends Component {
         <Route exact path="/user/profile" component={Profile}/>
         <Route exact path="/user/messages" component={Messages}/>
         <Route exact path="/user/authentication" component={Authentication}/>
+        <Route exact path="/user/subscriptions" component={Subscriptions}/>
+        <Route exact path="/user/donations" component={Donations}/>
+        <Route exact path="/user/gifts" component={Gifts}/>
         
       </div>
     );

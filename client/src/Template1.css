@@ -310,6 +310,7 @@
   -o-transition: .25s ease-out;
   transition: .25s ease-out;
   background-color: #000;
+  display:block;
 }
 
 .template_nav_btn__container{
@@ -401,6 +402,9 @@
     display: none;
   }
   .template_nav_btn__container{
+    display: none;
+  }
+  .template_nav_btn{
     display: none;
   }
 }

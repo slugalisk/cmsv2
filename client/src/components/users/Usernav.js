@@ -19,6 +19,19 @@ export default class Usernav extends React.Component{
         <Link to='/user/authentication'>
           Authentication
         </Link>
+        &nbsp; | &nbsp;
+        <Link to='/user/subscriptions'>
+          Subscriptions
+        </Link>
+        &nbsp; | &nbsp;
+        <Link to='/user/donations'>
+          Donations
+        </Link>
+        &nbsp; | &nbsp;
+        <Link to='/user/gifts'>
+          Gifts
+        </Link>
+
       </div>
     </div>
     );

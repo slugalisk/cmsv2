@@ -36,6 +36,7 @@
 .user_content__title{
   margin-top: 20px;
   padding-left: 15px;
+  font-size: 1.5em;
 }
 
 .user_form__section{
@@ -62,4 +63,9 @@
   border-top-color: #000;
   border-left-color: #000;
   border-radius: 4px;
+}
+
+.user_button_thin{
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
