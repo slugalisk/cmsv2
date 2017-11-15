@@ -1,4 +1,6 @@
 import React from 'react';
+import {Button} from 'react-bootstrap';
+
 import AccountForm from './forms/AccountForm';
 import DiscordForm from './forms/DiscordForm';
 
@@ -15,7 +17,12 @@ export default class Profile extends React.Component{
             Joined on 22nd August, 2016 1:11 am
           </div>
           <div>
-            Sign Out
+            <Button 
+            bsStyle="danger" 
+            type='button'
+            >
+              Sign Out
+            </Button>
           </div>
         </div>
 

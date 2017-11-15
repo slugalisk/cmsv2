@@ -26,10 +26,10 @@
   position: fixed;
   mix-blend-mode:  difference;
   z-index:  100;
-  top: 0px;
+  top: 25px;
   right: 10px;
   width: 60px;
-  height: 70px;
+  height: 60px;
   cursor: pointer;
   will-change: opacity;
   -webkit-transition: .25s ease-out;

@@ -1,7 +1,10 @@
 import React from 'react';
 import moment from 'moment';
+import twitter from 'twitter-text';
 
 export default class Tweetobject extends React.Component{
+
+
 
   render(){
 
@@ -9,10 +12,13 @@ export default class Tweetobject extends React.Component{
       <div 
         className='twitter_post'
       >
-        <a href={this.props.link}>
+        <a 
+          href={this.props.link}
+          className='template_link'
+        >
           Link &nbsp;
         </a> 
-          {this.props.children}
+        <span dangerouslySetInnerHTML={{__html: twitter.autoLink(twitter.htmlEscape(this.props.children))}} />
         <br/>
         <span 
           className='twitter_timestamp'

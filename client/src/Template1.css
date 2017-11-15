@@ -13,6 +13,10 @@
   transition: .4s ease-out;
 }
 
+.template_link{
+  color: #4a8ecc;
+}
+
 .home_navbar__link{
   text-decoration: none;
   color: #ddd;
