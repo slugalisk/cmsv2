@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import {Row, Col} from 'react-bootstrap';
+import {Row, Button} from 'react-bootstrap';
 
 const TwitchForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
@@ -25,10 +25,21 @@ const TwitchForm = props => {
       />
 
       <Row>
-        <button type='submit' disabled = {pristine || submitting}>Submit</button>
-        <button type='button' disabled = {pristine || submitting} onClick={reset}>
+        <Button 
+          bsStyle="success" 
+          type='submit' 
+          disabled = {pristine || submitting}
+        >
+          Submit
+        </Button>
+        <Button 
+          bsStyle="info" 
+          type='button' 
+          disabled = {pristine || submitting} 
+          onClick={reset}
+        >
           Clear Values
-        </button>
+        </Button>
       </Row>
     </form>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import {Row, Col} from 'react-bootstrap';
+import {Row, Col, Button} from 'react-bootstrap';
 
 class EmailForm extends React.Component{
 
@@ -99,10 +99,21 @@ class EmailForm extends React.Component{
 
 
         <Row>
-          <button type='submit' disabled = {pristine || submitting}>Submit</button>
-          <button type='button' disabled = {pristine || submitting} onClick={reset}>
+          <Button 
+            bsStyle="success" 
+            type='submit' 
+            disabled = {pristine || submitting}
+          >
+            Submit
+          </Button>
+          <Button 
+            bsStyle="info" 
+            type='button' 
+            disabled = {pristine || submitting} 
+            onClick={reset}
+          >
             Clear Values
-          </button>
+          </Button>
         </Row>
       </form>
     );
