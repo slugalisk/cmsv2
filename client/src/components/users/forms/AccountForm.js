@@ -7,44 +7,49 @@ const AccountForm = props => {
   return (
     <form onSubmit={handleSubmit}>
 
-      <Row>
+      <Row className='user_form__section'>
         <Col md = {12} sm = {12} xs = {12}> 
-          <label>Username</label>
-          <br/>
-          (You have no more name changes available)
+          <label>Username:</label>
+            <div className='user_form__sublabel'>
+              (You have no more name changes available)
+            </div>
             <Field
               name='loginUsername'
               component='input'
               type='text'
               placeholder=''
-              className='admin_form_field'
+              className='user_form__field'
               disabled='disabled'
             />
         </Col>
       </Row>
 
-      <Row>
+      <Row className='user_form__section'>
         <Col md = {12} sm = {12} xs = {12}> 
-          <label>Email</label>
-          <br/>
+          <label>Email:</label>
+          <div className='user_form__sublabel'>
           Be it valid or not, it will be safe with us.
+          </div>
             <Field
               name='email'
               component='input'
               type='email'
               placeholder=''
-              className='admin_form_field'
+              className='user_form__field'
             />
         </Col>
       </Row>
 
-      <Row>
+      <Row className='user_form__section'>
         <Col md = {12} sm = {12} xs = {12}>
-        <label>Country</label>
+        <label>Country:</label>
+        <div className='user_form__sublabel'>
+          The country you identify with
+        </div>
         <Field 
           name='country'
           component='select'
-          className='admin_form_field'
+          className='user_form__field'
         >
           <option />
           <option value='georgia'>United States</option>
@@ -53,13 +58,16 @@ const AccountForm = props => {
         </Col>
       </Row>
 
-      <Row>
+      <Row className='user_form__section'>
         <Col md = {12} sm = {12} xs = {12}>
-        <label>Accept Gifts?</label>
+        <label>Accept Gifts:</label>
+        <div className='user_form__sublabel'>
+          Whether or not you would like the ability to receive gifts (subscriptions) from other people.
+        </div>
         <Field 
           name='gifts'
           component='select'
-          className='admin_form_field'
+          className='user_form__field'
         >
           <option />
           <option value='georgia'>Yes, I accept gifts</option>
@@ -69,7 +77,7 @@ const AccountForm = props => {
       </Row>
    
 
-      <Row>
+      <Row className='user_form__section'>
         <button type='submit' disabled = {pristine || submitting}>Submit</button>
         <button type='button' disabled = {pristine || submitting} onClick={reset}>
           Clear Values

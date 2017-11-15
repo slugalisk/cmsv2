@@ -37,3 +37,29 @@
   margin-top: 20px;
   padding-left: 15px;
 }
+
+.user_form__section{
+  margin-top: 1em;
+  font-size: 1em;
+}
+.user_form__sublabel{
+  font-size: .8em;
+  font-weight: 400;
+  color: #999;
+  margin-bottom: .4em;
+  opacity: .5;
+}
+.user_form__field{
+  background-color: #1b1b1b;
+  border-color: #303030;
+  color: #c0c0c0;
+  box-shadow: inset 1px 1px 10px #151515;
+
+  height: 34px;
+  width: 100%;
+  padding: 6px 12px;
+  border: 1px solid #333;
+  border-top-color: #000;
+  border-left-color: #000;
+  border-radius: 4px;
+}

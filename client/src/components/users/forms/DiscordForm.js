@@ -10,14 +10,15 @@ const DiscordForm = props => {
       <Row>
         <Col md = {12} sm = {12} xs = {12}> 
           <label>Discord username: </label>
-          <br/>
-          For the discord server details, ask in chat. Remember to add your username and id. e.g. Jimmy#999
-            <Field
+          <div className='user_form__sublabel'>
+            For the discord server details, ask in chat. Remember to add your username and id. e.g. Jimmy#999
+          </div>
+          <Field
               name='loginUsername'
               component='input'
               type='text'
-              placeholder=''
-              className='admin_form_field'
+              placeholder='Discord username and id. e.g. Jimmy#999'
+              className='user_form__field'
             />
         </Col>
       </Row>
