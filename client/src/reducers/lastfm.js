@@ -1,7 +1,7 @@
 import {
   REQUEST_POSTS,
   RECEIVE_POSTS
-} from '../actions/reddit'
+} from '../actions/lastfm'
 
 const DEFAULT_STATE={
   posts: [],

@@ -9,17 +9,7 @@ const DEFAULT_STATE={
 export default(state=DEFAULT_STATE, payload)=>
 {
   switch(payload.type){
-    case 'setmapkey':
-      return {...state, map: {...state.map, [payload.key]:payload.value}};
 
-    case 'requestTweets':
-      return{
-        ...state,
-        map: [
-          ...state.posts,
-        ]
-      }
-      
     case REQUEST_POSTS:
       return {...state}
 

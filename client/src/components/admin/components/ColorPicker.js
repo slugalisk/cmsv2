@@ -31,7 +31,7 @@ class ColorPicker extends React.Component{
       { this.props.colorDisplay[this.props.colorPickerName] ? 
         <div className = 'admin_setup__popover'>
           <div className = 'admin_setup__cover'
-          onClick={() => this.colorPickerClick(this.props.colorPickerName)}
+          onClick = {() => this.colorPickerClick(this.props.colorPickerName)}
           />
           <ChromePicker
           color={this.props.colorChoice[this.props.colorPickerName]}

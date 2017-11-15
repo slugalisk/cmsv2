@@ -78,7 +78,7 @@ export default class Main extends React.Component{
           
           <Route exact path="/admin/lootboxes" render={(props) => <Lootbox {...props}/>}/>
 
-          <Route path="/admin/users/details" render={(props) => <UsersProfile {...props}/>} />
+          <Route path="/admin/users/details/" render={(props) => <UsersProfile {...props}/>} />
         </Col>
       </Col>
 

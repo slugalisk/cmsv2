@@ -2,7 +2,7 @@ import React from 'react';
 
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import * as TwitterActions from '../../../actions/twitter';
+import * as RedditActions from '../../../actions/reddit';
 
 import RedditPost from './RedditPost';
 
@@ -44,13 +44,13 @@ class RedditCont extends React.Component{
 function mapStateToProps(state, prop){
   /*the name of the reducer*/
   return{
-    posts: state.twitter.posts,
+    posts: state.reddit.posts,
   }
 }
 
 function mapDispatchToProps(dispatch){
   return {
-    action: bindActionCreators(TwitterActions, dispatch)
+    action: bindActionCreators(RedditActions, dispatch)
   }
 }
 
