@@ -1,5 +1,8 @@
 import React from 'react';
+import AccountForm from './forms/AccountForm';
+import DiscordForm from './forms/DiscordForm';
 
+import showResults from './ShowResults';
 export default class Profile extends React.Component{
   render(){
     return(
@@ -19,29 +22,18 @@ export default class Profile extends React.Component{
           </div>
         </div>
 
-        <h2 className='user_content__title'>Account</h2>
+        <h2 className='user_content__title'>
+          Account
+        </h2>
         <div className='user_content__section'>
-          <br/>Username: 
-          <br/>(You have no more name changes available)
-          <br/>[form]
-          <br/>Email: 
-          <br/>Be it valid or not, it will be safe with us.
-          <br/>[form]
-          <br/>Nationality:
-          <br/>The country you identify with
-          <br/>[form]
-          <br/>Accept Gifts: 
-          <br/>Whether or not you would like the ability to receive gifts (subscriptions) from other people.
-          <br/>[form]
-          <br/>[submit]
+          <AccountForm onSubmit={showResults} />
         </div>
 
-        <h2 className='user_content__title'>Discord</h2>
+        <h2 className='user_content__title'>
+          Discord
+        </h2>
         <div className='user_content__section'>
-          <br/>Discord username: 
-          <br/>For the discord server details, ask in chat. Remember to add your username and id. e.g. Jimmy#999
-          <br/>[form]
-          <br/>[submit]
+          <DiscordForm onSubmit={showResults} />
         </div>
       </div>
     );
