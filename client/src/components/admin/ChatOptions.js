@@ -1,9 +1,10 @@
 import React from 'react';
 
 import {Row, Col} from 'react-bootstrap';
+import { Provider } from 'react-redux';
+import showResults from './components/showResults';
 
-import Option from './components/Option';
-import Toggler from './components/Toggler';
+import ChatForm from './forms/ChatForm';
 
 export default class Chat extends React.Component{
   render(){
@@ -18,12 +19,12 @@ export default class Chat extends React.Component{
         xs={10} 
         xsOffset={1}
       >
-      <Option>
-        test
-        <Toggler>
-        </Toggler>
-      </Option>
-      
+
+
+          <div className='admin_panel_title'>
+            Chat
+        </div>
+        <ChatForm onSubmit={showResults}/>
       </Col>
     </div>
     );

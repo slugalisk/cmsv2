@@ -6,7 +6,6 @@ const TwitterForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
-    <h2>Twitter</h2>
       <label>Username</label>
       <Field
         name='username'
@@ -53,6 +52,7 @@ const TwitterForm = props => {
           bsStyle="success" 
           type='submit' 
           disabled = {pristine || submitting}
+          className='admin_button'
         >
           Submit
         </Button>
@@ -61,6 +61,7 @@ const TwitterForm = props => {
           type='button' 
           disabled = {pristine || submitting} 
           onClick={reset}
+          className='admin_button'
         >
           Clear Values
         </Button>

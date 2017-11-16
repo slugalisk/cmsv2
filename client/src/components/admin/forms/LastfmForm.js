@@ -6,7 +6,6 @@ const LastfmForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
-    <h2>Last.FM</h2>
       <label>Username</label>
       <Field
         name='username'
@@ -26,10 +25,11 @@ const LastfmForm = props => {
 
 
       <Row>
-      <Button 
+        <Button 
           bsStyle="success" 
           type='submit' 
           disabled = {pristine || submitting}
+          className='admin_button'
         >
           Submit
         </Button>
@@ -38,6 +38,7 @@ const LastfmForm = props => {
           type='button' 
           disabled = {pristine || submitting} 
           onClick={reset}
+          className='admin_button'
         >
           Clear Values
         </Button>

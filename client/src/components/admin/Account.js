@@ -10,7 +10,9 @@ export default class Acccount extends React.Component{
     return(
  
     <div>
-      <h2>Account</h2>
+      <div className='admin_panel_title'>
+        Account
+      </div>
       <Col 
         md={12} 
         mdOffset={0} 

@@ -62,6 +62,7 @@ class GroupsForm extends React.Component{
             bsStyle="success" 
             type='submit' 
             disabled = {pristine || submitting}
+            className='admin_button'
           >
             Submit
           </Button>
@@ -70,6 +71,7 @@ class GroupsForm extends React.Component{
             type='button' 
             disabled = {pristine || submitting} 
             onClick={reset}
+            className='admin_button'
           >
             Clear Values
           </Button>

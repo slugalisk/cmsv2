@@ -6,7 +6,6 @@ const YoutubeForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
-    <h2>Youtube</h2>
       <label>Username</label>
       <Field
         name='username'
@@ -30,6 +29,7 @@ const YoutubeForm = props => {
           bsStyle="success" 
           type='submit' 
           disabled = {pristine || submitting}
+          className='admin_button'
         >
           Submit
         </Button>
@@ -38,6 +38,7 @@ const YoutubeForm = props => {
           type='button' 
           disabled = {pristine || submitting} 
           onClick={reset}
+          className='admin_button'
         >
           Clear Values
         </Button>

@@ -1,6 +1,7 @@
 import React from 'react';
 import showResults from './components/showResults';
 import SetupForm from './forms/SetupForm';
+import SetupSectionForm from './forms/SetupSectionForm';
 
 import {Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
@@ -34,6 +35,10 @@ class Setup extends React.Component{
     
     return(
     <div>
+      <div className='admin_panel_title'>
+        Site Setup
+      </div>
+
       <Col 
         md={6} 
         mdOffset={0} 
@@ -48,7 +53,25 @@ class Setup extends React.Component{
         colorChoice={this.props.colorChoice}
         dispatch={this.props.dispatch}
         />
+
+      <div className='admin_panel_title'>
+        Site Sections
+      </div>
+
+        <SetupSectionForm 
+        onSubmit={showResults} 
+        colorDisplay={this.props.colorDisplay}
+        colorChoice={this.props.colorChoice}
+        dispatch={this.props.dispatch}
+        />
+
+
       </Col>
+
+
+
+
+
       <Col 
         md={6} 
         mdOffset={0} 

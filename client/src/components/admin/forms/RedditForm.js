@@ -6,7 +6,6 @@ const RedditForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
-    <h2>Reddit</h2>
       <label>Username</label>
       <Field
         name='username'
@@ -21,13 +20,15 @@ const RedditForm = props => {
           bsStyle="success" 
           type='submit' 
           disabled = {pristine || submitting}
+          className='admin_button'
         >
           Submit
         </Button>
         <Button 
           bsStyle="info" 
           type='button' 
-          disabled = {pristine || submitting} 
+          disabled = {pristine || submitting}
+          className='admin_button'
           onClick={reset}
         >
           Clear Values

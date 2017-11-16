@@ -2,6 +2,12 @@
   position: relative;
 }
 
+.admin_button{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
+
 .admin_background{
   position: fixed;
   height: 100vh;
@@ -26,7 +32,7 @@
   border: 2px solid #000;
 }
 
-.admin_setup__title{
+.admin_panel_title{
   font-size: 2em;
   font-weight: 600;
   margin-bottom: 1em;
