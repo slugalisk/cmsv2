@@ -2,14 +2,12 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-const ChatForm = props => {
+const BotsForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
 
-
-
-      <Row>
+    <Row>
       <Col 
         md={3} 
         mdOffset={1} 
@@ -18,9 +16,9 @@ const ChatForm = props => {
         xs={5} 
         xsOffset={1}
       >
-        <label>Combos</label>
+        <label>Twitter Stream</label>
         <Field 
-          name='chatCombos'
+          name='botsTwitterStream'
           component='select'
           className='admin_form_field'
         >
@@ -40,9 +38,9 @@ const ChatForm = props => {
         xs={5} 
         xsOffset={1}
       >
-        <label>Overrustle</label>
+        <label>!tweet</label>
         <Field 
-          name='chatOverrustle'
+          name='botsTweet'
           component='select'
           className='admin_form_field'
         >
@@ -62,9 +60,9 @@ const ChatForm = props => {
         xs={5} 
         xsOffset={1}
       >
-        <label>Profanity Filter</label>
+        <label>!stream / !live</label>
         <Field 
-          name='chatProfanity'
+          name='botsLive'
           component='select'
           className='admin_form_field'
         >
@@ -84,9 +82,9 @@ const ChatForm = props => {
         xs={5} 
         xsOffset={1}
       >
-        <label>R9K</label>
+        <label>!schedule</label>
         <Field 
-          name='chatR9K'
+          name='botsSchedule'
           component='select'
           className='admin_form_field'
         >
@@ -106,9 +104,9 @@ const ChatForm = props => {
         xs={5} 
         xsOffset={1}
       >
-        <label>Chat Greentext</label>
+        <label>!song (Requires Last.FM)</label>
         <Field 
-          name='chatGreentext'
+          name='botsSong'
           component='select'
           className='admin_form_field'
         >
@@ -128,9 +126,9 @@ const ChatForm = props => {
         xs={5} 
         xsOffset={1}
       >
-        <label>Allow Emotes</label>
+        <label>!logs [username]</label>
         <Field 
-          name='chatEmotes'
+          name='botsLogs'
           component='select'
           className='admin_form_field'
         >
@@ -150,9 +148,9 @@ const ChatForm = props => {
         xs={5} 
         xsOffset={1}
       >
-        <label>Subscribers Only</label>
+        <label>!poll</label>
         <Field 
-          name='chatSubsOnly'
+          name='botsPoll'
           component='select'
           className='admin_form_field'
         >
@@ -172,9 +170,9 @@ const ChatForm = props => {
         xs={5} 
         xsOffset={1}
       >
-        <label>Public Chat Logging</label>
+        <label>!nuke [word]</label>
         <Field 
-          name='chatPublicLogging'
+          name='botsNuke'
           component='select'
           className='admin_form_field'
         >
@@ -194,9 +192,9 @@ const ChatForm = props => {
         xs={5} 
         xsOffset={1}
       >
-        <label>Allow Links</label>
+        <label>!banned (Shows 24h Banlist)</label>
         <Field 
-          name='chatLinks'
+          name='botsBanned'
           component='select'
           className='admin_form_field'
         >
@@ -216,14 +214,38 @@ const ChatForm = props => {
         xs={5} 
         xsOffset={1}
       >
-        <label>Character Limit</label> 
-          <Field
-            name='chatCharacterLimit'
-            component='input'
-            type='text'
-            placeholder=''
+        <label>!slowmode</label> 
+        <Field 
+          name='botsSlowMode'
+          component='select'
+          className='admin_form_field'
+        >
+          <option />
+          <option value='yes'>Yes</option>
+          <option value='no'>No</option>
+        </Field>
+      </Col>
+
+
+
+      <Col 
+        md={3} 
+        mdOffset={1} 
+        sm={5} 
+        smOffset={1} 
+        xs={5} 
+        xsOffset={1}
+      >
+        <label>!submode</label> 
+          <Field 
+            name='botsSubMode'
+            component='select'
             className='admin_form_field'
-        />
+          >
+            <option />
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+          </Field>
       </Col>
 
 
@@ -236,17 +258,17 @@ const ChatForm = props => {
         xs={5} 
         xsOffset={1}
       >
-        <label>Message Delay (Seconds)</label> 
-          <Field
-            name='chatMessageDelay'
-            component='input'
-            type='text'
-            placeholder=''
-            className='admin_form_field'
-        />
+        <label>!aegis</label> 
+        <Field 
+          name='botsAegis'
+          component='select'
+          className='admin_form_field'
+        >
+          <option />
+          <option value='yes'>Yes</option>
+          <option value='no'>No</option>
+        </Field>
       </Col>
-
-
 
       <Col 
         md={3} 
@@ -256,17 +278,19 @@ const ChatForm = props => {
         xs={5} 
         xsOffset={1}
       >
-        <label>Non-Mod Chat Delay (Seconds)</label> 
-          <Field
-            name='chatNonmodDelay'
-            component='input'
-            type='text'
-            placeholder=''
-            className='admin_form_field'
-        />
+        <label>!ip [x] (hours)</label> 
+        <Field 
+          name='botsIPBan'
+          component='select'
+          className='admin_form_field'
+        >
+          <option />
+          <option value='yes'>Yes</option>
+          <option value='no'>No</option>
+        </Field>
       </Col>
-
     </Row>
+
 
 
       <Row>
@@ -293,5 +317,5 @@ const ChatForm = props => {
 };
 
 export default reduxForm({
-  form: 'chat', // a unique identifier for this form
-})(ChatForm);
+  form: 'bots', // a unique identifier for this form
+})(BotsForm);
