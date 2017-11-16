@@ -22,7 +22,27 @@ const renderDropzoneInput = (field) => {
         <span className="error">{field.meta.error}</span>}
       {files && Array.isArray(files) && (
         <ul>
-          { files.map((file, i) => <li key={i}>{file.name}</li>) }
+          { files.map((file, i) =>
+            <div key={i}>
+            <li>
+              {file.name}
+            </li>
+            <li>
+              <img 
+                src={file.preview} 
+                alt='preview'
+                className='admin_dropzone_preview__200'
+              />
+            </li>
+            <li>
+              <img 
+                src={file.preview} 
+                alt='preview'
+                className='admin_dropzone_preview__32'
+              />
+            </li>
+            </div>
+        ) }
         </ul>
       )}
     </div>
@@ -62,11 +82,105 @@ class EmoteForm extends React.Component {
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <div>
           <label htmlFor={FILE_FIELD_NAME}>Files</label>
+          <Row>
           <Field
             name={FILE_FIELD_NAME}
             component={renderDropzoneInput}
           />
+          </Row>
         </div>
+
+        <Row className='admin_setup__row'>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <label className='admin_setup__label'>Everyone</label>
+        </Col>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <Field
+            name='everyone'
+            component='input'
+            type='checkbox'
+          />
+        </Col>
+      </Row>
+      <Row className='admin_setup__row'>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <label className='admin_setup__label'>T1 Users</label>
+        </Col>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <Field
+            name='t1Users'
+            component='input'
+            type='checkbox'
+          />
+        </Col>
+      </Row>
+
+      <Row className='admin_setup__row'>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <label className='admin_setup__label'>T2 Users</label>
+        </Col>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <Field
+            name='t2Users'
+            component='input'
+            type='checkbox'
+          />
+        </Col>
+      </Row>
+
+      <Row className='admin_setup__row'>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <label className='admin_setup__label'>T3 Users</label>
+        </Col>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <Field
+            name='t3Users'
+            component='input'
+            type='checkbox'
+          />
+        </Col>
+      </Row>
+
+      <Row className='admin_setup__row'>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <label className='admin_setup__label'>T4 Users</label>
+        </Col>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <Field
+            name='t4Users'
+            component='input'
+            type='checkbox'
+          />
+        </Col>
+      </Row>
+
+      <Row className='admin_setup__row'>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <label className='admin_setup__label'>Moderators</label>
+        </Col>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <Field
+            name='moderators'
+            component='input'
+            type='checkbox'
+          />
+        </Col>
+      </Row>
+
+      <Row className='admin_setup__row'>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <label className='admin_setup__label'>Administrator</label>
+        </Col>
+        <Col md = {4} sm = {4} xs = {4}> 
+          <Field
+            name='administrator'
+            component='input'
+            type='checkbox'
+          />
+        </Col>
+      </Row>
+
+
         <div>
           <button type="submit">
             Submit

@@ -159,3 +159,11 @@
   -o-transition:  .2s ease-out;
   transition: .2s ease-out;
 }
+.admin_dropzone_preview__200{
+  width: 200px;
+}
+
+.admin_dropzone_preview__32{
+  width: 32px;
+  height: 32px;
+}
