@@ -103,7 +103,7 @@ class GroupsForm extends React.Component{
         <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
           <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
             <Row className='admin_setup__row'>
-            <label>Group Name</label>
+              <label>Group Name</label>
               <Field
                 name='groupName'
                 component='input'
@@ -113,14 +113,13 @@ class GroupsForm extends React.Component{
             </Row>
 
             <Row className='admin_setup__row'>
-                <label>Group Color</label>
-                <Field
-                  name='groupColor'
-                  component='input'
-                  type='text'
-                  className='admin_form_field'  
-                />
-              
+              <label>Group Color</label>
+              <Field
+                name='groupColor'
+                component='input'
+                type='text'
+                className='admin_form_field'  
+              />
               <ColorPickerWrapper
                 colorPickerName = 'groupColorPicker'
                 fieldName='groupColor'

@@ -208,11 +208,6 @@
 
 }
 
-
-.dropzone{
-  width:500px;
-}
-
 .dropzone_style{
   display:inline-block;
   width: 200px; 
@@ -222,4 +217,11 @@
   border-style: dashed; 
   border-radius: 5px;
   margin-bottom: 50px;
+}
+
+.admin_income__title{
+  font-weight: 600;
+}
+.admin_income__column{
+  text-align:center;
 }
