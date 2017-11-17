@@ -10,7 +10,7 @@ const FILE_FIELD_NAME = 'files';
 const renderDropzoneInput = (field) => {
   const files = field.input.value;
   return (
-    <div>
+    <Col md={4} mdOffset={4}>
       <Dropzone
         name={field.name}
         onDrop={( filesToUpload, e ) => field.input.onChange(filesToUpload)}
@@ -45,7 +45,7 @@ const renderDropzoneInput = (field) => {
         ) }
         </ul>
       )}
-    </div>
+    </Col>
   );
 }
 
@@ -81,7 +81,9 @@ class EmoteForm extends React.Component {
     return (
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <div>
-          <label htmlFor={FILE_FIELD_NAME}>Files</label>
+          <Col md={4} mdOffset={4}>
+            <label htmlFor={FILE_FIELD_NAME}>Files</label>
+          </Col>
           <Row>
           <Field
             name={FILE_FIELD_NAME}

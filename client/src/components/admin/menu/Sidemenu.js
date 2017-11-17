@@ -17,10 +17,10 @@ export default class Adminmenubar extends React.Component{
       
         <Adminmenusect title="Users">
           <Link to='/admin/users'><Option>Users</Option></Link>
-          <Link to='/admin/subscriptions'><Option>Subscriptions</Option></Link>  
           <Link to='/admin/groups'><Option>Groups</Option></Link>
           <Link to='/admin/banlist'><Option>Ban List</Option></Link>
           <Link to='/admin/email'><Option>Email Users</Option></Link>
+          <Link to='/admin/subscriptions'><Option>Subscriptions</Option></Link>  
           <Link to='/admin/donations'> <Option>Donations</Option></Link>
         </Adminmenusect>
 

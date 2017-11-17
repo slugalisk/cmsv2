@@ -11,6 +11,9 @@ export default class Email extends React.Component{
  
     <div>
       <Col md={12} mdOffset={0} sm={10} smOffset={1} xs={10} xsOffset={1}>
+      <div className='admin_panel_title'>
+        Email
+      </div>
         <EmailForm onSubmit={showResults} />
       </Col>
     </div>

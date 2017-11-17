@@ -3,6 +3,56 @@ import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
 import ColorPickerWrapper from '../components/ColorPicker';
+import Dropzone from 'react-dropzone';
+const FILE_FIELD_NAME = 'files';
+
+
+
+/* https://github.com/BBB/dropzone-redux-form-example */
+
+const renderDropzoneInput = (field) => {
+  const files = field.input.value;
+  return (
+    <Col md={4} mdOffset={4}>
+
+      <Dropzone
+        name={field.name}
+        onDrop={( filesToUpload, e ) => field.input.onChange(filesToUpload)}
+      >
+        <div>Try dropping some files here, or click to select files to upload.</div>
+      </Dropzone>
+      {field.meta.touched &&
+        field.meta.error &&
+        <span className="error">{field.meta.error}</span>}
+      {files && Array.isArray(files) && (
+        <ul>
+          { files.map((file, i) =>
+            <div key={i}>
+            <li>
+              {file.name}
+            </li>
+            <li>
+              <img 
+                src={file.preview} 
+                alt='preview'
+                className='admin_dropzone_preview__200'
+              />
+            </li>
+            <li>
+              <img 
+                src={file.preview} 
+                alt='preview'
+                className='admin_dropzone_preview__32'
+              />
+            </li>
+            </div>
+        ) }
+        </ul>
+      )}
+    </Col>
+  );
+}
+
 
 class GroupsForm extends React.Component{
 
@@ -18,7 +68,8 @@ class GroupsForm extends React.Component{
     return (
  
       <form onSubmit={handleSubmit}>
-      <h2>Groups</h2>
+
+
       
       <Row className='admin_setup__row'>
           <Col md = {4} sm = {4} xs = {4}> 
@@ -34,6 +85,18 @@ class GroupsForm extends React.Component{
           </Col>
   
           </Row>
+
+          <div>
+          <Col md={4} mdOffset={4}>
+          <label htmlFor={FILE_FIELD_NAME}>Files</label>
+          </Col>
+          <Row>
+          <Field
+            name={FILE_FIELD_NAME}
+            component={renderDropzoneInput}
+          />
+          </Row>
+        </div>
 
         <Row className='admin_setup__row'>
           <Col md = {4} sm = {4} xs = {4}> 

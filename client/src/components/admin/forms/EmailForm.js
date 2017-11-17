@@ -16,8 +16,7 @@ class EmailForm extends React.Component{
     return (
  
       <form onSubmit={handleSubmit}>
-      <h2>Email</h2>
-      
+
       <Row className='admin_setup__row'>
         <Col md = {4} sm = {4} xs = {4}> 
           <label className='admin_setup__label'>Regular Users</label>
