@@ -6,10 +6,10 @@ export default class UsersDonations extends React.Component{
   render(){
     return(
  
-    <div>
+    <div className='admin_form_wrapper'>
       <Col 
-        md={12} 
-        mdOffset={0} 
+        md={10} 
+        mdOffset={1} 
         sm={10} 
         smOffset={1} 
         xs={10} 
