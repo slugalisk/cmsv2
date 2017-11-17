@@ -7,22 +7,20 @@ const AccountForm = props => {
   return (
     <form onSubmit={handleSubmit}>
 
-      <Row className='admin_setup__row'>
-        <Col md = {12} sm = {12} xs = {12}> 
+    <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
+      <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+        <Row className='admin_setup__row'>
           <label>Username</label>
-            <Field
-              name='adminUsername'
-              component='input'
-              type='text'
-              placeholder=''
-              className='admin_form_field'
-            />
-        </Col>
-      </Row>
-
-      <Row className='admin_setup__row'>
-        <Col md = {5} sm = {12} xs = {12}> 
-        <label>First Name</label> 
+          <Field
+            name='adminUsername'
+            component='input'
+            type='text'
+            placeholder=''
+            className='admin_form_field'
+          />
+        </Row>
+        <Row className='admin_setup__row'>
+          <label>First Name</label> 
           <Field
             name='adminFirstName'
             component='input'
@@ -30,10 +28,9 @@ const AccountForm = props => {
             placeholder=''
             className='admin_form_field'
           />
-        </Col>
-
-        <Col md = {5} mdOffset={2} sm = {12} smOffset = {0} xs = {12} xsOffset = {0}> 
-        <label>Last Name</label>
+        </Row>
+        <Row className='admin_setup__row'>
+          <label>Last Name</label>
           <Field
             name='adminLastName'
             component='input'
@@ -41,77 +38,69 @@ const AccountForm = props => {
             placeholder=''
             className='admin_form_field'
           />
-        </Col>
-      </Row>
-
-      <Row  className='admin_setup__row'>
-      <Col md = {12} sm = {12} xs = {12}>
-      <label>Email</label>
-        <Field
-          name='adminEmail'
-          component='input'
-          type='email'
-          placeholder=''
-          className='admin_form_field'
-        />
+        </Row>
+        <Row  className='admin_setup__row'>
+          <label>Email</label>
+          <Field
+            name='adminEmail'
+            component='input'
+            type='email'
+            placeholder=''
+            className='admin_form_field'
+          />
+        </Row>
       </Col>
-    </Row>
+    </Col>
 
-    <Row  className='admin_setup__row'>
-    <Col md = {5} sm = {12} xs = {12}>
-    <label>New Password</label>
+    <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
+      <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+        <Row  className='admin_setup__row'>
+          <label>New Password</label>
+          <Field
+              name='adminPass'
+              component='input'
+              type='password'
+              placeholder=''
+              className='admin_form_field'
+          />
+        </Row>
+        <Row className='admin_setup__row'>
+          <label>Confirm Password</label>
+          <Field
+            name='adminPassConfirm'
+            component='input'
+            type='password'
+            placeholder=''
+            className='admin_form_field'
+          />
+        </Row>
+        <Row className='admin_setup__row'>
+          <label>Language</label>
+          <Field 
+            name='adminLanguage'
+            component='select'
+            className='admin_form_field'
+          >
+            <option />
+            <option value='georgia'>English</option>
+            <option value='georgia'>Not English</option>
+          </Field>
+        </Row>
 
-        <Field
-          name='adminPass'
-          component='input'
-          type='password'
-          placeholder=''
-          className='admin_form_field'
-        />
-      </Col>
+        <Row className='admin_setup__row'>
+          <label>Role</label>
+          <Field 
+            name='adminRole'
+            component='select'
+            className='admin_form_field'
+            disabled='disabled'
+            value='Admin'
+          >
+            <option value='Admin'>Admin</option>
+          </Field>
+        </Row>
 
-    <Col md = {5} mdOffset={2} sm = {12} smOffset = {0} xs = {12} xsOffset = {0}>
-    <label>Confirm Password</label>
-        <Field
-          name='adminPassConfirm'
-          component='input'
-          type='password'
-          placeholder=''
-          className='admin_form_field'
-        />
-      </Col>
-    </Row>
-
-    <Row  className='admin_setup__row'>
-      <Col md = {5} sm = {12} xs = {12}>
-      <label>Language</label>
-      <Field 
-        name='adminLanguage'
-        component='select'
-        className='admin_form_field'
-      >
-        <option />
-        <option value='georgia'>English</option>
-        <option value='georgia'>Not English</option>
-      </Field>
-      </Col>
-
-      <Col md = {5} mdOffset={2} sm = {12} smOffset = {0} xs = {12} xsOffset = {0}>
-      <label>Role</label>
-      <Field 
-        name='adminRole'
-        component='select'
-        className='admin_form_field'
-        disabled='disabled'
-        value='Admin'
-      >
-
-        <option value='Admin'>Admin</option>
-      </Field>
-      </Col>
-    </Row>
-
-      <Row>
+        <Row className='admin_button_wrapper'>
         <Button 
           bsStyle="success" 
           type='submit' 
@@ -130,6 +119,10 @@ const AccountForm = props => {
           Clear Values
         </Button>
       </Row>
+      </Col>
+    </Col>
+
+      
     </form>
   );
 };

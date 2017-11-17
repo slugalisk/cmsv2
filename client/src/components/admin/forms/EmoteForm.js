@@ -30,12 +30,13 @@ const renderDropzoneInput = (field) => {
             { files.map((file, i) =>
               <div key={i}>
 
-                <div className>
-                  File Name: {file.name}
+                <div className='admin_setup__row'>
+                  <strong>File Name:</strong><br/>
+                   {file.name}
                 </div>
 
-                <div>
-                  Image Preview: <br/>
+                <div className='admin_setup__row'>
+                  <strong>Image Preview:</strong> <br/>
                   <img 
                     src={file.preview} 
                     alt='preview'
@@ -43,8 +44,8 @@ const renderDropzoneInput = (field) => {
                   />
                 </div>
 
-                <div>
-                  Emote Preview:<br/>
+                <div className='admin_setup__row'>
+                  <strong>Emote Preview:</strong><br/>
                   <img 
                     src={file.preview} 
                     alt='preview'

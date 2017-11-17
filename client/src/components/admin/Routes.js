@@ -55,6 +55,23 @@ export default class Main extends React.Component{
           xsOffset={0}
           className = 'admin_panel__wrapper'
         >
+          <Col 
+            md={4} 
+            sm={6} 
+            xs={12} 
+            className='admin_column__1'
+          >
+          </Col>
+          <Col 
+            md={4} 
+            mdOffset={4} 
+            sm={6} 
+            smOffset={6} 
+            xs={12} 
+            xsOffset={0}
+            className='admin_column__2'>
+          </Col>
+
           <Route exact path="/admin" render={(props) => <Admin {...props}/>}/>
 
           <Route exact path="/admin/account" render={(props) => <Account {...props}/>}/>
