@@ -9,15 +9,9 @@ const ChatForm = props => {
 
 
 
-      <Row>
-      <Col 
-        md={3} 
-        mdOffset={1} 
-        sm={5} 
-        smOffset={1} 
-        xs={5} 
-        xsOffset={1}
-      >
+    <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
+      <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+      <Row className='admin_setup__row'>
         <label>Combos</label>
         <Field 
           name='chatCombos'
@@ -28,18 +22,9 @@ const ChatForm = props => {
           <option value='yes'>Yes</option>
           <option value='no'>No</option>
         </Field>
-      </Col>
+      </Row>
 
-
-
-      <Col 
-        md={3} 
-        mdOffset={1} 
-        sm={5} 
-        smOffset={1} 
-        xs={5} 
-        xsOffset={1}
-      >
+      <Row className='admin_setup__row'>
         <label>Overrustle</label>
         <Field 
           name='chatOverrustle'
@@ -50,18 +35,9 @@ const ChatForm = props => {
           <option value='yes'>Yes</option>
           <option value='no'>No</option>
         </Field>
-      </Col>
+      </Row>
 
-
-
-      <Col 
-        md={3} 
-        mdOffset={1} 
-        sm={5} 
-        smOffset={1} 
-        xs={5} 
-        xsOffset={1}
-      >
+      <Row className='admin_setup__row'>
         <label>Profanity Filter</label>
         <Field 
           name='chatProfanity'
@@ -72,18 +48,10 @@ const ChatForm = props => {
           <option value='yes'>Yes</option>
           <option value='no'>No</option>
         </Field>
-      </Col>
+      </Row>
 
 
-
-      <Col 
-        md={3} 
-        mdOffset={1} 
-        sm={5} 
-        smOffset={1} 
-        xs={5} 
-        xsOffset={1}
-      >
+      <Row className='admin_setup__row'>
         <label>R9K</label>
         <Field 
           name='chatR9K'
@@ -94,18 +62,15 @@ const ChatForm = props => {
           <option value='yes'>Yes</option>
           <option value='no'>No</option>
         </Field>
-      </Col>
+      </Row>
+    </Col>
+  </Col>
 
 
 
-      <Col 
-        md={3} 
-        mdOffset={1} 
-        sm={5} 
-        smOffset={1} 
-        xs={5} 
-        xsOffset={1}
-      >
+  <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
+      <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+      <Row className='admin_setup__row'>
         <label>Chat Greentext</label>
         <Field 
           name='chatGreentext'
@@ -116,18 +81,9 @@ const ChatForm = props => {
           <option value='yes'>Yes</option>
           <option value='no'>No</option>
         </Field>
-      </Col>
+      </Row>
 
-
-
-      <Col 
-        md={3} 
-        mdOffset={1} 
-        sm={5} 
-        smOffset={1} 
-        xs={5} 
-        xsOffset={1}
-      >
+      <Row className='admin_setup__row'>
         <label>Allow Emotes</label>
         <Field 
           name='chatEmotes'
@@ -138,18 +94,11 @@ const ChatForm = props => {
           <option value='yes'>Yes</option>
           <option value='no'>No</option>
         </Field>
-      </Col>
+      </Row>
 
 
 
-      <Col 
-        md={3} 
-        mdOffset={1} 
-        sm={5} 
-        smOffset={1} 
-        xs={5} 
-        xsOffset={1}
-      >
+      <Row className='admin_setup__row'>
         <label>Subscribers Only</label>
         <Field 
           name='chatSubsOnly'
@@ -160,18 +109,11 @@ const ChatForm = props => {
           <option value='yes'>Yes</option>
           <option value='no'>No</option>
         </Field>
-      </Col>
+      </Row>
 
 
 
-      <Col 
-        md={3} 
-        mdOffset={1} 
-        sm={5} 
-        smOffset={1} 
-        xs={5} 
-        xsOffset={1}
-      >
+      <Row className='admin_setup__row'>
         <label>Public Chat Logging</label>
         <Field 
           name='chatPublicLogging'
@@ -182,18 +124,14 @@ const ChatForm = props => {
           <option value='yes'>Yes</option>
           <option value='no'>No</option>
         </Field>
+      </Row>
+      </Col>
       </Col>
 
 
-
-      <Col 
-        md={3} 
-        mdOffset={1} 
-        sm={5} 
-        smOffset={1} 
-        xs={5} 
-        xsOffset={1}
-      >
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+        <Row className='admin_setup__row'>
         <label>Allow Links</label>
         <Field 
           name='chatLinks'
@@ -204,18 +142,9 @@ const ChatForm = props => {
           <option value='yes'>Yes</option>
           <option value='no'>No</option>
         </Field>
-      </Col>
+        </Row>
 
-
-
-      <Col 
-        md={3} 
-        mdOffset={1} 
-        sm={5} 
-        smOffset={1} 
-        xs={5} 
-        xsOffset={1}
-      >
+        <Row className='admin_setup__row'>
         <label>Character Limit</label> 
           <Field
             name='chatCharacterLimit'
@@ -224,18 +153,10 @@ const ChatForm = props => {
             placeholder=''
             className='admin_form_field'
         />
-      </Col>
+        </Row>
 
 
-
-      <Col 
-        md={3} 
-        mdOffset={1} 
-        sm={5} 
-        smOffset={1} 
-        xs={5} 
-        xsOffset={1}
-      >
+        <Row className='admin_setup__row'>
         <label>Message Delay (Seconds)</label> 
           <Field
             name='chatMessageDelay'
@@ -244,18 +165,11 @@ const ChatForm = props => {
             placeholder=''
             className='admin_form_field'
         />
-      </Col>
+      </Row>
 
 
 
-      <Col 
-        md={3} 
-        mdOffset={1} 
-        sm={5} 
-        smOffset={1} 
-        xs={5} 
-        xsOffset={1}
-      >
+      <Row className='admin_setup__row'>
         <label>Non-Mod Chat Delay (Seconds)</label> 
           <Field
             name='chatNonmodDelay'
@@ -264,30 +178,36 @@ const ChatForm = props => {
             placeholder=''
             className='admin_form_field'
         />
-      </Col>
-
-    </Row>
-
-
-      <Row>
-        <Button 
-          bsStyle="success" 
-          type='submit' 
-          disabled = {pristine || submitting}
-          className='admin_button'
-        >
-          Submit
-        </Button>
-        <Button 
-          bsStyle="info" 
-          type='button' 
-          disabled = {pristine || submitting} 
-          onClick={reset}
-          className='admin_button'
-        >
-          Clear Values
-        </Button>
       </Row>
+    </Col>
+    </Col>
+
+    <Col md={12} mdOffset={0} sm={12} smOffset={0} xs={12} xsOffset={0}>
+      <Col md={4} sm={6} xs={12}>
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+          <Row className='admin_button_wrapper'>
+            <Button 
+              bsStyle="success" 
+              type='submit' 
+              disabled = {pristine || submitting}
+              className='admin_button'
+            >
+              Submit
+            </Button>
+            <Button 
+              bsStyle="info" 
+              type='button' 
+              disabled = {pristine || submitting} 
+              onClick={reset}
+              className='admin_button'
+            >
+              Clear Values
+            </Button>
+          </Row>
+        </Col>
+      </Col>
+    </Col>
+
     </form>
   );
 };
