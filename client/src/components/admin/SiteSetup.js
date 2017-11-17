@@ -3,7 +3,7 @@ import showResults from './components/showResults';
 import SetupForm from './forms/SetupForm';
 import SetupSectionForm from './forms/SetupSectionForm';
 
-import {Col} from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
 import {bindActionCreators} from 'redux';
@@ -34,96 +34,106 @@ class Setup extends React.Component{
     }
     
     return(
-    <div>
-      <div className='admin_panel_title'>
-        Site Setup
-      </div>
-
+    <div className='admin_form_wrapper'>
       <Col 
-        md={6} 
-        mdOffset={0} 
-        sm={10} 
-        smOffset={1} 
-        xs={10} 
-        xsOffset={1}
+        md={4} 
+        sm={6} 
+        xs={12} 
+        className='admin_column__1'
       >
-        <SetupForm 
-        onSubmit={showResults} 
-        colorDisplay={this.props.colorDisplay}
-        colorChoice={this.props.colorChoice}
-        dispatch={this.props.dispatch}
-        />
-
-      <div className='admin_panel_title'>
-        Site Sections
-      </div>
-
-        <SetupSectionForm 
-        onSubmit={showResults} 
-        colorDisplay={this.props.colorDisplay}
-        colorChoice={this.props.colorChoice}
-        dispatch={this.props.dispatch}
-        />
-
-
+      </Col>
+      <Col 
+        md={4} 
+        mdOffset={4} 
+        sm={6} 
+        smOffset={6} 
+        xs={12} 
+        xsOffset={0}
+        className='admin_column__2'>
       </Col>
 
-
-
-
-
-      <Col 
-        md={6} 
-        mdOffset={0} 
-        sm={10} 
-        smOffset={1} 
-        xs={10} 
-        xsOffset={1}
-      >
-        <div 
-          className='admin_setup_preview' 
-          style={adminSetupPreview}
-        >
-          <Col 
-            md={12} 
-            sm={12} 
-            xs={12}
-            className='admin_setup_preview__header'
-            style={adminSetupPreviewHeader}
-          >
-          </Col>
-          <Col 
-            md={10} 
-            mdOffset={1} 
-            sm={10} 
-            smOffset={1} 
-            xs={10} 
-            xsOffset={1} 
-            className='admin_setup_preview__section'
-            style={adminSetupPreviewSection}
-          >
-            <div 
-              className='admin_setup_preview__section__header'
-              style={adminSetupPreviewSectionHeader}
-            >
-              Section
+      <Row>
+        <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+          <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+            <div className='admin_panel_title'>
+              Setup
             </div>
-            <div
-              className='admin_setup_preview__section__body'
-              style={adminSetupPreviewSectionBody}
-            >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-            ut labore et dolore magna aliqua.
-            </div>
-            <Link 
-              to='/admin/setup'
-              className='admin_setup_preview__section__link'
-              style={adminSetupPreviewSectionLink}
-            >
-              Link
-            </Link>
           </Col>
-        </div>
+        </Col>
+      </Row>
+
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+          <div className='admin_panel_title'>
+            Site Background
+          </div>
+          <SetupForm 
+          onSubmit={showResults} 
+          colorDisplay={this.props.colorDisplay}
+          colorChoice={this.props.colorChoice}
+          dispatch={this.props.dispatch}
+          />
+        </Col>
+      </Col>
+
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+          <div className='admin_panel_title'>
+            Site Sections
+          </div>
+          <SetupSectionForm 
+          onSubmit={showResults} 
+          colorDisplay={this.props.colorDisplay}
+          colorChoice={this.props.colorChoice}
+          dispatch={this.props.dispatch}
+          />
+        </Col>
+      </Col>
+
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+          <div 
+            className='admin_setup_preview' 
+            style={adminSetupPreview}
+          >
+            <Col 
+              className='admin_setup_preview__header'
+              style={adminSetupPreviewHeader}
+            >
+            </Col>
+            <Col 
+              md={10} 
+              mdOffset={1} 
+              sm={10} 
+              smOffset={1} 
+              xs={10} 
+              xsOffset={1} 
+              className='admin_setup_preview__section'
+              style={adminSetupPreviewSection}
+            >
+              <div 
+                className='admin_setup_preview__section__header'
+                style={adminSetupPreviewSectionHeader}
+              >
+                Section
+              </div>
+              <div
+                className='admin_setup_preview__section__body'
+                style={adminSetupPreviewSectionBody}
+              >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+              ut labore et dolore magna aliqua.
+              </div>
+              <Link 
+                to='/admin/setup'
+                className='admin_setup_preview__section__link'
+                style={adminSetupPreviewSectionLink}
+              >
+                Link
+              </Link>
+            </Col>
+          </div>
+        </Col>
       </Col>
     </div>
     );

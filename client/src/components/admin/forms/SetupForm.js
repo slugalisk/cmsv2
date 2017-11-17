@@ -21,127 +21,104 @@ class SetupForm extends React.Component{
       <form onSubmit={handleSubmit}>
       
         <Row className='admin_setup__row'>
-          <Col md = {4} sm = {4} xs = {4}> 
-            <label className='admin_setup__label'>Background Color</label>
-          </Col>
-          <Col md = {4} sm = {4} xs = {4}>
-              <Field
-                name='pageBackgroundColor'
-                component='input'
-                type='text'
-                className='admin_form_field'  
-              />
-          </Col>
-
-         <ColorPickerWrapper
+          <label>Background Color</label>
+          <Field
+            name='pageBackgroundColor'
+            component='input'
+            type='text'
+            className='admin_form_field'  
+          />
+          <ColorPickerWrapper
             colorPickerName = 'colorPickerPageBackground'
             fieldName='pageBackgroundColor'
             formName='setup'
             dispatch={this.props.dispatch}
           />
-
         </Row>
 
         <Row className='admin_setup__row'>
-          <Col md = {4} sm = {4} xs = {4}> 
-          <label className='admin_setup__label'>Header Color 1</label>
-          </Col>
-          <Col md = {4} sm = {4} xs = {4}> 
-            <Field
-              name='pageHeaderColor1'
-              component='input'
-              type='text'
-              className='admin_form_field'
-            />
-          </Col>
+          <label>Header Color 1</label>
+          <Field
+            name='pageHeaderColor1'
+            component='input'
+            type='text'
+            className='admin_form_field'
+          />
           <ColorPickerWrapper
             colorPickerName = 'colorPickerPageHeader1'
             fieldName='pageHeaderColor1'
             formName='setup'
             dispatch={this.props.dispatch}
-           />
-        
+          />
         </Row>
 
         <Row className='admin_setup__row'>
-          <Col md = {4} sm = {4} xs = {4}> 
-          <label className='admin_setup__label'>Header Color 2</label>
-          </Col>
-          <Col md = {4} sm = {4} xs = {4}> 
-            <Field
-              name='pageHeaderColor2'
-              component='input'
-              type='text'
-              className='admin_form_field'
-            />
-          </Col>
+          <label>Header Color 2</label>
+          <Field
+            name='pageHeaderColor2'
+            component='input'
+            type='text'
+            className='admin_form_field'
+          />
           <ColorPickerWrapper
             colorPickerName = 'colorPickerPageHeader2'
             fieldName='pageHeaderColor2'
             formName='setup'
             dispatch={this.props.dispatch}
           />
-        
         </Row>
 
         <Row className='admin_setup__row'>
-          <Col md = {4} sm = {4} xs = {4}> 
-          <label className='admin_setup__label'>Header Font</label>
-          </Col>
-          <Col md = {4} sm = {4} xs = {4}> 
+          <label>Header Font</label>
             <Field 
               name='pageHeaderFont' 
               component='select'
               className='admin_form_field'
             >
-              <option />
-              <option value='georgia'>Georgia</option>
-              <option value='palatino linotype'>Palatino Linotype</option>
-              <option value='times new roman'>Times New Roman</option>
-              <option value='Open Sans'>Open Sans</option>
-              <option value='arial'>Arial</option>
-              <option value='arial black'>Arial Black</option>
-              <option value='comic sans ms'>Comic Sans MS</option>
-              <option value='impact'>Impact</option>
-              <option value='lucida sans unicode'>Lucida Sans Unicode</option>
-              <option value='tahoma'>Tahoma</option>
-              <option value='trebuchet ms'>Trebuchet MS</option>
-              <option value='verdana'>Verdana</option>
-              <option value='courier new'>Courier New</option>
-              <option value='lucida console'>Lucida Console</option>
-            </Field>
-          </Col>
+            <option/>
+            <option value='georgia'>Georgia</option>
+            <option value='palatino linotype'>Palatino Linotype</option>
+            <option value='times new roman'>Times New Roman</option>
+            <option value='Open Sans'>Open Sans</option>
+            <option value='arial'>Arial</option>
+            <option value='arial black'>Arial Black</option>
+            <option value='comic sans ms'>Comic Sans MS</option>
+            <option value='impact'>Impact</option>
+            <option value='lucida sans unicode'>Lucida Sans Unicode</option>
+            <option value='tahoma'>Tahoma</option>
+            <option value='trebuchet ms'>Trebuchet MS</option>
+            <option value='verdana'>Verdana</option>
+            <option value='courier new'>Courier New</option>
+            <option value='lucida console'>Lucida Console</option>
+          </Field>
         </Row>
 
         <Row className='admin_setup__row'>
-          <Col md = {4} sm = {4} xs = {4}> 
-          <label className='admin_setup__label'>Body Font</label>
-          </Col>
-          <Col md = {4} sm = {4} xs = {4}> 
-            <Field 
-              name='pageBodyFont'
-              component='select'
-              className='admin_form_field'
-            >
-              <option />
-              <option value='georgia'>Georgia</option>
-              <option value='palatino linotype'>Palatino Linotype</option>
-              <option value='times new roman'>Times New Roman</option>
-              <option value='Open Sans'>Open Sans</option>
-              <option value='arial'>Arial</option>
-              <option value='arial black'>Arial Black</option>
-              <option value='comic sans ms'>Comic Sans MS</option>
-              <option value='impact'>Impact</option>
-              <option value='lucida sans unicode'>Lucida Sans Unicode</option>
-              <option value='tahoma'>Tahoma</option>
-              <option value='trebuchet ms'>Trebuchet MS</option>
-              <option value='verdana'>Verdana</option>
-              <option value='courier new'>Courier New</option>
-              <option value='lucida console'>Lucida Console</option>
-            </Field>
-          </Col>
+          <label>Body Font</label>
+          <Field 
+            name='pageBodyFont'
+            component='select'
+            className='admin_form_field'
+          >
+            <option />
+            <option value='georgia'>Georgia</option>
+            <option value='palatino linotype'>Palatino Linotype</option>
+            <option value='times new roman'>Times New Roman</option>
+            <option value='Open Sans'>Open Sans</option>
+            <option value='arial'>Arial</option>
+            <option value='arial black'>Arial Black</option>
+            <option value='comic sans ms'>Comic Sans MS</option>
+            <option value='impact'>Impact</option>
+            <option value='lucida sans unicode'>Lucida Sans Unicode</option>
+            <option value='tahoma'>Tahoma</option>
+            <option value='trebuchet ms'>Trebuchet MS</option>
+            <option value='verdana'>Verdana</option>
+            <option value='courier new'>Courier New</option>
+            <option value='lucida console'>Lucida Console</option>
+          </Field>
         </Row>
         
+
         <Row>
           <Button 
             bsStyle="success" 
@@ -154,9 +131,9 @@ class SetupForm extends React.Component{
           <Button 
             bsStyle="info" 
             type='button' 
-            disabled = {pristine || submitting}
-            className='admin_button'
+            disabled = {pristine || submitting} 
             onClick={reset}
+            className='admin_button'
           >
             Clear Values
           </Button>
