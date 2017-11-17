@@ -49,11 +49,11 @@ export default class Main extends React.Component{
         <Col 
           md={10} 
           mdOffset={2} 
+          sm={12}
+          smOffset={0}
+          xs={12}
+          xsOffset={0}
           className = 'admin_panel__wrapper'
-        >
-        <Col 
-          md={10} 
-          mdOffset={1}
         >
           <Route exact path="/admin" render={(props) => <Admin {...props}/>}/>
 
@@ -79,7 +79,7 @@ export default class Main extends React.Component{
           <Route exact path="/admin/lootboxes" render={(props) => <Lootbox {...props}/>}/>
 
           <Route path="/admin/users/details/" render={(props) => <UsersProfile {...props}/>} />
-        </Col>
+
       </Col>
 
       <Route path="/admin" render={(props) => <Adminbar {...props}/>} />

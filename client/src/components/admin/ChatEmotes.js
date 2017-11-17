@@ -11,37 +11,25 @@ export default class Emotes extends React.Component{
  
     <div>
       <Col 
-        md={12} 
-        mdOffset={0} 
-        sm={10} 
-        smOffset={1} 
-        xs={10} 
-        xsOffset={1}
+        md={4} 
+        sm={6} 
+        xs={12} 
+        className='admin_column__1'
       >
-        <EmoteForm onSubmit={showResults}/>
-        [submit new emote button]<br/>
-        image must be larger than 32x32 and smaller than 200x200<br/>
-        upload button<br/>
-        upload preview<br/>
-        emote nameadvanced css transforms<br/>
-        none - rotate - rainbowify - shake - rotate - custom<br/>
-        <br/>
-        [everyone]<br/>
-        [t1]<br/>
-        [t2]<br/>
-        [t3]<br/>
-        [t4]<br/>
-        [custom]<br/>
-        [mods]<br/>
-        [admins]<br/>
-        [inactive]<br/>
-        <br/><br/>
-        click option: <br/>
-        delete<br/>
-        name [name input field]<br/>
-        css transforms<br/>
-        none - rotate - rainbowify - shake - rotate - custom<br/>
       </Col>
+      <Col 
+        md={4} 
+        mdOffset={4} 
+        sm={6} 
+        smOffset={6} 
+        xs={12} 
+        xsOffset={0}
+        className='admin_column__2'>
+      </Col>
+
+
+        <EmoteForm onSubmit={showResults}/>
+      
     </div>
     );
   }

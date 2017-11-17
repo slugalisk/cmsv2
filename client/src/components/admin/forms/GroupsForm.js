@@ -13,7 +13,7 @@ const FILE_FIELD_NAME = 'files';
 const renderDropzoneInput = (field) => {
   const files = field.input.value;
   return (
-    <Col md={4} mdOffset={4}>
+    <Col md={4} mdOffset={4} sm={4} smOffset={4} xs={4} xsOffset={4}>
 
       <Dropzone
         name={field.name}
@@ -87,7 +87,7 @@ class GroupsForm extends React.Component{
           </Row>
 
           <div>
-          <Col md={4} mdOffset={4}>
+          <Col md={4} mdOffset={4} sm={4} smOffset={4} xs={4} xsOffset={4}>
           <label htmlFor={FILE_FIELD_NAME}>Files</label>
           </Col>
           <Row>
