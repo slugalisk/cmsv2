@@ -32,6 +32,7 @@ export default class Adminmenubar extends React.Component{
         </Adminmenusect>
 
         <Adminmenusect title="Site">
+          <Link to='/admin/domain'><Option>Domain Name</Option></Link>
           <Link to='/admin/setup'><Option>Setup</Option></Link>
           <Link to='/admin/socials'><Option>Social Links</Option></Link>
           <Link to='/admin/socialdisplay'><Option>Social Display</Option></Link>

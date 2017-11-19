@@ -26,6 +26,7 @@ import SiteSetup from './SiteSetup';
 import SiteSocialLinks from './SiteSocialLinks';
 import SiteSocialDisplay from './SiteSocialDisplay';
 import SiteCustomPages from './SiteCustomPages';
+import SiteDomain from './SiteDomain';
 
 import Lootbox from './Lootbox';
 
@@ -76,6 +77,7 @@ export default class Main extends React.Component{
           <Route exact path="/admin/socials" render={(props) => <SiteSocialLinks {...props}/>}/>
           <Route exact path="/admin/socialdisplay" render={(props) => <SiteSocialDisplay {...props}/>}/>
           <Route exact path="/admin/custompages" render={(props) => <SiteCustomPages {...props}/>}/>
+          <Route exact path="/admin/domain" render={(props) => <SiteDomain {...props}/>}/>
           
           <Route exact path="/admin/lootboxes" render={(props) => <Lootbox {...props}/>}/>
 

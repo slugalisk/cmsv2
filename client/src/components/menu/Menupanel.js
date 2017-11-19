@@ -184,6 +184,14 @@ export default class Menupanel extends React.Component{
         >
           User Gifts
         </Link>
+        <br/>
+        <Link
+          to = '/admin/domain'
+          className = 'menu_panel__link' 
+          onClick = {this.props.toggler}
+        >
+          Admin Domain
+        </Link>
 
 
 
