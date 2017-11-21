@@ -13,6 +13,7 @@ export default class Login extends React.Component{
       <Col md={4} mdOffset={4} sm={6} smOffset={3} xs={10} xsOffset={1}>
       <h2>Log In</h2>
       <LoginForm onSubmit={showResults} />
+      Forgot Password?
       </Col>
     </div>
     );

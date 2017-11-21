@@ -52,7 +52,6 @@ app.get('/testget', (req, res) => {
        console.log(info);
     }
   });
- 
 });
  
 
@@ -90,7 +89,7 @@ app.get('/testpost', (req, res) => {
     },
     "createdAt": time,
     "enabled": true,
-    "id": "12",
+    "id": "123",
     "name": "string",
     "readOnly": true,
     "updatedAt": time,
@@ -117,7 +116,6 @@ app.get('/testpost', (req, res) => {
       headers['X-Token'] =response.headers['x-token'];
       headers['cookie']=response.headers['set-cookie'];
       let time = JSON.parse(body).time;
-      console.log(time);
       postecho(headers['X-Client-ID'], headers['X-Token'], headers['cookie'], time);
     }
   });
@@ -129,7 +127,7 @@ app.get('/testpost', (req, res) => {
   console.log(cookie.toString().replace(' HttpOnly; Secure', ''));
  
   var options = {
-    url: 'https://slugalisk.com/api/v1/sites',
+    url: 'https://slugalisk.com/api/v1/sites/298923386666418178',
     method: 'PUT',
     headers: {
       'origin': 'https://slugalisk.com',
@@ -140,7 +138,7 @@ app.get('/testpost', (req, res) => {
     },
     "createdAt": time,
     "enabled": true,
-    "id": "298655507817037826",
+    "id": "298923386666418178",
     "name": "string",
     "readOnly": true,
     "updatedAt": time,
@@ -176,7 +174,6 @@ function deleteSiteTime(siteid){
   const headers = {};
   request(options, function(error, response, body) {
     if (response) {
-      console.log(body);
       headers['X-Client-ID'] = response.headers['x-client-id'];
       headers['X-Token'] =response.headers['x-token'];
       headers['cookie']=response.headers['set-cookie'];
@@ -218,6 +215,7 @@ function deleteSiteTime(siteid){
   });
  }
  
+ 
  /*get ids*/
  app.get('/getids', (req, res) => {
    let arrayOfIds=[];
@@ -228,13 +226,66 @@ function deleteSiteTime(siteid){
       for (let i in info.data){
         arrayOfIds.push(info.data[i].id);
       }
-      
       res.json(arrayOfIds);
     }
   });
- 
 });
- 
+
+/* GET /sites/{siteId}/domains */
+
+app.post('/getSiteDomains', (req, res)=>{
+  getSiteDomainsTime(req.body.siteid);
+ res.end('receive complete');
+});
+
+function getSiteDomainsTime(siteid){
+  var options = {
+    url: 'https://slugalisk.com/api/v1/system/time',
+    method: 'GET',
+    headers: {
+      'origin': 'https://slugalisk.com',
+      'Content-Type': 'application/json',
+    },
+  };
+  const headers = {};
+  request(options, function(error, response, body) {
+    if (response) {
+      headers['X-Client-ID'] = response.headers['x-client-id'];
+      headers['X-Token'] =response.headers['x-token'];
+      headers['cookie']=response.headers['set-cookie'];
+      let time = JSON.parse(body).time;
+      getSiteDomains(headers['X-Client-ID'], headers['X-Token'], headers['cookie'], time, siteid);
+    }
+    else{
+      console.log(error);
+    }
+  });
+ }
+
+function getSiteDomains(xclientid, xtoken, cookie, time, siteid){
+  console.log(siteid);
+  var options = {
+    url: 'https://slugalisk.com/api/v1/sites/'+siteid+'/domains',
+    method: 'GET',
+    headers: {
+      'origin': 'https://slugalisk.com',
+      'Content-Type': 'application/json',
+      'X-Client-ID': xclientid.toString(),
+      'X-Token': xtoken.toString(),
+      'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+    },
+  };
+  request(options, function(err, res, body) {
+    if (res) {
+      info = JSON.parse(body);
+      console.log(info);
+    }
+    else{
+      console.log(err);
+    }
+  });
+}
+
  
 
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-class DomainForm extends React.Component {
+class DeleteSiteForm extends React.Component {
   constructor(props){
     super(props);
     this.state={
@@ -47,7 +47,7 @@ class DomainForm extends React.Component {
         <Row className='admin_setup__row'>
           <label>Delete</label>
           <Field
-            name='deleteSite'
+            name='DeleteSiteSiteId'
             component='input'
             type='text'
             placeholder=''
@@ -140,5 +140,5 @@ class DomainForm extends React.Component {
 };
 
 export default reduxForm({
-  form: 'domain', // a unique identifier for this form
-})(DomainForm);
+  form: 'deleteSite', // a unique identifier for this form
+})(DeleteSiteForm);

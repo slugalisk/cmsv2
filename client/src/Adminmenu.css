@@ -55,7 +55,7 @@
 
 
 .admin_menu__title{
-  font-size: 1.5em;
+  font-size: 1.3em;
   cursor: default;
   position: relative;
   color: rgb(255,255,255);
@@ -63,28 +63,32 @@
   padding-left: 1em;
   line-height: 200%;
 
-  -webkit-transition: .25s ease-out;
-  -moz-transition: .25s ease-out;
-  -o-transition: .25s ease-out;
-  transition:.25s ease-out;
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  -o-transition: .2s ease-out;
+  transition:.2s ease-out;
 }
 .admin_menu__title:hover{
   color:rgb(124,211,211);
 }
 
 .admin_menu__subtext{
-  -webkit-transition: .5s ease-in;
-  -moz-transition: .5s ease-in;
-  -o-transition: .5s ease-in;
-  transition: .5s ease-in;
-  font-size: 16px;
+  -webkit-transition: .2s ease-in;
+  -moz-transition: .2s ease-in;
+  -o-transition: .2s ease-in;
+  transition: .2s ease-in;
+  font-size: 1em;
   letter-spacing: .5px;
   line-height: 150%;
-  padding-left: 2em;
 }
 
 .admin_menu_option{
+  padding-top: 2px;
+  padding-bottom: 2px;
   width: 100%;
+  padding-left: 2em;
+  border-top: 1px solid #121212;
+  border-bottom: 1px solid #010101;
 }
 
 .admin_menu_option__container{
