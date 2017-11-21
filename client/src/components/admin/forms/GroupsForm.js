@@ -118,7 +118,7 @@ class GroupsForm extends React.Component{
                 name='groupColor'
                 component='input'
                 type='text'
-                className='admin_form_field'  
+                className='admin_form_field'
               />
               <ColorPickerWrapper
                 colorPickerName = 'groupColorPicker'

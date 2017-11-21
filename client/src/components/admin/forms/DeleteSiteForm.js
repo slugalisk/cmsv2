@@ -42,23 +42,19 @@ class DeleteSiteForm extends React.Component {
   return (
     <form onSubmit={handleSubmit}>
 
-    <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
-      <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+
         <Row className='admin_setup__row'>
           <label>Delete</label>
           <Field
             name='DeleteSiteSiteId'
             component='input'
             type='text'
-            placeholder=''
+            placeholder='Site ID'
             className='admin_form_field'
           />
         </Row>
-      </Col>
-    </Col>
 
-    <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
-      <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+
         <Row className='admin_setup__row'>
           {strings.map((string, index) =>
             <div key={index}>
@@ -66,8 +62,6 @@ class DeleteSiteForm extends React.Component {
             </div>
           )}
         </Row>
-      </Col>
-    </Col>
 
     <Col md={12} mdOffset={0} sm={12} smOffset={0} xs={12} xsOffset={0}>
       <Col md={4} sm={6} xs={12}>

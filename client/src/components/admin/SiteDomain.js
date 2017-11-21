@@ -5,9 +5,11 @@ import { Provider } from 'react-redux';
 
 import deleteSite from './components/deleteSite';
 import siteDomains from './components/siteDomains';
+import postSiteDomain from './components/postSiteDomain';
 
 import DeleteSiteForm from './forms/DeleteSiteForm';
 import SiteDomainsForm from './forms/SiteDomainsForm';
+import PostSiteDomainForm from './forms/PostSiteDomainForm';
 
 export default class SiteDomain extends React.Component{
   render(){
@@ -31,27 +33,28 @@ export default class SiteDomain extends React.Component{
         className='admin_column__2'>
       </Col>
 
-      <Row>
-        <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-          <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-            <div className='admin_panel_title'>
-              Delete Site
-            </div>
-          </Col>
-        </Col>
-      </Row>
-      <DeleteSiteForm onSubmit={deleteSite}/>
 
-      <Row>
         <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
           <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-            <div className='admin_panel_title'>
-              Get Site Domains
-            </div>
+            <DeleteSiteForm onSubmit={deleteSite}/>
           </Col>
         </Col>
-      </Row>
-      <SiteDomainsForm onSubmit={siteDomains}/>
+     
+
+
+        <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+          <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+            <SiteDomainsForm onSubmit={siteDomains}/>
+          </Col>
+        </Col>
+      
+
+        <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+          <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+            <PostSiteDomainForm onSubmit={postSiteDomain}/>
+          </Col>
+        </Col>
+      
 
     </div>
     );

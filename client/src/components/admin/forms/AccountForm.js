@@ -45,7 +45,7 @@ const AccountForm = props => {
             name='adminEmail'
             component='input'
             type='email'
-            placeholder=''
+            placeholder='name@example.com'
             className='admin_form_field'
           />
         </Row>

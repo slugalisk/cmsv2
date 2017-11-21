@@ -44,7 +44,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
  
 
-/* test get */
+/* GET site */
 app.get('/testget', (req, res) => {
   request('https://slugalisk.com/api/v1/sites', function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -55,7 +55,7 @@ app.get('/testget', (req, res) => {
 });
  
 
-/* testpost */
+/* POST site */
 
 app.get('/testpost', (req, res) => {
   const headers = {};
@@ -104,7 +104,7 @@ app.get('/testpost', (req, res) => {
   });
  }
 
- /* test put */
+ /* PUT test site */
 
  app.get('/testput', (req, res) => {
   const headers = {};
@@ -155,7 +155,7 @@ app.get('/testpost', (req, res) => {
 
 
 
- /*delete*/
+ /* DELETE site*/
 
  app.post('/deletesite', (req, res)=>{
   deleteSiteTime(req.body.siteid);
@@ -286,9 +286,67 @@ function getSiteDomains(xclientid, xtoken, cookie, time, siteid){
   });
 }
 
+ /* POST site domain */
+
+ app.post('/postSiteDomain', (req, res)=>{
+  postSiteDomainTime(req.body.siteid);
+ res.end('receive complete');
+});
+
+function postSiteDomainTime(siteid){
+  var options = {
+    url: 'https://slugalisk.com/api/v1/system/time',
+    method: 'GET',
+    headers: {
+      'origin': 'https://slugalisk.com',
+      'Content-Type': 'application/json',
+    },
+  };
+  const headers = {};
+  request(options, function(error, response, body) {
+    if (response) {
+      headers['X-Client-ID'] = response.headers['x-client-id'];
+      headers['X-Token'] =response.headers['x-token'];
+      headers['cookie']=response.headers['set-cookie'];
+      let time = JSON.parse(body).time;
+
+      postSiteDomain(headers['X-Client-ID'], headers['X-Token'], headers['cookie'], time, siteid);
+
+    }
+    else{
+      console.log(error);
+    }
+  });
+ }
  
-
-
+ function postSiteDomain(xclientid, xtoken, cookie, time, siteid){
+  var options = {
+    url: 'https://slugalisk.com/api/v1/sites/'+siteid+'/domains',
+    method: 'POST',
+    headers: {
+      'origin': 'https://slugalisk.com',
+      'Content-Type': 'application/json',
+      'X-Client-ID': xclientid.toString(),
+      'X-Token': xtoken.toString(),
+      'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+    },
+    "createdAt": time,
+    "env": 0,
+    "host": "https://slugalisk.com",
+    "id": '123',
+    "siteId": siteid,
+    "updatedAt": time,
+    "verified": true
+  };
+  request(options, function(err, res, body) {
+    if (res) {
+      console.log(body);
+    }
+    else{
+      console.log(err);
+    }
+  });
+ }
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
