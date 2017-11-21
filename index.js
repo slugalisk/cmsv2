@@ -43,6 +43,8 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
  
+
+/* test get */
 app.get('/testget', (req, res) => {
   request('https://slugalisk.com/api/v1/sites', function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -54,11 +56,7 @@ app.get('/testget', (req, res) => {
 });
  
 
-
-
-
-
-
+/* testpost */
 
 app.get('/testpost', (req, res) => {
   const headers = {};
@@ -107,7 +105,8 @@ app.get('/testpost', (req, res) => {
   });
  }
 
- 
+ /* test put */
+
  app.get('/testput', (req, res) => {
   const headers = {};
  
@@ -160,23 +159,12 @@ app.get('/testpost', (req, res) => {
 
  /*delete*/
 
+ app.post('/deletesite', (req, res)=>{
+  deleteSiteTime(req.body.siteid);
+ res.end('receive complete');
+});
 
- app.get('/testdelete', (req, res) => {
-  const headers = {};
-  request('https://slugalisk.com/api/v1/system/time', function (error, response, body) {
-    if (!error && response.statusCode == 200) {
- 
-      headers['X-Client-ID'] = response.headers['x-client-id'];
-      headers['X-Token'] =response.headers['x-token'];
-      headers['cookie']=response.headers['set-cookie'];
-      let time = JSON.parse(body).time;
-      console.log(time);
-      deletesite(headers['X-Client-ID'], headers['X-Token'], headers['cookie'], time, '123');
-    }
-  });
- });
-
- function gettime(siteid){
+function deleteSiteTime(siteid){
   var options = {
     url: 'https://slugalisk.com/api/v1/system/time',
     method: 'GET',
@@ -194,7 +182,7 @@ app.get('/testpost', (req, res) => {
       headers['cookie']=response.headers['set-cookie'];
       let time = JSON.parse(body).time;
 
-      deletesite(headers['X-Client-ID'], headers['X-Token'], headers['cookie'], time, siteid);
+      deleteSite(headers['X-Client-ID'], headers['X-Token'], headers['cookie'], time, siteid);
 
     }
     else{
@@ -202,8 +190,8 @@ app.get('/testpost', (req, res) => {
     }
   });
  }
- 
- function deletesite(xclientid, xtoken, cookie, time, siteid){
+
+ function deleteSite(xclientid, xtoken, cookie, time, siteid){
   var options = {
     url: 'https://slugalisk.com/api/v1/sites/'+siteid,
     method: 'DELETE',
@@ -230,11 +218,26 @@ app.get('/testpost', (req, res) => {
   });
  }
  
+ /*get ids*/
+ app.get('/getids', (req, res) => {
+   let arrayOfIds=[];
+  request('https://slugalisk.com/api/v1/sites', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      info = JSON.parse(body);
 
- app.post('/testreceive', (req, res)=>{
-   gettime(req.body.siteid);
-  res.end('receive complete');
+      for (let i in info.data){
+        arrayOfIds.push(info.data[i].id);
+      }
+      
+      res.json(arrayOfIds);
+    }
+  });
+ 
 });
+ 
+ 
+
+
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.

@@ -2,9 +2,26 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-const DomainForm = props => {
+class DomainForm extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={
+      strings:[]
+    }
+  }
 
-  const { handleSubmit, pristine, reset, submitting } = props;
+  getStrings = (e) => {
+    e.preventDefault();
+    fetch('/getids')
+      .then(res => res.json())
+      .then(strings => this.setState({ strings }));
+  }
+
+  render(){
+
+    const strings = this.state.strings;
+
+  const { handleSubmit, pristine, reset, submitting } = this.props;
 
   const testget=()=>{
     fetch('http://localhost:5000/testget')
@@ -21,6 +38,8 @@ const DomainForm = props => {
   const deletepost=()=>{
     fetch('http://localhost:5000/testdelete')
   }
+
+
 
   return (
     <form onSubmit={handleSubmit}>
@@ -39,6 +58,21 @@ const DomainForm = props => {
         </Row>
       </Col>
     </Col>
+
+    <div>
+      <ul>
+        {strings.map((string, index) =>
+          <li key={index}>
+            {string}
+          </li>
+        )}
+      </ul>
+      <button
+        className="more"
+        onClick={this.getStrings}>
+        Get More
+      </button>
+    </div>
 
 
     <Col md={12} mdOffset={0} sm={12} smOffset={0} xs={12} xsOffset={0}>
@@ -107,6 +141,7 @@ const DomainForm = props => {
       
     </form>
   );
+}
 };
 
 export default reduxForm({
