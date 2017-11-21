@@ -171,18 +171,41 @@ app.get('/testpost', (req, res) => {
       headers['cookie']=response.headers['set-cookie'];
       let time = JSON.parse(body).time;
       console.log(time);
-      deletesite(headers['X-Client-ID'], headers['X-Token'], headers['cookie'], time);
+      deletesite(headers['X-Client-ID'], headers['X-Token'], headers['cookie'], time, '123');
     }
   });
  });
- 
- function deletesite(xclientid, xtoken, cookie, time){
-  console.log(xclientid.toString());
-  console.log(xtoken.toString());
-  console.log(cookie.toString().replace(' HttpOnly; Secure', ''));
- 
+
+ function gettime(siteid){
   var options = {
-    url: 'https://slugalisk.com/api/v1/sites/298659023225716738',
+    url: 'https://slugalisk.com/api/v1/system/time',
+    method: 'GET',
+    headers: {
+      'origin': 'https://slugalisk.com',
+      'Content-Type': 'application/json',
+    },
+  };
+  const headers = {};
+  request(options, function(error, response, body) {
+    if (response) {
+      console.log(body);
+      headers['X-Client-ID'] = response.headers['x-client-id'];
+      headers['X-Token'] =response.headers['x-token'];
+      headers['cookie']=response.headers['set-cookie'];
+      let time = JSON.parse(body).time;
+
+      deletesite(headers['X-Client-ID'], headers['X-Token'], headers['cookie'], time, siteid);
+
+    }
+    else{
+      console.log(error);
+    }
+  });
+ }
+ 
+ function deletesite(xclientid, xtoken, cookie, time, siteid){
+  var options = {
+    url: 'https://slugalisk.com/api/v1/sites/'+siteid,
     method: 'DELETE',
     headers: {
       'origin': 'https://slugalisk.com',
@@ -193,7 +216,6 @@ app.get('/testpost', (req, res) => {
     },
     "createdAt": time,
     "enabled": true,
-    "id": '298653628689350658',
     "name": "string",
     "readOnly": true,
     "updatedAt": time,
@@ -210,22 +232,9 @@ app.get('/testpost', (req, res) => {
  
 
  app.post('/testreceive', (req, res)=>{
-  console.log(req.body);
-  var inputstring={
-    username : req.body.username,
-    password:req.body.password,
-	}
-  console.log(inputstring);
+   gettime(req.body.siteid);
   res.end('receive complete');
 });
-
-app.get('/getarray', (req, res) => {
-  const passwords = ['this', 'is', 'from', 'express'];
-  console.log(passwords);
-  // Return them as json
-  res.json(passwords);
-});
-
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
