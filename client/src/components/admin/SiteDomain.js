@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Row, Col} from 'react-bootstrap';
 import { Provider } from 'react-redux';
-import showResults from './components/showResults';
+import deleteSite from './components/DeleteSite';
 
 import DomainForm from './forms/DomainForm';
 
@@ -38,7 +38,7 @@ export default class SiteDomain extends React.Component{
         </Col>
       </Row>
 
-          <DomainForm onSubmit={showResults}/>
+          <DomainForm onSubmit={deleteSite}/>
 
     </div>
     );

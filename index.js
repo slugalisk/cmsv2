@@ -2,7 +2,8 @@ const express = require('express');
 const path = require('path');
 var bodyParser = require('body-parser');
 var request = require('request');
-var fs    = require("fs");
+const cors = require('cors');
+
 require('isomorphic-fetch');
  
 var proxy = require('express-http-proxy');
@@ -14,7 +15,7 @@ app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, X-Token, X-Client-ID');
   next();
 });
- 
+ /*
 app.use(proxy(
   'https://slugalisk.com',
   {
@@ -34,7 +35,7 @@ app.use(proxy(
           return proxyRes.statusCode === 404;
       }
   }
-));
+));*/
  
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
@@ -45,7 +46,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.get('/testget', (req, res) => {
   request('https://slugalisk.com/api/v1/sites', function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      info = body;
+      info = JSON.parse(body);
        console.log(info);
     }
   });
@@ -59,7 +60,7 @@ app.get('/testget', (req, res) => {
 
 
 
-app.get('/testput', (req, res) => {
+app.get('/testpost', (req, res) => {
   const headers = {};
   request('https://slugalisk.com/api/v1/system/time', function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -106,37 +107,8 @@ app.get('/testput', (req, res) => {
   });
  }
 
- /*
-function postsite(xclientid, xtoken, cookie, time){
-  console.log(xclientid.toString());
-  console.log(xtoken.toString());
-  console.log(cookie.toString().replace(' HttpOnly; Secure', ''));
  
-  var options = {
-    url: 'https://slugalisk.com/api/v1/system/ping',
-    method: 'POST',
-    headers: {
-      'origin': 'https://slugalisk.com',
-      'Content-Type': 'application/json',
-      'X-Client-ID': xclientid.toString(),
-      'X-Token': xtoken.toString(),
-      'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
-    },
-    "message": "PING",
-    "time": time,
-  };
-  request(options, function(err, res, body) {
-    if (res) {
-      console.log(body);
-    }
-    else{
-      console.log(err);
-    }
-  });
- }
- */
- 
- app.get('/testpost', (req, res) => {
+ app.get('/testput', (req, res) => {
   const headers = {};
  
   request('https://slugalisk.com/api/v1/system/time', function (error, response, body) {
@@ -158,8 +130,8 @@ function postsite(xclientid, xtoken, cookie, time){
   console.log(cookie.toString().replace(' HttpOnly; Secure', ''));
  
   var options = {
-    url: 'https://slugalisk.com/api/v1/system/echo',
-    method: 'POST',
+    url: 'https://slugalisk.com/api/v1/sites',
+    method: 'PUT',
     headers: {
       'origin': 'https://slugalisk.com',
       'Content-Type': 'application/json',
@@ -167,7 +139,64 @@ function postsite(xclientid, xtoken, cookie, time){
       'X-Token': xtoken.toString(),
       'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
     },
-    "message": "PING",
+    "createdAt": time,
+    "enabled": true,
+    "id": "298655507817037826",
+    "name": "string",
+    "readOnly": true,
+    "updatedAt": time,
+  };
+  request(options, function(err, res, body) {
+    if (res) {
+      console.log(body);
+    }
+    else{
+      console.log(err);
+    }
+  });
+ }
+
+
+
+ /*delete*/
+
+
+ app.get('/testdelete', (req, res) => {
+  const headers = {};
+  request('https://slugalisk.com/api/v1/system/time', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+ 
+      headers['X-Client-ID'] = response.headers['x-client-id'];
+      headers['X-Token'] =response.headers['x-token'];
+      headers['cookie']=response.headers['set-cookie'];
+      let time = JSON.parse(body).time;
+      console.log(time);
+      deletesite(headers['X-Client-ID'], headers['X-Token'], headers['cookie'], time);
+    }
+  });
+ });
+ 
+ function deletesite(xclientid, xtoken, cookie, time){
+  console.log(xclientid.toString());
+  console.log(xtoken.toString());
+  console.log(cookie.toString().replace(' HttpOnly; Secure', ''));
+ 
+  var options = {
+    url: 'https://slugalisk.com/api/v1/sites/298659023225716738',
+    method: 'DELETE',
+    headers: {
+      'origin': 'https://slugalisk.com',
+      'Content-Type': 'application/json',
+      'X-Client-ID': xclientid.toString(),
+      'X-Token': xtoken.toString(),
+      'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+    },
+    "createdAt": time,
+    "enabled": true,
+    "id": '298653628689350658',
+    "name": "string",
+    "readOnly": true,
+    "updatedAt": time,
   };
   request(options, function(err, res, body) {
     if (res) {
@@ -179,6 +208,25 @@ function postsite(xclientid, xtoken, cookie, time){
   });
  }
  
+
+ app.post('/testreceive', (req, res)=>{
+  console.log(req.body);
+  var inputstring={
+    username : req.body.username,
+    password:req.body.password,
+	}
+  console.log(inputstring);
+  res.end('receive complete');
+});
+
+app.get('/getarray', (req, res) => {
+  const passwords = ['this', 'is', 'from', 'express'];
+  console.log(passwords);
+  // Return them as json
+  res.json(passwords);
+});
+
+
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {

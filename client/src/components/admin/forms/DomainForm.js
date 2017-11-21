@@ -18,6 +18,9 @@ const DomainForm = props => {
     fetch('http://localhost:5000/testpost')
   }
 
+  const deletepost=()=>{
+    fetch('http://localhost:5000/testdelete')
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -25,19 +28,9 @@ const DomainForm = props => {
     <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
       <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
         <Row className='admin_setup__row'>
-          <label>Username</label>
+          <label>Delete</label>
           <Field
-            name='adminUsername'
-            component='input'
-            type='text'
-            placeholder=''
-            className='admin_form_field'
-          />
-        </Row>
-        <Row className='admin_setup__row'>
-          <label>First Name</label> 
-          <Field
-            name='adminFirstName'
+            name='deleteSite'
             component='input'
             type='text'
             placeholder=''
@@ -95,6 +88,15 @@ const DomainForm = props => {
               className='admin_button'
             >
               test post
+            </Button>
+
+            <Button 
+              bsStyle="warning" 
+              type='button' 
+              onClick={deletepost}
+              className='admin_button'
+            >
+              test delete
             </Button>
 
           </Row>
