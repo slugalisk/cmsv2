@@ -11,11 +11,24 @@ const RegistrationForm = props => {
         <Col md = {12} sm = {12} xs = {12}> 
           <label>Username</label>
             <Field
-              name='loginUsername'
+              name='registerUsername'
               component='input'
               type='text'
-              placeholder=''
-              className='admin_form_field'
+              placeholder='Username'
+              className='form_field'
+            />
+        </Col>
+      </Row>
+
+      <Row className='form_row'>
+        <Col md = {12} sm = {12} xs = {12}> 
+          <label>Email Address</label>
+            <Field
+              name='registerEmail'
+              component='input'
+              type='text'
+              placeholder='Email Address'
+              className='form_field'
             />
         </Col>
       </Row>
@@ -24,11 +37,11 @@ const RegistrationForm = props => {
         <Col md = {5} sm = {12} xs = {12}> 
         <label>Password</label> 
           <Field
-            name='loginPassword'
+            name='registerPassword'
             component='input'
             type='password'
-            placeholder=''
-            className='admin_form_field'
+            placeholder='Password'
+            className='form_field'
           />
         </Col>
       </Row>
@@ -40,18 +53,9 @@ const RegistrationForm = props => {
           bsStyle="success" 
           type='submit' 
           disabled = {pristine || submitting}
-          className='user_button'
+          className='form_button'
         >
           Submit
-        </Button>
-        <Button 
-          bsStyle="info" 
-          type='button' 
-          disabled = {pristine || submitting} 
-          onClick={reset}
-          className='user_button'
-        >
-          Clear Values
         </Button>
       </Row>
     </form>

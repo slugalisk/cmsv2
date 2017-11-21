@@ -14,8 +14,8 @@ const LoginForm = props => {
               name='loginUsername'
               component='input'
               type='text'
-              placeholder=''
-              className='admin_form_field'
+              placeholder='Username'
+              className='form_field'
             />
         </Col>
       </Row>
@@ -27,31 +27,20 @@ const LoginForm = props => {
             name='loginPassword'
             component='input'
             type='password'
-            placeholder=''
-            className='admin_form_field'
+            placeholder='Password'
+            className='form_field'
           />
         </Col>
       </Row>
-
-   
 
       <Row>
         <Button 
           bsStyle="success" 
           type='submit' 
           disabled = {pristine || submitting}
-          className='user_button'
+          className='form_button'
         >
           Submit
-        </Button>
-        <Button 
-          bsStyle="info" 
-          type='button' 
-          disabled = {pristine || submitting} 
-          onClick={reset}
-          className='user_button'
-        >
-          Clear Values
         </Button>
       </Row>
     </form>
