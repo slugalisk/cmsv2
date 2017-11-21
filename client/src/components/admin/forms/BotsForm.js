@@ -6,10 +6,15 @@ const BotsForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
+
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <Row className='admin_setup__row'>
-            <label>Twitter Stream</label>
+            <Row>
+              <label>
+                  Twitter Stream
+              </label>
+            </Row>
             <Field 
               name='botsTwitterStream'
               component='select'
@@ -20,9 +25,17 @@ const BotsForm = props => {
               <option value='no'>No</option>
             </Field>
           </Row>
+        </Col>
+      </Col>
 
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <Row className='admin_setup__row'>
-            <label>!tweet</label>
+            <Row>
+              <label>
+                !tweet
+              </label>
+            </Row>
             <Field 
               name='botsTweet'
               component='select'
@@ -33,9 +46,17 @@ const BotsForm = props => {
               <option value='no'>No</option>
             </Field>
           </Row>
+        </Col>
+      </Col>
 
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <Row className='admin_setup__row'>
-            <label>!stream / !live</label>
+            <Row>
+              <label>
+                !stream / !live
+              </label>
+            </Row>
             <Field 
               name='botsLive'
               component='select'
@@ -46,10 +67,17 @@ const BotsForm = props => {
               <option value='no'>No</option>
             </Field>
           </Row>
+        </Col>
+      </Col>
 
-
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <Row className='admin_setup__row'>
-            <label>!schedule</label>
+            <Row>
+              <label>
+                !schedule
+              </label>
+            </Row>
             <Field 
               name='botsSchedule'
               component='select'
@@ -60,9 +88,17 @@ const BotsForm = props => {
               <option value='no'>No</option>
             </Field>
           </Row>
+        </Col>
+      </Col>
 
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <Row className='admin_setup__row'>
-            <label>!ip [x] (hours)</label> 
+            <Row>
+              <label>
+                !ip [x] (hours)
+              </label>
+            </Row> 
             <Field 
               name='botsIPBan'
               component='select'
@@ -80,7 +116,11 @@ const BotsForm = props => {
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <Row className='admin_setup__row'>
-            <label>!song (Requires Last.FM)</label>
+            <Row>
+              <label>
+                !song (Requires Last.FM)
+              </label>
+            </Row>
             <Field 
               name='botsSong'
               component='select'
@@ -91,9 +131,17 @@ const BotsForm = props => {
               <option value='no'>No</option>
             </Field>
           </Row>
+        </Col>
+      </Col>
 
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <Row className='admin_setup__row'>
-            <label>!logs [username]</label>
+            <Row>
+              <label>
+                !logs [username]
+              </label>
+            </Row>
             <Field 
               name='botsLogs'
               component='select'
@@ -104,9 +152,17 @@ const BotsForm = props => {
               <option value='no'>No</option>
             </Field>
           </Row>
+        </Col>
+      </Col>
 
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <Row className='admin_setup__row'>
-            <label>!poll</label>
+            <Row>
+              <label>
+                !poll
+              </label>
+            </Row>
             <Field 
               name='botsPoll'
               component='select'
@@ -117,9 +173,17 @@ const BotsForm = props => {
               <option value='no'>No</option>
             </Field>
           </Row>
+        </Col>
+      </Col>
 
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <Row className='admin_setup__row'>
-            <label>!nuke [word]</label>
+            <Row>
+              <label>
+                !nuke [word]
+              </label>
+            </Row>
             <Field 
               name='botsNuke'
               component='select'
@@ -137,7 +201,11 @@ const BotsForm = props => {
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <Row className='admin_setup__row'>
-            <label>!banned (Shows 24h Banlist)</label>
+            <Row>
+              <label>
+                !banned (Shows 24h Banlist)
+              </label>
+            </Row>
             <Field 
               name='botsBanned'
               component='select'
@@ -148,9 +216,17 @@ const BotsForm = props => {
               <option value='no'>No</option>
             </Field>
           </Row>
+        </Col>
+      </Col>
 
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <Row className='admin_setup__row'>
-            <label>!slowmode</label> 
+            <Row>
+              <label>
+                !slowmode
+              </label>
+            </Row> 
             <Field 
               name='botsSlowMode'
               component='select'
@@ -161,22 +237,38 @@ const BotsForm = props => {
               <option value='no'>No</option>
             </Field>
           </Row>
+        </Col>
+      </Col>
 
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <Row className='admin_setup__row'>
-            <label>!submode</label> 
-              <Field 
-                name='botsSubMode'
-                component='select'
-                className='admin_form_field'
-              >
-                <option />
-                <option value='yes'>Yes</option>
-                <option value='no'>No</option>
-              </Field>
+            <Row>
+              <label>
+                !submode
+              </label>
+            </Row> 
+            <Field 
+              name='botsSubMode'
+              component='select'
+              className='admin_form_field'
+            >
+              <option />
+              <option value='yes'>Yes</option>
+              <option value='no'>No</option>
+            </Field>
           </Row>
+        </Col>
+      </Col>
 
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <Row className='admin_setup__row'>
-            <label>!aegis</label> 
+            <Row>
+              <label>
+                !aegis
+              </label>
+            </Row> 
             <Field 
               name='botsAegis'
               component='select'
@@ -187,7 +279,6 @@ const BotsForm = props => {
               <option value='no'>No</option>
             </Field>
           </Row>
-
         </Col>
       </Col>
 
