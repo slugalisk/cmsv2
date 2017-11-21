@@ -21,13 +21,17 @@ class SetupForm extends React.Component{
       <form onSubmit={handleSubmit}>
       
         <Row className='admin_setup__row'>
-          <label>Background Color</label>
+          <Row>
+            <label>
+              Background Color
+            </label>
+          </Row>
           <Field
             name='pageBackgroundColor'
             component='input'
             type='text'
             className='admin_form_field'  
-          />
+          />          
           <ColorPickerWrapper
             colorPickerName = 'colorPickerPageBackground'
             fieldName='pageBackgroundColor'
@@ -37,7 +41,11 @@ class SetupForm extends React.Component{
         </Row>
 
         <Row className='admin_setup__row'>
-          <label>Header Color 1</label>
+          <Row>
+            <label>
+              Header Color 1
+            </label>
+          </Row>
           <Field
             name='pageHeaderColor1'
             component='input'
@@ -53,7 +61,11 @@ class SetupForm extends React.Component{
         </Row>
 
         <Row className='admin_setup__row'>
-          <label>Header Color 2</label>
+          <Row>
+            <label>
+              Header Color 2
+            </label>
+          </Row>
           <Field
             name='pageHeaderColor2'
             component='input'
@@ -69,7 +81,11 @@ class SetupForm extends React.Component{
         </Row>
 
         <Row className='admin_setup__row'>
-          <label>Header Font</label>
+          <Row>
+            <label>
+              Header Font
+            </label>
+          </Row>
             <Field 
               name='pageHeaderFont' 
               component='select'
@@ -94,7 +110,11 @@ class SetupForm extends React.Component{
         </Row>
 
         <Row className='admin_setup__row'>
-          <label>Body Font</label>
+          <Row>
+            <label>
+              Body Font
+            </label>
+          </Row>
           <Field 
             name='pageBodyFont'
             component='select'

@@ -19,9 +19,11 @@ class SetupSectionForm extends React.Component{
     return (
       <form onSubmit={handleSubmit}>
         <Row className='admin_setup__row'>
-          <label className='admin_setup__label'>
+          <Row>
+            <label>
             Background
-          </label>
+            </label>
+          </Row>
           <Field
             name='sectionBackgroundColor'
             component='input'
@@ -37,9 +39,11 @@ class SetupSectionForm extends React.Component{
         </Row>
 
         <Row className='admin_setup__row'>
-          <label className='admin_setup__label'>
+          <Row>
+            <label>
             Header Text
-          </label>
+            </label>
+          </Row>
           <Field
             name='sectionHeaderTextColor'
             component='input'
@@ -55,9 +59,11 @@ class SetupSectionForm extends React.Component{
         </Row>
       
         <Row className='admin_setup__row'>
-          <label className='admin_setup__label'>
+          <Row>
+            <label>
             Header Size
-          </label>
+            </label>
+          </Row>
           <Field
             name='sectionHeaderSize'
             component='input'
@@ -68,9 +74,11 @@ class SetupSectionForm extends React.Component{
         </Row>
 
       <Row className='admin_setup__row'>
-        <label className='admin_setup__label'>
+        <Row>
+          <label>
           Body Text
-        </label>
+          </label>
+        </Row>
         <Field
           name='sectionBodyTextColor'
           component='input'
@@ -86,9 +94,11 @@ class SetupSectionForm extends React.Component{
       </Row>
 
       <Row className='admin_setup__row'>
-        <label className='admin_setup__label'>
+        <Row>
+          <label>
           Link Text
-        </label>
+          </label>
+        </Row>
         <Field
           name='sectionLinkColor'
           component='input'
@@ -104,9 +114,11 @@ class SetupSectionForm extends React.Component{
       </Row>
 
       <Row className='admin_setup__row'>
-        <label className='admin_setup__label'>
+        <Row>
+          <label>
           Border Color
-        </label>
+          </label>
+        </Row>
         <Field
           name='sectionBorderColor'
           component='input'
