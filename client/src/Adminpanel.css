@@ -37,7 +37,7 @@
   -moz-transition: .3s linear;
   -o-transition: .3s linear;
   transition:.3s linear;
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-radius: 4px;
 }
 

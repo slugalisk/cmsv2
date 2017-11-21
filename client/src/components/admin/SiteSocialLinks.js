@@ -35,7 +35,7 @@ export default class SocialLinks extends React.Component{
       <Row>
         <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
           <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-            <div className='admin_panel_title'>
+            <div className='title_row'>
               Social Media Links
             </div>
           </Col>
@@ -44,7 +44,7 @@ export default class SocialLinks extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <div className='admin_panel_title'>
+          <div className='title_row'>
             Twitter
           </div>
           <TwitterForm onSubmit={showResults}/>
@@ -53,7 +53,7 @@ export default class SocialLinks extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <div className='admin_panel_title'>
+          <div className='title_row'>
             Reddit
           </div>
           <RedditForm onSubmit={showResults}/>
@@ -62,7 +62,7 @@ export default class SocialLinks extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <div className='admin_panel_title'>
+          <div className='title_row'>
             Last.FM
           </div>
           <LastfmForm onSubmit={showResults}/>
@@ -71,7 +71,7 @@ export default class SocialLinks extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <div className='admin_panel_title'>
+          <div className='title_row'>
             Twitch
           </div>
           <TwitchForm onSubmit={showResults}/>
@@ -80,7 +80,7 @@ export default class SocialLinks extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <div className='admin_panel_title'>
+          <div className='title_row'>
             Youtube
           </div>
           <YoutubeForm onSubmit={showResults}/>

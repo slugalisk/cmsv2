@@ -55,7 +55,7 @@ class Setup extends React.Component{
       <Row>
         <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
           <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-            <div className='admin_panel_title'>
+            <div className='title_row'>
               Setup
             </div>
           </Col>
@@ -64,7 +64,7 @@ class Setup extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <div className='admin_panel_title'>
+          <div className='title_row'>
             Site Background
           </div>
           <SetupForm 
@@ -78,7 +78,7 @@ class Setup extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <div className='admin_panel_title'>
+          <div className='title_row'>
             Site Sections
           </div>
           <SetupSectionForm 

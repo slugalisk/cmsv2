@@ -7,7 +7,7 @@ const RegistrationForm = props => {
   return (
     <form onSubmit={handleSubmit}>
 
-      <Row>
+      <Row className='form_row'>
         <Col md = {12} sm = {12} xs = {12}> 
           <label>Username</label>
             <Field
@@ -20,7 +20,7 @@ const RegistrationForm = props => {
         </Col>
       </Row>
 
-      <Row>
+      <Row className='form_row'>
         <Col md = {5} sm = {12} xs = {12}> 
         <label>Password</label> 
           <Field

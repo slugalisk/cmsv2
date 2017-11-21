@@ -17,7 +17,7 @@ export default class Home extends React.Component{
 
   render(){
     return(
-      <div>
+      <div className='template_wrapper'>
         <Navbar/>
         <MainHeader/>
         <Row className='template_row'>

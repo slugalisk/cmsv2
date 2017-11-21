@@ -16,10 +16,35 @@
     width: 100vw;
     overflow-x: hidden;
     font-family: 'Open Sans', Helvetica;
-    background-color: #111111;
+    background-color: #eee;
   }
 
   .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
     margin-top: 0px;
     margin-bottom: 0px;
+  }
+
+  .login_wrapper{
+    width: 100%;
+    background-color: #fff;
+    padding: 40px;
+    max-width: 400px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 1px solid #cdd2d2;
+  }
+
+
+  .title_row{
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 1em;
+  }
+
+  .form_row{
+    margin-bottom: 1em;
+  }
+  .form_label{
+    font-size: .8em
   }
