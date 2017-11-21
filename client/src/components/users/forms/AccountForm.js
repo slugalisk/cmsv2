@@ -321,6 +321,7 @@ const AccountForm = props => {
           bsStyle="success" 
           type='submit' 
           disabled = {pristine || submitting}
+          className='user_button'
         >
           Submit
         </Button>
@@ -329,6 +330,7 @@ const AccountForm = props => {
           type='button' 
           disabled = {pristine || submitting} 
           onClick={reset}
+          className='user_button'
         >
           Clear Values
         </Button>

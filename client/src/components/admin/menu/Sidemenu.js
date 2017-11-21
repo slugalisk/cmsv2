@@ -43,8 +43,9 @@ export default class Adminmenubar extends React.Component{
           <Link to='/admin/lootboxes'><Option>Loot Boxes</Option></Link>
         </Adminmenusect>
 
-          <br/>
+        <div className='admin_menu__subtext'>
           Log Out
+        </div>
         </Col>
     )
   }

@@ -17,6 +17,10 @@
   padding: 8px 15px;
 }
 
+.user_row{
+  margin-bottom: 10px;
+}
+
 .user_content{
   max-width: 100%;
   padding-left: 15px;
@@ -65,7 +69,14 @@
   border-radius: 4px;
 }
 
+.user_button{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
+
 .user_button_thin{
   padding-top: 0px;
   padding-bottom: 0px;
 }
+

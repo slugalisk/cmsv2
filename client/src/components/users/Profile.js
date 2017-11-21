@@ -10,16 +10,17 @@ export default class Profile extends React.Component{
     return(
       <div className='user_content'>
         <div className='user_content__section'>
-          <h2>
+          <h2 className='user_row'>
             [Account Name]
           </h2>
-          <div>
+          <div className='user_row'>
             Joined on 22nd August, 2016 1:11 am
           </div>
           <div>
             <Button 
             bsStyle="danger" 
             type='button'
+            className='user_button'
             >
               Sign Out
             </Button>

@@ -29,7 +29,7 @@
 
 .admin_form_field{
   height: 2.5em;
-  width: 100%;
+  width: calc(100% - 2em);
   line-height: 1.5em;
   padding-right: 3.5em;
   padding: .5em;
@@ -38,6 +38,7 @@
   -o-transition: .3s linear;
   transition:.3s linear;
   border: 2px solid #000;
+  border-radius: 4px;
 }
 
 .admin_panel_title{
@@ -70,10 +71,13 @@
     left: 0px;
 }
 
+.admin_color_picker{
+  width: 2em;
+  display: inline-block;
+}
 .admin_setup__dropper{
-  height: 2.5em;
+  width: 100%;
   cursor: pointer;
-  border: 2px solid rgb(102, 102, 102);
 }
 
 .admin_setup__language{

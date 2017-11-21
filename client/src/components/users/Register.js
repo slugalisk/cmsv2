@@ -10,8 +10,8 @@ export default class Register extends React.Component{
     return(
  
     <div>
-      <h2>Setup</h2>
-      <Col md={6} mdOffset={0} sm={10} smOffset={1} xs={10} xsOffset={1}>
+      <Col md={4} mdOffset={4} sm={6} smOffset={3} xs={10} xsOffset={1}>
+      <h2>Register</h2>
       <RegistrationForm onSubmit={showResults} />
       </Col>
     </div>

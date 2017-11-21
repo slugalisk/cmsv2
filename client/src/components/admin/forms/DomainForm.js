@@ -35,9 +35,7 @@ class DomainForm extends React.Component {
     fetch('http://localhost:5000/testpost')
   }
 
-  const deletepost=()=>{
-    fetch('http://localhost:5000/testdelete')
-  }
+
 
 
 
@@ -59,21 +57,17 @@ class DomainForm extends React.Component {
       </Col>
     </Col>
 
-    <div>
-      <ul>
-        {strings.map((string, index) =>
-          <li key={index}>
-            {string}
-          </li>
-        )}
-      </ul>
-      <button
-        className="more"
-        onClick={this.getStrings}>
-        Get More
-      </button>
-    </div>
-
+    <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}> 
+      <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+        <Row className='admin_setup__row'>
+          {strings.map((string, index) =>
+            <div key={index}>
+              {string}
+            </div>
+          )}
+        </Row>
+      </Col>
+    </Col>
 
     <Col md={12} mdOffset={0} sm={12} smOffset={0} xs={12} xsOffset={0}>
       <Col md={4} sm={6} xs={12}>
@@ -87,6 +81,16 @@ class DomainForm extends React.Component {
             >
               Submit
             </Button>
+
+            <Button 
+              bsStyle="success" 
+              type='submit' 
+              onClick={this.getStrings}
+              className='admin_button'
+            >
+              Get Site ID Numbers
+            </Button>
+
             <Button 
               bsStyle="info" 
               type='button' 
@@ -122,15 +126,6 @@ class DomainForm extends React.Component {
               className='admin_button'
             >
               test post
-            </Button>
-
-            <Button 
-              bsStyle="warning" 
-              type='button' 
-              onClick={deletepost}
-              className='admin_button'
-            >
-              test delete
             </Button>
 
           </Row>

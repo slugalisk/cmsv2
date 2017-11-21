@@ -21,27 +21,27 @@ class ColorPicker extends React.Component{
   render(){
     
     return(
-    <Col md = {4} sm = {4} xs = {4}>
-      <img 
-        src={dropper} 
-        className= 'admin_setup__dropper' 
-        alt="Eye Dropper By Gregor Cresnar"
-        onClick={() => this.colorPickerClick(this.props.colorPickerName)}
-      />
-      { this.props.colorDisplay[this.props.colorPickerName] ? 
-        <div className = 'admin_setup__popover'>
-          <div className = 'admin_setup__cover'
-          onClick = {() => this.colorPickerClick(this.props.colorPickerName)}
-          />
-          <ChromePicker
-          color={this.props.colorChoice[this.props.colorPickerName]}
-          onChangeComplete={ this.changeColor }
+      <div className='admin_color_picker'>
+        <img 
+          src={dropper} 
+          className= 'admin_setup__dropper' 
+          alt="Eye Dropper By Gregor Cresnar"
+          onClick={() => this.colorPickerClick(this.props.colorPickerName)}
         />
-      </div> 
-      : 
-      null 
-      }
-      </Col>
+        { this.props.colorDisplay[this.props.colorPickerName] ? 
+          <div className = 'admin_setup__popover'>
+            <div className = 'admin_setup__cover'
+            onClick = {() => this.colorPickerClick(this.props.colorPickerName)}
+            />
+            <ChromePicker
+            color={this.props.colorChoice[this.props.colorPickerName]}
+            onChangeComplete={ this.changeColor }
+          />
+        </div> 
+        : 
+        null 
+        }
+      </div>
     )
   }
 }
