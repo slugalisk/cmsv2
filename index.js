@@ -83,26 +83,13 @@ app.get('/testget', (req, res) => {
 
 /* POST site */
 
-app.get('/testpost', (req, res) => {
-  const headers = {};
-  request('https://slugalisk.com/api/v1/system/time', function (error, response, body) {
-    if (!error && response.statusCode == 200) {
- 
-      headers['X-Client-ID'] = response.headers['x-client-id'];
-      headers['X-Token'] =response.headers['x-token'];
-      headers['cookie']=response.headers['set-cookie'];
-      let time = JSON.parse(body).time;
-      console.log(time);
-      postsite(headers['X-Client-ID'], headers['X-Token'], headers['cookie'], time);
-    }
-  });
- });
- 
- function postsite(xclientid, xtoken, cookie, time){
-  console.log(xclientid.toString());
-  console.log(xtoken.toString());
-  console.log(cookie.toString().replace(' HttpOnly; Secure', ''));
- 
+
+app.post('/postSite', (req, res)=>{
+  authorizeRequest(req.body.siteid, postSite);
+ res.end('receive complete');
+});
+
+ function postSite(xclientid, xtoken, cookie, time, siteid){
   var options = {
     url: 'https://slugalisk.com/api/v1/sites',
     method: 'POST',
@@ -115,7 +102,7 @@ app.get('/testpost', (req, res) => {
     },
     "createdAt": time,
     "enabled": true,
-    "id": "123",
+    "id": siteid,
     "name": "string",
     "readOnly": true,
     "updatedAt": time,
@@ -129,7 +116,7 @@ app.get('/testpost', (req, res) => {
     }
   });
  }
-
+ 
  /* PUT test site */
 
  app.get('/testput', (req, res) => {

@@ -31,14 +31,6 @@ class DeleteSiteForm extends React.Component {
     fetch('http://localhost:5000/testput')
   }
 
-  const testpost=()=>{
-    fetch('http://localhost:5000/testpost')
-  }
-
-
-
-
-
   return (
     <form onSubmit={handleSubmit}>
 
@@ -111,15 +103,6 @@ class DeleteSiteForm extends React.Component {
               className='admin_button'
             >
               test put
-            </Button>
-
-            <Button 
-              bsStyle="warning" 
-              type='button' 
-              onClick={testpost}
-              className='admin_button'
-            >
-              test post
             </Button>
 
           </Row>
