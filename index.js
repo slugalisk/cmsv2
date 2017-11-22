@@ -15,7 +15,7 @@ app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, X-Token, X-Client-ID');
   next();
 });
- /*
+ 
 app.use(proxy(
   'https://slugalisk.com',
   {
@@ -35,7 +35,7 @@ app.use(proxy(
           return proxyRes.statusCode === 404;
       }
   }
-));*/
+));
  
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
