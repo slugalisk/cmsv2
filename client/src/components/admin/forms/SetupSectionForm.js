@@ -28,7 +28,7 @@ class SetupSectionForm extends React.Component{
             name='sectionBackgroundColor'
             component='input'
             type='text'
-            className='admin_form_field'
+            className='admin_form_field__small'
           />
           <ColorPickerWrapper
             colorPickerName = 'colorPickerSectionBackground'
@@ -48,7 +48,7 @@ class SetupSectionForm extends React.Component{
             name='sectionHeaderTextColor'
             component='input'
             type='text'
-            className='admin_form_field'
+            className='admin_form_field__small'
           />
           <ColorPickerWrapper
             colorPickerName = 'colorPickerHeaderColor'
@@ -83,7 +83,7 @@ class SetupSectionForm extends React.Component{
           name='sectionBodyTextColor'
           component='input'
           type='text'
-          className='admin_form_field'
+          className='admin_form_field__small'
         />
         <ColorPickerWrapper
           colorPickerName = 'colorPickerSectionBody'
@@ -103,7 +103,7 @@ class SetupSectionForm extends React.Component{
           name='sectionLinkColor'
           component='input'
           type='text'
-          className='admin_form_field'
+          className='admin_form_field__small'
         />
         <ColorPickerWrapper
           colorPickerName = 'colorPickerSectionLink'
@@ -123,7 +123,7 @@ class SetupSectionForm extends React.Component{
           name='sectionBorderColor'
           component='input'
           type='text'
-          className='admin_form_field'
+          className='admin_form_field__small'
         />
         <ColorPickerWrapper
           colorPickerName = 'colorPickerSectionBorder'

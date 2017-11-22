@@ -30,7 +30,7 @@ class SetupForm extends React.Component{
             name='pageBackgroundColor'
             component='input'
             type='text'
-            className='admin_form_field'  
+            className='admin_form_field__small'  
           />          
           <ColorPickerWrapper
             colorPickerName = 'colorPickerPageBackground'
@@ -50,7 +50,7 @@ class SetupForm extends React.Component{
             name='pageHeaderColor1'
             component='input'
             type='text'
-            className='admin_form_field'
+            className='admin_form_field__small'
           />
           <ColorPickerWrapper
             colorPickerName = 'colorPickerPageHeader1'
@@ -70,7 +70,7 @@ class SetupForm extends React.Component{
             name='pageHeaderColor2'
             component='input'
             type='text'
-            className='admin_form_field'
+            className='admin_form_field__small'
           />
           <ColorPickerWrapper
             colorPickerName = 'colorPickerPageHeader2'
