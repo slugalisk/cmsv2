@@ -10,12 +10,12 @@ export default class Adminmenubar extends React.Component{
 
     return(
         <Col md={2} className='admin_menu__container'>
-        <Adminmenusect title="Account">
+        <Adminmenusect title="ACCOUNT">
           <Link to='/admin/account'><Option>Account</Option></Link>
           <Option>OBS Integration</Option>
         </Adminmenusect>
       
-        <Adminmenusect title="Users">
+        <Adminmenusect title="USERS">
           <Link to='/admin/users'><Option>Users</Option></Link>
           <Link to='/admin/groups'><Option>Groups</Option></Link>
           <Link to='/admin/banlist'><Option>Ban List</Option></Link>
@@ -24,14 +24,14 @@ export default class Adminmenubar extends React.Component{
           <Link to='/admin/donations'> <Option>Donations</Option></Link>
         </Adminmenusect>
 
-        <Adminmenusect title="Chat">
+        <Adminmenusect title="CHAT">
           <Link to='/admin/emotes'><Option>Emotes</Option></Link>
           <Link to='/admin/chatoptions'><Option>Chat</Option></Link>
           <Link to='/admin/bots'><Option>Bots</Option></Link>
           <Link to='/admin/polls'><Option>Polls</Option></Link>
         </Adminmenusect>
 
-        <Adminmenusect title="Site">
+        <Adminmenusect title="SITE">
           <Link to='/admin/domain'><Option>Domain Name</Option></Link>
           <Link to='/admin/setup'><Option>Setup</Option></Link>
           <Link to='/admin/socials'><Option>Social Links</Option></Link>
@@ -39,7 +39,7 @@ export default class Adminmenubar extends React.Component{
           <Link to='/admin/custompages'><Option>Custom Pages</Option></Link>
         </Adminmenusect>
 
-        <Adminmenusect title="Lootboxes">
+        <Adminmenusect title="BOXES">
           <Link to='/admin/lootboxes'><Option>Loot Boxes</Option></Link>
         </Adminmenusect>
 

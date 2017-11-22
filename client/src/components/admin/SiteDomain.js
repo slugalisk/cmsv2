@@ -3,7 +3,7 @@ import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 import { Provider } from 'react-redux';
 
-//import deleteSite from './components/deleteSite';
+import deleteSite from './components/deleteSite';
 import siteDomains from './components/siteDomains';
 import postSiteDomain from './components/postSiteDomain';
 
@@ -36,7 +36,7 @@ export default class SiteDomain extends React.Component{
 
         <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
           <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-            <DeleteSiteForm /*onSubmit={deleteSite}*//>
+            <DeleteSiteForm onSubmit={deleteSite}/>
           </Col>
         </Col>
      
