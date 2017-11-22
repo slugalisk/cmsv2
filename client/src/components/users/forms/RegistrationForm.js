@@ -4,31 +4,23 @@ import {Row, Col, Button} from 'react-bootstrap';
 
 const RegistrationForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
+
+  const getAuthCredentials=()=>{
+    fetch('http://localhost:5000/getAuthCredentials')
+  }
+
   return (
     <form onSubmit={handleSubmit}>
-
-      <Row className='form_row'>
-          <label>
-            Username
-          </label>
-          <Field
-            name='registerUsername'
-            component='input'
-            type='text'
-            placeholder='Username'
-            className='form_field'
-          />
-      </Row>
 
       <Row className='form_row'>
           <label>
             Email Address
           </label>
           <Field
-            name='registerEmail'
+            name='postAuthEmail'
             component='input'
             type='text'
-            placeholder='Email Address'
+            placeholder='name@example.com'
             className='form_field'
           />
       </Row>
@@ -38,7 +30,7 @@ const RegistrationForm = props => {
           Password
         </label> 
         <Field
-          name='registerPassword'
+          name='postAuthPassword'
           component='input'
           type='password'
           placeholder='Password'
@@ -56,6 +48,15 @@ const RegistrationForm = props => {
           className='form_button'
         >
           Register
+        </Button>
+
+        <Button 
+          bsStyle="success" 
+          type='button' 
+          className='form_button'
+          onClick={getAuthCredentials}
+        >
+          Get Auth Credentials
         </Button>
       </Row>
     </form>

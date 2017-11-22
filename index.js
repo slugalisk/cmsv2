@@ -242,7 +242,6 @@ function getSiteDomains(xclientid, xtoken, cookie, time, siteid){
  res.end('receive complete');
 });
 
- 
  function postSiteDomain(xclientid, xtoken, cookie, time, siteid){
   var options = {
     url: 'https://slugalisk.com/api/v1/sites/'+siteid+'/domains',
@@ -261,6 +260,102 @@ function getSiteDomains(xclientid, xtoken, cookie, time, siteid){
     "siteId": siteid,
     "updatedAt": time,
     "verified": true
+  };
+  request(options, function(err, res, body) {
+    if (res) {
+      console.log(body);
+    }
+    else{
+      console.log(err);
+    }
+  });
+ }
+
+ /* GET auth credentials */
+
+ app.get('/getAuthCredentials', (req, res)=>{
+  authorizeRequest('0', getAuthCredentials);
+ res.end('receive complete');
+});
+
+function getAuthCredentials(xclientid, xtoken, cookie, time, siteid){
+  var options = {
+    url: 'https://slugalisk.com/api/v1/auth/credentials',
+    method: 'GET',
+    headers: {
+      'origin': 'https://slugalisk.com',
+      'Content-Type': 'application/json',
+      'X-Client-ID': xclientid.toString(),
+      'X-Token': xtoken.toString(),
+      'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+    },
+  };
+  request(options, function(err, res, body) {
+    if (res) {
+      info = JSON.parse(body);
+      console.log(info);
+    }
+    else{
+      console.log(err);
+    }
+  });
+}
+
+ /* POST auth credentials */
+
+ app.post('/postAuthCredentials', (req, res)=>{
+  authorizeRequest2(req.body.email, req.body.password, postAuthCredentials);
+ res.end('receive complete');
+});
+
+function authorizeRequest2(email, password, requestName){
+  console.log(email);
+  console.log(password);
+  var options = {
+    url: 'https://slugalisk.com/api/v1/system/time',
+    method: 'GET',
+    headers: {
+      'origin': 'https://slugalisk.com',
+      'Content-Type': 'application/json',
+    },
+  };
+  const headers = {};
+  request(options, function(error, response, body) {
+    if (response) {
+      headers['X-Client-ID'] = response.headers['x-client-id'];
+      headers['X-Token'] =response.headers['x-token'];
+      headers['cookie']=response.headers['set-cookie'];
+      let time = JSON.parse(body).time;
+
+      requestName(
+        headers['X-Client-ID'], 
+        headers['X-Token'], 
+        headers['cookie'], 
+        time, 
+        email, 
+        password,
+      );
+
+    }
+    else{
+      console.log(error);
+    }
+  });
+}
+
+ function postAuthCredentials(xclientid, xtoken, cookie, time, email, password){
+  var options = {
+    url: 'https://slugalisk.com/api/v1/auth/credentials',
+    method: 'POST',
+    headers: {
+      'origin': 'https://slugalisk.com',
+      'Content-Type': 'application/json',
+      'X-Client-ID': xclientid.toString(),
+      'X-Token': xtoken.toString(),
+      'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+    },
+    "email": email,
+    "password": password
   };
   request(options, function(err, res, body) {
     if (res) {

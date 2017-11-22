@@ -9,13 +9,13 @@ const LoginForm = props => {
 
       <Row className='form_row'>
           <label>
-            Username
+            Email Address
           </label>
           <Field
             name='loginUsername'
             component='input'
             type='text'
-            placeholder='Username'
+            placeholder='name@example.com'
             className='form_field'
           />
       </Row>

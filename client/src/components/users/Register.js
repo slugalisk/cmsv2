@@ -1,6 +1,8 @@
 import React from 'react';
 
+import postAuthCredentials from './components/postAuthCredentials';
 import showResults from './ShowResults';
+
 import RegistrationForm from './forms/RegistrationForm';
 
 import {Col} from 'react-bootstrap';
@@ -26,7 +28,7 @@ export default class Register extends React.Component{
             Register
           </h2>
           <RegistrationForm 
-            onSubmit={showResults} 
+            onSubmit={postAuthCredentials} 
           />
           <Link to='/login'>
             Already have an account? Log In
