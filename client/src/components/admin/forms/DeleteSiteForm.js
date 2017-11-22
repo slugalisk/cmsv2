@@ -76,17 +76,7 @@ class DeleteSiteForm extends React.Component {
             >
               Get Site ID Numbers
             </Button>
-
-            <Button 
-              bsStyle="info" 
-              type='button' 
-              disabled = {pristine || submitting} 
-              onClick={reset}
-              className='admin_button'
-            >
-              Clear Values
-            </Button>
-
+            
             <Button 
               bsStyle="warning" 
               type='button' 

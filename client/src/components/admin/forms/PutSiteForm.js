@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-class PostSiteForm extends React.Component {
+class PutSiteForm extends React.Component {
   render(){
 
   const { handleSubmit, pristine, reset, submitting } = this.props;
@@ -12,9 +12,9 @@ class PostSiteForm extends React.Component {
     <form onSubmit={handleSubmit}>
 
         <Row className='admin_setup__row'>
-          <label>Post Site</label>
+          <label>Put Site</label>
           <Field
-            name='PostSiteId'
+            name='PutSiteId'
             component='input'
             type='text'
             placeholder='Site ID'
@@ -40,13 +40,12 @@ class PostSiteForm extends React.Component {
         </Col>
       </Col>
     </Col>
-
-    Post currently makes a new site id regardless of id input
+    Put currently makes a new site id regardless of id input
     </form>
   );
 }
 };
 
 export default reduxForm({
-  form: 'postSite', // a unique identifier for this form
-})(PostSiteForm);
+  form: 'putSite', // a unique identifier for this form
+})(PutSiteForm);
