@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 
 import postSite from './components/postSite';
 import putSite from './components/putSite';
-import deleteSite from './components/deleteSite';
+import deleteSite from './components/DeleteSite';
 import siteDomains from './components/siteDomains';
 import postSiteDomain from './components/postSiteDomain';
 
