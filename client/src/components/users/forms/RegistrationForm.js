@@ -8,42 +8,42 @@ const RegistrationForm = props => {
     <form onSubmit={handleSubmit}>
 
       <Row className='form_row'>
-        <Col md = {12} sm = {12} xs = {12}> 
-          <label>Username</label>
-            <Field
-              name='registerUsername'
-              component='input'
-              type='text'
-              placeholder='Username'
-              className='form_field'
-            />
-        </Col>
-      </Row>
-
-      <Row className='form_row'>
-        <Col md = {12} sm = {12} xs = {12}> 
-          <label>Email Address</label>
-            <Field
-              name='registerEmail'
-              component='input'
-              type='text'
-              placeholder='Email Address'
-              className='form_field'
-            />
-        </Col>
-      </Row>
-
-      <Row className='form_row'>
-        <Col md = {5} sm = {12} xs = {12}> 
-        <label>Password</label> 
+          <label>
+            Username
+          </label>
           <Field
-            name='registerPassword'
+            name='registerUsername'
             component='input'
-            type='password'
-            placeholder='Password'
+            type='text'
+            placeholder='Username'
             className='form_field'
           />
-        </Col>
+      </Row>
+
+      <Row className='form_row'>
+          <label>
+            Email Address
+          </label>
+          <Field
+            name='registerEmail'
+            component='input'
+            type='text'
+            placeholder='Email Address'
+            className='form_field'
+          />
+      </Row>
+
+      <Row className='form_row'>
+        <label>
+          Password
+        </label> 
+        <Field
+          name='registerPassword'
+          component='input'
+          type='password'
+          placeholder='Password'
+          className='form_field'
+        />
       </Row>
 
    
@@ -55,7 +55,7 @@ const RegistrationForm = props => {
           disabled = {pristine || submitting}
           className='form_button'
         >
-          Submit
+          Register
         </Button>
       </Row>
     </form>

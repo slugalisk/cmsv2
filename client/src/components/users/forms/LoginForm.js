@@ -8,29 +8,29 @@ const LoginForm = props => {
     <form onSubmit={handleSubmit}>
 
       <Row className='form_row'>
-        <Col md = {12} sm = {12} xs = {12}> 
-          <label>Username</label>
-            <Field
-              name='loginUsername'
-              component='input'
-              type='text'
-              placeholder='Username'
-              className='form_field'
-            />
-        </Col>
+          <label>
+            Username
+          </label>
+          <Field
+            name='loginUsername'
+            component='input'
+            type='text'
+            placeholder='Username'
+            className='form_field'
+          />
       </Row>
 
       <Row className='form_row'>
-        <Col md = {5} sm = {12} xs = {12}> 
-        <label>Password</label> 
-          <Field
-            name='loginPassword'
-            component='input'
-            type='password'
-            placeholder='Password'
-            className='form_field'
-          />
-        </Col>
+        <label>
+          Password
+        </label> 
+        <Field
+          name='loginPassword'
+          component='input'
+          type='password'
+          placeholder='Password'
+          className='form_field'
+        />
       </Row>
 
       <Row>
@@ -40,7 +40,7 @@ const LoginForm = props => {
           disabled = {pristine || submitting}
           className='form_button'
         >
-          Submit
+          Log In
         </Button>
       </Row>
     </form>

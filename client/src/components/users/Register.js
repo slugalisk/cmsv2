@@ -21,7 +21,7 @@ export default class Register extends React.Component{
       >
         <div className='login_wrapper'>
           <h2
-            className='title_row'
+            className='form_title'
           >
             Register
           </h2>

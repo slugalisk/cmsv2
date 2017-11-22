@@ -36,8 +36,10 @@ class App extends Component {
         <Menuwrap/>
         <Route exact path="/" component={Home}/>
         <Route path="/admin" component={Admin}/>
+
         <Route exact path="/login" component={Login}/>
         <Route exact path="/register" component={Register}/>
+        
         <Route exact path="/user/profile" component={Profile}/>
         <Route exact path="/user/messages" component={Messages}/>
         <Route exact path="/user/authentication" component={Authentication}/>

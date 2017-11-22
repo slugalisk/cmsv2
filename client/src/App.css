@@ -37,12 +37,12 @@
   }
 
 
-  .title_row{
+  .form_title{
     font-size: 1.5em;
     font-weight: 600;
     margin-bottom: 1em;
+    text-align: center;
   }
-
   .form_row{
     margin-bottom: 1em;
   }

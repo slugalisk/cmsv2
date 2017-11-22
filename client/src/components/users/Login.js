@@ -21,7 +21,7 @@ export default class Login extends React.Component{
       >
         <div className='login_wrapper'>
           <h2 
-            className='title_row'
+            className='form_title'
           >
             Log In
           </h2>
