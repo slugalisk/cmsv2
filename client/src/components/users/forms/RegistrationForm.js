@@ -8,6 +8,9 @@ const RegistrationForm = props => {
   const getAuthCredentials=()=>{
     fetch('http://localhost:5000/getAuthCredentials')
   }
+  const getPeople=()=>{
+    fetch('http://localhost:5000/getPeople')
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -57,6 +60,15 @@ const RegistrationForm = props => {
           onClick={getAuthCredentials}
         >
           Get Auth Credentials
+        </Button>
+
+        <Button 
+          bsStyle="success" 
+          type='button' 
+          className='form_button'
+          onClick={getPeople}
+        >
+          Get People
         </Button>
       </Row>
     </form>

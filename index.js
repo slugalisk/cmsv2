@@ -43,8 +43,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
  
-
-function authorizeRequest(siteid, requestName){
+function authorizeRequest0(requestName){
   var options = {
     url: 'https://slugalisk.com/api/v1/system/time',
     method: 'GET',
@@ -61,8 +60,12 @@ function authorizeRequest(siteid, requestName){
       headers['cookie']=response.headers['set-cookie'];
       let time = JSON.parse(body).time;
 
-      requestName(headers['X-Client-ID'], headers['X-Token'], headers['cookie'], time, siteid);
-
+      requestName(
+          headers['X-Client-ID'],
+          headers['X-Token'],
+          headers['cookie'], 
+          time,
+        );
     }
     else{
       console.log(error);
@@ -70,6 +73,72 @@ function authorizeRequest(siteid, requestName){
   });
 }
 
+function authorizeRequest1(parameter_1, requestName){
+  var options = {
+    url: 'https://slugalisk.com/api/v1/system/time',
+    method: 'GET',
+    headers: {
+      'origin': 'https://slugalisk.com',
+      'Content-Type': 'application/json',
+    },
+  };
+  const headers = {};
+  request(options, function(error, response, body) {
+    if (response) {
+      headers['X-Client-ID'] = response.headers['x-client-id'];
+      headers['X-Token'] =response.headers['x-token'];
+      headers['cookie']=response.headers['set-cookie'];
+      let time = JSON.parse(body).time;
+
+      requestName(
+          headers['X-Client-ID'],
+          headers['X-Token'],
+          headers['cookie'], 
+          time, 
+          parameter_1
+        );
+    }
+    else{
+      console.log(error);
+    }
+  });
+}
+
+
+function authorizeRequest2(parameter_1, parameter_2, requestName){
+  console.log(parameter_1);
+  console.log(parameter_2);
+  var options = {
+    url: 'https://slugalisk.com/api/v1/system/time',
+    method: 'GET',
+    headers: {
+      'origin': 'https://slugalisk.com',
+      'Content-Type': 'application/json',
+    },
+  };
+  const headers = {};
+  request(options, function(error, response, body) {
+    if (response) {
+      headers['X-Client-ID'] = response.headers['x-client-id'];
+      headers['X-Token'] =response.headers['x-token'];
+      headers['cookie']=response.headers['set-cookie'];
+      let time = JSON.parse(body).time;
+
+      requestName(
+        headers['X-Client-ID'], 
+        headers['X-Token'], 
+        headers['cookie'], 
+        time, 
+        parameter_1, 
+        parameter_2,
+      );
+
+    }
+    else{
+      console.log(error);
+    }
+  });
+}
 /* GET site */
 app.get('/testget', (req, res) => {
   request('https://slugalisk.com/api/v1/sites', function (error, response, body) {
@@ -85,7 +154,7 @@ app.get('/testget', (req, res) => {
 
 
 app.post('/postSite', (req, res)=>{
-  authorizeRequest(req.body.siteid, postSite);
+  authorizeRequest1(req.body.siteid, postSite);
  res.end('receive complete');
 });
 
@@ -120,7 +189,7 @@ app.post('/postSite', (req, res)=>{
  /* PUT test site */
 
  app.post('/putSite', (req, res)=>{
-  authorizeRequest(req.body.siteid, putSite);
+  authorizeRequest1(req.body.siteid, putSite);
  res.end('receive complete');
 });
 
@@ -157,7 +226,7 @@ app.post('/postSite', (req, res)=>{
  /* DELETE site*/
 
  app.post('/deletesite', (req, res)=>{
-  authorizeRequest(req.body.siteid, deleteSite);
+  authorizeRequest1(req.body.siteid, deleteSite);
  res.end('receive complete');
 });
 
@@ -207,7 +276,7 @@ app.post('/postSite', (req, res)=>{
 /* GET /sites/{siteId}/domains */
 
 app.post('/getSiteDomains', (req, res)=>{
-  authorizeRequest(req.body.siteid, getSiteDomains);
+  authorizeRequest1(req.body.siteid, getSiteDomains);
  res.end('receive complete');
 });
 
@@ -238,7 +307,7 @@ function getSiteDomains(xclientid, xtoken, cookie, time, siteid){
  /* POST site domain */
 
  app.post('/postSiteDomain', (req, res)=>{
-  authorizeRequest(req.body.siteid, postSiteDomain);
+  authorizeRequest1(req.body.siteid, postSiteDomain);
  res.end('receive complete');
 });
 
@@ -274,11 +343,11 @@ function getSiteDomains(xclientid, xtoken, cookie, time, siteid){
  /* GET auth credentials */
 
  app.get('/getAuthCredentials', (req, res)=>{
-  authorizeRequest('0', getAuthCredentials);
+  authorizeRequest0(getAuthCredentials);
  res.end('receive complete');
 });
 
-function getAuthCredentials(xclientid, xtoken, cookie, time, siteid){
+function getAuthCredentials(xclientid, xtoken, cookie, time){
   var options = {
     url: 'https://slugalisk.com/api/v1/auth/credentials',
     method: 'GET',
@@ -308,40 +377,6 @@ function getAuthCredentials(xclientid, xtoken, cookie, time, siteid){
  res.end('receive complete');
 });
 
-function authorizeRequest2(email, password, requestName){
-  console.log(email);
-  console.log(password);
-  var options = {
-    url: 'https://slugalisk.com/api/v1/system/time',
-    method: 'GET',
-    headers: {
-      'origin': 'https://slugalisk.com',
-      'Content-Type': 'application/json',
-    },
-  };
-  const headers = {};
-  request(options, function(error, response, body) {
-    if (response) {
-      headers['X-Client-ID'] = response.headers['x-client-id'];
-      headers['X-Token'] =response.headers['x-token'];
-      headers['cookie']=response.headers['set-cookie'];
-      let time = JSON.parse(body).time;
-
-      requestName(
-        headers['X-Client-ID'], 
-        headers['X-Token'], 
-        headers['cookie'], 
-        time, 
-        email, 
-        password,
-      );
-
-    }
-    else{
-      console.log(error);
-    }
-  });
-}
 
  function postAuthCredentials(xclientid, xtoken, cookie, time, email, password){
   var options = {
@@ -366,6 +401,65 @@ function authorizeRequest2(email, password, requestName){
     }
   });
  }
+
+  /* GET people */
+
+  app.get('/getPeople', (req, res)=>{
+    authorizeRequest0(getPeople);
+   res.end('receive complete');
+  });
+  
+  function getPeople(xclientid, xtoken, cookie, time){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/people',
+      method: 'GET',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        info = JSON.parse(body);
+        console.log(info);
+      }
+      else{
+        console.log(err);
+      }
+    });
+  }
+
+  /* DELETE people */
+  app.post('/deletePeople', (req, res)=>{
+    authorizeRequest1(req.body.peopleId, deleteSite);
+   res.end('receive complete');
+  });
+  
+   function deletePeople(xclientid, xtoken, cookie, time, peopleid){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/sites/'+peopleid,
+      method: 'DELETE',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+   }
+
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
