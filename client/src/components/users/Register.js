@@ -33,6 +33,9 @@ export default class Register extends React.Component{
           <RegistrationForm 
             onSubmit={postAuthCredentials} 
           />
+          <Link to='/recovery'>
+            Forgot Password?<br/>
+          </Link>
           <Link to='/login'>
             Already have an account? Log In
           </Link>

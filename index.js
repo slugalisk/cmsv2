@@ -456,6 +456,37 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     });
    }
 
+   /*POST auth recovery */
+
+   app.post('/postAuthRecovery', (req, res)=>{
+    authorizeRequest1(req.body.email, postAuthRecovery);
+   res.end('receive complete');
+  });
+  
+  
+   function postAuthRecovery(xclientid, xtoken, cookie, time, email){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/auth/recovery',
+      method: 'POST',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+      "email": email,
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+   }
+
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.

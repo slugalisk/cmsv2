@@ -1,12 +1,13 @@
 import React from 'react';
 
-import showResults from './ShowResults';
-import LoginForm from './forms/LoginForm';
+import postAuthRecovery from './components/postAuthRecovery';
+
+import RecoveryForm from './forms/RecoveryForm';
 
 import {Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
-export default class Login extends React.Component{
+export default class Recovery extends React.Component{
   render(){
     return(
  
@@ -23,17 +24,12 @@ export default class Login extends React.Component{
           <h2 
             className='form_title'
           >
-            Log In
+            Recover Password
           </h2>
-          <LoginForm 
-            onSubmit={showResults} 
+          <RecoveryForm 
+            onSubmit={postAuthRecovery} 
           />
-          <Link to='/recovery'>
-            Forgot Password?<br/>
-          </Link>
-          <Link to='/register'>
-            Don't have an account? Sign up
-          </Link>
+          
         </div>
       </Col>
     </div>
