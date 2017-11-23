@@ -1,9 +1,12 @@
 import React from 'react';
 
+
 import postAuthCredentials from './components/postAuthCredentials';
+import deletePeople from './components/deletePeople';
 import showResults from './ShowResults';
 
 import RegistrationForm from './forms/RegistrationForm';
+import DeletePeopleForm from './forms/DeletePeopleForm';
 
 import {Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
@@ -34,6 +37,11 @@ export default class Register extends React.Component{
             Already have an account? Log In
           </Link>
         </div>
+
+        <DeletePeopleForm 
+            onSubmit={deletePeople} 
+          />
+
       </Col>
     </div>
     );

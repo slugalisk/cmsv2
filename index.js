@@ -241,11 +241,6 @@ app.post('/postSite', (req, res)=>{
       'X-Token': xtoken.toString(),
       'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
     },
-    "createdAt": time,
-    "enabled": true,
-    "name": "string",
-    "readOnly": true,
-    "updatedAt": time,
   };
   request(options, function(err, res, body) {
     if (res) {
@@ -434,13 +429,14 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
 
   /* DELETE people */
   app.post('/deletePeople', (req, res)=>{
-    authorizeRequest1(req.body.peopleId, deleteSite);
+    authorizeRequest1(req.body.peopleid, deletePeople);
    res.end('receive complete');
   });
   
    function deletePeople(xclientid, xtoken, cookie, time, peopleid){
+     console.log(peopleid);
     var options = {
-      url: 'https://slugalisk.com/api/v1/sites/'+peopleid,
+      url: 'https://slugalisk.com/api/v1/people/'+peopleid,
       method: 'DELETE',
       headers: {
         'origin': 'https://slugalisk.com',
