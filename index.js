@@ -397,6 +397,37 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   });
  }
 
+  /* DELETE auth credentials */
+
+  app.post('/deleteAuthCredentials', (req, res)=>{
+    authorizeRequest1(req.body.credentialsId, deleteAuthCredentials);
+   res.end('receive complete');
+  });
+  
+  
+   function deleteAuthCredentials(xclientid, xtoken, cookie, time, credentialsId){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/auth/credentials/'+credentialsId,
+      method: 'DELETE',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+   }
+  
+
   /* GET people */
 
   app.get('/getPeople', (req, res)=>{
