@@ -428,6 +428,120 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
    }
   
 
+  /* POST auth credentials replacements*/
+
+  app.post('/postAuthCredentialsReplacements', (req, res)=>{
+    authorizeRequest2(req.body.email, req.body.credentialsId, postAuthCredentialsReplacements);
+   res.end('receive complete');
+  });
+  
+  
+   function postAuthCredentialsReplacements(xclientid, xtoken, cookie, time, email, credentialsId){
+    var options = {
+      url: 'https://slugalisk.com/api/v1//auth/credentials/'+credentialsId+'/replacements',
+      method: 'POST',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+      "current": {
+        "email": email,
+        "password": "string"
+      },
+      "replacement": {
+        "email": email,
+        "password": "string"
+      },
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+   }
+
+  /* PUT auth credentials replacements*/
+
+  app.post('/putAuthCredentialsReplacements', (req, res)=>{
+    authorizeRequest3(
+      req.body.email, 
+      req.body.credentialsId, 
+      req.body.code, 
+      putAuthCredentialsReplacements
+    );
+   res.end('receive complete');
+  });
+  
+  
+   function putAuthCredentialsReplacements(xclientid, xtoken, cookie, time, email, credentialsId, code){
+    var options = {
+      url: 'https://slugalisk.com/api/v1//auth/credentials/'+credentialsId+'/replacements',
+      method: 'PUT',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+      "code": code,
+      "credentials": {
+        "email": email,
+        "password": "string"
+      }
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+   }
+
+  /* DELETE auth credentials replacements*/
+
+  app.post('/deleteAuthCredentialsReplacements', (req, res)=>{
+    authorizeRequest2(
+      req.body.code, 
+      req.body.credentialsId, 
+      putAuthCredentialsReplacements
+    );
+   res.end('receive complete');
+  });
+  
+  
+   function deleteAuthCredentialsReplacements(xclientid, xtoken, cookie, time, code, credentialsId){
+    var options = {
+      url: 'https://slugalisk.com/api/v1//auth/credentials/'+credentialsId+'/replacements',
+      method: 'DELETE',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+      "code": code,
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+   }
+  
+
   /* GET people */
 
   app.get('/getPeople', (req, res)=>{
