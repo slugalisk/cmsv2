@@ -28,6 +28,9 @@ import Subscriptions from './components/users/Subscriptions';
 import Donations from './components/users/Donations';
 import Gifts from './components/users/Gifts';
 
+import Donate from './components/template1/pages/Donate';
+import Subscribe from './components/template1/pages/Subscribe';
+
 class App extends Component {
   render() {
     return (
@@ -48,7 +51,9 @@ class App extends Component {
         <Route exact path='/user/subscriptions' component={Subscriptions}/>
         <Route exact path='/user/donations' component={Donations}/>
         <Route exact path='/user/gifts' component={Gifts}/>
-        
+
+        <Route exact path='/donate' component={Donate}/>
+        <Route exact path='/subscribe' component={Subscribe}/> 
       </div>
     );
   }
