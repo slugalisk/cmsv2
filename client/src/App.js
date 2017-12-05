@@ -53,8 +53,8 @@ class App extends Component {
         <Route exact path='/user/donations' component={Donations}/>
         <Route exact path='/user/gifts' component={Gifts}/>
 
-        <Route exact path='/donate' component={Donate}/>
-        <Route exact path='/subscribe' component={Subscribe}/> 
+        <Route exact path='/user/donate' component={Donate}/>
+        <Route exact path='/user/subscribe' component={Subscribe}/> 
       </div>
     );
   }

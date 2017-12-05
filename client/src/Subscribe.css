@@ -1,3 +1,13 @@
+.subscription_page_title{
+  font-size: 3.5em;
+  width: 80vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-bottom: 20px;
+  max-width: 1100px;
+}
+
 .subscription_notice{
   color: #31708f;
   background-color: #d9edf7;
@@ -60,6 +70,7 @@
 .subscription_row__price_1_time{
   display: inline-block;
   font-size: 1.2em;
+  line-height: 200%;
 }
 .subscription_row__price_2_row{
   display: inline-block;
@@ -74,6 +85,7 @@
 .subscription_row__price_2_time{
   display: inline-block;
   font-size: 1.2em;
+  line-height: 200%;
 }
 
 @media screen and (max-width: 992px) {

@@ -106,7 +106,7 @@ class Navbar extends React.Component{
             className='home_navbar__link__container'
           >
             <Link 
-              to='/'
+              to='/user/donate'
               className='home_navbar__link'
             >
               Donate
@@ -118,7 +118,7 @@ class Navbar extends React.Component{
             className='home_navbar__link__container'
           >
           <Link 
-              to='/'
+              to='/user/subscribe'
               className='home_navbar__link'
             >
               Subscribe

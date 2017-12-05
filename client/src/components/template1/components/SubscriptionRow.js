@@ -23,7 +23,7 @@ export default class SubscriptionRow extends React.Component{
               1 month
               <br/>
               <Button 
-                bsStyle="success" 
+                bsStyle="primary" 
                 type='submit' 
               >
                 Choose
@@ -38,7 +38,7 @@ export default class SubscriptionRow extends React.Component{
               3 months
               <br/>
               <Button 
-                bsStyle="success" 
+                bsStyle="primary" 
                 type='submit' 
               >
                 Choose

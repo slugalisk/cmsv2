@@ -195,7 +195,7 @@ export default class Menupanel extends React.Component{
 
         <br/>
         <Link
-          to = '/donate'
+          to = '/user/donate'
           className = 'menu_panel__link' 
           onClick = {this.props.toggler}
         >
@@ -204,7 +204,7 @@ export default class Menupanel extends React.Component{
 
         <br/>
         <Link
-          to = '/subscribe'
+          to = '/user/subscribe'
           className = 'menu_panel__link' 
           onClick = {this.props.toggler}
         >
