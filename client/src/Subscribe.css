@@ -18,13 +18,15 @@
   padding: 15px 20px;
   background: #030303;
   border-radius: 4px;
-  position: relative;
+  position: flex;
   width: 80vw;
   left: 0;
   right: 0;
   margin: auto;
   margin-bottom: 20px;
   max-width: 1100px;
+
+  justify-content: space-between;
 }
 
 .subscription_row__left{
@@ -40,7 +42,9 @@
 }
 
 .subscription_row__right{
-  float: right;
+  display:inline-block;
+  width: 55%;
+  text-align: right;
 }
 .subscription_row__price_1_row{
   display: inline-block;
@@ -70,4 +74,19 @@
 .subscription_row__price_2_time{
   display: inline-block;
   font-size: 1.2em;
+}
+
+@media screen and (max-width: 992px) {
+  .subscription_row__left{
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+  .subscription_row__right{
+    width: 100%;
+    text-align: center;
+  }
+  .subscription_row__price_1_row{
+    border-right: none;
+  }
 }
