@@ -1,6 +1,21 @@
-.subscription_row{
+.subscription_notice{
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  width: 80vw;
+  left: 0;
+  right: 0;
+  margin: auto;
   margin-bottom: 20px;
-  padding: 5px 20px;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.subscription_row{
+  padding: 15px 20px;
   background: #030303;
   border-radius: 4px;
   position: relative;
@@ -8,6 +23,7 @@
   left: 0;
   right: 0;
   margin: auto;
+  margin-bottom: 20px;
   max-width: 1100px;
 }
 
@@ -16,7 +32,8 @@
   display: inline-block;
 }
 .subscription_title{
-  font-size: 2em;
+  font-size: 3em;
+  margin-bottom: 10px;
 }
 .subscription_subtitle{
 
@@ -27,21 +44,30 @@
 }
 .subscription_row__price_1_row{
   display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-right: 1px dashed rgba(255,255,255,.2);
 }
 .subscription_row__price_1{
   display: inline-block;
-  font-size: 2em;
+  font-size: 3.5em;
+  margin-right: 10px;
 }
 .subscription_row__price_1_time{
   display: inline-block;
+  font-size: 1.2em;
 }
 .subscription_row__price_2_row{
   display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .subscription_row__price_2{
   display: inline-block;
-  font-size: 2em;
+  font-size: 3.5em;
+  margin-right: 10px;
 }
 .subscription_row__price_2_time{
   display: inline-block;
+  font-size: 1.2em;
 }

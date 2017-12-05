@@ -14,6 +14,16 @@ export default class Subscribe extends React.Component{
           Subscribe [send a message too]
         </div>
 
+        <div className='subscription_notice'>
+        Would you like to gift someone a subscription?&nbsp;
+          <Button 
+            bsStyle="success" 
+            type='submit' 
+          >
+            Yes, gift a subscription
+          </Button>
+        </div>
+
         <SubscriptionRow
           subscriptionTitle='Tier IV'
           subscriptionSubtitle='Know in your heart you have made the right choice here.'
