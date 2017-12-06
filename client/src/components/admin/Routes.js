@@ -29,6 +29,7 @@ import SiteCustomPages from './SiteCustomPages';
 import SiteDomain from './SiteDomain';
 
 import SiteReddit from './SiteReddit';
+import SiteTwitch from './SiteTwitch';
 
 import Lootbox from './Lootbox';
 
@@ -82,7 +83,8 @@ export default class Main extends React.Component{
           <Route exact path="/admin/domain" render={(props) => <SiteDomain {...props}/>}/>
 
           <Route exact path="/admin/reddit" render={(props) => <SiteReddit {...props}/>}/>
-          
+          <Route exact path="/admin/twitch" render={(props) => <SiteTwitch {...props}/>}/>
+
           <Route exact path="/admin/lootboxes" render={(props) => <Lootbox {...props}/>}/>
 
           <Route path="/admin/users/details/" render={(props) => <UsersProfile {...props}/>} />
