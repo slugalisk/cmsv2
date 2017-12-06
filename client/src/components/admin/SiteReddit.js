@@ -10,6 +10,8 @@ import deleteRedditAppid from './components/deleteRedditAppid.js';
 import postRedditAppidOauth from './components/postRedditAppidOauth.js';
 import getRedditAppidTokens from './components/getRedditAppidTokens.js';
 import postRedditAppidTokens from './components/postRedditAppidTokens.js';
+import getRedditAppidTokenid from './components/getRedditAppidTokenid.js';
+import deleteRedditAppidTokenid from './components/deleteRedditAppidTokenid.js';
 
 import GetRedditForm from './forms/GetRedditForm.js';
 import PostRedditForm from './forms/PostRedditForm.js';
@@ -18,6 +20,8 @@ import DeleteRedditAppidForm from './forms/DeleteRedditAppidForm.js';
 import PostRedditAppidOauthForm from './forms/PostRedditAppidOauthForm.js';
 import GetRedditAppidTokensForm from './forms/GetRedditAppidTokensForm.js';
 import PostRedditAppidTokensForm from './forms/PostRedditAppidTokensForm.js';
+import GetRedditAppidTokenidForm from './forms/GetRedditAppidTokenidForm.js';
+import DeleteRedditAppidTokenidForm from './forms/DeleteRedditAppidTokenidForm.js';
 
 export default class SiteReddit extends React.Component{
   render(){
@@ -83,6 +87,17 @@ export default class SiteReddit extends React.Component{
         </Col>
       </Col>
 
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+          <GetRedditAppidTokenidForm onSubmit={getRedditAppidTokenid}/>
+        </Col>
+      </Col>
+      
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+          <DeleteRedditAppidTokenidForm onSubmit={deleteRedditAppidTokenid}/>
+        </Col>
+      </Col>
     </div>
     );
   }
