@@ -955,18 +955,53 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     });
   }
 
-    /* DELETE REDDIT APPID WIDGETS*/
-    app.post('/deleteRedditAppidWidgets', (req, res)=>{
+    /* POST REDDIT APPID WIDGETS*/
+    app.post('/postRedditAppidWidgets', (req, res)=>{
       authorizeRequest1(
         req.body.appid, 
-        deleteRedditAppidTokens
+        postRedditAppidWidgets
       );
      res.end('receive complete');
     });
     
-    function deleteRedditAppidWidgets(xclientid, xtoken, cookie, time, parameter_1){
+    function postRedditAppidWidgets(xclientid, xtoken, cookie, time, parameter_1){
       var options = {
         url: 'https://slugalisk.com/api/v1/reddit/apps/'+parameter_1+'/widgets',
+        method: 'POST',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+        "limit": 0,
+        "subreddit": "string"
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          info = JSON.parse(body);
+          console.log(info);
+        }
+        else{
+          console.log(err);
+        }
+      });
+    }
+
+    /* DELETE REDDIT APPID WIDGETS*/
+    app.post('/deleteRedditAppidWidgets', (req, res)=>{
+      authorizeRequest2(
+        req.body.appid, 
+        req.body.widgetid,
+        deleteRedditAppidTokens,
+      );
+     res.end('receive complete');
+    });
+    
+    function deleteRedditAppidWidgets(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/reddit/apps/'+parameter_1+'/widgets'+parameter_2,
         method: 'DELETE',
         headers: {
           'origin': 'https://slugalisk.com',

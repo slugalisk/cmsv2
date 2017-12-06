@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-class DeleteRedditAppidWidgetsForm extends React.Component {
+class PostRedditAppidWidgetsForm extends React.Component {
   render(){
 
   const { handleSubmit, pristine, reset, submitting } = this.props;
@@ -11,21 +11,10 @@ class DeleteRedditAppidWidgetsForm extends React.Component {
   return (
     <form onSubmit={handleSubmit}>
 
-
         <Row className='admin_setup__row'>
-          <label>Delete Reddit Appid Widgets</label>
+          <label>Post Reddit Appid Widgets</label>
           <Field
-            name='DeleteRedditAppidWidgetsAppid'
-            component='input'
-            type='text'
-            placeholder=''
-            className='admin_form_field'
-          />
-        </Row>
-        <Row className='admin_setup__row'>
-          <label>Delete Reddit Appid Widgets WidgetId</label>
-          <Field
-            name='DeleteRedditAppidWidgetsWidgetid'
+            name='PostRedditAppidWidgets'
             component='input'
             type='text'
             placeholder=''
@@ -59,5 +48,5 @@ class DeleteRedditAppidWidgetsForm extends React.Component {
 };
 
 export default reduxForm({
-  form: 'deleteRedditAppidWidgets', // a unique identifier for this form
-})(DeleteRedditAppidWidgetsForm);
+  form: 'postRedditAppidWidgets', // a unique identifier for this form
+})(PostRedditAppidWidgetsForm);
