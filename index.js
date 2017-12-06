@@ -574,14 +574,17 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
 
   /* DELETE people */
   app.post('/deletePeople', (req, res)=>{
-    authorizeRequest1(req.body.peopleid, deletePeople);
+    authorizeRequest1(
+      req.body.peopleid, 
+      deletePeople
+    );
    res.end('receive complete');
   });
   
-   function deletePeople(xclientid, xtoken, cookie, time, peopleid){
+   function deletePeople(xclientid, xtoken, cookie, time, parameter_1){
      console.log(peopleid);
     var options = {
-      url: 'https://slugalisk.com/api/v1/people/'+peopleid,
+      url: 'https://slugalisk.com/api/v1/people/'+parameter_1,
       method: 'DELETE',
       headers: {
         'origin': 'https://slugalisk.com',
@@ -636,6 +639,8 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
 
 
    /* --- REDDIT --- */
+
+   /* GET REDDIT */
    app.get('/getReddit', (req, res) => {
     request('https://slugalisk.com/api/v1/reddit/apps', function (error, response, body) {
       if (!error && response.statusCode == 200) {
@@ -644,6 +649,47 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
       }
     });
   });
+
+  /* POST REDDIT */
+  app.post('/postReddit', (req, res)=>{
+    authorizeRequest2(
+      req.body.consumerKey, 
+      req.body.consumerSecret, 
+      postReddit
+    );
+   res.end('receive complete');
+  });
+  
+  function postReddit(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/reddit/apps',
+      method: 'POST',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+      'consumerKey': parameter_1,
+      'consumerSecret': parameter_2,
+      'defaultToken': {
+        'expiry': '2017-12-06T00:54:09.938Z',
+        'refreshToken': 'string',
+        'token': 'string',
+        'tokenType': 'string'
+      },
+      'name': 'string'
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+   }
 
 
 // The "catchall" handler: for any request that doesn't
