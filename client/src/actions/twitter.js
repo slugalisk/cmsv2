@@ -13,12 +13,12 @@ function receivePosts(json) {
   };
 }
 const fetchPosts = () => {
-  return dispatch => {
+  /*return dispatch => {
     dispatch(requestPosts())
-    fetch(`http://149.56.128.48:30002/api/v1/twitter/widgets/1/feed`)
+    fetch(`https://slugalisk.com/api/v1/twitter/widgets/1/feed`)
       .then(async(response) => response.json())
       .then(json => dispatch(receivePosts(json)))
-  }
+  }*/
 }
 
 export function fetchPostsIfNeeded() {

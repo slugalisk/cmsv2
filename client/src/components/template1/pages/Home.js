@@ -5,12 +5,10 @@ import MainHeader from '../components/MainHeader';
 import Navbar from '../components/Navbar';
 
 import TwitterCont from '../components/TwitterCont';
-import RedditCont from '../components/RedditCont';
 
 import YoutubeCont from '../components/YoutubeCont';
 import TwitchCont from '../components/TwitchCont';
 
-import LastfmCont from '../components/LastfmCont';
 
 
 export default class Home extends React.Component{
@@ -26,7 +24,7 @@ export default class Home extends React.Component{
               <TwitterCont/>
             </Col>
             <Col md={6}>
-              <RedditCont/>
+            <TwitterCont/>
             </Col>
           </Col>
         </Row>
@@ -46,7 +44,7 @@ export default class Home extends React.Component{
               <TwitterCont/>
             </Col>
             <Col md={6}>
-              <LastfmCont/>
+            <TwitterCont/>
             </Col>
           </Col>
         </Row>

@@ -8,10 +8,12 @@ import TwitterPost from './TwitterPost';
 class TwitterCont extends Component {
 
 componentWillMount(){
-  this.props.action.fetchPostsIfNeeded();
+  //this.props.action.fetchPostsIfNeeded();
 }
 
 render() {
+
+  {/*
     const mapPosts = this.props.posts.map((value) => {
       return (
         <TwitterPost
@@ -22,6 +24,7 @@ render() {
         </TwitterPost>
       )
     });
+  */}
     return (
       <div>
         <div
@@ -32,7 +35,7 @@ render() {
           >
             Twitter
           </div>
-          {mapPosts}
+          {/*{mapPosts}*/}
         </div>
       </div>
     );

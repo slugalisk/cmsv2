@@ -211,6 +211,14 @@ export default class Menupanel extends React.Component{
           Subscribe
         </Link>
 
+        <br/>
+        <Link
+          to = '/admin/reddit'
+          className = 'menu_panel__link' 
+          onClick = {this.props.toggler}
+        >
+          Site Reddit
+        </Link>
 
 
         <br/>
