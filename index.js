@@ -705,7 +705,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   
   function getRedditAppid(xclientid, xtoken, cookie, time, parameter_1){
     var options = {
-      url: 'https://slugalisk.com/api/v1/reddit/apps'+parameter_1,
+      url: 'https://slugalisk.com/api/v1/reddit/apps/'+parameter_1,
       method: 'GET',
       headers: {
         'origin': 'https://slugalisk.com',
@@ -725,8 +725,9 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
       }
     });
   }
-    /* DELETE REDDIT APP ID */
-    app.post('/deleteRedditAppid', (req, res)=>{
+
+  /* DELETE REDDIT APP ID */
+  app.post('/deleteRedditAppid', (req, res)=>{
     authorizeRequest1(
       req.body.appid, 
       deleteRedditAppid
@@ -736,7 +737,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   
   function deleteRedditAppid(xclientid, xtoken, cookie, time, parameter_1){
     var options = {
-      url: 'https://slugalisk.com/api/v1/reddit/apps'+parameter_1,
+      url: 'https://slugalisk.com/api/v1/reddit/apps/'+parameter_1,
       method: 'DELETE',
       headers: {
         'origin': 'https://slugalisk.com',
@@ -787,6 +788,39 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
         }
       });
      }
+
+  /* GET REDDIT APPID TOKENS*/
+  app.post('/getRedditAppidTokens', (req, res)=>{
+    authorizeRequest1(
+      req.body.appid, 
+      getRedditAppidTokens
+    );
+   res.end('receive complete');
+  });
+  
+  function getRedditAppidTokens(xclientid, xtoken, cookie, time, parameter_1){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/reddit/apps/'+parameter_1+'/tokens',
+      method: 'GET',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        info = JSON.parse(body);
+        console.log(info);
+      }
+      else{
+        console.log(err);
+      }
+    });
+  }
+
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
