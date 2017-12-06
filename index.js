@@ -1191,7 +1191,6 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
       );
      res.end('receive complete');
     });
-    
     function postTwitter(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
       var options = {
         url: 'https://slugalisk.com/api/v1/twitter/apps',
@@ -1220,6 +1219,35 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
       });
      }
 
+    /* GET TWITTER APPID */
+    app.post('/getTwitterAppid', (req, res)=>{
+      authorizeRequest1(
+        req.body.appid,
+        postTwitter
+      );
+     res.end('receive complete');
+    });
+    function postTwitter(xclientid, xtoken, cookie, time, parameter_1){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/twitter/apps/'+parameter_1,
+        method: 'GET',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+     }
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.

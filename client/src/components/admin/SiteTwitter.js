@@ -5,9 +5,11 @@ import { Provider } from 'react-redux';
 
 import getTwitter from './components/getTwitter';
 import postTwitter from './components/postTwitter';
+import getTwitterAppid from './components/getTwitterAppid';
 
-import GetTwitterForm from './forms/GetTwitterForm.js';
-import PostTwitterForm from './forms/PostTwitterForm.js';
+import GetTwitterForm from './forms/GetTwitterForm';
+import PostTwitterForm from './forms/PostTwitterForm';
+import GetTwitterAppidForm from './forms/GetTwitterAppidForm';
 
 
 
@@ -45,6 +47,11 @@ export default class SiteTwitter extends React.Component{
         </Col>
       </Col>
       
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+          <GetTwitterAppidForm onSubmit={getTwitterAppid}/>
+        </Col>
+      </Col>
 
     </div>
     );
