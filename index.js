@@ -1249,6 +1249,36 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
       });
      }
 
+    /* DELETE TWITTER APPID */
+    app.post('/deleteTwitterAppid', (req, res)=>{
+      authorizeRequest1(
+        req.body.appid,
+        deleteTwitter
+      );
+     res.end('receive complete');
+    });
+    function deleteTwitter(xclientid, xtoken, cookie, time, parameter_1){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/twitter/apps/'+parameter_1,
+        method: 'DELETE',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+     }
+
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {
