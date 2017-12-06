@@ -404,10 +404,9 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
    res.end('receive complete');
   });
   
-  
-   function deleteAuthCredentials(xclientid, xtoken, cookie, time, credentialsId){
+  function deleteAuthCredentials(xclientid, xtoken, cookie, time, parameter_1){
     var options = {
-      url: 'https://slugalisk.com/api/v1/auth/credentials/'+credentialsId,
+      url: 'https://slugalisk.com/api/v1/auth/credentials/'+parameter_1,
       method: 'DELETE',
       headers: {
         'origin': 'https://slugalisk.com',
@@ -425,20 +424,24 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
         console.log(err);
       }
     });
-   }
+  }
   
 
   /* POST auth credentials replacements*/
 
   app.post('/postAuthCredentialsReplacements', (req, res)=>{
-    authorizeRequest2(req.body.email, req.body.credentialsId, postAuthCredentialsReplacements);
+    authorizeRequest2(
+      req.body.email, 
+      req.body.credentialsId, 
+      postAuthCredentialsReplacements
+    );
    res.end('receive complete');
   });
   
   
-   function postAuthCredentialsReplacements(xclientid, xtoken, cookie, time, email, credentialsId){
+   function postAuthCredentialsReplacements(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
     var options = {
-      url: 'https://slugalisk.com/api/v1//auth/credentials/'+credentialsId+'/replacements',
+      url: 'https://slugalisk.com/api/v1//auth/credentials/'+parameter_2+'/replacements',
       method: 'POST',
       headers: {
         'origin': 'https://slugalisk.com',
@@ -448,11 +451,11 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
         'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
       },
       "current": {
-        "email": email,
+        "email": parameter_1,
         "password": "string"
       },
       "replacement": {
-        "email": email,
+        "email": parameter_1,
         "password": "string"
       },
     };
@@ -722,6 +725,38 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
       }
     });
   }
+    /* DELETE REDDIT APP ID */
+    app.post('/deleteRedditAppid', (req, res)=>{
+    authorizeRequest1(
+      req.body.appid, 
+      deleteRedditAppid
+    );
+    res.end('receive complete');
+  });
+  
+  function deleteRedditAppid(xclientid, xtoken, cookie, time, parameter_1){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/reddit/apps'+parameter_1,
+      method: 'DELETE',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        info = JSON.parse(body);
+        console.log(info);
+      }
+      else{
+        console.log(err);
+      }
+    });
+  }
+  
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
