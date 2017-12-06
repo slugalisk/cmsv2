@@ -89,7 +89,6 @@ function authorizeRequest1(parameter_1, requestName){
       headers['X-Token'] =response.headers['x-token'];
       headers['cookie']=response.headers['set-cookie'];
       let time = JSON.parse(body).time;
-
       requestName(
           headers['X-Client-ID'],
           headers['X-Token'],
@@ -123,7 +122,6 @@ function authorizeRequest2(parameter_1, parameter_2, requestName){
       headers['X-Token'] =response.headers['x-token'];
       headers['cookie']=response.headers['set-cookie'];
       let time = JSON.parse(body).time;
-
       requestName(
         headers['X-Client-ID'], 
         headers['X-Token'], 
@@ -132,13 +130,85 @@ function authorizeRequest2(parameter_1, parameter_2, requestName){
         parameter_1, 
         parameter_2,
       );
-
     }
     else{
       console.log(error);
     }
   });
 }
+
+function authorizeRequest3(parameter_1, parameter_2, parameter_3, requestName){
+  console.log(parameter_1);
+  console.log(parameter_2);
+  console.log(parameter_3);
+  var options = {
+    url: 'https://slugalisk.com/api/v1/system/time',
+    method: 'GET',
+    headers: {
+      'origin': 'https://slugalisk.com',
+      'Content-Type': 'application/json',
+    },
+  };
+  const headers = {};
+  request(options, function(error, response, body) {
+    if (response) {
+      headers['X-Client-ID'] = response.headers['x-client-id'];
+      headers['X-Token'] =response.headers['x-token'];
+      headers['cookie']=response.headers['set-cookie'];
+      let time = JSON.parse(body).time;
+      requestName(
+        headers['X-Client-ID'], 
+        headers['X-Token'], 
+        headers['cookie'], 
+        time, 
+        parameter_1, 
+        parameter_2,
+        parameter_3,
+      );
+    }
+    else{
+      console.log(error);
+    }
+  });
+}
+
+function authorizeRequest4(parameter_1, parameter_2, parameter_3, parameter_4, requestName){
+  console.log(parameter_1);
+  console.log(parameter_2);
+  console.log(parameter_3);
+  console.log(parameter_4);
+  var options = {
+    url: 'https://slugalisk.com/api/v1/system/time',
+    method: 'GET',
+    headers: {
+      'origin': 'https://slugalisk.com',
+      'Content-Type': 'application/json',
+    },
+  };
+  const headers = {};
+  request(options, function(error, response, body) {
+    if (response) {
+      headers['X-Client-ID'] = response.headers['x-client-id'];
+      headers['X-Token'] =response.headers['x-token'];
+      headers['cookie']=response.headers['set-cookie'];
+      let time = JSON.parse(body).time;
+      requestName(
+        headers['X-Client-ID'], 
+        headers['X-Token'], 
+        headers['cookie'], 
+        time, 
+        parameter_1, 
+        parameter_2,
+        parameter_3,
+        parameter_4,
+      );
+    }
+    else{
+      console.log(error);
+    }
+  });
+}
+
 /* GET site */
 app.get('/testget', (req, res) => {
   request('https://slugalisk.com/api/v1/sites', function (error, response, body) {
@@ -1101,6 +1171,8 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     });
 
     /* --- TWITTER --- */
+
+    /* GET TWITTER */
     app.get('/getTwitter', (req, res) => {
       request('https://slugalisk.com/api/v1/twitter/apps', function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -1109,6 +1181,44 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
         }
       });
     });
+
+    /* POST TWITTER */
+    app.post('/postTwitter', (req, res)=>{
+      authorizeRequest2(
+        req.body.consumerKey, 
+        req.body.consumerSecret,
+        postTwitter
+      );
+     res.end('receive complete');
+    });
+    
+    function postTwitter(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/twitter/apps',
+        method: 'POST',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+          "consumerKey": parameter_1,
+          "consumerSecret": parameter_2,
+          "defaultToken": {
+            "secret": "string",
+            "token": "string"
+          },
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+     }
 
 
 // The "catchall" handler: for any request that doesn't
