@@ -927,7 +927,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   app.post('/getRedditAppidWidgets', (req, res)=>{
     authorizeRequest1(
       req.body.appid, 
-      getRedditAppidTokens
+      getRedditAppidWidgets
     );
    res.end('receive complete');
   });
@@ -954,6 +954,38 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
       }
     });
   }
+
+    /* DELETE REDDIT APPID WIDGETS*/
+    app.post('/deleteRedditAppidWidgets', (req, res)=>{
+      authorizeRequest1(
+        req.body.appid, 
+        deleteRedditAppidTokens
+      );
+     res.end('receive complete');
+    });
+    
+    function deleteRedditAppidWidgets(xclientid, xtoken, cookie, time, parameter_1){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/reddit/apps/'+parameter_1+'/widgets',
+        method: 'DELETE',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          info = JSON.parse(body);
+          console.log(info);
+        }
+        else{
+          console.log(err);
+        }
+      });
+    }
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
