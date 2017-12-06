@@ -3,9 +3,9 @@ import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 import { Provider } from 'react-redux';
 
-import postSite from './components/postSite';
+import getTwitter from './components/getTwitter';
 
-import getRedditForm from './forms/GetRedditForm.js';
+import GetTwitterForm from './forms/GetTwitterForm.js';
 
 
 
@@ -33,7 +33,7 @@ export default class SiteTwitter extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostSiteForm onSubmit={postSite}/>
+          <GetTwitterForm onSubmit={getTwitter}/>
         </Col>
       </Col>
 

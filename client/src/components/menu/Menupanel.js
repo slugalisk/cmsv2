@@ -230,6 +230,14 @@ export default class Menupanel extends React.Component{
         </Link>
 
         <br/>
+        <Link
+          to = '/admin/twitter'
+          className = 'menu_panel__link' 
+          onClick = {this.props.toggler}
+        >
+          Site Twitter
+        </Link>
+        <br/>
        
       </div>
     )

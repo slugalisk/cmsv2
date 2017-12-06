@@ -30,6 +30,7 @@ import SiteDomain from './SiteDomain';
 
 import SiteReddit from './SiteReddit';
 import SiteTwitch from './SiteTwitch';
+import SiteTwitter from './SiteTwitter';
 
 import Lootbox from './Lootbox';
 
@@ -84,6 +85,7 @@ export default class Main extends React.Component{
 
           <Route exact path="/admin/reddit" render={(props) => <SiteReddit {...props}/>}/>
           <Route exact path="/admin/twitch" render={(props) => <SiteTwitch {...props}/>}/>
+          <Route exact path="/admin/twitter" render={(props) => <SiteTwitter {...props}/>}/>
 
           <Route exact path="/admin/lootboxes" render={(props) => <Lootbox {...props}/>}/>
 
