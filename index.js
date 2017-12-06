@@ -1088,6 +1088,19 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
       });
     }
 
+
+
+    /* --- TWITCH --- */
+    app.get('/getTwitch', (req, res) => {
+      request('https://slugalisk.com/api/v1/twitch/apps', function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+          info = JSON.parse(body);
+           console.log(info);
+        }
+      });
+    });
+
+
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {

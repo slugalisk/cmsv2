@@ -92,6 +92,9 @@
   border-top: 1px solid #222;
   border-bottom: 1px solid #010101;
 }
+.admin_menu_option:hover{
+  background-color: #222;
+}
 
 .admin_menu_option__container{
   text-decoration: none;
