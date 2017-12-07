@@ -1553,6 +1553,46 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     });
    }
 
+  /* PUT TWITTER APPID WIDGETS WIDGETID */
+  app.post('/putTwitterAppidWidgetsWidgetid', (req, res)=>{
+    authorizeRequest2(
+      req.body.appid,
+      req.body.widgetid,
+      getTwitterAppidWidgetsWidgetid
+    );
+   res.end('receive complete');
+  });
+  function putTwitterAppidWidgetsWidgetid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/twitter/apps/'+parameter_1+'/widgets/'+paremeter_2,
+      method: 'PUT',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+      "enableLinks": true,
+      "enableMedia": true,
+      "enableTruncation": true,
+      "limit": 0,
+      "linkHashTags": true,
+      "linkMentions": true,
+      "mediaSize": "thumb",
+      "mentionsFormat": "SCREEN_NAME",
+      "screenName": "string"
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+   }
+
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {
