@@ -1,5 +1,4 @@
 import React from 'react';
-import {Row, Col, Button} from 'react-bootstrap';
 
 export default class Gifts extends React.Component{
   render(){

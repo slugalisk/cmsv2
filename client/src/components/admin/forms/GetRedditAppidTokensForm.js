@@ -5,7 +5,7 @@ import {Row, Col, Button} from 'react-bootstrap';
 class GetRedditAppidTokensForm extends React.Component {
   render(){
 
-  const { handleSubmit, pristine, reset, submitting } = this.props;
+  const { handleSubmit, pristine, submitting } = this.props;
 
 
   return (

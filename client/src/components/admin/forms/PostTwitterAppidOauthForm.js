@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-class DeleteRedditAppidWidgetsForm extends React.Component {
+class PostTwitterAppidOauthForm extends React.Component {
   render(){
 
   const { handleSubmit, pristine, submitting } = this.props;
@@ -13,26 +13,15 @@ class DeleteRedditAppidWidgetsForm extends React.Component {
 
 
         <Row className='admin_setup__row'>
-          <label>Delete Reddit Appid Widgets</label>
+          <label>Post Twitter Appid Oauth Key</label>
           <Field
-            name='DeleteRedditAppidWidgetsAppid'
+            name='PostTwitterAppidOauth'
             component='input'
             type='text'
             placeholder=''
             className='admin_form_field'
           />
         </Row>
-        <Row className='admin_setup__row'>
-          <label>Delete Reddit Appid Widgets WidgetId</label>
-          <Field
-            name='DeleteRedditAppidWidgetsWidgetid'
-            component='input'
-            type='text'
-            placeholder=''
-            className='admin_form_field'
-          />
-        </Row>
-
 
     <Col md={12} mdOffset={0} sm={12} smOffset={0} xs={12} xsOffset={0}>
       <Col md={4} sm={6} xs={12}>
@@ -59,5 +48,5 @@ class DeleteRedditAppidWidgetsForm extends React.Component {
 };
 
 export default reduxForm({
-  form: 'deleteRedditAppidWidgets', // a unique identifier for this form
-})(DeleteRedditAppidWidgetsForm);
+  form: 'postTwitterAppidOauth', // a unique identifier for this form
+})(PostTwitterAppidOauthForm);

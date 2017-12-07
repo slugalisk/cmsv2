@@ -21,7 +21,7 @@ class DeleteSiteForm extends React.Component {
 
     const strings = this.state.strings;
 
-  const { handleSubmit, pristine, reset, submitting } = this.props;
+  const { handleSubmit, pristine, submitting } = this.props;
 
   const testget=()=>{
     fetch('http://localhost:5000/testget')

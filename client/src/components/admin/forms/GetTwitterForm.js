@@ -1,11 +1,11 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
 class GetTwitterForm extends React.Component {
   render(){
 
-  const { handleSubmit, pristine, reset, submitting } = this.props;
+  const { handleSubmit } = this.props;
 
 
   return (
