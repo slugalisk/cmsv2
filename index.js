@@ -1223,11 +1223,11 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     app.post('/getTwitterAppid', (req, res)=>{
       authorizeRequest1(
         req.body.appid,
-        postTwitter
+        getTwitterAppid
       );
      res.end('receive complete');
     });
-    function postTwitter(xclientid, xtoken, cookie, time, parameter_1){
+    function getTwitterappid(xclientid, xtoken, cookie, time, parameter_1){
       var options = {
         url: 'https://slugalisk.com/api/v1/twitter/apps/'+parameter_1,
         method: 'GET',
@@ -1253,11 +1253,11 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     app.post('/deleteTwitterAppid', (req, res)=>{
       authorizeRequest1(
         req.body.appid,
-        deleteTwitter
+        deleteTwitterAppid
       );
      res.end('receive complete');
     });
-    function deleteTwitter(xclientid, xtoken, cookie, time, parameter_1){
+    function deleteTwitterAppid(xclientid, xtoken, cookie, time, parameter_1){
       var options = {
         url: 'https://slugalisk.com/api/v1/twitter/apps/'+parameter_1,
         method: 'DELETE',
@@ -1279,7 +1279,6 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
       });
      }
 
-
      /* POST TWITTER APPID OAUTH */
     app.post('/postTwitterAppidOauth', (req, res)=>{
       authorizeRequest1(
@@ -1292,6 +1291,36 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
       var options = {
         url: 'https://slugalisk.com/api/v1/twitter/apps/'+parameter_1+'/oauth',
         method: 'POST',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+     }
+
+    /* GET TWITTER APPID TOKENS */
+    app.post('/getTwitterAppidTokens', (req, res)=>{
+      authorizeRequest1(
+        req.body.appid,
+        getTwitterAppidTokens
+      );
+     res.end('receive complete');
+    });
+    function getTwitterAppidTokens(xclientid, xtoken, cookie, time, parameter_1){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/twitter/apps/'+parameter_1+'/tokens',
+        method: 'GET',
         headers: {
           'origin': 'https://slugalisk.com',
           'Content-Type': 'application/json',

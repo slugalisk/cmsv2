@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-class PostSiteForm extends React.Component {
+class GetTwitterAppidTokensForm extends React.Component {
   render(){
 
   const { handleSubmit, pristine, submitting } = this.props;
@@ -11,13 +11,14 @@ class PostSiteForm extends React.Component {
   return (
     <form onSubmit={handleSubmit}>
 
+
         <Row className='admin_setup__row'>
-          <label>Post Site</label>
+          <label>Get Twitter Appid Tokens</label>
           <Field
-            name='PostSiteId'
+            name='GetTwitterAppidTokens'
             component='input'
             type='text'
-            placeholder='Site ID'
+            placeholder=''
             className='admin_form_field'
           />
         </Row>
@@ -41,12 +42,12 @@ class PostSiteForm extends React.Component {
       </Col>
     </Col>
 
-    Post currently makes a new site id regardless of id input
+      
     </form>
   );
 }
 };
 
 export default reduxForm({
-  form: 'postSite', // a unique identifier for this form
-})(PostSiteForm);
+  form: 'getTwitterAppidTokens', // a unique identifier for this form
+})(GetTwitterAppidTokensForm);
