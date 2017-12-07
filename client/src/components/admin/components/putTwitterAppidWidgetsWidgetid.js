@@ -4,7 +4,7 @@ export default (async function showResults(values) {
     method: 'POST',
     body: JSON.stringify({
       appid: values.PutTwitterAppidWidgetsWidgetidAppid,
-      tokenid: values.PutTwitterAppidWidgetsWidgetidWidgetid,
+      widgetid: values.PutTwitterAppidWidgetsWidgetidWidgetid,
     }),
     headers: new Headers({ "Content-Type": "application/json" })
   })
