@@ -1400,6 +1400,37 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
       });
      }
 
+    /* PUT TWITTER APPID TOKENS TOKENID */
+    app.post('/putTwitterAppidTokensTokenid', (req, res)=>{
+      authorizeRequest1(
+        req.body.appid,
+        req.body.tokenid,
+        putTwitterAppidTokensTokenid
+      );
+     res.end('receive complete');
+    });
+    function putTwitterAppidTokensTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/twitter/apps/'+parameter_1+'/tokens/'+parameter_2,
+        method: 'PUT',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+     }
+
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {
