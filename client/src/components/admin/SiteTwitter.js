@@ -10,6 +10,7 @@ import deleteTwitterAppid from './components/deleteTwitterAppid';
 import postTwitterAppidOauth from './components/postTwitterAppidOauth';
 import getTwitterAppidTokens from './components/getTwitterAppidTokens';
 import postTwitterAppidTokens from './components/postTwitterAppidTokens';
+import getTwitterAppidtokensTokenid from './components/getTwitterAppidTokensTokenid';
 
 import GetTwitterForm from './forms/GetTwitterForm';
 import PostTwitterForm from './forms/PostTwitterForm';
@@ -18,6 +19,7 @@ import DeleteTwitterAppidForm from './forms/DeleteTwitterAppidForm';
 import PostTwitterAppidOauthForm from './forms/PostTwitterAppidOauthForm';
 import GetTwitterAppidTokensForm from './forms/GetTwitterAppidTokensForm';
 import PostTwitterAppidTokensForm from './forms/PostTwitterAppidTokensForm';
+import GetTwitterAppidTokensTokenidForm from './forms/GetTwitterAppidTokensTokenidForm';
 
 export default class SiteTwitter extends React.Component{
   render(){
@@ -80,6 +82,12 @@ export default class SiteTwitter extends React.Component{
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <PostTwitterAppidTokensForm onSubmit={postTwitterAppidTokens}/>
+        </Col>
+      </Col>
+
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+          <GetTwitterAppidTokensTokenidForm onSubmit={getTwitterAppidtokensTokenid}/>
         </Col>
       </Col>
 
