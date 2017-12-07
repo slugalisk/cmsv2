@@ -18,6 +18,7 @@ import postTwitterAppidWidgets from './components/postTwitterAppidWidgets';
 import getTwitterAppidWidgetsWidgetid from './components/getTwitterAppidWidgetsWidgetid';
 import putTwitterAppidWidgetsWidgetid from './components/putTwitterAppidWidgetsWidgetid';
 import deleteTwitterAppidWidgetsWidgetid from './components/deleteTwitterAppidWidgetsWidgetid';
+import getTwitterAppidWidgetsWidgetidFeed from './components/getTwitterAppidWidgetsWidgetidFeed';
 
 import GetTwitterForm from './forms/GetTwitterForm';
 import PostTwitterForm from './forms/PostTwitterForm';
@@ -34,6 +35,7 @@ import PostTwitterAppidWidgetsForm from './forms/PostTwitterAppidWidgetsForm';
 import GetTwitterAppidWidgetsWidgetidForm from './forms/GetTwitterAppidWidgetsWidgetidForm';
 import PutTwitterAppidWidgetsWidgetidForm from './forms/PutTwitterAppidWidgetsWidgetidForm';
 import DeleteTwitterAppidWidgetsWidgetidForm from './forms/DeleteTwitterAppidWidgetsWidgetidForm';
+import GetTwitterAppidWidgetsWidgetidFeedForm from './forms/GetTwitterAppidWidgetsWidgetidFeedForm';
 
 export default class SiteTwitter extends React.Component{
   render(){
@@ -146,6 +148,13 @@ export default class SiteTwitter extends React.Component{
           <DeleteTwitterAppidWidgetsWidgetidForm onSubmit={deleteTwitterAppidWidgetsWidgetid}/>
         </Col>
       </Col>
+
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+          <GetTwitterAppidWidgetsWidgetidFeedForm onSubmit={getTwitterAppidWidgetsWidgetidFeed}/>
+        </Col>
+      </Col>
+
     </div>
     );
   }
