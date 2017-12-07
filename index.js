@@ -1443,7 +1443,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     function deleteTwitterAppidTokensTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
       var options = {
         url: 'https://slugalisk.com/api/v1/twitter/apps/'+parameter_1+'/tokens/'+parameter_2,
-        method: 'PUT',
+        method: 'DELETE',
         headers: {
           'origin': 'https://slugalisk.com',
           'Content-Type': 'application/json',
@@ -1473,7 +1473,37 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     function getTwitterAppidWidgets(xclientid, xtoken, cookie, time, parameter_1){
       var options = {
         url: 'https://slugalisk.com/api/v1/twitter/apps/'+parameter_1+'/widgets',
-        method: 'PUT',
+        method: 'GET',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+     }
+
+    /* POST TWITTER APPID WIDGETS */
+    app.post('/postTwitterAppidWidgets', (req, res)=>{
+      authorizeRequest1(
+        req.body.appid,
+        postTwitterAppidWidgets
+      );
+     res.end('receive complete');
+    });
+    function postTwitterAppidWidgets(xclientid, xtoken, cookie, time, parameter_1){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/twitter/apps/'+parameter_1+'/widgets',
+        method: 'POST',
         headers: {
           'origin': 'https://slugalisk.com',
           'Content-Type': 'application/json',
