@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import postSite from './components/postSite';
 import putSite from './components/putSite';
 import deleteSite from './components/deleteSite';
-import siteDomains from './components/siteDomains';
+import getSiteDomains from './components/getSiteDomains';
 import postSiteDomain from './components/postSiteDomain';
 
 import PostSiteForm from './forms/PostSiteForm';
@@ -57,7 +57,7 @@ export default class SiteDomain extends React.Component{
     
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <SiteDomainsForm onSubmit={siteDomains}/>
+          <SiteDomainsForm onSubmit={getSiteDomains}/>
         </Col>
       </Col>
     

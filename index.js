@@ -224,7 +224,10 @@ app.get('/testget', (req, res) => {
 
 
 app.post('/postSite', (req, res)=>{
-  authorizeRequest1(req.body.siteid, postSite);
+  authorizeRequest1(
+    req.body.id, 
+    postSite
+  );
  res.end('receive complete');
 });
 
@@ -296,7 +299,10 @@ app.post('/postSite', (req, res)=>{
  /* DELETE site*/
 
  app.post('/deletesite', (req, res)=>{
-  authorizeRequest1(req.body.siteid, deleteSite);
+  authorizeRequest1(
+    req.body.id, 
+    deleteSite
+  );
  res.end('receive complete');
 });
 
@@ -341,7 +347,10 @@ app.post('/postSite', (req, res)=>{
 /* GET /sites/{siteId}/domains */
 
 app.post('/getSiteDomains', (req, res)=>{
-  authorizeRequest1(req.body.siteid, getSiteDomains);
+  authorizeRequest1(
+    req.body.id, 
+    getSiteDomains
+  );
  res.end('receive complete');
 });
 
@@ -372,7 +381,10 @@ function getSiteDomains(xclientid, xtoken, cookie, time, siteid){
  /* POST site domain */
 
  app.post('/postSiteDomain', (req, res)=>{
-  authorizeRequest1(req.body.siteid, postSiteDomain);
+  authorizeRequest1(
+    req.body.id, 
+    postSiteDomain
+  );
  res.end('receive complete');
 });
 
@@ -408,7 +420,9 @@ function getSiteDomains(xclientid, xtoken, cookie, time, siteid){
  /* GET auth credentials */
 
  app.get('/getAuthCredentials', (req, res)=>{
-  authorizeRequest0(getAuthCredentials);
+  authorizeRequest0(
+    getAuthCredentials
+  );
  res.end('receive complete');
 });
 
@@ -475,7 +489,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
 
   app.post('/deleteAuthCredentials', (req, res)=>{
     authorizeRequest1(
-      req.body.credentialsId, 
+      req.body.id, 
       deleteAuthCredentials,
     );
    res.end('receive complete');
@@ -509,7 +523,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   app.post('/postAuthCredentialsReplacements', (req, res)=>{
     authorizeRequest2(
       req.body.email, 
-      req.body.credentialsId, 
+      req.body.id, 
       postAuthCredentialsReplacements
     );
    res.end('receive complete');
@@ -551,7 +565,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   app.post('/putAuthCredentialsReplacements', (req, res)=>{
     authorizeRequest3(
       req.body.email, 
-      req.body.credentialsId, 
+      req.body.id, 
       req.body.code, 
       putAuthCredentialsReplacements
     );
@@ -591,7 +605,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   app.post('/deleteAuthCredentialsReplacements', (req, res)=>{
     authorizeRequest2(
       req.body.code, 
-      req.body.credentialsId, 
+      req.body.id, 
       putAuthCredentialsReplacements
     );
    res.end('receive complete');
@@ -655,7 +669,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   /* DELETE people */
   app.post('/deletePeople', (req, res)=>{
     authorizeRequest1(
-      req.body.peopleid, 
+      req.body.id, 
       deletePeople
     );
    res.end('receive complete');
@@ -1680,8 +1694,8 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   /* POST GOOGLE APPS */
   app.post('/postGoogle', (req, res)=>{
     authorizeRequest2(
-      req.body.clientKey, 
-      req.body.clientSecret,
+      req.body.key, 
+      req.body.secret,
       postGoogle
     );
     res.end('receive complete');

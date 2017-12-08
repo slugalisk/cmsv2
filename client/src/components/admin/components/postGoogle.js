@@ -1,9 +1,10 @@
 
 export default (async function showResults(values) {
-  fetch("http://localhost:5000/deletePeople", {
+  fetch("http://localhost:5000/postGoogle", {
     method: 'POST',
     body: JSON.stringify({
-      id: values.DeletePeopleId,
+      key: values.PostGoogleKey,
+      secret: values.PostGoogleSecret
     }),
     headers: new Headers({ "Content-Type": "application/json" })
   })
