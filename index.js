@@ -1670,42 +1670,68 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     });
   });
 
-    /* POST GOOGLE APPS */
-    app.post('/postGoogle', (req, res)=>{
-      authorizeRequest2(
-        req.body.clientKey, 
-        req.body.clientSecret,
-        postTwitter
-      );
-     res.end('receive complete');
+  /* POST GOOGLE APPS */
+  app.post('/postGoogle', (req, res)=>{
+    authorizeRequest2(
+      req.body.clientKey, 
+      req.body.clientSecret,
+      postGoogle
+    );
+    res.end('receive complete');
+  });
+  function postGoogle(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/google/apps',
+      method: 'POST',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+      "clientKey": parameter_1,
+      "clientSecret": parameter_2
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
     });
-    function postTwitter(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
-      var options = {
-        url: 'https://slugalisk.com/api/v1/google/apps',
-        method: 'POST',
-        headers: {
-          'origin': 'https://slugalisk.com',
-          'Content-Type': 'application/json',
-          'X-Client-ID': xclientid.toString(),
-          'X-Token': xtoken.toString(),
-          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
-        },
-          "consumerKey": parameter_1,
-          "consumerSecret": parameter_2,
-          "defaultToken": {
-            "secret": "string",
-            "token": "string"
-          },
-      };
-      request(options, function(err, res, body) {
-        if (res) {
-          console.log(body);
-        }
-        else{
-          console.log(err);
-        }
-      });
-     }
+    }
+
+  /* GET GOOGLE APPID */
+  app.post('/getGoogleAppid', (req, res)=>{
+    authorizeRequest2(
+      req.body.appId,
+      getGoogleAppid
+    );
+    res.end('receive complete');
+  });
+  function getGoogleAppid(xclientid, xtoken, cookie, time, parameter_1){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/google/apps/'+parameter_1,
+      method: 'GET',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+  }
 
 
 // The "catchall" handler: for any request that doesn't
