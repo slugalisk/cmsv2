@@ -1,7 +1,6 @@
 import React from 'react';
 
-import {Row, Col} from 'react-bootstrap';
-import { Provider } from 'react-redux';
+import {Col} from 'react-bootstrap';
 
 import getTwitch from './components/getTwitch';
 

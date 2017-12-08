@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import {Row, Col, Button} from 'react-bootstrap';
+import {Row, Button} from 'react-bootstrap';
 
 import ColorPickerWrapper from '../components/ColorPicker';
 

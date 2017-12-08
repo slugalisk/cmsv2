@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Row, Col} from 'react-bootstrap';
+import {Col} from 'react-bootstrap';
 
 export default class Polls extends React.Component{
   render(){

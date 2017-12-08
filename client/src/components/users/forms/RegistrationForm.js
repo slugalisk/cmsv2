@@ -1,9 +1,9 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import {Row, Col, Button} from 'react-bootstrap';
+import {Row, Button} from 'react-bootstrap';
 
 const RegistrationForm = props => {
-  const { handleSubmit, pristine, reset, submitting } = props;
+  const { handleSubmit, pristine, submitting } = props;
 
   const getAuthCredentials=()=>{
     fetch('http://localhost:5000/getAuthCredentials')

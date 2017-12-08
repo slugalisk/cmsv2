@@ -31,6 +31,8 @@ import SiteDomain from './SiteDomain';
 import SiteReddit from './SiteReddit';
 import SiteTwitch from './SiteTwitch';
 import SiteTwitter from './SiteTwitter';
+import SiteGoogle from './SiteGoogle';
+import SiteDiscord from './SiteDiscord';
 
 import Lootbox from './Lootbox';
 

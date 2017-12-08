@@ -32,7 +32,7 @@ import DeleteRedditAppidWidgetsForm from './forms/DeleteRedditAppidWidgetsForm';
 import GetRedditAppidWidgetidForm from './forms/GetRedditAppidWidgetidForm';
 import GetRedditAppidWidgetidFeedForm from './forms/GetRedditAppidWidgetidFeedForm';
 
-export default class SiteReddit extends React.Component{
+export default class SiteDiscord extends React.Component{
   render(){
     return(
  
