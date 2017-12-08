@@ -1868,7 +1868,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
       });
     }
 
-    /* GET GOOGLE APPID TOKENS */
+    /* POST GOOGLE APPID TOKENS */
     app.post('/postGoogleAppidTokens', (req, res)=>{
       authorizeRequest1(
         req.body.appId,
@@ -1984,6 +1984,350 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     function deleteGoogleAppidTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
       var options = {
         url: 'https://slugalisk.com/api/v1/google/apps/'+parameter_1+'/tokens/'+parameter_2,
+        method: 'DELETE',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+        "expiry": "2017-12-08T03:07:01.005Z",
+        "refreshToken": "string",
+        "token": "string",
+        "tokenType": "string"
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+    }
+
+
+  /* --- DISCORD --- */
+
+  /* GET DISCORD */
+  app.get('/getDiscord', (req, res) => {
+    request('https://slugalisk.com/api/v1/discord/apps', function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        info = JSON.parse(body);
+         console.log(info);
+      }
+    });
+  });
+
+  /* POST DISCORD APPS */
+  app.post('/postDiscord', (req, res)=>{
+    authorizeRequest2(
+      req.body.clientKey, 
+      req.body.clientSecret,
+      postDiscord
+    );
+    res.end('receive complete');
+  });
+  function postDiscord(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/discord/apps',
+      method: 'POST',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+      "clientKey": parameter_1,
+      "clientSecret": parameter_2
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+  }
+
+  /* GET DISCORD APPID */
+  app.post('/getDiscordAppid', (req, res)=>{
+    authorizeRequest1(
+      req.body.appId,
+      getDiscordAppid,
+    );
+    res.end('receive complete');
+  });
+  function getDiscordAppid(xclientid, xtoken, cookie, time, parameter_1){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/discord/apps/'+parameter_1,
+      method: 'GET',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+  }
+
+  /* PUT DISCORD APPID */
+  app.post('/putDiscordAppid', (req, res)=>{
+    authorizeRequest1(
+      req.body.appId,
+      putDiscordAppid,
+    );
+    res.end('receive complete');
+  });
+  function putDiscordAppid(xclientid, xtoken, cookie, time, parameter_1){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/discord/apps/'+parameter_1,
+      method: 'PUT',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+      "clientKey": "string",
+      "clientSecret": "string",
+      "defaultToken": {
+        "expiry": "2017-12-08T05:46:33.263Z",
+        "refreshToken": "string",
+        "token": "string",
+        "tokenType": "string"
+      }
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+  }
+
+  /* DELETE DISCORD APPID */
+  app.post('/deleteDiscordAppid', (req, res)=>{
+    authorizeRequest1(
+      req.body.appId,
+      deleteDiscordAppid,
+    );
+    res.end('receive complete');
+  });
+  function deleteDiscordAppid(xclientid, xtoken, cookie, time, parameter_1){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/discord/apps/'+parameter_1,
+      method: 'DELETE',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+  }
+
+  /* POST DISCORD APPID OAUTH */
+  app.post('/postDiscordAppidOauth', (req, res)=>{
+    authorizeRequest1(
+      req.body.appId,
+      postDiscordAppidOauth,
+    );
+    res.end('receive complete');
+  });
+  function postDiscordAppidOauth(xclientid, xtoken, cookie, time, parameter_1){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/discord/apps/'+parameter_1+'/oauth',
+      method: 'POST',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+  }
+
+  /* GET DISCORD APPID TOKENS */
+  app.post('/getDiscordAppidTokens', (req, res)=>{
+    authorizeRequest1(
+      req.body.appId,
+      getDiscordAppidTokens,
+    );
+    res.end('receive complete');
+  });
+  function getDiscordAppidTokens(xclientid, xtoken, cookie, time, parameter_1){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/discord/apps/'+parameter_1+'/tokens',
+      method: 'GET',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+  }
+
+  /* POST DISCORD APPID TOKENS */
+  app.post('/postDiscordAppidTokens', (req, res)=>{
+    authorizeRequest1(
+      req.body.appId,
+      postDiscordAppidTokens,
+    );
+    res.end('receive complete');
+  });
+  function postDiscordAppidTokens(xclientid, xtoken, cookie, time, parameter_1){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/discord/apps/'+parameter_1+'/tokens',
+      method: 'POST',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+      "expiry": "2017-12-08T03:05:04.588Z",
+      "refreshToken": "string",
+      "token": "string",
+      "tokenType": "string"
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+  }
+
+  
+  /* GET DISCORD APPID TOKENID */
+  app.post('/getDiscordAppidTokenid', (req, res)=>{
+    authorizeRequest1(
+      req.body.appId,
+      req.body.tokenId,
+      getDiscordAppidTokenid,
+    );
+    res.end('receive complete');
+  });
+  function getDiscordAppidTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/discord/apps/'+parameter_1+'/tokens/'+parameter_2,
+      method: 'GET',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+      "expiry": "2017-12-08T03:05:04.588Z",
+      "refreshToken": "string",
+      "token": "string",
+      "tokenType": "string"
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+  }
+
+    /* PUT DISCORD APPID TOKENID */
+    app.post('/putDiscordAppidTokenid', (req, res)=>{
+      authorizeRequest1(
+        req.body.appId,
+        req.body.tokenId,
+        putDiscordAppidTokenid,
+      );
+      res.end('receive complete');
+    });
+    function putDiscordAppidTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/discord/apps/'+parameter_1+'/tokens/'+parameter_2,
+        method: 'PUT',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+        "expiry": "2017-12-08T03:07:01.005Z",
+        "refreshToken": "string",
+        "token": "string",
+        "tokenType": "string"
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+    }
+
+    /* DELETE DISCORD APPID TOKENID */
+    app.post('/deleteDiscordAppidTokenid', (req, res)=>{
+      authorizeRequest1(
+        req.body.appId,
+        req.body.tokenId,
+        deleteDiscordAppidTokenid,
+      );
+      res.end('receive complete');
+    });
+    function deleteDiscordAppidTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/discord/apps/'+parameter_1+'/tokens/'+parameter_2,
         method: 'DELETE',
         headers: {
           'origin': 'https://slugalisk.com',
