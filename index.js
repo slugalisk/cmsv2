@@ -1713,7 +1713,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   /* GET GOOGLE APPID */
   app.post('/getGoogleAppid', (req, res)=>{
     authorizeRequest1(
-      req.body.appId,
+      req.body.appid,
       getGoogleAppid,
     );
     res.end('receive complete');
@@ -1743,7 +1743,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   /* PUT GOOGLE APPID */
   app.post('/putGoogleAppid', (req, res)=>{
     authorizeRequest1(
-      req.body.appId,
+      req.body.appid,
       putGoogleAppid,
     );
     res.end('receive complete');
@@ -1781,7 +1781,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     /* DELETE GOOGLE APPID */
     app.post('/deleteGoogleAppid', (req, res)=>{
       authorizeRequest1(
-        req.body.appId,
+        req.body.appid,
         deleteGoogleAppid,
       );
       res.end('receive complete');
@@ -1811,7 +1811,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     /* POST GOOGLE APPID OAUTH */
     app.post('/postGoogleAppidOauth', (req, res)=>{
       authorizeRequest1(
-        req.body.appId,
+        req.body.appid,
         postGoogleAppidOauth,
       );
       res.end('receive complete');
@@ -1841,7 +1841,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     /* GET GOOGLE APPID TOKENS */
     app.post('/getGoogleAppidTokens', (req, res)=>{
       authorizeRequest1(
-        req.body.appId,
+        req.body.appid,
         getGoogleAppidTokens,
       );
       res.end('receive complete');
@@ -1871,7 +1871,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     /* POST GOOGLE APPID TOKENS */
     app.post('/postGoogleAppidTokens', (req, res)=>{
       authorizeRequest1(
-        req.body.appId,
+        req.body.appid,
         postGoogleAppidTokens,
       );
       res.end('receive complete');
@@ -1905,8 +1905,8 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   /* GET GOOGLE APPID TOKENID */
   app.post('/getGoogleAppidTokenid', (req, res)=>{
     authorizeRequest1(
-      req.body.appId,
-      req.body.tokenId,
+      req.body.appid,
+      req.body.tokenid,
       getGoogleAppidTokenid,
     );
     res.end('receive complete');
@@ -1940,8 +1940,8 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     /* PUT GOOGLE APPID TOKENID */
     app.post('/putGoogleAppidTokenid', (req, res)=>{
       authorizeRequest1(
-        req.body.appId,
-        req.body.tokenId,
+        req.body.appid,
+        req.body.tokenid,
         putGoogleAppidTokenid,
       );
       res.end('receive complete');
@@ -1975,8 +1975,8 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     /* DELETE GOOGLE APPID TOKENID */
     app.post('/deleteGoogleAppidTokenid', (req, res)=>{
       authorizeRequest1(
-        req.body.appId,
-        req.body.tokenId,
+        req.body.appid,
+        req.body.tokenid,
         deleteGoogleAppidTokenid,
       );
       res.end('receive complete');
@@ -2056,7 +2056,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   /* GET DISCORD APPID */
   app.post('/getDiscordAppid', (req, res)=>{
     authorizeRequest1(
-      req.body.appId,
+      req.body.appid,
       getDiscordAppid,
     );
     res.end('receive complete');
@@ -2086,7 +2086,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   /* PUT DISCORD APPID */
   app.post('/putDiscordAppid', (req, res)=>{
     authorizeRequest1(
-      req.body.appId,
+      req.body.appid,
       putDiscordAppid,
     );
     res.end('receive complete');
@@ -2124,7 +2124,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   /* DELETE DISCORD APPID */
   app.post('/deleteDiscordAppid', (req, res)=>{
     authorizeRequest1(
-      req.body.appId,
+      req.body.appid,
       deleteDiscordAppid,
     );
     res.end('receive complete');
@@ -2154,7 +2154,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   /* POST DISCORD APPID OAUTH */
   app.post('/postDiscordAppidOauth', (req, res)=>{
     authorizeRequest1(
-      req.body.appId,
+      req.body.appid,
       postDiscordAppidOauth,
     );
     res.end('receive complete');
@@ -2184,7 +2184,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   /* GET DISCORD APPID TOKENS */
   app.post('/getDiscordAppidTokens', (req, res)=>{
     authorizeRequest1(
-      req.body.appId,
+      req.body.appid,
       getDiscordAppidTokens,
     );
     res.end('receive complete');
@@ -2214,7 +2214,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   /* POST DISCORD APPID TOKENS */
   app.post('/postDiscordAppidTokens', (req, res)=>{
     authorizeRequest1(
-      req.body.appId,
+      req.body.appid,
       postDiscordAppidTokens,
     );
     res.end('receive complete');
@@ -2249,8 +2249,8 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   /* GET DISCORD APPID TOKENID */
   app.post('/getDiscordAppidTokenid', (req, res)=>{
     authorizeRequest1(
-      req.body.appId,
-      req.body.tokenId,
+      req.body.appid,
+      req.body.tokenid,
       getDiscordAppidTokenid,
     );
     res.end('receive complete');
@@ -2284,8 +2284,8 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     /* PUT DISCORD APPID TOKENID */
     app.post('/putDiscordAppidTokenid', (req, res)=>{
       authorizeRequest1(
-        req.body.appId,
-        req.body.tokenId,
+        req.body.appid,
+        req.body.tokenid,
         putDiscordAppidTokenid,
       );
       res.end('receive complete');
@@ -2319,8 +2319,8 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     /* DELETE DISCORD APPID TOKENID */
     app.post('/deleteDiscordAppidTokenid', (req, res)=>{
       authorizeRequest1(
-        req.body.appId,
-        req.body.tokenId,
+        req.body.appid,
+        req.body.tokenid,
         deleteDiscordAppidTokenid,
       );
       res.end('receive complete');
