@@ -1170,6 +1170,8 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
       });
     });
 
+    
+
     /* --- TWITTER --- */
 
     /* GET TWITTER */
@@ -1654,6 +1656,57 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
       }
     });
    }
+
+
+  /* --- GOOGLE --- */
+
+  /* GET GOOGLE APPS */
+  app.get('/getGoogle', (req, res) => {
+    request('https://slugalisk.com/api/v1/google/apps', function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        info = JSON.parse(body);
+         console.log(info);
+      }
+    });
+  });
+
+    /* POST GOOGLE APPS */
+    app.post('/postGoogle', (req, res)=>{
+      authorizeRequest2(
+        req.body.clientKey, 
+        req.body.clientSecret,
+        postTwitter
+      );
+     res.end('receive complete');
+    });
+    function postTwitter(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/google/apps',
+        method: 'POST',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+          "consumerKey": parameter_1,
+          "consumerSecret": parameter_2,
+          "defaultToken": {
+            "secret": "string",
+            "token": "string"
+          },
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+     }
+
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
