@@ -438,12 +438,16 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
  /* POST auth credentials */
 
  app.post('/postAuthCredentials', (req, res)=>{
-  authorizeRequest2(req.body.email, req.body.password, postAuthCredentials);
+  authorizeRequest2(
+    req.body.email, 
+    req.body.password, 
+    postAuthCredentials,
+  );
  res.end('receive complete');
 });
 
 
- function postAuthCredentials(xclientid, xtoken, cookie, time, email, password){
+ function postAuthCredentials(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
   var options = {
     url: 'https://slugalisk.com/api/v1/auth/credentials',
     method: 'POST',
@@ -470,7 +474,10 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   /* DELETE auth credentials */
 
   app.post('/deleteAuthCredentials', (req, res)=>{
-    authorizeRequest1(req.body.credentialsId, deleteAuthCredentials);
+    authorizeRequest1(
+      req.body.credentialsId, 
+      deleteAuthCredentials,
+    );
    res.end('receive complete');
   });
   
@@ -1498,7 +1505,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     app.post('/postTwitterAppidWidgets', (req, res)=>{
       authorizeRequest1(
         req.body.appid,
-        postTwitterAppidWidgets
+        postTwitterAppidWidgets,
       );
      res.end('receive complete');
     });
@@ -1529,7 +1536,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     authorizeRequest2(
       req.body.appid,
       req.body.widgetid,
-      getTwitterAppidWidgetsWidgetid
+      getTwitterAppidWidgetsWidgetid,
     );
    res.end('receive complete');
   });
@@ -1560,7 +1567,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     authorizeRequest2(
       req.body.appid,
       req.body.widgetid,
-      getTwitterAppidWidgetsWidgetid
+      getTwitterAppidWidgetsWidgetid,
     );
    res.end('receive complete');
   });
@@ -1600,7 +1607,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     authorizeRequest2(
       req.body.appid,
       req.body.widgetid,
-      deleteTwitterAppidWidgetsWidgetid
+      deleteTwitterAppidWidgetsWidgetid,
     );
    res.end('receive complete');
   });
@@ -1631,7 +1638,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     authorizeRequest2(
       req.body.appid,
       req.body.widgetid,
-      getTwitterAppidWidgetsWidgetidFeed
+      getTwitterAppidWidgetsWidgetidFeed,
     );
    res.end('receive complete');
   });
@@ -1707,7 +1714,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   app.post('/getGoogleAppid', (req, res)=>{
     authorizeRequest1(
       req.body.appId,
-      getGoogleAppid
+      getGoogleAppid,
     );
     res.end('receive complete');
   });
@@ -1737,7 +1744,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   app.post('/putGoogleAppid', (req, res)=>{
     authorizeRequest1(
       req.body.appId,
-      putGoogleAppid
+      putGoogleAppid,
     );
     res.end('receive complete');
   });
@@ -1771,6 +1778,234 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     });
   }
 
+    /* DELETE GOOGLE APPID */
+    app.post('/deleteGoogleAppid', (req, res)=>{
+      authorizeRequest1(
+        req.body.appId,
+        deleteGoogleAppid,
+      );
+      res.end('receive complete');
+    });
+    function deleteGoogleAppid(xclientid, xtoken, cookie, time, parameter_1){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/google/apps/'+parameter_1,
+        method: 'DELETE',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+    }
+
+    /* POST GOOGLE APPID OAUTH */
+    app.post('/postGoogleAppidOauth', (req, res)=>{
+      authorizeRequest1(
+        req.body.appId,
+        postGoogleAppidOauth,
+      );
+      res.end('receive complete');
+    });
+    function postGoogleAppidOauth(xclientid, xtoken, cookie, time, parameter_1){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/google/apps/'+parameter_1+'/oauth',
+        method: 'POST',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+    }
+
+    /* GET GOOGLE APPID TOKENS */
+    app.post('/getGoogleAppidTokens', (req, res)=>{
+      authorizeRequest1(
+        req.body.appId,
+        getGoogleAppidTokens,
+      );
+      res.end('receive complete');
+    });
+    function getGoogleAppidTokens(xclientid, xtoken, cookie, time, parameter_1){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/google/apps/'+parameter_1+'/tokens',
+        method: 'GET',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+    }
+
+    /* GET GOOGLE APPID TOKENS */
+    app.post('/postGoogleAppidTokens', (req, res)=>{
+      authorizeRequest1(
+        req.body.appId,
+        postGoogleAppidTokens,
+      );
+      res.end('receive complete');
+    });
+    function postGoogleAppidTokens(xclientid, xtoken, cookie, time, parameter_1){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/google/apps/'+parameter_1+'/tokens',
+        method: 'POST',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+        "expiry": "2017-12-08T03:05:04.588Z",
+        "refreshToken": "string",
+        "token": "string",
+        "tokenType": "string"
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+    }
+
+  /* GET GOOGLE APPID TOKENID */
+  app.post('/getGoogleAppidTokenid', (req, res)=>{
+    authorizeRequest1(
+      req.body.appId,
+      req.body.tokenId,
+      getGoogleAppidTokenid,
+    );
+    res.end('receive complete');
+  });
+  function getGoogleAppidTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/google/apps/'+parameter_1+'/tokens/'+parameter_2,
+      method: 'GET',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+      "expiry": "2017-12-08T03:05:04.588Z",
+      "refreshToken": "string",
+      "token": "string",
+      "tokenType": "string"
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+  }
+
+    /* PUT GOOGLE APPID TOKENID */
+    app.post('/putGoogleAppidTokenid', (req, res)=>{
+      authorizeRequest1(
+        req.body.appId,
+        req.body.tokenId,
+        putGoogleAppidTokenid,
+      );
+      res.end('receive complete');
+    });
+    function putGoogleAppidTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/google/apps/'+parameter_1+'/tokens/'+parameter_2,
+        method: 'PUT',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+        "expiry": "2017-12-08T03:07:01.005Z",
+        "refreshToken": "string",
+        "token": "string",
+        "tokenType": "string"
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+    }
+
+    /* DELETE GOOGLE APPID TOKENID */
+    app.post('/deleteGoogleAppidTokenid', (req, res)=>{
+      authorizeRequest1(
+        req.body.appId,
+        req.body.tokenId,
+        deleteGoogleAppidTokenid,
+      );
+      res.end('receive complete');
+    });
+    function deleteGoogleAppidTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/google/apps/'+parameter_1+'/tokens/'+parameter_2,
+        method: 'DELETE',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+        "expiry": "2017-12-08T03:07:01.005Z",
+        "refreshToken": "string",
+        "token": "string",
+        "tokenType": "string"
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+    }
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
