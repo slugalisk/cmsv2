@@ -1917,15 +1917,15 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     }
 
   /* GET GOOGLE APPID TOKENID */
-  app.post('/getGoogleAppidTokenid', (req, res)=>{
+  app.post('/getGoogleAppidTokensTokenid', (req, res)=>{
     authorizeRequest1(
       req.body.appid,
       req.body.tokenid,
-      getGoogleAppidTokenid,
+      getGoogleAppidTokensTokenid,
     );
     res.end('receive complete');
   });
-  function getGoogleAppidTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+  function getGoogleAppidTokensTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
     var options = {
       url: 'https://slugalisk.com/api/v1/google/apps/'+parameter_1+'/tokens/'+parameter_2,
       method: 'GET',
@@ -1952,15 +1952,15 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   }
 
     /* PUT GOOGLE APPID TOKENID */
-    app.post('/putGoogleAppidTokenid', (req, res)=>{
+    app.post('/putGoogleAppidTokensTokenid', (req, res)=>{
       authorizeRequest1(
         req.body.appid,
         req.body.tokenid,
-        putGoogleAppidTokenid,
+        putGoogleAppidTokensTokenid,
       );
       res.end('receive complete');
     });
-    function putGoogleAppidTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+    function putGoogleAppidTokensTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
       var options = {
         url: 'https://slugalisk.com/api/v1/google/apps/'+parameter_1+'/tokens/'+parameter_2,
         method: 'PUT',
@@ -1987,15 +1987,15 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     }
 
     /* DELETE GOOGLE APPID TOKENID */
-    app.post('/deleteGoogleAppidTokenid', (req, res)=>{
+    app.post('/deleteGoogleAppidTokensTokenid', (req, res)=>{
       authorizeRequest1(
         req.body.appid,
         req.body.tokenid,
-        deleteGoogleAppidTokenid,
+        deleteGoogleAppidTokensTokenid,
       );
       res.end('receive complete');
     });
-    function deleteGoogleAppidTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+    function deleteGoogleAppidTokensTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
       var options = {
         url: 'https://slugalisk.com/api/v1/google/apps/'+parameter_1+'/tokens/'+parameter_2,
         method: 'DELETE',
@@ -2037,8 +2037,8 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   /* POST DISCORD APPS */
   app.post('/postDiscord', (req, res)=>{
     authorizeRequest2(
-      req.body.clientKey, 
-      req.body.clientSecret,
+      req.body.key, 
+      req.body.secret,
       postDiscord
     );
     res.end('receive complete');
@@ -2261,15 +2261,15 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
 
   
   /* GET DISCORD APPID TOKENID */
-  app.post('/getDiscordAppidTokenid', (req, res)=>{
+  app.post('/getDiscordAppidTokensTokenid', (req, res)=>{
     authorizeRequest1(
       req.body.appid,
       req.body.tokenid,
-      getDiscordAppidTokenid,
+      getDiscordAppidTokensTokenid,
     );
     res.end('receive complete');
   });
-  function getDiscordAppidTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+  function getDiscordAppidTokensTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
     var options = {
       url: 'https://slugalisk.com/api/v1/discord/apps/'+parameter_1+'/tokens/'+parameter_2,
       method: 'GET',
@@ -2296,15 +2296,15 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
   }
 
     /* PUT DISCORD APPID TOKENID */
-    app.post('/putDiscordAppidTokenid', (req, res)=>{
+    app.post('/putDiscordAppidTokensTokenid', (req, res)=>{
       authorizeRequest1(
         req.body.appid,
         req.body.tokenid,
-        putDiscordAppidTokenid,
+        putDiscordAppidTokensTokenid,
       );
       res.end('receive complete');
     });
-    function putDiscordAppidTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+    function putDiscordAppidTokensTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
       var options = {
         url: 'https://slugalisk.com/api/v1/discord/apps/'+parameter_1+'/tokens/'+parameter_2,
         method: 'PUT',
