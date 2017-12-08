@@ -1705,7 +1705,7 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
 
   /* GET GOOGLE APPID */
   app.post('/getGoogleAppid', (req, res)=>{
-    authorizeRequest2(
+    authorizeRequest1(
       req.body.appId,
       getGoogleAppid
     );
@@ -1722,6 +1722,44 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
         'X-Token': xtoken.toString(),
         'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
       },
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+  }
+
+  /* PUT GOOGLE APPID */
+  app.post('/putGoogleAppid', (req, res)=>{
+    authorizeRequest1(
+      req.body.appId,
+      putGoogleAppid
+    );
+    res.end('receive complete');
+  });
+  function putGoogleAppid(xclientid, xtoken, cookie, time, parameter_1){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/google/apps/'+parameter_1,
+      method: 'PUT',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+      "clientKey": "string",
+      "clientSecret": "string",
+      "defaultToken": {
+        "expiry": "2017-12-08T01:14:03.839Z",
+        "refreshToken": "string",
+        "token": "string",
+        "tokenType": "string"
+      }
     };
     request(options, function(err, res, body) {
       if (res) {
