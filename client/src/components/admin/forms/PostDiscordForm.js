@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-class GetRedditAppidTokenidForm extends React.Component {
+class PostDiscordForm extends React.Component {
   render(){
 
   const { handleSubmit, pristine, submitting } = this.props;
@@ -13,9 +13,9 @@ class GetRedditAppidTokenidForm extends React.Component {
 
 
         <Row className='admin_setup__row'>
-          <label>Get Reddit Appid Tokenid Appid</label>
+          <label>Post Discord Key</label>
           <Field
-            name='GetRedditAppidTokenidAppid'
+            name='PostDiscordKey'
             component='input'
             type='text'
             placeholder=''
@@ -23,15 +23,16 @@ class GetRedditAppidTokenidForm extends React.Component {
           />
         </Row>
         <Row className='admin_setup__row'>
-          <label>Get Reddit Appid Tokenid Tokenid</label>
+          <label>Post Discord Secret</label>
           <Field
-            name='GetRedditAppidTokenidTokenid'
+            name='PostDiscordSecret'
             component='input'
             type='text'
             placeholder=''
             className='admin_form_field'
           />
         </Row>
+
 
     <Col md={12} mdOffset={0} sm={12} smOffset={0} xs={12} xsOffset={0}>
       <Col md={4} sm={6} xs={12}>
@@ -58,5 +59,5 @@ class GetRedditAppidTokenidForm extends React.Component {
 };
 
 export default reduxForm({
-  form: 'getRedditAppidTokenid', // a unique identifier for this form
-})(GetRedditAppidTokenidForm);
+  form: 'postDiscord', // a unique identifier for this form
+})(PostDiscordForm);

@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-class DeleteRedditAppidTokenidForm extends React.Component {
+class GetDiscordAppidTokensForm extends React.Component {
   render(){
 
   const { handleSubmit, pristine, submitting } = this.props;
@@ -13,19 +13,9 @@ class DeleteRedditAppidTokenidForm extends React.Component {
 
 
         <Row className='admin_setup__row'>
-          <label>Delete Reddit Appid Tokenid Appid</label>
+          <label>Get Discord Appid Tokens</label>
           <Field
-            name='DeleteRedditAppidTokenidAppid'
-            component='input'
-            type='text'
-            placeholder=''
-            className='admin_form_field'
-          />
-        </Row>
-        <Row className='admin_setup__row'>
-          <label>Delete Reddit Appid Tokenid Tokenid</label>
-          <Field
-            name='DeleteRedditAppidTokenidTokenid'
+            name='GetDiscordAppidTokens'
             component='input'
             type='text'
             placeholder=''
@@ -58,5 +48,5 @@ class DeleteRedditAppidTokenidForm extends React.Component {
 };
 
 export default reduxForm({
-  form: 'deleteRedditAppidTokenid', // a unique identifier for this form
-})(DeleteRedditAppidTokenidForm);
+  form: 'getDiscordAppidTokens', // a unique identifier for this form
+})(GetDiscordAppidTokensForm);

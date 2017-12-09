@@ -239,7 +239,6 @@ export default class Menupanel extends React.Component{
         </Link>
         <br/>
 
-        <br/>
         <Link
           to = '/admin/google'
           className = 'menu_panel__link' 
@@ -249,7 +248,6 @@ export default class Menupanel extends React.Component{
         </Link>
         <br/>
 
-        <br/>
         <Link
           to = '/admin/discord'
           className = 'menu_panel__link' 

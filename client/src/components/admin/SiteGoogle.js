@@ -2,35 +2,27 @@ import React from 'react';
 
 import {Col} from 'react-bootstrap';
 
-import getReddit from './components/getReddit';
-import postReddit from './components/postReddit';
-import getRedditAppid from './components/getRedditAppid';
-import deleteRedditAppid from './components/deleteRedditAppid';
-import postRedditAppidOauth from './components/postRedditAppidOauth';
-import getRedditAppidTokens from './components/getRedditAppidTokens';
-import postRedditAppidTokens from './components/postRedditAppidTokens';
-import getRedditAppidTokenid from './components/getRedditAppidTokenid';
-import deleteRedditAppidTokenid from './components/deleteRedditAppidTokenid';
-import getRedditAppidWidgets from './components/getRedditAppidWidgets';
-import postRedditAppidWidgets from './components/postRedditAppidWidgets';
-import deleteRedditAppidWidgets from './components/deleteRedditAppidWidgets';
-import getRedditAppidWidgetid from './components/getRedditAppidWidgetid';
-import getRedditAppidWidgetidFeed from './components/getRedditAppidWidgetidFeed';
 
-import GetRedditForm from './forms/GetRedditForm';
-import PostRedditForm from './forms/PostRedditForm';
-import GetRedditAppidForm from './forms/GetRedditAppidForm';
-import DeleteRedditAppidForm from './forms/DeleteRedditAppidForm';
-import PostRedditAppidOauthForm from './forms/PostRedditAppidOauthForm';
-import GetRedditAppidTokensForm from './forms/GetRedditAppidTokensForm';
-import PostRedditAppidTokensForm from './forms/PostRedditAppidTokensForm';
-import GetRedditAppidTokenidForm from './forms/GetRedditAppidTokenidForm';
-import DeleteRedditAppidTokenidForm from './forms/DeleteRedditAppidTokenidForm';
-import GetRedditAppidWidgetsForm from './forms/GetRedditAppidWidgetsForm';
-import PostRedditAppidWidgetsForm from './forms/PostRedditAppidWidgetsForm';
-import DeleteRedditAppidWidgetsForm from './forms/DeleteRedditAppidWidgetsForm';
-import GetRedditAppidWidgetidForm from './forms/GetRedditAppidWidgetidForm';
-import GetRedditAppidWidgetidFeedForm from './forms/GetRedditAppidWidgetidFeedForm';
+import getGoogle from './components/getGoogle';
+import postGoogle from './components/postGoogle';
+import getGoogleAppid from './components/getGoogleAppid';
+import deleteGoogleAppid from './components/deleteGoogleAppid';
+import postGoogleAppidOauth from './components/postGoogleAppidOauth';
+import getGoogleAppidTokens from './components/getGoogleAppidTokens';
+import postGoogleAppidTokens from './components/postGoogleAppidTokens';
+import getGoogleAppidTokensTokenid from './components/getGoogleAppidTokensTokenid';
+import deleteGoogleAppidTokensTokenid from './components/deleteGoogleAppidTokensTokenid';
+
+
+import GetGoogleForm from './forms/GetGoogleForm';
+import PostGoogleForm from './forms/PostGoogleForm';
+import GetGoogleAppidForm from './forms/GetGoogleAppidForm';
+import DeleteGoogleAppidForm from './forms/DeleteGoogleAppidForm';
+import PostGoogleAppidOauthForm from './forms/PostGoogleAppidOauthForm';
+import GetGoogleAppidTokensForm from './forms/GetGoogleAppidTokensForm';
+import PostGoogleAppidTokensForm from './forms/PostGoogleAppidTokensForm';
+import GetGoogleAppidTokensTokenidForm from './forms/GetGoogleAppidTokensTokenidForm';
+import DeleteGoogleAppidTokensTokenidForm from './forms/DeleteGoogleAppidTokensTokenidForm';
 
 export default class SiteGoogle extends React.Component{
   render(){
@@ -54,89 +46,62 @@ export default class SiteGoogle extends React.Component{
         className='admin_column__2'>
       </Col>
 
+
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetRedditForm onSubmit={getReddit}/>
+          <GetGoogleForm onSubmit={getGoogle}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostRedditForm onSubmit={postReddit}/>
+          <PostGoogleForm onSubmit={postGoogle}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetRedditAppidForm onSubmit={getRedditAppid}/>
+          <GetGoogleAppidForm onSubmit={getGoogleAppid}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <DeleteRedditAppidForm onSubmit={deleteRedditAppid}/>
+          <DeleteGoogleAppidForm onSubmit={deleteGoogleAppid}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostRedditAppidOauthForm onSubmit={postRedditAppidOauth}/>
+          <PostGoogleAppidOauthForm onSubmit={postGoogleAppidOauth}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetRedditAppidTokensForm onSubmit={getRedditAppidTokens}/>
+          <GetGoogleAppidTokensForm onSubmit={getGoogleAppidTokens}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostRedditAppidTokensForm onSubmit={postRedditAppidTokens}/>
+          <PostGoogleAppidTokensForm onSubmit={postGoogleAppidTokens}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetRedditAppidTokenidForm onSubmit={getRedditAppidTokenid}/>
+          <GetGoogleAppidTokensTokenidForm onSubmit={getGoogleAppidTokensTokenid}/>
         </Col>
       </Col>
       
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <DeleteRedditAppidTokenidForm onSubmit={deleteRedditAppidTokenid}/>
+          <DeleteGoogleAppidTokensTokenidForm onSubmit={deleteGoogleAppidTokensTokenid}/>
         </Col>
       </Col>
 
-      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetRedditAppidWidgetsForm onSubmit={getRedditAppidWidgets}/>
-        </Col>
-      </Col>
 
-      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostRedditAppidWidgetsForm onSubmit={postRedditAppidWidgets}/>
-        </Col>
-      </Col>
-
-      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <DeleteRedditAppidWidgetsForm onSubmit={deleteRedditAppidWidgets}/>
-        </Col>
-      </Col>
-
-      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetRedditAppidWidgetidForm onSubmit={getRedditAppidWidgetid}/>
-        </Col>
-      </Col>
-
-      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetRedditAppidWidgetidFeedForm onSubmit={getRedditAppidWidgetidFeed}/>
-        </Col>
-      </Col>
     </div>
     );
   }

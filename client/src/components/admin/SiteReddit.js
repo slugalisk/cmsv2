@@ -9,8 +9,8 @@ import deleteRedditAppid from './components/deleteRedditAppid';
 import postRedditAppidOauth from './components/postRedditAppidOauth';
 import getRedditAppidTokens from './components/getRedditAppidTokens';
 import postRedditAppidTokens from './components/postRedditAppidTokens';
-import getRedditAppidTokenid from './components/getRedditAppidTokenid';
-import deleteRedditAppidTokenid from './components/deleteRedditAppidTokenid';
+import getRedditAppidTokensTokenid from './components/getRedditAppidTokensTokenid';
+import deleteRedditAppidTokensTokenid from './components/deleteRedditAppidTokensTokenid';
 import getRedditAppidWidgets from './components/getRedditAppidWidgets';
 import postRedditAppidWidgets from './components/postRedditAppidWidgets';
 import deleteRedditAppidWidgets from './components/deleteRedditAppidWidgets';
@@ -24,8 +24,8 @@ import DeleteRedditAppidForm from './forms/DeleteRedditAppidForm';
 import PostRedditAppidOauthForm from './forms/PostRedditAppidOauthForm';
 import GetRedditAppidTokensForm from './forms/GetRedditAppidTokensForm';
 import PostRedditAppidTokensForm from './forms/PostRedditAppidTokensForm';
-import GetRedditAppidTokenidForm from './forms/GetRedditAppidTokenidForm';
-import DeleteRedditAppidTokenidForm from './forms/DeleteRedditAppidTokenidForm';
+import GetRedditAppidTokensTokenidForm from './forms/GetRedditAppidTokensTokenidForm';
+import DeleteRedditAppidTokensTokenidForm from './forms/DeleteRedditAppidTokensTokenidForm';
 import GetRedditAppidWidgetsForm from './forms/GetRedditAppidWidgetsForm';
 import PostRedditAppidWidgetsForm from './forms/PostRedditAppidWidgetsForm';
 import DeleteRedditAppidWidgetsForm from './forms/DeleteRedditAppidWidgetsForm';
@@ -98,13 +98,13 @@ export default class SiteReddit extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetRedditAppidTokenidForm onSubmit={getRedditAppidTokenid}/>
+          <GetRedditAppidTokensTokenidForm onSubmit={getRedditAppidTokensTokenid}/>
         </Col>
       </Col>
       
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <DeleteRedditAppidTokenidForm onSubmit={deleteRedditAppidTokenid}/>
+          <DeleteRedditAppidTokensTokenidForm onSubmit={deleteRedditAppidTokensTokenid}/>
         </Col>
       </Col>
 

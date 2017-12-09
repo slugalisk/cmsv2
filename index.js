@@ -949,16 +949,16 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     }
 
     /* GET REDDIT APPID TOKENID*/
-    app.post('/getRedditAppidTokenid', (req, res)=>{
+    app.post('/getRedditAppidTokensTokenid', (req, res)=>{
       authorizeRequest1(
         req.body.appid,
         req.body.tokenid,
-        getRedditAppidTokenid
+        getRedditAppidTokensTokenid
       );
      res.end('receive complete');
     });
     
-    function getRedditAppidTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+    function getRedditAppidTokensTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
       var options = {
         url: 'https://slugalisk.com/api/v1/reddit/apps/'+parameter_1+'/tokens/'+parameter_2,
         method: 'GET',
@@ -982,16 +982,16 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     }
 
     /* DELETE REDDIT APPID TOKENID*/
-    app.post('/deleteRedditAppidTokenid', (req, res)=>{
+    app.post('/deleteRedditAppidTokensTokenid', (req, res)=>{
       authorizeRequest1(
         req.body.appid,
         req.body.tokenid,
-        deleteRedditAppidTokenid
+        deleteRedditAppidTokensTokenid
       );
       res.end('receive complete');
     });
     
-    function deleteRedditAppidTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+    function deleteRedditAppidTokensTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
       var options = {
         url: 'https://slugalisk.com/api/v1/reddit/apps/'+parameter_1+'/tokens/'+parameter_2,
         method: 'DELETE',
