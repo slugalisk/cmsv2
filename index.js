@@ -1191,7 +1191,331 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
       });
     });
 
-    
+    app.post('/postTwitch', (req, res)=>{
+      authorizeRequest2(
+        req.body.consumerKey, 
+        req.body.consumerSecret,
+        postTwitch
+      );
+     res.end('receive complete');
+    });
+    function postTwitch(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/twitch/apps',
+        method: 'POST',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+        "clientKey": parameter_1,
+        "clientSecret": parameter_2,
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+     }
+
+     /* GET TWITCH APPID */
+     app.post('/getTwitchAppid', (req, res)=>{
+      authorizeRequest1(
+        req.body.appid,
+        getTwitchAppid
+      );
+     res.end('receive complete');
+    });
+    function getTwitchappid(xclientid, xtoken, cookie, time, parameter_1){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/twitch/apps/'+parameter_1,
+        method: 'GET',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+     }
+
+  /* PUT TWITCH APPID */
+  app.post('/putTwitchAppid', (req, res)=>{
+    authorizeRequest1(
+      req.body.appid,
+      putTwitchAppid,
+    );
+    res.end('receive complete');
+  });
+  function putTwitchAppid(xclientid, xtoken, cookie, time, parameter_1){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/twitch/apps/'+parameter_1,
+      method: 'PUT',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+      "clientKey": "string",
+      "clientSecret": "string",
+      "defaultToken": {
+        "expiry": "2017-12-08T01:14:03.839Z",
+        "refreshToken": "string",
+        "token": "string",
+        "tokenType": "string"
+      }
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+  }
+
+    /* DELETE TWITCH APPID */
+    app.post('/deleteTwitchAppid', (req, res)=>{
+      authorizeRequest1(
+        req.body.appid,
+        deleteTwitchAppid,
+      );
+      res.end('receive complete');
+    });
+    function deleteTwitchAppid(xclientid, xtoken, cookie, time, parameter_1){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/twitch/apps/'+parameter_1,
+        method: 'DELETE',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+    }
+
+     /* POST TWITCH APPID OAUTH */
+     app.post('/postTwitchAppidOauth', (req, res)=>{
+      authorizeRequest1(
+        req.body.appid,
+        postTwitchAppidOauth
+      );
+     res.end('receive complete');
+    });
+    function postTwitchAppidOauth(xclientid, xtoken, cookie, time, parameter_1){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/twitch/apps/'+parameter_1+'/oauth',
+        method: 'POST',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+     }
+
+    /* GET TWITCH APPID TOKENS */
+    app.post('/getTwitchAppidTokens', (req, res)=>{
+      authorizeRequest1(
+        req.body.appid,
+        getTwitchAppidTokens
+      );
+     res.end('receive complete');
+    });
+    function getTwitchAppidTokens(xclientid, xtoken, cookie, time, parameter_1){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/twitch/apps/'+parameter_1+'/tokens',
+        method: 'GET',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+     }
+
+    /* POST TWITCH APPID TOKENS */
+    app.post('/postTwitchAppidTokens', (req, res)=>{
+      authorizeRequest1(
+        req.body.appid,
+        postTwitchAppidTokens
+      );
+     res.end('receive complete');
+    });
+    function postTwitchAppidTokens(xclientid, xtoken, cookie, time, parameter_1){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/twitch/apps/'+parameter_1+'/tokens',
+        method: 'GET',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+     }
+
+  /* GET TWITCH APPID TOKENID */
+  app.post('/getTwitchAppidTokensTokenid', (req, res)=>{
+    authorizeRequest1(
+      req.body.appid,
+      req.body.tokenid,
+      getTwitchAppidTokensTokenid,
+    );
+    res.end('receive complete');
+  });
+  function getTwitchAppidTokensTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/twitch/apps/'+parameter_1+'/tokens/'+parameter_2,
+      method: 'GET',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+      "expiry": "2017-12-08T03:05:04.588Z",
+      "refreshToken": "string",
+      "token": "string",
+      "tokenType": "string"
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+  }
+
+    /* PUT TWITCH APPID TOKENID */
+    app.post('/putTwitchAppidTokensTokenid', (req, res)=>{
+      authorizeRequest1(
+        req.body.appid,
+        req.body.tokenid,
+        putTwitchAppidTokensTokenid,
+      );
+      res.end('receive complete');
+    });
+    function putTwitchAppidTokensTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/twitch/apps/'+parameter_1+'/tokens/'+parameter_2,
+        method: 'PUT',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+        "expiry": "2017-12-08T03:07:01.005Z",
+        "refreshToken": "string",
+        "token": "string",
+        "tokenType": "string"
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+    }
+
+    /* DELETE TWITCH APPID TOKENID */
+    app.post('/deleteTwitchAppidTokensTokenid', (req, res)=>{
+      authorizeRequest1(
+        req.body.appid,
+        req.body.tokenid,
+        deleteTwitchAppidTokensTokenid,
+      );
+      res.end('receive complete');
+    });
+    function deleteTwitchAppidTokensTokenid(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+      var options = {
+        url: 'https://slugalisk.com/api/v1/twitch/apps/'+parameter_1+'/tokens/'+parameter_2,
+        method: 'DELETE',
+        headers: {
+          'origin': 'https://slugalisk.com',
+          'Content-Type': 'application/json',
+          'X-Client-ID': xclientid.toString(),
+          'X-Token': xtoken.toString(),
+          'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+        },
+        "expiry": "2017-12-08T03:07:01.005Z",
+        "refreshToken": "string",
+        "token": "string",
+        "tokenType": "string"
+      };
+      request(options, function(err, res, body) {
+        if (res) {
+          console.log(body);
+        }
+        else{
+          console.log(err);
+        }
+      });
+    }
+
 
     /* --- TWITTER --- */
 
