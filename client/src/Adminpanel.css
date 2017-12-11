@@ -2,12 +2,6 @@
   position: relative;
 }
 
-.admin_button{
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-right: 1em;
-}
-
 .admin_background{
   position: fixed;
   height: 100vh;
@@ -244,4 +238,39 @@
 }
 .admin_income__column{
   text-align:center;
+}
+
+.admin_button{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  -webkit-transition:  .2s ease-out;
+  -moz-transition:  .2s ease-out;
+  -o-transition:  .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.btn-success, 
+.btn-hover,
+.btn-danger
+{
+  -webkit-transition:  .2s ease-out;
+  -moz-transition:  .2s ease-out;
+  -o-transition:  .2s ease-out;
+  transition: .2s ease-out;
+}
+.btn-success:hover{
+  background-color: transparent;
+  border-color: #5cb85c;
+  color: #5cb85c;
+}
+.btn-info:hover{
+  background-color: transparent;
+  border-color: #5bc0de;
+  color: #5bc0de;
+}
+.btn-danger:hover{
+  background-color: transparent;
+  border-color: #d9534f;
+  color: #d9534f;
 }
