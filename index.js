@@ -15,7 +15,7 @@ app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, X-Token, X-Client-ID');
   next();
 });
- /*
+ 
 app.use(proxy(
   'https://slugalisk.com',
   {
@@ -35,7 +35,7 @@ app.use(proxy(
           return proxyRes.statusCode === 404;
       }
   }
-));*/
+));
  
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
@@ -472,8 +472,8 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
       'X-Token': xtoken.toString(),
       'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
     },
-    "email": email,
-    "password": password
+    "email": parameter_1,
+    "password": parameter_2
   };
   request(options, function(err, res, body) {
     if (res) {
@@ -729,6 +729,41 @@ function getAuthCredentials(xclientid, xtoken, cookie, time){
     });
    }
 
+  /*POST auth sessions login */
+
+  app.post('/postAuthSessions', (req, res)=>{
+    authorizeRequest2(
+      req.body.email, 
+      req.body.password,
+      postAuthSessions,
+    );
+    res.end('receive complete');
+  });
+  
+    function postAuthSessions(xclientid, xtoken, cookie, time, parameter_1, parameter_2){
+    var options = {
+      url: 'https://slugalisk.com/api/v1/auth/sessions',
+      method: 'POST',
+      headers: {
+        'origin': 'https://slugalisk.com',
+        'Content-Type': 'application/json',
+        'X-Client-ID': xclientid.toString(),
+        'X-Token': xtoken.toString(),
+        'Cookie': cookie.toString().replace(' HttpOnly; Secure', ''),
+      },
+      'email': parameter_1,
+      'password':parameter_2,
+    };
+    request(options, function(err, res, body) {
+      if (res) {
+        console.log(body);
+      }
+      else{
+        console.log(err);
+      }
+    });
+    }
+    
 
 
 
