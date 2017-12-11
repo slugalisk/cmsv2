@@ -1,12 +1,11 @@
 
 export default (async function showResults(values) {
-  console.log(values.key);
-  /*fetch("http://localhost:5000/postGoogle", {
+  fetch('http://localhost:5000/api/v1/google/apps', {
     method: 'POST',
     body: JSON.stringify({
-      key: values.PostGoogleKey,
-      secret: values.PostGoogleSecret
+      key: values.key,
+      secret: values.secret
     }),
-    headers: new Headers({ "Content-Type": "application/json" })
-  })*/
+    headers: new Headers({ 'Content-Type': 'application/json' })
+  })
 });

@@ -1,11 +1,13 @@
 
 export default (async function showResults(values) {
-  fetch("http://localhost:5000/putDiscordAppidTokensTokenid", {
-    method: 'POST',
+  fetch('http://localhost:5000/api/v1/discord/apps/'+values.appId+'/tokens/'+values.tokenId, {
+    method: 'PUT',
     body: JSON.stringify({
-      appid: values.PutDiscordAppidTokensTokenidAppid,
-      tokenid: values.PutDiscordAppidTokensTokenidTokenid,
+      'expiry': '2017-12-11T23:23:07.152Z',
+      'refreshToken': 'string',
+      'token': 'string',
+      'tokenType': 'string'
     }),
-    headers: new Headers({ "Content-Type": "application/json" })
+    headers: new Headers({ 'Content-Type': 'application/json' })
   })
 });

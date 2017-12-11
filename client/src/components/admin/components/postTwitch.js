@@ -1,11 +1,11 @@
 
 export default (async function showResults(values) {
-  fetch("http://localhost:5000/postTwitch", {
+  fetch('http://localhost:5000/api/v1/twitch/apps', {
     method: 'POST',
     body: JSON.stringify({
-      consumerKey: values.PostTwitchKey,
-      consumerSecret: values.PostTwitchSecret
+      key: values.key,
+      secret: values.secret
     }),
-    headers: new Headers({ "Content-Type": "application/json" })
+    headers: new Headers({ 'Content-Type': 'application/json' })
   })
 });

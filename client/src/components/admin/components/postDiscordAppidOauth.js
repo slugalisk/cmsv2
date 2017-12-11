@@ -1,10 +1,7 @@
 
 export default (async function showResults(values) {
-  fetch("http://localhost:5000/postDiscordAppidOauth", {
+  fetch('http://localhost:5000/api/v1/discord/apps/'+values.appId+'/oauth', {
     method: 'POST',
-    body: JSON.stringify({
-      appid: values.PostDiscordAppidOauth,
-    }),
-    headers: new Headers({ "Content-Type": "application/json" })
+    headers: new Headers({ 'Content-Type': 'application/json' })
   })
 });
