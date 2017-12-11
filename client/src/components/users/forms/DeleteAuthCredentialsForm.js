@@ -15,7 +15,7 @@ class DeleteAuthCredentialsForm extends React.Component {
         <Row className='admin_setup__row'>
           <label>Delete</label>
           <Field
-            name='DeleteAuthCredentials'
+            name='deleteAuthCredentialsid'
             component='input'
             type='text'
             placeholder='delete Auth Credentials'

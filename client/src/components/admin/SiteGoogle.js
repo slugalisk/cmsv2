@@ -13,6 +13,8 @@ import postGoogleAppidTokens from './components/postGoogleAppidTokens';
 import getGoogleAppidTokensTokenid from './components/getGoogleAppidTokensTokenid';
 import deleteGoogleAppidTokensTokenid from './components/deleteGoogleAppidTokensTokenid';
 
+import postReddit from './components/postReddit';
+import PostRedditForm from './forms/PostRedditForm';
 
 import GetGoogleForm from './forms/GetGoogleForm';
 import PostGoogleForm from './forms/PostGoogleForm';
@@ -56,6 +58,12 @@ export default class SiteGoogle extends React.Component{
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <PostGoogleForm onSubmit={postGoogle}/>
+        </Col>
+      </Col>
+
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+          <PostRedditForm onSubmit={postReddit}/>
         </Col>
       </Col>
 

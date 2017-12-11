@@ -15,7 +15,7 @@ class PostRedditForm extends React.Component {
         <Row className='admin_setup__row'>
           <label>Post Reddit Key</label>
           <Field
-            name='PostRedditKey'
+            name='key'
             component='input'
             type='text'
             placeholder=''

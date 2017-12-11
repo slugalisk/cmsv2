@@ -15,7 +15,7 @@ class DeletePeopleForm extends React.Component {
         <Row className='admin_setup__row'>
           <label>Delete</label>
           <Field
-            name='DeletePeopleId'
+            name='deletePeopleId'
             component='input'
             type='text'
             placeholder='People ID'

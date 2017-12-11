@@ -13,9 +13,9 @@ import getRedditAppidTokensTokenid from './components/getRedditAppidTokensTokeni
 import deleteRedditAppidTokensTokenid from './components/deleteRedditAppidTokensTokenid';
 import getRedditAppidWidgets from './components/getRedditAppidWidgets';
 import postRedditAppidWidgets from './components/postRedditAppidWidgets';
-import deleteRedditAppidWidgets from './components/deleteRedditAppidWidgets';
-import getRedditAppidWidgetid from './components/getRedditAppidWidgetid';
-import getRedditAppidWidgetidFeed from './components/getRedditAppidWidgetidFeed';
+import deleteRedditAppidWidgetsWidgetid from './components/deleteRedditAppidWidgetsWidgetid';
+import getRedditAppidWidgetsWidgetid from './components/getRedditAppidWidgetsWidgetid';
+import getRedditAppidWidgetsWidgetidFeed from './components/getRedditAppidWidgetsWidgetidFeed';
 
 import GetRedditForm from './forms/GetRedditForm';
 import PostRedditForm from './forms/PostRedditForm';
@@ -28,9 +28,9 @@ import GetRedditAppidTokensTokenidForm from './forms/GetRedditAppidTokensTokenid
 import DeleteRedditAppidTokensTokenidForm from './forms/DeleteRedditAppidTokensTokenidForm';
 import GetRedditAppidWidgetsForm from './forms/GetRedditAppidWidgetsForm';
 import PostRedditAppidWidgetsForm from './forms/PostRedditAppidWidgetsForm';
-import DeleteRedditAppidWidgetsForm from './forms/DeleteRedditAppidWidgetsForm';
-import GetRedditAppidWidgetidForm from './forms/GetRedditAppidWidgetidForm';
-import GetRedditAppidWidgetidFeedForm from './forms/GetRedditAppidWidgetidFeedForm';
+import DeleteRedditAppidWidgetsWidgetidForm from './forms/DeleteRedditAppidWidgetsWidgetidForm';
+import GetRedditAppidWidgetsWidgetidForm from './forms/GetRedditAppidWidgetsWidgetidForm';
+import GetRedditAppidWidgetsWidgetidFeedForm from './forms/GetRedditAppidWidgetsWidgetidFeedForm';
 
 export default class SiteReddit extends React.Component{
   render(){
@@ -122,19 +122,19 @@ export default class SiteReddit extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <DeleteRedditAppidWidgetsForm onSubmit={deleteRedditAppidWidgets}/>
+          <DeleteRedditAppidWidgetsWidgetidForm onSubmit={deleteRedditAppidWidgetsWidgetid}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetRedditAppidWidgetidForm onSubmit={getRedditAppidWidgetid}/>
+          <GetRedditAppidWidgetsWidgetidForm onSubmit={getRedditAppidWidgetsWidgetid}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetRedditAppidWidgetidFeedForm onSubmit={getRedditAppidWidgetidFeed}/>
+          <GetRedditAppidWidgetsWidgetidFeedForm onSubmit={getRedditAppidWidgetsWidgetidFeed}/>
         </Col>
       </Col>
     </div>

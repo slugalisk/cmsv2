@@ -15,7 +15,7 @@ class PostGoogleForm extends React.Component {
         <Row className='admin_setup__row'>
           <label>Post Google Key</label>
           <Field
-            name='PostGoogleKey'
+            name='key'
             component='input'
             type='text'
             placeholder=''

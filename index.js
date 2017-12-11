@@ -3,6 +3,7 @@ const path = require('path');
 var bodyParser = require('body-parser');
 var request = require('request');
 const cors = require('cors');
+var session = require('express-session')
 
 require('isomorphic-fetch');
  
@@ -16,7 +17,7 @@ app.use(function(req, res, next) {
   next();
 });
  
-app.use(proxy(
+app.use('/api/v1', proxy(
   'https://slugalisk.com',
   {
       proxyReqOptDecorator: function (proxyReqOpts, srcReq) {

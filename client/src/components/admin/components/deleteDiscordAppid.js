@@ -1,10 +1,7 @@
 
 export default (async function showResults(values) {
-  fetch("http://localhost:5000/deleteDiscordAppid", {
-    method: 'POST',
-    body: JSON.stringify({
-      appid: values.DeleteDiscordAppid,
-    }),
-    headers: new Headers({ "Content-Type": "application/json" })
+  fetch('http://localhost:5000/api/v1/discord/apps/'+values.appId, {
+    method: 'DELETE',
+    headers: new Headers({ 'Content-Type': 'application/json' })
   })
 });

@@ -1,10 +1,7 @@
 
 export default (async function showResults(values) {
-  fetch("http://localhost:5000/getDiscordAppidTokens", {
-    method: 'POST',
-    body: JSON.stringify({
-      appid: values.GetDiscordAppidTokens,
-    }),
-    headers: new Headers({ "Content-Type": "application/json" })
+  fetch('http://localhost:5000/api/v1/discord/apps/'+values.appId+'/tokens', {
+    method: 'GET',
+    headers: new Headers({ 'Content-Type': 'application/json' })
   })
 });

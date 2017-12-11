@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-class DeleteRedditAppidWidgetsForm extends React.Component {
+class DeleteRedditAppidWidgetsWidgetidForm extends React.Component {
   render(){
 
   const { handleSubmit, pristine, submitting } = this.props;
@@ -60,4 +60,4 @@ class DeleteRedditAppidWidgetsForm extends React.Component {
 
 export default reduxForm({
   form: 'deleteRedditAppidWidgets', // a unique identifier for this form
-})(DeleteRedditAppidWidgetsForm);
+})(DeleteRedditAppidWidgetsWidgetidForm);

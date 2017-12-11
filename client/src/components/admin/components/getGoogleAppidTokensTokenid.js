@@ -1,11 +1,7 @@
 
 export default (async function showResults(values) {
-  fetch("http://localhost:5000/getGoogleAppidTokensTokenid", {
-    method: 'POST',
-    body: JSON.stringify({
-      appid: values.GetGoogleAppidTokensTokenidAppid,
-      tokenid: values.GetGoogleAppidTokensTokenidTokenid,
-    }),
-    headers: new Headers({ "Content-Type": "application/json" })
+  fetch('http://localhost:5000/api/v1/google/apps/'+values.appId+'/tokens/'+values.tokenId, {
+    method: 'GET',
+    headers: new Headers({ 'Content-Type': 'application/json' })
   })
 });
