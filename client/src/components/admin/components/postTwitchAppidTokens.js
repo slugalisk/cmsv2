@@ -1,6 +1,6 @@
 
 export default (async function showResults(values) {
-  fetch('http://localhost:5000/api/v1/twitch/apps/'+values.appId+'/tokens', {
+  fetch('http://localhost:3000/api/v1/twitch/apps/'+values.appId+'/tokens', {
     method: 'POST',
     body: JSON.stringify({
       'expiry': '2017-12-11T23:18:12.504Z',

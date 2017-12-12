@@ -24,11 +24,11 @@ class DeleteSiteForm extends React.Component {
   const { handleSubmit, pristine, submitting } = this.props;
 
   const testget=()=>{
-    fetch('http://localhost:5000/testget')
+    fetch('http://localhost:3000/testget')
   }
 
   const testput=()=>{
-    fetch('http://localhost:5000/testput')
+    fetch('http://localhost:3000/testput')
   }
 
   return (

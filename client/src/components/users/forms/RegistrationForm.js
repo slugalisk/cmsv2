@@ -6,10 +6,10 @@ const RegistrationForm = props => {
   const { handleSubmit, pristine, submitting } = props;
 
   const getAuthCredentials=()=>{
-    fetch('http://localhost:5000/getAuthCredentials')
+    fetch('http://localhost:3000/getAuthCredentials')
   }
   const getPeople=()=>{
-    fetch('http://localhost:5000/getPeople')
+    fetch('http://localhost:3000/getPeople')
   }
 
   return (
