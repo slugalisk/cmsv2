@@ -4,4 +4,7 @@ export default (async function showResults(values) {
     method: 'GET',
     headers: new Headers({ 'Content-Type': 'application/json' })
   })
+  .then(function(res){
+    console.log(res);
+  })
 });

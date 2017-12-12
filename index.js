@@ -20,24 +20,24 @@ app.use(function(req, res, next) {
 app.use(proxy(
   'https://slugalisk.com',
   {
-      proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
-          proxyReqOpts.headers.referer = 'https://slugalisk.com';
-          proxyReqOpts.headers.origin = 'https://slugalisk.com';
-          delete proxyReqOpts.headers['x-forwarded-host'];
-          delete proxyReqOpts.headers['x-forwarded-proto'];
-          delete proxyReqOpts.headers['x-forwarded-port'];
-          delete proxyReqOpts.headers['x-forwarded-for'];
-          return proxyReqOpts;
-      },
-      userResHeaderDecorator: function(headers, userReq, userRes, proxyReq, proxyRes) {
-          const cookies = headers['set-cookie'] || [];
-          headers['set-cookie'] = cookies.map(c => c.replace(/;\s*Secure/, ''));
-          delete headers['strict-transport-security']; 
-          return headers;
-      },
-      skipToNextHandlerFilter: function(proxyRes) {
-          return proxyRes.statusCode === 404;
-      }
+    proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
+        proxyReqOpts.headers.referer = 'https://slugalisk.com';
+        proxyReqOpts.headers.origin = 'https://slugalisk.com';
+        delete proxyReqOpts.headers['x-forwarded-host'];
+        delete proxyReqOpts.headers['x-forwarded-proto'];
+        delete proxyReqOpts.headers['x-forwarded-port'];
+        delete proxyReqOpts.headers['x-forwarded-for'];
+        return proxyReqOpts;
+    },
+    userResHeaderDecorator: function(headers, userReq, userRes, proxyReq, proxyRes) {
+        const cookies = headers['set-cookie'] || [];
+        headers['set-cookie'] = cookies.map(c => c.replace(/;\s*Secure/, ''));
+        delete headers['strict-transport-security']; 
+        return headers;
+    },
+    skipToNextHandlerFilter: function(proxyRes) {
+        return proxyRes.statusCode === 404;
+    }
   }
 ));
  
