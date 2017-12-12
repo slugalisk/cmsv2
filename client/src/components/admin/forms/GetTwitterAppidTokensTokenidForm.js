@@ -10,35 +10,33 @@ class GetTwitterAppidTokensTokenidForm extends React.Component {
 
   return (
     <form onSubmit={handleSubmit}>
-
-
-        <Row className='admin_setup__row'>
-          <label>Get Twitter Appid Tokens Tokenid Appid</label>
-          <Field
-            name='GetTwitterAppidTokensTokenidAppid'
-            component='input'
-            type='text'
-            placeholder=''
-            className='admin_form_field'
-          />
-        </Row>
-        <Row className='admin_setup__row'>
-          <label>Get Twitter Appid Tokens Tokenid Tokenid</label>
-          <Field
-            name='GetTwitterAppidTokensTokenidTokenid'
-            component='input'
-            type='text'
-            placeholder=''
-            className='admin_form_field'
-          />
-        </Row>
+      <Row className='admin_setup__row'>
+        <label>Get Twitter Appid Tokens Tokenid Appid</label>
+        <Field
+          name='appId'
+          component='input'
+          type='text'
+          placeholder=''
+          className='admin_form_field'
+        />
+      </Row>
+      <Row className='admin_setup__row'>
+        <label>Get Twitter Appid Tokens Tokenid Tokenid</label>
+        <Field
+          name='tokenId'
+          component='input'
+          type='text'
+          placeholder=''
+          className='admin_form_field'
+        />
+      </Row>
 
     <Col md={12} mdOffset={0} sm={12} smOffset={0} xs={12} xsOffset={0}>
       <Col md={4} sm={6} xs={12}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <Row className='admin_button_wrapper'>
             <Button 
-              bsStyle="success" 
+              bsStyle='success' 
               type='submit' 
               disabled = {pristine || submitting}
               className='admin_button'

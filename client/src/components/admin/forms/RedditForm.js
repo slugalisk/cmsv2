@@ -17,7 +17,7 @@ const RedditForm = props => {
 
       <Row>
         <Button 
-          bsStyle="success" 
+          bsStyle='success' 
           type='submit' 
           disabled = {pristine || submitting}
           className='admin_button'
@@ -25,7 +25,7 @@ const RedditForm = props => {
           Submit
         </Button>
         <Button 
-          bsStyle="info" 
+          bsStyle='info' 
           type='button' 
           disabled = {pristine || submitting}
           className='admin_button'

@@ -15,7 +15,7 @@ class DeleteRedditAppidTokensTokenidForm extends React.Component {
         <Row className='admin_setup__row'>
           <label>Delete Reddit Appid Tokenid Appid</label>
           <Field
-            name='DeleteRedditAppidTokensTokenidAppid'
+            name='appId'
             component='input'
             type='text'
             placeholder=''
@@ -25,7 +25,7 @@ class DeleteRedditAppidTokensTokenidForm extends React.Component {
         <Row className='admin_setup__row'>
           <label>Delete Reddit Appid Tokenid Tokenid</label>
           <Field
-            name='DeleteRedditAppidTokensTokenidTokenid'
+            name='tokenId'
             component='input'
             type='text'
             placeholder=''
@@ -38,7 +38,7 @@ class DeleteRedditAppidTokensTokenidForm extends React.Component {
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <Row className='admin_button_wrapper'>
             <Button 
-              bsStyle="success" 
+              bsStyle='success' 
               type='submit' 
               disabled = {pristine || submitting}
               className='admin_button'

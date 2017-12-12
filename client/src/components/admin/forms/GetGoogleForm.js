@@ -21,7 +21,7 @@ class GetGoogleForm extends React.Component {
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <Row className='admin_button_wrapper'>
             <Button 
-              bsStyle="success" 
+              bsStyle='success' 
               type='submit'
               className='admin_button'
             >
