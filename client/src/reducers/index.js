@@ -13,6 +13,8 @@ import instagram from './instagram';
 import twitch from './twitch';
 import youtube from './youtube';
 
+import api from './api';
+
 const reducers={
   menu,
   form: reducerForm,
@@ -27,6 +29,8 @@ const reducers={
   instagram,
   twitch,
   youtube,
+
+  api,
 };
 
 export default reducers;

@@ -32,7 +32,8 @@ import Gifts from './components/users/Gifts';
 import Donate from './components/template1/pages/Donate';
 import Subscribe from './components/template1/pages/Subscribe';
 
-class App extends Component {
+export default class App extends Component {
+
   render() {
     return (
       <div className='App'>
@@ -59,5 +60,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

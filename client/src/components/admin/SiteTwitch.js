@@ -24,11 +24,23 @@ import PostTwitchAppidTokensForm from './forms/PostTwitchAppidTokensForm';
 import GetTwitchAppidTokensTokenidForm from './forms/GetTwitchAppidTokensTokenidForm';
 import DeleteTwitchAppidTokensTokenidForm from './forms/DeleteTwitchAppidTokensTokenidForm';
 
-export default class SiteTwitch extends React.Component{
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as ApiActions from '../../actions/api';
+
+
+class SiteTwitch extends React.Component{
+  testfunc(){
+    this.props.action.getApiIfNeeded();
+  }
+
+  
   render(){
+
     return(
  
     <div className='admin_form_wrapper'>
+    <button onClick={()=>this.testfunc()}>test</button>
       <Col 
         md={4} 
         sm={6} 
@@ -106,3 +118,19 @@ export default class SiteTwitch extends React.Component{
     );
   }
 }
+
+function mapStateToProps(state, prop){
+  /*the name of the reducer*/
+  return{
+    xClientId: state.api.xClientId,
+    xToken: state.api.xToken,
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    action: bindActionCreators(ApiActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SiteTwitch);

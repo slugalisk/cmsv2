@@ -2,13 +2,13 @@ import React from 'react';
 import { reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-class GetTwitchForm extends React.Component {
-  render(){
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as ApiActions from '../../../actions/api';
 
-  const { handleSubmit } = this.props;
 
 
-  return (
+  let GetTwitchForm = ({ handleChange, handleSubmit, value }) => (
     <form onSubmit={handleSubmit}>
       <Row className='admin_setup__row'>
         <label>Get Twitch</label>
@@ -31,9 +31,44 @@ class GetTwitchForm extends React.Component {
       </Col>
     </form>
   );
-}
-};
 
-export default reduxForm({
+function mapStateToProps(state, prop){
+  /*the name of the reducer*/
+  return{
+    xClientId: state.api.xClientId,
+    xToken: state.api.xToken,
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    action: bindActionCreators(ApiActions, dispatch)
+  }
+}
+
+GetTwitchForm = reduxForm({
   form: 'getTwitch', // a unique identifier for this form
 })(GetTwitchForm);
+
+GetTwitchForm = connect(
+  state => ({
+    initialValues: state.api.xClientId, // pull initial values from account reducer
+  }),             
+)(GetTwitchForm)
+
+/*
+//const selector = formValueSelector('selectingFormValues') // <-- same as form name
+GetTwitchForm = connect(
+  state => {
+  // can select values individually
+  const testValue = 'asdf'
+})(GetTwitchForm)
+
+GetTwitchForm = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(GetTwitchForm);
+*/
+
+
+export default GetTwitchForm
