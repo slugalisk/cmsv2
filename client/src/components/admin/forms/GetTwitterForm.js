@@ -52,6 +52,7 @@ GetTwitterForm = reduxForm({
 GetTwitterForm = connect(
   state => ({
     initialValues: {
+      method: 'GET',
       url:'http://localhost:3000/api/v1/twitter/apps',
       xClientId: state.api.xClientId,
       xToken: state.api.xToken,

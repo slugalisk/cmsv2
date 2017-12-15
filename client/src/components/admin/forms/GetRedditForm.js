@@ -52,6 +52,7 @@ GetRedditForm = reduxForm({
 GetRedditForm = connect(
   state => ({
     initialValues: {
+      method: 'GET',
       url:'http://localhost:3000/api/v1/reddit/apps',
       xClientId: state.api.xClientId,
       xToken: state.api.xToken,

@@ -53,6 +53,7 @@ GetTwitchForm = reduxForm({
 GetTwitchForm = connect(
   state => ({
     initialValues: {
+      method: 'GET',
       url:'http://localhost:3000/api/v1/twitch/apps',
       xClientId: state.api.xClientId,
       xToken: state.api.xToken,

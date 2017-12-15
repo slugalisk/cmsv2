@@ -8,8 +8,9 @@ export default (async function showResults(values) {
     
     ?
 
-    axios.get(values.url + '/' + values.appId, {
-      method: 'GET',
+    axios({
+      url: values.url + '/' + values.appId,
+      method: values.method,
       headers: new Headers({ 
         'Content-Type': 'application/json',
         'x-client-id': values.xClientId,
@@ -20,8 +21,9 @@ export default (async function showResults(values) {
 
     :
 
-    axios.get(values.url, {
-      method: 'GET',
+    axios({
+      url: values.url,
+      method: values.method,
       headers: new Headers({ 
         'Content-Type': 'application/json',
         'x-client-id': values.xClientId,

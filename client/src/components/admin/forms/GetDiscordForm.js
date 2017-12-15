@@ -52,6 +52,7 @@ GetDiscordForm = reduxForm({
 GetDiscordForm = connect(
   state => ({
     initialValues: {
+      method: 'GET',
       url:'http://localhost:3000/api/v1/discord/apps',
       xClientId: state.api.xClientId,
       xToken: state.api.xToken,
