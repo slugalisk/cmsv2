@@ -7,7 +7,6 @@ import {connect} from 'react-redux';
 import * as ApiActions from '../../../actions/api';
 
 
-
   let GetTwitchForm = ({ handleChange, handleSubmit, value }) => (
     <form onSubmit={handleSubmit}>
       <Row className='admin_setup__row'>
@@ -55,25 +54,10 @@ GetTwitchForm = connect(
   state => ({
     initialValues: {
       url:'http://localhost:3000/api/v1/twitch/apps',
-      clientid: state.api.xClientId,
-      token: state.api.xToken,
+      xClientId: state.api.xClientId,
+      xToken: state.api.xToken,
      }
   }),          
 )(GetTwitchForm)
-
-/*
-//const selector = formValueSelector('selectingFormValues') // <-- same as form name
-GetTwitchForm = connect(
-  state => {
-  // can select values individually
-  const testValue = 'asdf'
-})(GetTwitchForm)
-
-GetTwitchForm = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(GetTwitchForm);
-*/
-
 
 export default GetTwitchForm

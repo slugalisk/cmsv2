@@ -53,8 +53,8 @@ GetTwitterForm = connect(
   state => ({
     initialValues: {
       url:'http://localhost:3000/api/v1/twitter/apps',
-      clientid: state.api.xClientId,
-      token: state.api.xToken,
+      xClientId: state.api.xClientId,
+      xToken: state.api.xToken,
      }
   }),          
 )(GetTwitterForm)
