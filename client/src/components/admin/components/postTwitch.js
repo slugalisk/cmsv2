@@ -14,7 +14,7 @@ export default (async function showResults(values) {
       'set-cookie': document.cookie,
     }
   })*/
-  fetch('http://localhost:3000/api/v1/reddit/apps', {
+  fetch('http://localhost:3000/api/v1/twitch/apps', {
     credentials: 'include',
     method: 'POST',
     headers: { 
@@ -23,8 +23,8 @@ export default (async function showResults(values) {
       'X-Token': values.token,
     },
     body: JSON.stringify({
-      'clientKey': '222',
-      'clientSecret': '444',
+      'clientKey': values.key,
+      'clientSecret': values.secret,
     }),
   })
   .then(async(response) => console.log(response))
