@@ -27,14 +27,12 @@ app.use(proxy(
         delete proxyReqOpts.headers['x-forwarded-proto'];
         delete proxyReqOpts.headers['x-forwarded-port'];
         delete proxyReqOpts.headers['x-forwarded-for'];
-        console.log('asdf');
         return proxyReqOpts;
     },
     userResHeaderDecorator: function(headers, userReq, userRes, proxyReq, proxyRes) {
         const cookies = headers['set-cookie'] || [];
         headers['set-cookie'] = cookies.map(c => c.replace(/;\s*Secure/, ''));
         delete headers['strict-transport-security']; 
-        console.log('ffff');
         return headers;
     },
     skipToNextHandlerFilter: function(proxyRes) {

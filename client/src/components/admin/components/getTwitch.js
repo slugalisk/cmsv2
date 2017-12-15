@@ -1,12 +1,18 @@
+import axios from 'axios';
 
 export default (async function showResults(values) {
   
   console.log(values);
-  console.log('49494949');
-  /*fetch('http://localhost:3000/api/v1/twitch/apps', {
+
+  axios.get('http://localhost:3000/api/v1/twitch/apps', {
     method: 'GET',
-    headers: new Headers({ 'Content-Type': 'application/json' })
-  })*/
+    headers: new Headers({ 
+      'Content-Type': 'application/json',
+      'x-client-id': values.clientid,
+      'x-token': values.token,
+    })
+  })
+  .then(async(response) => console.log(response))
 });
 
 

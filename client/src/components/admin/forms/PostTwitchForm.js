@@ -2,6 +2,8 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
+import {connect} from 'react-redux';
+
 class PostTwitchForm extends React.Component {
   render(){
 
@@ -52,6 +54,18 @@ class PostTwitchForm extends React.Component {
 }
 };
 
-export default reduxForm({
+PostTwitchForm = reduxForm({
   form: 'postTwitch', // a unique identifier for this form
+  enableReinitialize: true //necessary to update object in initialValues
 })(PostTwitchForm);
+
+PostTwitchForm = connect(
+  state => ({
+    initialValues: {
+      clientid: state.api.xClientId,
+      token: state.api.xToken,
+     }
+  }),          
+)(PostTwitchForm)
+
+export default PostTwitchForm
