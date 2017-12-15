@@ -48,12 +48,16 @@ function mapDispatchToProps(dispatch){
 
 GetTwitchForm = reduxForm({
   form: 'getTwitch', // a unique identifier for this form
+  enableReinitialize: true //necessary to update object in initialValues
 })(GetTwitchForm);
 
 GetTwitchForm = connect(
   state => ({
-    initialValues: state.api.xClientId, // pull initial values from account reducer
-  }),             
+    initialValues: {
+      clientid: state.api.xClientId,
+      token: state.api.xToken,
+     }
+  }),          
 )(GetTwitchForm)
 
 /*
