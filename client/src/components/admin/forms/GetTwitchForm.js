@@ -31,19 +31,6 @@ import * as ApiActions from '../../../actions/api';
     </form>
   );
 
-function mapStateToProps(state, prop){
-  /*the name of the reducer*/
-  return{
-    xClientId: state.api.xClientId,
-    xToken: state.api.xToken,
-  }
-}
-
-function mapDispatchToProps(dispatch){
-  return {
-    action: bindActionCreators(ApiActions, dispatch)
-  }
-}
 
 GetTwitchForm = reduxForm({
   form: 'getTwitch', // a unique identifier for this form

@@ -30,20 +30,6 @@ let GetGoogleForm = ({ handleChange, handleSubmit, value }) => (
   </form>
 );
 
-function mapStateToProps(state, prop){
-  /*the name of the reducer*/
-  return{
-    xClientId: state.api.xClientId,
-    xToken: state.api.xToken,
-  }
-}
-
-function mapDispatchToProps(dispatch){
-  return {
-    action: bindActionCreators(ApiActions, dispatch)
-  }
-}
-
 GetGoogleForm = reduxForm({
   form: 'getGoogle', // a unique identifier for this form
   enableReinitialize: true //necessary to update object in initialValues

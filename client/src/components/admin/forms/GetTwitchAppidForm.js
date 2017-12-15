@@ -28,7 +28,8 @@ let GetTwitchAppidForm = ({ handleChange, pristine, submitting, handleSubmit, va
               disabled = {pristine || submitting}
               className='admin_button'
             >
-              Submit
+              Submit  
+              
             </Button>
 
           </Row>
@@ -38,26 +39,10 @@ let GetTwitchAppidForm = ({ handleChange, pristine, submitting, handleSubmit, va
   </form>
 );
 
-function mapStateToProps(state, prop){
-  /*the name of the reducer*/
-  return{
-    xClientId: state.api.xClientId,
-    xToken: state.api.xToken,
-  }
-}
-
-function mapDispatchToProps(dispatch){
-  return {
-    action: bindActionCreators(ApiActions, dispatch)
-  }
-}
-
 GetTwitchAppidForm = reduxForm({
   form: 'getTwitchAppid', // a unique identifier for this form
   enableReinitialize: true //necessary to update object in initialValues
 })(GetTwitchAppidForm);
-
-let selector = formValueSelector('getTwitchAppid')
 
 GetTwitchAppidForm = connect(
   state => ({
@@ -70,4 +55,4 @@ GetTwitchAppidForm = connect(
   }),          
 )(GetTwitchAppidForm)
 
-export default GetTwitchAppidForm
+export default GetTwitchAppidForm;
