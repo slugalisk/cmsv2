@@ -2,20 +2,15 @@ import React from 'react';
 import { reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-class GetTwitterForm extends React.Component {
-  render(){
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as ApiActions from '../../../actions/api';
 
-  const { handleSubmit } = this.props;
-
-
-  return (
-    <form onSubmit={handleSubmit}>
-
-        <Row className='admin_setup__row'>
-          <label>Get Twitter</label>
-        </Row>
-
-
+let GetTwitterForm = ({ handleChange, handleSubmit, value }) => (
+  <form onSubmit={handleSubmit}>
+    <Row className='admin_setup__row'>
+      <label>Get Twitter</label>
+    </Row>
     <Col md={12} mdOffset={0} sm={12} smOffset={0} xs={12} xsOffset={0}>
       <Col md={4} sm={6} xs={12}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
@@ -32,11 +27,38 @@ class GetTwitterForm extends React.Component {
         </Col>
       </Col>
     </Col>
-    </form>
-  );
-}
-};
+  </form>
+);
 
-export default reduxForm({
+function mapStateToProps(state, prop){
+  /*the name of the reducer*/
+  return{
+    xClientId: state.api.xClientId,
+    xToken: state.api.xToken,
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    action: bindActionCreators(ApiActions, dispatch)
+  }
+}
+
+GetTwitterForm = reduxForm({
   form: 'getTwitter', // a unique identifier for this form
+  enableReinitialize: true //necessary to update object in initialValues
 })(GetTwitterForm);
+
+GetTwitterForm = connect(
+  state => ({
+    initialValues: {
+      url:'http://localhost:3000/api/v1/twitter/apps',
+      clientid: state.api.xClientId,
+      token: state.api.xToken,
+     }
+  }),          
+)(GetTwitterForm)
+
+
+
+export default GetTwitterForm

@@ -2,7 +2,8 @@ import React from 'react';
 
 import {Col} from 'react-bootstrap';
 
-import getReddit from './components/getReddit';
+import apiRequest from './components/apiRequest';
+
 import postReddit from './components/postReddit';
 import getRedditAppid from './components/getRedditAppid';
 import deleteRedditAppid from './components/deleteRedditAppid';
@@ -56,7 +57,7 @@ export default class SiteReddit extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetRedditForm onSubmit={getReddit}/>
+          <GetRedditForm onSubmit={apiRequest}/>
         </Col>
       </Col>
 

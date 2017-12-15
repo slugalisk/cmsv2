@@ -2,8 +2,8 @@ import React from 'react';
 
 import {Col} from 'react-bootstrap';
 
+import apiRequest from './components/apiRequest';
 
-import getGoogle from './components/getGoogle';
 import postGoogle from './components/postGoogle';
 import getGoogleAppid from './components/getGoogleAppid';
 import deleteGoogleAppid from './components/deleteGoogleAppid';
@@ -51,7 +51,7 @@ export default class SiteGoogle extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetGoogleForm onSubmit={getGoogle}/>
+          <GetGoogleForm onSubmit={apiRequest}/>
         </Col>
       </Col>
 
