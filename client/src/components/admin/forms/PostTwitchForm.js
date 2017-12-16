@@ -62,8 +62,10 @@ PostTwitchForm = reduxForm({
 PostTwitchForm = connect(
   state => ({
     initialValues: {
-      clientid: state.api.xClientId,
-      token: state.api.xToken,
+      method: 'POST',
+      url:'http://localhost:3000/api/v1/twitch/apps',
+      xClientId: state.api.xClientId,
+      xToken: state.api.xToken,
      }
   }),          
 )(PostTwitchForm)

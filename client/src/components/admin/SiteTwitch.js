@@ -5,7 +5,7 @@ import {Col} from 'react-bootstrap';
 import apiRequest from './components/apiRequest';
 
 import postTwitch from './components/postTwitch';
-import getTwitchAppid from './components/getTwitchAppid';
+
 import deleteTwitchAppid from './components/deleteTwitchAppid';
 import postTwitchAppidOauth from './components/postTwitchAppidOauth';
 import getTwitchAppidTokens from './components/getTwitchAppidTokens';
@@ -67,7 +67,7 @@ class SiteTwitch extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostTwitchForm onSubmit={postTwitch}/>
+          <PostTwitchForm onSubmit={apiRequest}/>
         </Col>
       </Col>
 

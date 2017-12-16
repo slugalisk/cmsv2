@@ -6,8 +6,8 @@ export default (async function showResults(values) {
     method: 'POST',
     headers: { 
       'Content-Type': 'application/json',
-      'X-Client-Id': values.clientid,
-      'X-Token': values.token,
+      'X-Client-Id': values.xClientId,
+      'X-Token': values.xToken,
     },
     body: JSON.stringify({
       'clientKey': values.key,
