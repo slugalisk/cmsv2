@@ -39,10 +39,9 @@ function requestApp() {
   }
 }
 
-function receiveApp(appId, data) {
+function receiveApp(data) {
   return {
     type: RECEIVE_APP,
-    appId: appId,
     data: data,
   };
 }
@@ -69,7 +68,7 @@ export function getTwitch(values){
     console.log(data);  
   });
   */
-  .then(data => dispatch(receiveApp(values.appId, data)));
+  .then(data => dispatch(receiveApp(data)));
   }
 }
 

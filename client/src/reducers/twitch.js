@@ -33,10 +33,7 @@ export default(state=DEFAULT_STATE, payload)=>
       console.log(payload.data);
       return {
         ...state,
-        appData: {
-          appId: payload.appId,
-          data: payload.data,
-        },
+        appData: payload.data,
       };
 
    default:
