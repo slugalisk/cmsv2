@@ -42,11 +42,25 @@ class GetRedditAppidForm extends React.Component{
   }
 }
 
+function mapStateToProps(state, prop){
+  /*the name of the reducer*/
+  return{
+    initialValues: {
+      method: 'GET',
+      url:'http://localhost:3000/api/v1/reddit/apps',
+      xClientId: state.api.xClientId,
+      xToken: state.api.xToken,
+     }
+  }
+}
+
 GetRedditAppidForm = reduxForm({
   form: 'getRedditAppid', // a unique identifier for this form
   enableReinitialize: true //necessary to update object in initialValues
-})(GetRedditAppidForm);
+},
+mapStateToProps)(GetRedditAppidForm);
 
+/*
 GetRedditAppidForm = connect(
   state => ({
     initialValues: {
@@ -55,9 +69,8 @@ GetRedditAppidForm = connect(
       xClientId: state.api.xClientId,
       xToken: state.api.xToken,
      }
-  }),          
-)(GetRedditAppidForm)
+  }), mapStateToProps)(GetRedditAppidForm)
 
-
+*/
 
 export default GetRedditAppidForm;

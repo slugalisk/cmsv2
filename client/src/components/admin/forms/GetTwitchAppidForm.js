@@ -1,8 +1,9 @@
 import React from 'react';
-import { Field, reduxForm, formValueSelector } from 'redux-form';
+import { Field, reduxForm, formValueSelector, getFormValues } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
 import {connect} from 'react-redux';
+import {compose} from 'redux';
 
 class GetTwitchAppidForm extends React.Component{
   render(){
@@ -42,11 +43,39 @@ class GetTwitchAppidForm extends React.Component{
   }
 }
 
+
+function mapStateToProps(state, prop){
+  console.log(state);
+  /*the name of the reducer*/
+  return{
+    initialValues: {
+      method: 'GET',
+      url:'http://localhost:3000/api/v1/twitch/apps/'
+      /*
+       + 
+        (state.form.getTwitchAppid 
+          ? 
+          state.form.getTwitchAppid.values.appId
+          //state.form.getTwitchAppid.values.appId 
+          :
+          0
+        )
+        */,
+      xClientId: state.api.xClientId,
+      xToken: state.api.xToken,
+     },
+
+  }
+}
+
+/*
 GetTwitchAppidForm = reduxForm({
   form: 'getTwitchAppid', // a unique identifier for this form
   enableReinitialize: true //necessary to update object in initialValues
-})(GetTwitchAppidForm);
+}, mapStateToProps)(GetTwitchAppidForm);
+*/
 
+/*
 GetTwitchAppidForm = connect(
   state => ({
     initialValues: {
@@ -57,7 +86,14 @@ GetTwitchAppidForm = connect(
      }
   }),          
 )(GetTwitchAppidForm)
+*/
 
-
-
+/*
 export default GetTwitchAppidForm;
+*/
+export default connect( mapStateToProps )(
+  reduxForm({
+      form: 'getTwitchAppid',
+      enableReinitialize : true
+  })(GetTwitchAppidForm)
+);

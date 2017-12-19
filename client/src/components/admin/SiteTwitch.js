@@ -27,7 +27,7 @@ import DeleteTwitchAppidTokensTokenidForm from './forms/DeleteTwitchAppidTokensT
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as ApiActions from '../../actions/api';
-
+import * as TwitchActions from '../../actions/twitch';
 
 class SiteTwitch extends React.Component{
   testfunc(){
@@ -61,7 +61,7 @@ class SiteTwitch extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetTwitchForm onSubmit={apiRequest}/>
+          <GetTwitchForm onSubmit={values=>this.props.twitchAction.fetchAppIfNeeded(values)}/>
         </Col>
       </Col>
 
@@ -73,7 +73,7 @@ class SiteTwitch extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetTwitchAppidForm onSubmit={apiRequest}/>
+          <GetTwitchAppidForm onSubmit={values=>this.props.twitchAction.fetchAppIfNeeded(values)}/>
         </Col>
       </Col>
 
@@ -129,7 +129,8 @@ function mapStateToProps(state, prop){
 
 function mapDispatchToProps(dispatch){
   return {
-    action: bindActionCreators(ApiActions, dispatch)
+    action: bindActionCreators(ApiActions, dispatch),
+    twitchAction: bindActionCreators(TwitchActions, dispatch)
   }
 }
 
