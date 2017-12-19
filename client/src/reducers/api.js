@@ -4,9 +4,7 @@ import {
 } from '../actions/api'
 
 const DEFAULT_STATE={
-  xClientId: 1,
-  xToken: 1,
-  setCookie: 1,
+  headerContent: {},
 }
 export default(state=DEFAULT_STATE, payload)=>
 {
@@ -21,8 +19,12 @@ export default(state=DEFAULT_STATE, payload)=>
       console.log(payload.cookie);
       return {
         ...state,
-        xClientId: payload.clientId,
-        xToken: payload.token,
+        headerContent: {
+          ...state.xClientId,
+          xClientId: payload.clientId,
+          ...state.xToken,
+          xToken: payload.token,
+        }
       };
 
     default:

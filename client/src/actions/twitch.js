@@ -46,7 +46,7 @@ function receiveApp(appId, data) {
   };
 }
 
-const fetchApp = (values) => {
+export function getTwitch(values){
   console.log("ACTION ACTION ACTION");
   console.log(values);
   return dispatch => {
@@ -61,18 +61,32 @@ const fetchApp = (values) => {
       'X-Token': values.xToken, 
     }
   })
-    .then(data => dispatch(receiveApp(values.appId, data)));
+  .then(console.log('RETURN RETURN RETURN'))
+  .then(data=> console.log(data));
+  //.then(data => dispatch(receiveApp(values.appId, data)));
   }
 }
-export function fetchAppIfNeeded(values){
+
+export function getTwitchAppId(values){
   console.log("ACTION ACTION ACTION");
   console.log(values);
-  return (dispatch, getState) => {
-    return dispatch(fetchApp(values)); 
+  return dispatch => {
+    dispatch(requestApp())
+    fetch(`http://localhost:3000/api/v1/twitch/apps`,
+    {
+      method: 'GET',
+      credentials: 'include',
+      headers: { 
+      'Content-Type': 'application/json',
+      'X-Client-Id': values.xClientId,
+      'X-Token': values.xToken, 
+    }
+  })
+    .then(console.log('RETURN RETURN RETURN'))
+    .then(data=> console.log(data));
+    //.then(data => dispatch(receiveApp(values.appId, data)));
+  }
 }
-}
-
-
 
 /*
 const getAppById = appId => dispatch => {

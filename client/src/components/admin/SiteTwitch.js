@@ -61,7 +61,7 @@ class SiteTwitch extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetTwitchForm onSubmit={values=>this.props.twitchAction.fetchAppIfNeeded(values)}/>
+          <GetTwitchForm onSubmit={values=>this.props.twitchAction.getTwitch(values)}/>
         </Col>
       </Col>
 
@@ -73,7 +73,7 @@ class SiteTwitch extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetTwitchAppidForm onSubmit={values=>this.props.twitchAction.fetchAppIfNeeded(values)}/>
+          <GetTwitchAppidForm onSubmit={values=>this.props.twitchAction.getTwitchAppId(values)}/>
         </Col>
       </Col>
 
