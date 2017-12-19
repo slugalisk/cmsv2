@@ -1,10 +1,13 @@
 import {
   REQUEST_POSTS,
-  RECEIVE_POSTS
+  RECEIVE_POSTS,
+  REQUEST_APP,
+  RECEIVE_APP,
 } from '../actions/twitch'
 
 const DEFAULT_STATE={
   posts: [],
+  appData: {},
 }
 export default(state=DEFAULT_STATE, payload)=>
 {
@@ -22,7 +25,21 @@ export default(state=DEFAULT_STATE, payload)=>
         ],
       };
 
-    default:
+    case REQUEST_APP:
+      return {...state}
+
+    case RECEIVE_APP:
+      console.log('REDUCER REDUCER REDUCER');
+      console.log(payload.data);
+      return {
+        ...state,
+        appData: {
+          appId: payload.appId,
+          data: payload.data,
+        },
+      };
+
+   default:
       return state;
   }
 };
