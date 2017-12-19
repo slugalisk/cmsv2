@@ -34,18 +34,7 @@ import * as ApiActions from '../../../actions/api';
 
 GetTwitchForm = reduxForm({
   form: 'getTwitch', // a unique identifier for this form
-  enableReinitialize: true //necessary to update object in initialValues
 })(GetTwitchForm);
 
-GetTwitchForm = connect(
-  state => ({
-    initialValues: {
-      method: 'GET',
-      url:'http://localhost:3000/api/v1/twitch/apps',
-      xClientId: state.api.headerContent.xClientId,
-      xToken: state.api.headerContent.xToken,
-     }
-  }),          
-)(GetTwitchForm)
 
 export default GetTwitchForm
