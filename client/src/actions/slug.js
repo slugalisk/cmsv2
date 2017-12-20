@@ -12,13 +12,17 @@ export function slugFetch(dispatch, getState, path, method, data=undefined) {
 
   if (data !== undefined) {
     options.headers['Content-Type'] = 'application/json';
-    console.log(JSON.stringify(data));
     options.body = JSON.stringify(data);
     //options.data = JSON.stringify(data);
   }
   console.log(options);
   return fetch(urlBase + path, options)
-    .then(rs => rs.json());
+  .then((rs) => rs.text())
+  .then((text) => text.length ? JSON.parse(text) : {})
+  .catch((error) => {
+		throw error;
+	});
+    //.then(rs => rs.json());
 }
 
 export function slugGet(dispatch, getState, path) {
