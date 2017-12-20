@@ -7,6 +7,7 @@ import togglers from './togglers';
 import templatenav from './templatenav';
 
 import discord from './discord';
+import google from './google';
 import reddit from './reddit';
 import twitter from './twitter';
 import lastfm from './lastfm';
@@ -25,6 +26,7 @@ const reducers={
   templatenav,
 
   discord,
+  google,
   twitter,
   reddit,
   lastfm,

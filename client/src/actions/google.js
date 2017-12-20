@@ -33,20 +33,20 @@ function receiveApp(data) {
   };
 }
 
-/* GET /discord/apps */
-export function getDiscord(values){
+/* GET /google/apps */
+export function getGoogle(values){
   return (dispatch, getState) => {
-    slugGet(dispatch, getState, '/api/v1/discord/apps')
+    slugGet(dispatch, getState, '/api/v1/google/apps')
     .then(data => dispatch(receiveApp(data)));
   }
 }
-/* POST /discord/apps */
-export function postDiscord(values){
+/* POST /google/apps */
+export function postGoogle(values){
   return (dispatch, getState) => {
   slugPost(
     dispatch, 
     getState, 
-    '/api/v1/discord/apps', 
+    '/api/v1/google/apps', 
     {
       clientKey: values.key, 
       clientSecret:values.secret
@@ -55,20 +55,20 @@ export function postDiscord(values){
   .then(data => dispatch(receiveApp(data)));
   }
 }
-/* GET /discord/apps/{appId} */
-export function getDiscordAppId(values){
+/* GET /google/apps/{appId} */
+export function getGoogleAppId(values){
   return (dispatch, getState) => {
-  slugGet(dispatch, getState, '/api/v1/discord/apps/'+values.appId)
+  slugGet(dispatch, getState, '/api/v1/google/apps/'+values.appId)
   .then(data => dispatch(receiveApp(data)));
   }
 }
-/* PUT /discord/apps/{appId} */
-export function putDiscordAppId(values){
+/* PUT /google/apps/{appId} */
+export function putGoogleAppId(values){
   return (dispatch, getState) => {
   slugPut(
     dispatch, 
     getState, 
-    '/api/v1/discord/apps/'+values.appId,
+    '/api/v1/google/apps/'+values.appId,
     {
       "clientKey": values.key,
       "clientSecret": values.secret,
@@ -83,39 +83,39 @@ export function putDiscordAppId(values){
   .then(data => dispatch(receiveApp(data)));
   }
 }
-/* DELETE /discord/apps/{appId} */
-export function deleteDiscordAppId(values){
+/* DELETE /google/apps/{appId} */
+export function deleteGoogleAppId(values){
   return (dispatch, getState) => {
-  slugDelete(dispatch, getState, '/api/v1/discord/apps/'+values.appId)
+  slugDelete(dispatch, getState, '/api/v1/google/apps/'+values.appId)
   .then(data => dispatch(receiveApp(data)));
   }
 }
-/* POST /discord/apps/{appId}/oauth */
-export function postDiscordOauth(values){
+/* POST /google/apps/{appId}/oauth */
+export function postGoogleOauth(values){
   return (dispatch, getState) => {
   slugPost(
     dispatch, 
     getState, 
-    '/api/v1/discord/apps/'+values.appId+'/oauth', 
+    '/api/v1/google/apps/'+values.appId+'/oauth', 
     {}
   )
   .then(data => dispatch(receiveApp(data)));
   }
 }
-/* GET /discord/apps/{appId}/tokens */
-export function getDiscordAppIdTokens(values){
+/* GET /google/apps/{appId}/tokens */
+export function getGoogleAppIdTokens(values){
   return (dispatch, getState) => {
-    slugGet(dispatch, getState, '/api/v1/discord/apps/'+values.appId+'/tokens')
+    slugGet(dispatch, getState, '/api/v1/google/apps/'+values.appId+'/tokens')
     .then(data => dispatch(receiveApp(data)));
   }
 }
-/* POST /discord/apps/{appId}/tokens */
-export function postDiscordAppIdTokens(values){
+/* POST /google/apps/{appId}/tokens */
+export function postGoogleAppIdTokens(values){
   return (dispatch, getState) => {
   slugPost(
     dispatch, 
     getState, 
-    '/api/v1/discord/apps/'+values.appId+'/tokens', 
+    '/api/v1/google/apps/'+values.appId+'/tokens', 
     { 
       "expiry": "2017-12-20T06:32:19.988Z",
       "refreshToken": "string",
@@ -126,20 +126,20 @@ export function postDiscordAppIdTokens(values){
   .then(data => dispatch(receiveApp(data)));
   }
 }
-/* GET /discord/apps/{appId}/tokens/{tokenid} */
-export function getDiscordAppIdTokensTokenId(values){
+/* GET /google/apps/{appId}/tokens/{tokenid} */
+export function getGoogleAppIdTokensTokenId(values){
   return (dispatch, getState) => {
-    slugGet(dispatch, getState, '/api/v1/discord/apps/'+values.appId+'/tokens/'+values.tokenId)
+    slugGet(dispatch, getState, '/api/v1/google/apps/'+values.appId+'/tokens/'+values.tokenId)
     .then(data => dispatch(receiveApp(data)));
   }
 }
-/* PUT /discord/apps/{appId}/tokens/{tokenid} */
-export function putDiscordAppIdTokensTokenId(values){
+/* PUT /google/apps/{appId}/tokens/{tokenid} */
+export function putGoogleAppIdTokensTokenId(values){
   return (dispatch, getState) => {
     slugPut(
       dispatch, 
       getState, 
-      '/api/v1/discord/apps/'+values.appId+'/tokens/'+values.tokenId,
+      '/api/v1/google/apps/'+values.appId+'/tokens/'+values.tokenId,
       {
         "expiry": "2017-12-20T06:33:41.711Z",
         "refreshToken": "string",
@@ -150,10 +150,10 @@ export function putDiscordAppIdTokensTokenId(values){
     .then(data => dispatch(receiveApp(data)));
   }
 }
-/* DELETE /discord/apps/{appId}/tokens/{tokenid} */
-export function deleteDiscordAppIdTokensTokenId(values){
+/* DELETE /google/apps/{appId}/tokens/{tokenid} */
+export function deleteGoogleAppIdTokensTokenId(values){
   return (dispatch, getState) => {
-    slugDelete(dispatch, getState, '/api/v1/discord/apps/'+values.appId+'/tokens/'+values.tokenId)
+    slugDelete(dispatch, getState, '/api/v1/google/apps/'+values.appId+'/tokens/'+values.tokenId)
     .then(data => dispatch(receiveApp(data)));
   }
 }

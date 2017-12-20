@@ -2,20 +2,6 @@ import React from 'react';
 
 import {Col} from 'react-bootstrap';
 
-import apiRequest from './components/apiRequest';
-
-import postGoogle from './components/postGoogle';
-import getGoogleAppid from './components/getGoogleAppid';
-import deleteGoogleAppid from './components/deleteGoogleAppid';
-import postGoogleAppidOauth from './components/postGoogleAppidOauth';
-import getGoogleAppidTokens from './components/getGoogleAppidTokens';
-import postGoogleAppidTokens from './components/postGoogleAppidTokens';
-import getGoogleAppidTokensTokenid from './components/getGoogleAppidTokensTokenid';
-import deleteGoogleAppidTokensTokenid from './components/deleteGoogleAppidTokensTokenid';
-
-import postReddit from './components/postReddit';
-import PostRedditForm from './forms/PostRedditForm';
-
 import GetGoogleForm from './forms/GetGoogleForm';
 import PostGoogleForm from './forms/PostGoogleForm';
 import GetGoogleAppidForm from './forms/GetGoogleAppidForm';
@@ -26,11 +12,22 @@ import PostGoogleAppidTokensForm from './forms/PostGoogleAppidTokensForm';
 import GetGoogleAppidTokensTokenidForm from './forms/GetGoogleAppidTokensTokenidForm';
 import DeleteGoogleAppidTokensTokenidForm from './forms/DeleteGoogleAppidTokensTokenidForm';
 
-export default class SiteGoogle extends React.Component{
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as ApiActions from '../../actions/api';
+import * as GoogleActions from '../../actions/google';
+
+class SiteGoogle extends React.Component{
+  testfunc(){
+    this.props.action.getApiIfNeeded();
+  }
+
+
   render(){
     return(
  
     <div className='admin_form_wrapper'>
+        <button onClick={()=>this.testfunc()}>test</button>
       <Col 
         md={4} 
         sm={6} 
@@ -51,61 +48,55 @@ export default class SiteGoogle extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetGoogleForm onSubmit={apiRequest}/>
+          <GetGoogleForm onSubmit={values=>this.props.twitchAction.getGoogle(values)}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostGoogleForm onSubmit={postGoogle}/>
+          <PostGoogleForm onSubmit={values=>this.props.twitchAction.postGoogle(values)}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostRedditForm onSubmit={postReddit}/>
+          <GetGoogleAppidForm onSubmit={values=>this.props.twitchAction.getGoogleAppId(values)}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetGoogleAppidForm onSubmit={getGoogleAppid}/>
+          <DeleteGoogleAppidForm onSubmit={values=>this.props.twitchAction.deleteGoogleAppId(values)}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <DeleteGoogleAppidForm onSubmit={deleteGoogleAppid}/>
+          <PostGoogleAppidOauthForm onSubmit={values=>this.props.twitchAction.postGoogleAppIdOauth(values)}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostGoogleAppidOauthForm onSubmit={postGoogleAppidOauth}/>
+          <GetGoogleAppidTokensForm onSubmit={values=>this.props.twitchAction.getGoogleAppIdTokens(values)}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetGoogleAppidTokensForm onSubmit={getGoogleAppidTokens}/>
+          <PostGoogleAppidTokensForm onSubmit={values=>this.props.twitchAction.postGoogleAppIdTokens(values)}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostGoogleAppidTokensForm onSubmit={postGoogleAppidTokens}/>
-        </Col>
-      </Col>
-
-      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetGoogleAppidTokensTokenidForm onSubmit={getGoogleAppidTokensTokenid}/>
+          <GetGoogleAppidTokensTokenidForm onSubmit={values=>this.props.twitchAction.getGoogleAppIdTokensTokenId(values)}/>
         </Col>
       </Col>
       
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <DeleteGoogleAppidTokensTokenidForm onSubmit={deleteGoogleAppidTokensTokenid}/>
+          <DeleteGoogleAppidTokensTokenidForm onSubmit={values=>this.props.twitchAction.deleteGoogleAppIdTokensTokenId(values)}/>
         </Col>
       </Col>
 
@@ -114,3 +105,20 @@ export default class SiteGoogle extends React.Component{
     );
   }
 }
+
+function mapStateToProps(state, prop){
+  /*the name of the reducer*/
+  return{
+    xClientId: state.api.xClientId,
+    xToken: state.api.xToken,
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    action: bindActionCreators(ApiActions, dispatch),
+    twitchAction: bindActionCreators(GoogleActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SiteGoogle);
