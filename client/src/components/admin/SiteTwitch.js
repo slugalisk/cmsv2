@@ -6,10 +6,8 @@ import apiRequest from './components/apiRequest';
 
 import postTwitch from './components/postTwitch';
 
-import deleteTwitchAppid from './components/deleteTwitchAppid';
 import postTwitchAppidOauth from './components/postTwitchAppidOauth';
 import postTwitchAppidTokens from './components/postTwitchAppidTokens';
-import deleteTwitchAppidTokensTokenid from './components/deleteTwitchAppidTokensTokenid';
 
 
 import GetTwitchForm from './forms/GetTwitchForm';
@@ -65,7 +63,7 @@ class SiteTwitch extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostTwitchForm onSubmit={apiRequest}/>
+          <PostTwitchForm onSubmit={values=>this.props.twitchAction.postTwitch(values)}/>
         </Col>
       </Col>
 
@@ -77,13 +75,13 @@ class SiteTwitch extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <DeleteTwitchAppidForm onSubmit={deleteTwitchAppid}/>
+          <DeleteTwitchAppidForm onSubmit={values=>this.props.twitchAction.deleteTwitchAppId(values)}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostTwitchAppidOauthForm onSubmit={postTwitchAppidOauth}/>
+          <PostTwitchAppidOauthForm onSubmit={values=>this.props.twitchAction.postTwitchAppId(values)}/>
         </Col>
       </Col>
 
@@ -95,7 +93,7 @@ class SiteTwitch extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostTwitchAppidTokensForm onSubmit={postTwitchAppidTokens}/>
+          <PostTwitchAppidTokensForm onSubmit={values=>this.props.twitchAction.postTwitchAppIdTokens(values)}/>
         </Col>
       </Col>
 
@@ -107,7 +105,7 @@ class SiteTwitch extends React.Component{
       
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <DeleteTwitchAppidTokensTokenidForm onSubmit={deleteTwitchAppidTokensTokenid}/>
+          <DeleteTwitchAppidTokensTokenidForm onSubmit={values=>this.props.twitchAction.deleteTwitchAppIdTokensTokenId(values)}/>
         </Col>
       </Col>
 

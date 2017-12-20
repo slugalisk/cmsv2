@@ -12,6 +12,7 @@ export function slugFetch(dispatch, getState, path, method, data=undefined) {
 
   if (data !== undefined) {
     options.headers['Content-Type'] = 'application/json';
+    console.log(data);
     options.data = JSON.stringify(data);
   }
 
