@@ -12,10 +12,11 @@ export function slugFetch(dispatch, getState, path, method, data=undefined) {
 
   if (data !== undefined) {
     options.headers['Content-Type'] = 'application/json';
-    console.log(data);
-    options.data = JSON.stringify(data);
+    console.log(JSON.stringify(data));
+    options.body = JSON.stringify(data);
+    //options.data = JSON.stringify(data);
   }
-
+  console.log(options);
   return fetch(urlBase + path, options)
     .then(rs => rs.json());
 }

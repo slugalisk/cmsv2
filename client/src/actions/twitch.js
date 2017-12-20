@@ -61,8 +61,11 @@ export function postTwitch(values){
   slugPost(
     dispatch, 
     getState, 
-    '/api/v1/twitch/apps/'+values.appId, 
-    {'clientKey': values.key, 'clientSecret':values.secret}
+    '/api/v1/twitch/apps', 
+    {
+      clientKey: values.key, 
+      clientSecret:values.secret
+    }
   )
   .then(data => dispatch(receiveApp(data)));
   }
