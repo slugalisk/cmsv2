@@ -46,10 +46,8 @@ function receiveApp(data) {
   };
 }
 
-export function getTwitch(values){
-  return (dispatch, getState) => {
-    dispatch(requestApp());
-    fetch(`http://localhost:3000/api/v1/twitch/apps`,
+export function slugFetch(dispatch, getState, url){
+  fetch(url,
     {
       method: 'GET',
       credentials: 'include',
@@ -59,47 +57,20 @@ export function getTwitch(values){
       'X-Token': getState().api.headerContent.xToken, 
     }
   })
-  .then(console.log('RETURN RETURN RETURN'))
   .then(function(response) {
     return response.json();
   })
-  /*
-  .then(function(data) {
-    console.log(data);  
-  });
-  */
   .then(data => dispatch(receiveApp(data)));
+}
+
+export function getTwitch(values){
+  return (dispatch, getState) => {
+    slugFetch(dispatch, getState, 'http://localhost:3000/api/v1/twitch/apps');
   }
 }
 
 export function getTwitchAppId(values){
   return (dispatch, getState) => {
-    dispatch(requestApp())
-    fetch(`http://localhost:3000/api/v1/twitch/apps/`+values.appId,
-    {
-      method: 'GET',
-      credentials: 'include',
-      headers: { 
-      'Content-Type': 'application/json',
-      'X-Client-Id': getState().api.headerContent.xClientId,
-      'X-Token': getState().api.headerContent.xToken, 
-    }
-  })
-  .then(console.log('RETURN RETURN RETURN'))
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
-    console.log(data);  
-  });
-    //.then(data => dispatch(receiveApp(values.appId, data)));
+    slugFetch(dispatch, getState, 'http://localhost:3000/api/v1/twitch/apps/'+values.appId);
   }
 }
-
-/*
-const getAppById = appId => dispatch => {
-  dispatch(requestApp(appId));
-  return fetchApp(`http://localhost:3000/api/v1/twitch/apps`)
-    .then(data => dispatch(receiveApp(appId, data)));
-}
-*/
