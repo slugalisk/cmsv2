@@ -4,7 +4,11 @@ import {
 } from '../actions/api'
 
 const DEFAULT_STATE={
-  headerContent: {},
+  headerContent: {
+    urlBase:'http://localhost:3000',
+    xClientId:'',
+    xToken:'',
+  },
 }
 export default(state=DEFAULT_STATE, payload)=>
 {
@@ -18,8 +22,9 @@ export default(state=DEFAULT_STATE, payload)=>
       console.log(payload.token);
       console.log(payload.cookie);
       return {
-        ...state,
         headerContent: {
+          ...state.urlBase,
+          urlBase: 'http://localhost:3000',
           ...state.xClientId,
           xClientId: payload.clientId,
           ...state.xToken,
