@@ -35,17 +35,5 @@ GetDiscordForm = reduxForm({
   enableReinitialize: true //necessary to update object in initialValues
 })(GetDiscordForm);
 
-GetDiscordForm = connect(
-  state => ({
-    initialValues: {
-      method: 'GET',
-      url:'http://localhost:3000/api/v1/discord/apps',
-      xClientId: state.api.xClientId,
-      xToken: state.api.xToken,
-     }
-  }),          
-)(GetDiscordForm)
-
-
 
 export default GetDiscordForm

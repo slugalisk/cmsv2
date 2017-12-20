@@ -6,6 +6,7 @@ import adminmobile from './adminmobile';
 import togglers from './togglers';
 import templatenav from './templatenav';
 
+import discord from './discord';
 import reddit from './reddit';
 import twitter from './twitter';
 import lastfm from './lastfm';
@@ -23,6 +24,7 @@ const reducers={
   togglers,
   templatenav,
 
+  discord,
   twitter,
   reddit,
   lastfm,

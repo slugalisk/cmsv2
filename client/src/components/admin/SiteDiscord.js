@@ -2,18 +2,6 @@ import React from 'react';
 
 import {Col} from 'react-bootstrap';
 
-import apiRequest from './components/apiRequest';
-
-import postDiscord from './components/postDiscord';
-import getDiscordAppid from './components/getDiscordAppid';
-import deleteDiscordAppid from './components/deleteDiscordAppid';
-import postDiscordAppidOauth from './components/postDiscordAppidOauth';
-import getDiscordAppidTokens from './components/getDiscordAppidTokens';
-import postDiscordAppidTokens from './components/postDiscordAppidTokens';
-import getDiscordAppidTokensTokenid from './components/getDiscordAppidTokensTokenid';
-import deleteDiscordAppidTokensTokenid from './components/deleteDiscordAppidTokensTokenid';
-
-
 import GetDiscordForm from './forms/GetDiscordForm';
 import PostDiscordForm from './forms/PostDiscordForm';
 import GetDiscordAppidForm from './forms/GetDiscordAppidForm';
@@ -24,11 +12,21 @@ import PostDiscordAppidTokensForm from './forms/PostDiscordAppidTokensForm';
 import GetDiscordAppidTokensTokenidForm from './forms/GetDiscordAppidTokensTokenidForm';
 import DeleteDiscordAppidTokensTokenidForm from './forms/DeleteDiscordAppidTokensTokenidForm';
 
-export default class SiteDiscord extends React.Component{
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as ApiActions from '../../actions/api';
+import * as DiscordActions from '../../actions/discord';
+
+
+class SiteDiscord extends React.Component{
+  testfunc(){
+    this.props.action.getApiIfNeeded();
+  }
   render(){
     return(
- 
+
     <div className='admin_form_wrapper'>
+          <button onClick={()=>this.testfunc()}>test</button>
       <Col 
         md={4} 
         sm={6} 
@@ -49,55 +47,55 @@ export default class SiteDiscord extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetDiscordForm onSubmit={apiRequest}/>
+          <GetDiscordForm onSubmit={values=>this.props.discordAction.getDiscord(values)}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostDiscordForm onSubmit={postDiscord}/>
+          <PostDiscordForm onSubmit={values=>this.props.discordAction.postTwitch(values)}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetDiscordAppidForm onSubmit={getDiscordAppid}/>
+          <GetDiscordAppidForm onSubmit={values=>this.props.discordAction.getDiscordppId(values)}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <DeleteDiscordAppidForm onSubmit={deleteDiscordAppid}/>
+          <DeleteDiscordAppidForm onSubmit={values=>this.props.discordAction.deleteDiscordppId(values)}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostDiscordAppidOauthForm onSubmit={postDiscordAppidOauth}/>
+          <PostDiscordAppidOauthForm onSubmit={values=>this.props.discordAction.postDiscordppId(values)}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetDiscordAppidTokensForm onSubmit={getDiscordAppidTokens}/>
+          <GetDiscordAppidTokensForm onSubmit={values=>this.props.discordAction.getDiscordppIdTokens(values)}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostDiscordAppidTokensForm onSubmit={postDiscordAppidTokens}/>
+          <PostDiscordAppidTokensForm onSubmit={values=>this.props.discordAction.postDiscordppIdTokens(values)}/>
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetDiscordAppidTokensTokenidForm onSubmit={getDiscordAppidTokensTokenid}/>
+          <GetDiscordAppidTokensTokenidForm onSubmit={values=>this.props.discordAction.getDiscordppIdTokensTokenId(values)}/>
         </Col>
       </Col>
       
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <DeleteDiscordAppidTokensTokenidForm onSubmit={deleteDiscordAppidTokensTokenid}/>
+          <DeleteDiscordAppidTokensTokenidForm onSubmit={values=>this.props.discordAction.deleteDiscordppIdTokensTokenId(values)}/>
         </Col>
       </Col>
 
@@ -106,3 +104,21 @@ export default class SiteDiscord extends React.Component{
     );
   }
 }
+
+
+function mapStateToProps(state, prop){
+  /*the name of the reducer*/
+  return{
+    xClientId: state.api.xClientId,
+    xToken: state.api.xToken,
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    action: bindActionCreators(ApiActions, dispatch),
+    discordAction: bindActionCreators(DiscordActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SiteDiscord);

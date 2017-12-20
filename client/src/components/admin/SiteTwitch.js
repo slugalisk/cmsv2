@@ -2,10 +2,6 @@ import React from 'react';
 
 import {Col} from 'react-bootstrap';
 
-import apiRequest from './components/apiRequest';
-
-import postTwitch from './components/postTwitch';
-
 import GetTwitchForm from './forms/GetTwitchForm';
 import PostTwitchForm from './forms/PostTwitchForm';
 import GetTwitchAppidForm from './forms/GetTwitchAppidForm';
@@ -60,7 +56,6 @@ class SiteTwitch extends React.Component{
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
           <PostTwitchForm onSubmit={values=>this.props.twitchAction.postTwitch(values)}/>
-          {/*<PostTwitchForm onSubmit={postTwitch}/>*/}
         </Col>
       </Col>
 
