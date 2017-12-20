@@ -58,9 +58,7 @@ export function slugFetch(dispatch, getState, path){
       'X-Token': xToken, 
     }
   })
-  .then(function(response) {
-    return response.json();
-  })
+  .then(function(response) {return response.json();})
   .then(data => dispatch(receiveApp(data)));
 }
 
@@ -73,5 +71,17 @@ export function getTwitch(values){
 export function getTwitchAppId(values){
   return (dispatch, getState) => {
     slugFetch(dispatch, getState, '/api/v1/twitch/apps/'+values.appId);
+  }
+}
+
+export function getTwitchAppIdTokens(values){
+  return (dispatch, getState) => {
+    slugFetch(dispatch, getState, '/api/v1/twitch/apps/'+values.appId+'/tokens');
+  }
+}
+
+export function getTwitchAppIdTokensTokenId(values){
+  return (dispatch, getState) => {
+    slugFetch(dispatch, getState, '/api/v1/twitch/apps/'+values.appId+'/tokens/'+values.tokenId);
   }
 }
