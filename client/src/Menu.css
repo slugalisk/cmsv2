@@ -1,0 +1,119 @@
+.menu_panel{
+  position: fixed;
+  height: 100vh;
+  top: 0px;
+  background-color: #000;
+  -webkit-transition:  .4s ease-out;
+  -moz-transition:  .4s ease-out;
+  -o-transition:  .4s ease-out;
+  transition: .4s ease-out;
+  width: 300px;
+  z-index: 11;
+  right: 0px;
+}
+
+.menu_panel--hidden{
+  right: -300px;
+}
+
+.menu_panel__link{
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.menu_btn{
+  position: fixed;
+  mix-blend-mode:  difference;
+  z-index:  100;
+  top: 25px;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  will-change: opacity;
+  -webkit-transition: .25s ease-out;
+  -moz-transition: .25s ease-out;
+  -o-transition: .25s ease-out;
+  transition: .25s ease-out;
+  background-color: #000;
+}
+
+.menu_btn__container{
+  background: transparent;
+  color: #fff;
+}
+
+.menu_line1{
+  background-color: #fff;
+  height: 3px;
+  width: 24px;
+  position: absolute;
+  left: 18px;
+  z-index: 11;
+  -webkit-transition: .25s ease-out;
+  -moz-transition: .25s ease-out;
+  -o-transition: .25s ease-out;
+  transition:.25s ease-out;
+
+  top: 34px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.menu_line1--closed{
+	top: 29px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+
+}
+
+.menu_line2{
+  background-color: #fff;
+  height: 3px;
+  width: 24px;
+  position: absolute;
+  left: 18px;
+  z-index: 11;
+  -webkit-transition: .25s ease-out;
+  -moz-transition: .25s ease-out;
+  -o-transition: .25s ease-out;
+  transition:.25s ease-out;
+
+  top: 34px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.menu_line2--closed{
+	top: 38px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.menu_line3{
+  background-color: #fff;
+  height: 3px;
+  width: 0px;
+  position: absolute;
+  left: 18px;
+  z-index: 11;
+  -webkit-transition: .25s ease-out;
+  -moz-transition: .25s ease-out;
+  -o-transition: .25s ease-out;
+  transition:.25s ease-out;
+
+  top: 47px;
+}
+
+.menu_line3--closed{
+  width: 14px;
+}
