@@ -1,9 +1,6 @@
 import React from 'react';
 
-import {Row, Col} from 'react-bootstrap';
-import { Provider } from 'react-redux';
-
-import apiRequest from './components/apiRequest';
+import {Col} from 'react-bootstrap';
 
 import GetTwitterForm from './forms/GetTwitterForm';
 import PostTwitterForm from './forms/PostTwitterForm';
@@ -13,20 +10,29 @@ import PostTwitterAppIdOauthForm from './forms/PostTwitterAppIdOauthForm';
 import GetTwitterAppIdTokensForm from './forms/GetTwitterAppIdTokensForm';
 import PostTwitterAppIdTokensForm from './forms/PostTwitterAppIdTokensForm';
 import GetTwitterAppIdTokensTokenIdForm from './forms/GetTwitterAppIdTokensTokenIdForm';
-import PutTwitterAppIdTokensTokenIdForm from './forms/PutTwitterAppIdTokensTokenIdForm';
 import DeleteTwitterAppIdTokensTokenIdForm from './forms/DeleteTwitterAppIdTokensTokenIdForm';
 import GetTwitterAppIdWidgetsForm from './forms/GetTwitterAppIdWidgetsForm';
 import PostTwitterAppIdWidgetsForm from './forms/PostTwitterAppIdWidgetsForm';
 import GetTwitterAppIdWidgetsWidgetIdForm from './forms/GetTwitterAppIdWidgetsWidgetIdForm';
 import PutTwitterAppIdWidgetsWidgetIdForm from './forms/PutTwitterAppIdWidgetsWidgetIdForm';
 import DeleteTwitterAppIdWidgetsWidgetIdForm from './forms/DeleteTwitterAppIdWidgetsWidgetIdForm';
+
 import GetTwitterAppIdWidgetsWidgetIdFeedForm from './forms/GetTwitterAppIdWidgetsWidgetIdFeedForm';
 
-export default class SiteTwitter extends React.Component{
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as ApiActions from '../../actions/api';
+import * as TwitterActions from '../../actions/twitter';
+
+class SiteTwitter extends React.Component{
+  testfunc(){
+    this.props.action.getApiIfNeeded();
+  }
   render(){
     return(
  
     <div className='admin_form_wrapper'>
+    <button onClick={()=>this.testfunc()}>test</button>
       <Col 
         md={4} 
         sm={6} 
@@ -45,98 +51,122 @@ export default class SiteTwitter extends React.Component{
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+      <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+        <GetTwitterForm 
+          onSubmit={values=>this.props.twitterAction.getTwitter(values)}
+        />
+      </Col>
+    </Col>
+
+    <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+      <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+        <PostTwitterForm 
+          onSubmit={values=>this.props.twitterAction.postTwitter(values)}
+        />
+      </Col>
+    </Col>
+
+    <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+      <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+        <GetTwitterAppIdForm 
+          onSubmit={values=>this.props.twitterAction.getTwitterAppId(values)}
+        />
+      </Col>
+    </Col>
+
+    <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+      <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+        <DeleteTwitterAppIdForm 
+          onSubmit={values=>this.props.twitterAction.deleteTwitterAppId(values)}
+        />
+      </Col>
+    </Col>
+
+    <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+      <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+        <PostTwitterAppIdOauthForm 
+          onSubmit={values=>this.props.twitterAction.postTwitterAppIdOauth(values)}
+        />
+      </Col>
+    </Col>
+
+    <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+      <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+        <GetTwitterAppIdTokensForm 
+          onSubmit={values=>this.props.twitterAction.getTwitterAppIdTokens(values)}
+        />
+      </Col>
+    </Col>
+
+    <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+      <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+        <PostTwitterAppIdTokensForm 
+          onSubmit={values=>this.props.twitterAction.postTwitterAppIdTokens(values)}
+        />
+      </Col>
+    </Col>
+
+    <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+      <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+        <GetTwitterAppIdTokensTokenIdForm 
+          onSubmit={values=>this.props.twitterAction.getTwitterAppIdTokensTokenId(values)}
+        />
+      </Col>
+    </Col>
+    
+    <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+      <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+        <DeleteTwitterAppIdTokensTokenIdForm 
+          onSubmit={values=>this.props.twitterAction.deleteTwitterAppIdTokensTokenId(values)}
+        />
+      </Col>
+    </Col>
+
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetTwitterForm onSubmit={apiRequest}/>
+          <GetTwitterAppIdWidgetsForm 
+            onSubmit={values=>this.props.twitterAction.getTwitterAppIdWidgets(values)}
+          />
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostTwitterForm onSubmit={apiRequest}/>
-        </Col>
-      </Col>
-      
-      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetTwitterAppIdForm onSubmit={apiRequest}/>
+          <PostTwitterAppIdWidgetsForm 
+            onSubmit={values=>this.props.twitterAction.postTwitterAppIdWidgets(values)}
+          />
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <DeleteTwitterAppIdForm onSubmit={apiRequest}/>
+          <GetTwitterAppIdWidgetsWidgetIdForm 
+            onSubmit={values=>this.props.twitterAction.getTwitterAppIdWidgetsWidgetId(values)}
+          />
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostTwitterAppIdOauthForm onSubmit={apiRequest}/>
+          <PutTwitterAppIdWidgetsWidgetIdForm 
+            onSubmit={values=>this.props.twitterAction.putTwitterAppIdWidgetsWidgetId(values)}
+          />
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetTwitterAppIdTokensForm onSubmit={apiRequest}/>
+          <DeleteTwitterAppIdWidgetsWidgetIdForm 
+            onSubmit={values=>this.props.twitterAction.deleteTwitterAppIdWidgetsWidgetId(values)}
+          />
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostTwitterAppIdTokensForm onSubmit={apiRequest}/>
-        </Col>
-      </Col>
-
-      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetTwitterAppIdTokensTokenIdForm onSubmit={apiRequest}/>
-        </Col>
-      </Col>
-
-      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PutTwitterAppIdTokensTokenIdForm onSubmit={apiRequest}/>
-        </Col>
-      </Col>
-
-      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <DeleteTwitterAppIdTokensTokenIdForm onSubmit={apiRequest}/>
-        </Col>
-      </Col>
-
-      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetTwitterAppIdWidgetsForm onSubmit={apiRequest}/>
-        </Col>
-      </Col>
-
-      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostTwitterAppIdWidgetsForm onSubmit={apiRequest}/>
-        </Col>
-      </Col>
-
-      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetTwitterAppIdWidgetsWidgetIdForm onSubmit={apiRequest}/>
-        </Col>
-      </Col>
-
-      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PutTwitterAppIdWidgetsWidgetIdForm onSubmit={apiRequest}/>
-        </Col>
-      </Col>
-
-      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <DeleteTwitterAppIdWidgetsWidgetIdForm onSubmit={apiRequest}/>
-        </Col>
-      </Col>
-
-      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
-        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <GetTwitterAppIdWidgetsWidgetIdFeedForm onSubmit={apiRequest}/>
+          <GetTwitterAppIdWidgetsWidgetIdFeedForm 
+            onSubmit={values=>this.props.twitterAction.getTwitterAppIdWidgetsWidgetIdFeed(values)}
+          />
         </Col>
       </Col>
 
@@ -144,3 +174,20 @@ export default class SiteTwitter extends React.Component{
     );
   }
 }
+
+function mapStateToProps(state, prop){
+  /*the name of the reducer*/
+  return{
+    xClientId: state.api.xClientId,
+    xToken: state.api.xToken,
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    action: bindActionCreators(ApiActions, dispatch),
+    twitterAction: bindActionCreators(TwitterActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SiteTwitter);
