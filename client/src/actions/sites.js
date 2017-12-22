@@ -37,9 +37,9 @@ export function postSites(values){
     getState, 
     '/api/v1/sites', 
     {
-      "enabled": true,
-      "name": "string",
-      "readOnly": true
+      'enabled': true,
+      'name': values.name,
+      'readOnly': true
     }
   )
   .then(data => dispatch(receiveApp(data)));

@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-class PostSiteForm extends React.Component {
+class PostSitesForm extends React.Component {
   render(){
 
   const { handleSubmit, pristine, submitting } = this.props;
@@ -13,10 +13,10 @@ class PostSiteForm extends React.Component {
       <Row className='admin_setup__row'>
         <label>Post Site</label>
         <Field
-          name='siteId'
+          name='name'
           component='input'
           type='text'
-          placeholder='Site ID'
+          placeholder='Name'
           className='admin_form_field'
         />
       </Row>
@@ -43,5 +43,5 @@ class PostSiteForm extends React.Component {
 };
 
 export default reduxForm({
-  form: 'postSite', // a unique identifier for this form
-})(PostSiteForm);
+  form: 'postSites', // a unique identifier for this form
+})(PostSitesForm);

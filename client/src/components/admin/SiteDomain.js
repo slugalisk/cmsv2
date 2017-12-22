@@ -3,15 +3,14 @@ import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 import { Provider } from 'react-redux';
 
-import postSite from './components/postSite';
 import putSite from './components/putSite';
 import deleteSite from './components/deleteSite';
 import getSiteDomains from './components/getSiteDomains';
 import postSiteDomain from './components/postSiteDomain';
 
 import GetSitesForm from './forms/GetSitesForm';
+import PostSitesForm from './forms/PostSitesForm';
 
-import PostSiteForm from './forms/PostSiteForm';
 import PutSiteForm from './forms/PutSiteForm';
 import DeleteSiteForm from './forms/DeleteSiteForm';
 import SiteDomainsForm from './forms/SiteDomainsForm';
@@ -58,7 +57,9 @@ class SiteDomain extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostSiteForm onSubmit={postSite}/>
+          <PostSitesForm
+            onSubmit={values=>this.props.sitesAction.postSites(values)}
+          />
         </Col>
       </Col>
 
