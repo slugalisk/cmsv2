@@ -72,7 +72,7 @@ export function putSitesSiteId(values){
   .then(data => dispatch(receiveApp(data)));
   }
 }
-/* DELETE /sites/{siteIdId} */
+/* DELETE /sites/{siteId} */
 export function deleteSitesSiteId(values){
   return (dispatch, getState) => {
   slugDelete(
@@ -136,7 +136,7 @@ export function putSitesSiteIdDomainsDomainId(values){
   }
 }
 /* DELETE /sites/{siteId}/domains/{domainId} */
-export function deleteRedditAppIdTokensTokenId(values){
+export function deleteSitesSiteIdDomainsDomainId(values){
   return (dispatch, getState) => {
     slugDelete(
       dispatch, 

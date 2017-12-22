@@ -10,11 +10,14 @@ import postSiteDomain from './components/postSiteDomain';
 
 import GetSitesForm from './forms/GetSitesForm';
 import PostSitesForm from './forms/PostSitesForm';
-
-import PutSiteForm from './forms/PutSiteForm';
-import DeleteSiteForm from './forms/DeleteSiteForm';
-import SiteDomainsForm from './forms/SiteDomainsForm';
-import PostSiteDomainForm from './forms/PostSiteDomainForm';
+import GetSitesSiteIdForm from './forms/GetSitesSiteIdForm';
+import PutSitesSiteIdForm from './forms/PutSitesSiteIdForm';
+import DeleteSitesSiteIdForm from './forms/DeleteSitesSiteIdForm';
+import GetSitesSiteIdDomainsForm from './forms/GetSitesSiteIdDomainsForm';
+import PostSitesSiteIdDomainsForm from './forms/PostSitesSiteIdDomainsForm';
+import GetSitesSiteIdDomainsDomainIdForm from './forms/GetSitesSiteIdDomainsDomainIdForm';
+import PutSitesSiteIdDomainsDomainIdForm from './forms/PutSitesSiteIdDomainsDomainIdForm';
+import DeleteSitesSiteIdDomainsDomainIdForm from './forms/DeleteSitesSiteIdDomainsDomainIdForm';
 
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
@@ -65,28 +68,67 @@ class SiteDomain extends React.Component{
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PutSiteForm onSubmit={putSite}/>
+          <GetSitesSiteIdForm 
+            onSubmit={values=>this.props.sitesAction.getSitesSiteId(values)}
+          />
         </Col>
       </Col>
 
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <DeleteSiteForm onSubmit={deleteSite}/>
+          <PutSitesSiteIdForm 
+            onSubmit={values=>this.props.sitesAction.putSitesSiteId(values)}
+          />
+        </Col>
+      </Col>
+
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+          <DeleteSitesSiteIdForm 
+            onSubmit={values=>this.props.sitesAction.deleteSitesSiteId(values)}
+          />
         </Col>
       </Col>
     
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <SiteDomainsForm onSubmit={getSiteDomains}/>
+          <GetSitesSiteIdDomainsForm 
+            onSubmit={values=>this.props.sitesAction.getSitesSiteIdDomains(values)}
+          />
         </Col>
       </Col>
     
       <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
         <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
-          <PostSiteDomainForm onSubmit={postSiteDomain}/>
+          <PostSitesSiteIdDomainsForm 
+            onSubmit={values=>this.props.sitesAction.postSitesSiteIdDomains(values)}
+          />
         </Col>
       </Col>
-      
+
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+          <GetSitesSiteIdDomainsDomainIdForm 
+            onSubmit={values=>this.props.sitesAction.getSitesSiteIdDomainsDomainId(values)}
+          />
+        </Col>
+      </Col>
+
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+          <PutSitesSiteIdDomainsDomainIdForm 
+            onSubmit={values=>this.props.sitesAction.putSitesSiteIdDomainsDomainId(values)}
+          />
+        </Col>
+      </Col>
+
+      <Col md={4} mdOffset={0} sm={6} smOffset={0} xs={12} xsOffset={0}>
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>
+          <DeleteSitesSiteIdDomainsDomainIdForm 
+            onSubmit={values=>this.props.sitesAction.deleteSitesSiteIdDomainsDomainId(values)}
+          />
+        </Col>
+      </Col> 
 
     </div>
     );

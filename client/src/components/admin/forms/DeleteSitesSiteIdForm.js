@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-class DeleteSiteForm extends React.Component {
+class DeleteSitesSiteIdForm extends React.Component {
   constructor(props){
     super(props);
     this.state={
@@ -107,5 +107,5 @@ class DeleteSiteForm extends React.Component {
 };
 
 export default reduxForm({
-  form: 'deleteSite', // a unique identifier for this form
-})(DeleteSiteForm);
+  form: 'deleteSitesSiteId', // a unique identifier for this form
+})(DeleteSitesSiteIdForm);

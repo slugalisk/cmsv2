@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-class SiteDomainsForm extends React.Component {
+class GetSitesSiteIdDomainsDomainIdForm extends React.Component {
   render(){
 
   const { handleSubmit, pristine, reset, submitting } = this.props;
@@ -11,12 +11,22 @@ class SiteDomainsForm extends React.Component {
   return (
     <form onSubmit={handleSubmit}>
       <Row className='admin_setup__row'>
-        <label>Get Site Domains</label>
+        <label>Get Sites SiteId Domains SiteId</label>
         <Field
           name='siteId'
           component='input'
           type='text'
           placeholder='Site ID'
+          className='admin_form_field'
+        />
+      </Row>
+      <Row className='admin_setup__row'>
+        <label>Get Sites SiteId Domains DomainId</label>
+        <Field
+          name='domainId'
+          component='input'
+          type='text'
+          placeholder='Domain ID'
           className='admin_form_field'
         />
       </Row>
@@ -43,5 +53,5 @@ class SiteDomainsForm extends React.Component {
 };
 
 export default reduxForm({
-  form: 'siteDomains', // a unique identifier for this form
-})(SiteDomainsForm);
+  form: 'getSitesSiteIdDomainsDomainId', // a unique identifier for this form
+})(GetSitesSiteIdDomainsDomainIdForm);
