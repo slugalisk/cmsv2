@@ -13,7 +13,6 @@ import twitter from './twitter';
 import lastfm from './lastfm';
 import instagram from './instagram';
 import twitch from './twitch';
-import youtube from './youtube';
 
 import api from './api';
 
@@ -32,7 +31,6 @@ const reducers={
   lastfm,
   instagram,
   twitch,
-  youtube,
 
   api,
 };
