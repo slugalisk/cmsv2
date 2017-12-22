@@ -2,7 +2,6 @@ import React from 'react';
 import {Route} from 'react-router-dom';
 import {Row, Col} from 'react-bootstrap';
 
-import AdminBackground from './components/AdminBackground';
 import Admin from './Admin';
 import Adminmenu from './menu/Sidemenu';
 import Adminbar from './menu/Menubar';
@@ -45,7 +44,6 @@ export default class Main extends React.Component{
  
     return(
       <div className='admin_panel'>
-        <Route path="/admin" render={(props) => <AdminBackground {...props}/>} /> 
 
         <Row>
         <Col md={2} className='admin_menu'>
