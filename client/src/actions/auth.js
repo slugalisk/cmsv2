@@ -77,7 +77,7 @@ export function postAuthCredentialsIdReplacements(values){
   }
 }
 /* PUT /auth/credentials/{credentialsId}/replacements/{replacementId} */
-export function postAuthCredentialsIdReplacements(values){
+export function putAuthCredentialsIdReplacements(values){
   return (dispatch, getState) => {
   slugPut(
     dispatch, 
@@ -95,7 +95,7 @@ export function postAuthCredentialsIdReplacements(values){
   }
 }
 /* DELETE /auth/credentials/{credentialsId}/replacements/{replacementId} */
-export function postAuthCredentialsIdReplacements(values){
+export function deleteAuthCredentialsIdReplacements(values){
   return (dispatch, getState) => {
   slugDelete(
     dispatch, 
