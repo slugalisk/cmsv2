@@ -32,6 +32,7 @@ import SiteTwitch from './SiteTwitch';
 import SiteTwitter from './SiteTwitter';
 import SiteGoogle from './SiteGoogle';
 import SiteDiscord from './SiteDiscord';
+import SiteAuth from './SiteAuth';
 
 import Lootbox from './Lootbox';
 
@@ -88,6 +89,7 @@ export default class Main extends React.Component{
           <Route exact path="/admin/twitter" render={(props) => <SiteTwitter {...props}/>}/>
           <Route exact path="/admin/google" render={(props) => <SiteGoogle {...props}/>}/>
           <Route exact path="/admin/discord" render={(props) => <SiteDiscord {...props}/>}/>
+          <Route exact path="/admin/auth" render={(props) => <SiteAuth {...props}/>}/>
 
           <Route exact path="/admin/lootboxes" render={(props) => <Lootbox {...props}/>}/>
 
