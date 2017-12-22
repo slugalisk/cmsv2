@@ -3,11 +3,6 @@ import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 import { Provider } from 'react-redux';
 
-import putSite from './components/putSite';
-import deleteSite from './components/deleteSite';
-import getSiteDomains from './components/getSiteDomains';
-import postSiteDomain from './components/postSiteDomain';
-
 import GetSitesForm from './forms/GetSitesForm';
 import PostSitesForm from './forms/PostSitesForm';
 import GetSitesSiteIdForm from './forms/GetSitesSiteIdForm';
