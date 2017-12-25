@@ -2,10 +2,6 @@ import React from 'react';
 import { reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
-import * as ApiActions from '../../../actions/api';
-
 let GetDiscordForm = ({ handleChange, handleSubmit, value }) => (
   <form onSubmit={handleSubmit}>
     <Row className='admin_setup__row'>
@@ -34,6 +30,5 @@ GetDiscordForm = reduxForm({
   form: 'getDiscord', // a unique identifier for this form
   enableReinitialize: true //necessary to update object in initialValues
 })(GetDiscordForm);
-
 
 export default GetDiscordForm

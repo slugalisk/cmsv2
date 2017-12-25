@@ -2,10 +2,6 @@ import React from 'react';
 import { reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
-import * as ApiActions from '../../../actions/api';
-
 let GetRedditForm = ({ handleChange, handleSubmit, value }) => (
   <form onSubmit={handleSubmit}>
     <Row className='admin_setup__row'>
@@ -34,18 +30,5 @@ GetRedditForm = reduxForm({
   form: 'getReddit', // a unique identifier for this form
   enableReinitialize: true //necessary to update object in initialValues
 })(GetRedditForm);
-
-GetRedditForm = connect(
-  state => ({
-    initialValues: {
-      method: 'GET',
-      url:'http://localhost:3000/api/v1/reddit/apps',
-      xClientId: state.api.xClientId,
-      xToken: state.api.xToken,
-     }
-  }),          
-)(GetRedditForm)
-
-
 
 export default GetRedditForm

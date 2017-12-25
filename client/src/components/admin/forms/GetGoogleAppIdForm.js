@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, reduxForm, formValueSelector } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
 import {connect} from 'react-redux';
@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 class GetGoogleAppIdForm extends React.Component{
   render(){
 
-  const { handleChange, pristine, submitting, handleSubmit, value }= this.props;
+  const { pristine, submitting, handleSubmit }= this.props;
     return(
       <form onSubmit={handleSubmit}>
         <Row className='admin_setup__row'>
@@ -46,18 +46,5 @@ GetGoogleAppIdForm = reduxForm({
   form: 'getGoogleAppId', // a unique identifier for this form
   enableReinitialize: true //necessary to update object in initialValues
 })(GetGoogleAppIdForm);
-
-GetGoogleAppIdForm = connect(
-  state => ({
-    initialValues: {
-      method: 'GET',
-      url:'http://localhost:3000/api/v1/google/apps',
-      xClientId: state.api.xClientId,
-      xToken: state.api.xToken,
-     }
-  }),          
-)(GetGoogleAppIdForm)
-
-
 
 export default GetGoogleAppIdForm;

@@ -139,7 +139,6 @@ class GroupsForm extends React.Component{
           </Row>
         </Col>
 
-
         <Col md={12} mdOffset={0} sm={12} smOffset={0} xs={12} xsOffset={0}>
           <Col md={4} sm={6} xs={12}>
             <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={10} xsOffset={1}>

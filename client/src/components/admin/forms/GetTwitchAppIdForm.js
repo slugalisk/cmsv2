@@ -1,14 +1,13 @@
 import React from 'react';
-import { Field, reduxForm, formValueSelector, getFormValues } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
 import {connect} from 'react-redux';
-import {compose} from 'redux';
 
 class GetTwitchAppIdForm extends React.Component{
   render(){
 
-  const { handleChange, pristine, submitting, handleSubmit, value }= this.props;
+  const { pristine, submitting, handleSubmit }= this.props;
     return(
       <form onSubmit={handleSubmit}>
         <Row className='admin_setup__row'>

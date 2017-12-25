@@ -2,11 +2,6 @@ import React from 'react';
 import { reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
-import * as ApiActions from '../../../actions/api';
-
-
   let GetTwitchForm = ({ handleChange, handleSubmit, value }) => (
     <form onSubmit={handleSubmit}>
       <Row className='admin_setup__row'>
@@ -23,14 +18,12 @@ import * as ApiActions from '../../../actions/api';
               >
                 Submit
               </Button>
-
             </Row>
           </Col>
         </Col>
       </Col>
     </form>
   );
-
 
 GetTwitchForm = reduxForm({
   form: 'getTwitch', // a unique identifier for this form

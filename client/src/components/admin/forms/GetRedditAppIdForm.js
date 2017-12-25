@@ -1,13 +1,11 @@
 import React from 'react';
-import { Field, reduxForm, formValueSelector } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
-
-import {connect} from 'react-redux';
 
 class GetRedditAppIdForm extends React.Component{
   render(){
 
-  const { handleChange, pristine, submitting, handleSubmit, value }= this.props;
+  const { pristine, submitting, handleSubmit }= this.props;
     return(
       <form onSubmit={handleSubmit}>
         <Row className='admin_setup__row'>
@@ -42,23 +40,12 @@ class GetRedditAppIdForm extends React.Component{
   }
 }
 
-function mapStateToProps(state, prop){
-  /*the name of the reducer*/
-  return{
-    initialValues: {
-      method: 'GET',
-      url:'http://localhost:3000/api/v1/reddit/apps',
-      xClientId: state.api.xClientId,
-      xToken: state.api.xToken,
-     }
-  }
-}
+
 
 GetRedditAppIdForm = reduxForm({
   form: 'getRedditAppId', // a unique identifier for this form
   enableReinitialize: true //necessary to update object in initialValues
-},
-mapStateToProps)(GetRedditAppIdForm);
+})(GetRedditAppIdForm);
 
 /*
 GetRedditAppIdForm = connect(
