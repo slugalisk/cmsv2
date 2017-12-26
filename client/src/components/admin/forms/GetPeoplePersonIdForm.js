@@ -2,16 +2,16 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-class GetRedditAppIdForm extends React.Component{
+class GetPeoplePersonIdForm extends React.Component{
   render(){
 
   const { pristine, submitting, handleSubmit }= this.props;
     return(
       <form onSubmit={handleSubmit}>
         <Row className='admin_setup__row'>
-          <label>Get Reddit AppId</label>
+          <label>Get People PersonId</label>
           <Field
-            name='appId'
+            name='personId'
             component='input'
             type='text'
             placeholder=''
@@ -40,9 +40,9 @@ class GetRedditAppIdForm extends React.Component{
   }
 }
 
-GetRedditAppIdForm = reduxForm({
-  form: 'getRedditAppId', // a unique identifier for this form
-})(GetRedditAppIdForm);
+GetPeoplePersonIdForm = reduxForm({
+  form: 'getPeoplePersonId', // a unique identifier for this form
+})(GetPeoplePersonIdForm);
 
 
-export default GetRedditAppIdForm;
+export default GetPeoplePersonIdForm;

@@ -2,10 +2,10 @@ import React from 'react';
 import { reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-let GetGoogleForm = ({ handleChange, handleSubmit, value }) => (
+let GetPeopleForm = ({ handleChange, handleSubmit, value }) => (
   <form onSubmit={handleSubmit}>
     <Row className='admin_setup__row'>
-      <label>Get Google</label>
+      <label>Get People</label>
     </Row>
     <Col md={12} mdOffset={0} sm={12} smOffset={0} xs={12} xsOffset={0}>
       <Col md={4} sm={6} xs={12}>
@@ -25,8 +25,8 @@ let GetGoogleForm = ({ handleChange, handleSubmit, value }) => (
   </form>
 );
 
-GetGoogleForm = reduxForm({
-  form: 'getGoogle', // a unique identifier for this form
-})(GetGoogleForm);
+GetPeopleForm = reduxForm({
+  form: 'getPeople', // a unique identifier for this form
+})(GetPeopleForm);
 
-export default GetGoogleForm
+export default GetPeopleForm
