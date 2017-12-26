@@ -1,37 +1,29 @@
 import {
-  REQUEST_HEADERS,
-  RECEIVE_HEADERS,
-} from '../actions/api'
+  REQUEST_APP,
+  RECEIVE_APP,
+} from '../actions/auth'
 
 const DEFAULT_STATE={
-  headerContent: {
-    urlBase:'http://localhost:3000',
-    xClientId:'',
-    xToken:'',
-  },
+  posts: [],
+  appData: {},
 }
 export default(state=DEFAULT_STATE, payload)=>
 {
   switch(payload.type){
-    
-    case REQUEST_HEADERS:
+
+    case REQUEST_APP:
       return {...state}
 
-    case RECEIVE_HEADERS:
-      console.log(payload.clientId);
-      console.log(payload.token);
+    case RECEIVE_APP:
+      console.log('REDUCER REDUCER REDUCER');
+      console.log(payload.data);
       return {
-        headerContent: {
-          ...state.urlBase,
-          urlBase: 'http://localhost:3000',
-          ...state.xClientId,
-          xClientId: payload.clientId,
-          ...state.xToken,
-          xToken: payload.token,
-        }
+        ...state,
+        //appData: payload.data,
+        appData: {...payload.data},
       };
 
-    default:
+   default:
       return state;
   }
 };
