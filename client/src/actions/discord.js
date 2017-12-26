@@ -1,22 +1,7 @@
 import {slugGet, slugPost, slugPut, slugDelete} from './slug';
 
-export const REQUEST_POSTS = Symbol('REQUEST_POSTS')
-export const RECEIVE_POSTS = Symbol('RECEIVE_POSTS')
-
 export const REQUEST_APP = Symbol('REQUEST_APP')
 export const RECEIVE_APP = Symbol('RECEIVE_APP')
-
-function requestPosts() {
-  return {
-    type: REQUEST_POSTS,
-  }
-}
-function receivePosts(json) {
-  return {
-    type: RECEIVE_POSTS,
-    posts: json.data,
-  };
-}
 
 /* --- */
 

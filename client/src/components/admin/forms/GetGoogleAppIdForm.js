@@ -2,8 +2,6 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-import {connect} from 'react-redux';
-
 class GetGoogleAppIdForm extends React.Component{
   render(){
 
@@ -42,9 +40,6 @@ class GetGoogleAppIdForm extends React.Component{
   }
 }
 
-GetGoogleAppIdForm = reduxForm({
+export default reduxForm({
   form: 'getGoogleAppId', // a unique identifier for this form
-  enableReinitialize: true //necessary to update object in initialValues
 })(GetGoogleAppIdForm);
-
-export default GetGoogleAppIdForm;
