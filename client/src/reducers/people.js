@@ -1,7 +1,7 @@
 import {
   REQUEST_HEADERS,
   RECEIVE_HEADERS,
-} from '../actions/api'
+} from '../actions/people'
 
 const DEFAULT_STATE={
   headerContent: {

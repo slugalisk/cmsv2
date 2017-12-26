@@ -20,7 +20,6 @@ export default(state=DEFAULT_STATE, payload)=>
     case RECEIVE_HEADERS:
       console.log(payload.clientId);
       console.log(payload.token);
-      console.log(payload.cookie);
       return {
         headerContent: {
           ...state.urlBase,

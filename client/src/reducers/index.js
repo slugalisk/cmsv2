@@ -7,6 +7,8 @@ import togglers from './togglers';
 import templatenav from './templatenav';
 
 import sites from './sites';
+import auth from './auth';
+import people from './people';
 
 import discord from './discord';
 import google from './google';
@@ -27,6 +29,8 @@ const reducers={
   templatenav,
 
   sites,
+  auth,
+  people,
   
   discord,
   google,
