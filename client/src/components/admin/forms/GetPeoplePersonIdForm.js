@@ -4,7 +4,6 @@ import {Row, Col, Button} from 'react-bootstrap';
 
 class GetPeoplePersonIdForm extends React.Component{
   render(){
-
   const { pristine, submitting, handleSubmit }= this.props;
     return(
       <form onSubmit={handleSubmit}>
@@ -43,6 +42,5 @@ class GetPeoplePersonIdForm extends React.Component{
 GetPeoplePersonIdForm = reduxForm({
   form: 'getPeoplePersonId', // a unique identifier for this form
 })(GetPeoplePersonIdForm);
-
 
 export default GetPeoplePersonIdForm;

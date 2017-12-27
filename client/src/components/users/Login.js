@@ -1,6 +1,5 @@
 import React from 'react';
 
-import showResults from './ShowResults';
 import LoginForm from './forms/LoginForm';
 
 import {Col} from 'react-bootstrap';

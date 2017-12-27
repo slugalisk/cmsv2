@@ -6,8 +6,6 @@ import {Link} from 'react-router-dom';
 import showResults from './ShowResults';
 
 import RegistrationForm from './forms/RegistrationForm';
-import DeletePeopleForm from './forms/DeletePeopleForm';
-import DeleteAuthCredentialsForm from './forms/DeleteAuthCredentialsForm';
 
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';

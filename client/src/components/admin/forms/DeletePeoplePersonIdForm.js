@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Row, Col, Button} from 'react-bootstrap';
 
-class DeletePeoplePersonId extends React.Component {
+class DeletePeoplePersonIdForm extends React.Component {
   render(){
     const { handleSubmit, pristine, submitting } = this.props;
     return (
