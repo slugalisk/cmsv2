@@ -1,13 +1,17 @@
 import React from 'react';
 
-import postAuthRecovery from './components/postAuthRecovery';
-
-import RecoveryForm from './forms/RecoveryForm';
-
 import {Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
-export default class Recovery extends React.Component{
+import RecoveryForm from './forms/RecoveryForm';
+
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as ApiActions from '../../actions/api';
+import * as AuthActions from '../../actions/auth';
+
+
+class Recovery extends React.Component{
   render(){
     return(
  
@@ -27,7 +31,7 @@ export default class Recovery extends React.Component{
             Recover Password
           </h2>
           <RecoveryForm 
-            onSubmit={postAuthRecovery} 
+            onSubmit={values=>this.props.authAction.postAuthRecovery(values)}
           />
           
         </div>
@@ -36,3 +40,20 @@ export default class Recovery extends React.Component{
     );
   }
 }
+
+function mapStateToProps(state, prop){
+  /*the name of the reducer*/
+  return{
+    xClientId: state.api.xClientId,
+    xToken: state.api.xToken,
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    action: bindActionCreators(ApiActions, dispatch),
+    authAction: bindActionCreators(AuthActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Recovery);
