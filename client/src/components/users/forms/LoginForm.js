@@ -12,7 +12,7 @@ const LoginForm = props => {
             Email Address
           </label>
           <Field
-            name='loginUsername'
+            name='email'
             component='input'
             type='text'
             placeholder='name@example.com'
@@ -25,7 +25,7 @@ const LoginForm = props => {
           Password
         </label> 
         <Field
-          name='loginPassword'
+          name='password'
           component='input'
           type='password'
           placeholder='Password'

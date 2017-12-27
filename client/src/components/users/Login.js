@@ -6,7 +6,12 @@ import LoginForm from './forms/LoginForm';
 import {Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
-export default class Login extends React.Component{
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as ApiActions from '../../actions/api';
+import * as AuthActions from '../../actions/auth';
+
+class Login extends React.Component{
   render(){
     return(
  
@@ -26,7 +31,7 @@ export default class Login extends React.Component{
             Log In
           </h2>
           <LoginForm 
-            onSubmit={showResults} 
+            onSubmit={values=>this.props.authAction.postAuthSessions(values)}
           />
           <Link to='/recovery'>
             Forgot Password?<br/>
@@ -40,3 +45,20 @@ export default class Login extends React.Component{
     );
   }
 }
+
+function mapStateToProps(state, prop){
+  /*the name of the reducer*/
+  return{
+    xClientId: state.api.xClientId,
+    xToken: state.api.xToken,
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    action: bindActionCreators(ApiActions, dispatch),
+    authAction: bindActionCreators(AuthActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
