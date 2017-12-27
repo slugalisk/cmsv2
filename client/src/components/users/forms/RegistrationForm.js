@@ -5,13 +5,6 @@ import {Row, Button} from 'react-bootstrap';
 const RegistrationForm = props => {
   const { handleSubmit, pristine, submitting } = props;
 
-  const getAuthCredentials=()=>{
-    fetch('http://localhost:3000/getAuthCredentials')
-  }
-  const getPeople=()=>{
-    fetch('http://localhost:3000/getPeople')
-  }
-
   return (
     <form onSubmit={handleSubmit}>
 
@@ -41,8 +34,6 @@ const RegistrationForm = props => {
         />
       </Row>
 
-   
-
       <Row>
         <Button 
           bsStyle="success" 
@@ -53,23 +44,6 @@ const RegistrationForm = props => {
           Register
         </Button>
 
-        <Button 
-          bsStyle="success" 
-          type='button' 
-          className='form_button'
-          onClick={getAuthCredentials}
-        >
-          Get Auth Credentials
-        </Button>
-
-        <Button 
-          bsStyle="success" 
-          type='button' 
-          className='form_button'
-          onClick={getPeople}
-        >
-          Get People
-        </Button>
       </Row>
     </form>
   );

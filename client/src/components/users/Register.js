@@ -1,9 +1,7 @@
 import React from 'react';
 
-
-import postAuthCredentials from './components/postAuthCredentials';
-import deletePeople from './components/deletePeople';
-import deleteAuthCredentials from './components/deleteAuthCredentials';
+import {Col} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 import showResults from './ShowResults';
 
@@ -11,11 +9,12 @@ import RegistrationForm from './forms/RegistrationForm';
 import DeletePeopleForm from './forms/DeletePeopleForm';
 import DeleteAuthCredentialsForm from './forms/DeleteAuthCredentialsForm';
 
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as ApiActions from '../../actions/api';
+import * as AuthActions from '../../actions/auth';
 
-import {Col} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
-
-export default class Register extends React.Component{
+class Register extends React.Component{
   render(){
     return(
  
@@ -35,7 +34,7 @@ export default class Register extends React.Component{
             Register
           </h2>
           <RegistrationForm 
-            onSubmit={postAuthCredentials} 
+            onSubmit={values=>this.props.authAction.postAuth(values)}
           />
           <Link to='/recovery'>
             Forgot Password?<br/>
@@ -45,16 +44,25 @@ export default class Register extends React.Component{
           </Link>
         </div>
 
-        <DeletePeopleForm 
-            onSubmit={deletePeople} 
-          />
-
-        <DeleteAuthCredentialsForm 
-          onSubmit={deleteAuthCredentials} 
-        />
-
       </Col>
     </div>
     );
   }
 }
+
+function mapStateToProps(state, prop){
+  /*the name of the reducer*/
+  return{
+    xClientId: state.api.xClientId,
+    xToken: state.api.xToken,
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    action: bindActionCreators(ApiActions, dispatch),
+    authAction: bindActionCreators(AuthActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register);
