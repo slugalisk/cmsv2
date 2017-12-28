@@ -5,7 +5,7 @@ export default class Gifts extends React.Component{
     return(
       <div className='user_content'>
         <div className='user_content__title'>
-          Gifts123
+          Gifts
         </div>
         <div className='user_content__section'>
           None
