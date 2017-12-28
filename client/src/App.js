@@ -4,7 +4,6 @@ import './Menu.css';
 import './Adminmenu.css';
 import './Adminpanel.css';
 import './Template1.css';
-import './User.css';
 import './Subscribe.css';
 
 import 'react-table/react-table.css';
